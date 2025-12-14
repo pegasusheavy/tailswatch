@@ -51,6 +51,20 @@ export class ThemeService {
     { id: 'gopher', name: 'Gopher', description: 'Go-inspired bright theme with cyan', isDark: false },
     { id: 'kernel', name: 'Kernel', description: 'C/C++ inspired battle-tested classic', isDark: true },
     { id: 'oxide', name: 'Oxide', description: 'Rust-inspired dark theme with orange', isDark: true },
+
+    // Material Design themes
+    { id: 'material-light-blue', name: 'Material Light Blue', description: 'Material Design with Blue primary', isDark: false },
+    { id: 'material-dark-blue', name: 'Material Dark Blue', description: 'Dark Material with Blue primary', isDark: true },
+    { id: 'material-light-indigo', name: 'Material Light Indigo', description: 'Material Design with Indigo primary', isDark: false },
+    { id: 'material-dark-indigo', name: 'Material Dark Indigo', description: 'Dark Material with Indigo primary', isDark: true },
+    { id: 'material-light-purple', name: 'Material Light Purple', description: 'Material Design with Purple primary', isDark: false },
+    { id: 'material-dark-purple', name: 'Material Dark Purple', description: 'Dark Material with Purple primary', isDark: true },
+    { id: 'material-light-teal', name: 'Material Light Teal', description: 'Material Design with Teal primary', isDark: false },
+    { id: 'material-dark-teal', name: 'Material Dark Teal', description: 'Dark Material with Teal primary', isDark: true },
+    { id: 'material-light-green', name: 'Material Light Green', description: 'Material Design with Green primary', isDark: false },
+    { id: 'material-dark-green', name: 'Material Dark Green', description: 'Dark Material with Green primary', isDark: true },
+    { id: 'material-light-deeporange', name: 'Material Light Deep Orange', description: 'Material Design with Deep Orange primary', isDark: false },
+    { id: 'material-dark-deeporange', name: 'Material Dark Deep Orange', description: 'Dark Material with Deep Orange primary', isDark: true },
   ];
 
   /** Currently active theme ID */
