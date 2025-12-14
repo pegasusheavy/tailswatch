@@ -81,7 +81,7 @@ constructor(private service: MyService) {}
 @Injectable({ providedIn: 'root' })
 export class MyService {
   private readonly state = signal<State>(initialState);
-  
+
   constructor() {
     if (typeof localStorage !== 'undefined') {
       // Safe to use localStorage
