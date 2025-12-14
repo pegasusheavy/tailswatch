@@ -1,4 +1,10 @@
 <div class="flex h-screen bg-[var(--color-background)]">
+  <!-- Back to Docs Button -->
+  <a routerLink="/" class="fixed bottom-4 left-4 z-[100] flex items-center gap-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2 text-sm font-medium shadow-lg transition-all hover:bg-[var(--color-surface-muted)] hover:shadow-xl">
+    <fa-icon [icon]="['fas', 'arrow-left']"></fa-icon>
+    <span>Back to docs</span>
+  </a>
+
   <!-- Sidebar -->
   <aside
     class="flex flex-col border-r border-[var(--color-border)] bg-[var(--color-surface)] transition-all duration-300"

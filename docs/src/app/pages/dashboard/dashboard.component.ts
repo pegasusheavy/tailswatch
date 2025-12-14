@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { ThemeSelectorComponent } from '../../components/theme-selector/theme-selector.component';
+import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 
 interface StatCard {
   title: string;
@@ -28,7 +30,7 @@ interface TeamMember {
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [ThemeSelectorComponent],
+  imports: [RouterModule, ThemeSelectorComponent, FaIconComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
