@@ -1,0 +1,119 @@
+<section id="borders" class="mb-16 scroll-mt-24">
+  <h2 appScrollAnimate="fade-right" class="mb-6 border-b border-[var(--color-border)] pb-2 text-2xl font-semibold">Borders & Dividers</h2>
+
+  <div class="space-y-8">
+    <!-- Border Radius -->
+    <div appScrollAnimate="fade-up">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Border Radius</h3>
+      <div class="flex flex-wrap items-end gap-4" appStaggerChildren [staggerDelay]="60">
+        <div class="flex h-16 w-16 items-center justify-center rounded-none border border-[var(--color-border)] bg-[var(--color-surface)]">
+          <span class="text-[10px] text-[var(--color-text-muted)]">none</span>
+        </div>
+        <div class="flex h-16 w-16 items-center justify-center rounded-sm border border-[var(--color-border)] bg-[var(--color-surface)]">
+          <span class="text-[10px] text-[var(--color-text-muted)]">sm</span>
+        </div>
+        <div class="flex h-16 w-16 items-center justify-center rounded border border-[var(--color-border)] bg-[var(--color-surface)]">
+          <span class="text-[10px] text-[var(--color-text-muted)]">default</span>
+        </div>
+        <div class="flex h-16 w-16 items-center justify-center rounded-md border border-[var(--color-border)] bg-[var(--color-surface)]">
+          <span class="text-[10px] text-[var(--color-text-muted)]">md</span>
+        </div>
+        <div class="flex h-16 w-16 items-center justify-center rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)]">
+          <span class="text-[10px] text-[var(--color-text-muted)]">lg</span>
+        </div>
+        <div class="flex h-16 w-16 items-center justify-center rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)]">
+          <span class="text-[10px] text-[var(--color-text-muted)]">xl</span>
+        </div>
+        <div class="flex h-16 w-16 items-center justify-center rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)]">
+          <span class="text-[10px] text-[var(--color-text-muted)]">2xl</span>
+        </div>
+        <div class="flex h-16 w-16 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-surface)]">
+          <span class="text-[10px] text-[var(--color-text-muted)]">full</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Border Width -->
+    <div appScrollAnimate="fade-up" [animateDelay]="100">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Border Width</h3>
+      <div class="flex flex-wrap gap-4" appStaggerChildren [staggerDelay]="60">
+        <div class="flex h-16 w-20 items-center justify-center rounded-lg border border-[var(--color-primary-500)] bg-[var(--color-surface)]">
+          <span class="text-[10px] text-[var(--color-text-muted)]">1px</span>
+        </div>
+        <div class="flex h-16 w-20 items-center justify-center rounded-lg border-2 border-[var(--color-primary-500)] bg-[var(--color-surface)]">
+          <span class="text-[10px] text-[var(--color-text-muted)]">2px</span>
+        </div>
+        <div class="flex h-16 w-20 items-center justify-center rounded-lg border-4 border-[var(--color-primary-500)] bg-[var(--color-surface)]">
+          <span class="text-[10px] text-[var(--color-text-muted)]">4px</span>
+        </div>
+        <div class="flex h-16 w-20 items-center justify-center rounded-lg border-8 border-[var(--color-primary-500)] bg-[var(--color-surface)]">
+          <span class="text-[10px] text-[var(--color-text-muted)]">8px</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Border Styles -->
+    <div appScrollAnimate="fade-up" [animateDelay]="200">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Border Styles</h3>
+      <div class="flex flex-wrap gap-4" appStaggerChildren [staggerDelay]="60">
+        <div class="flex h-16 w-24 items-center justify-center rounded-lg border-2 border-solid border-[var(--color-border)] bg-[var(--color-surface)]">
+          <span class="text-[10px] text-[var(--color-text-muted)]">solid</span>
+        </div>
+        <div class="flex h-16 w-24 items-center justify-center rounded-lg border-2 border-dashed border-[var(--color-border)] bg-[var(--color-surface)]">
+          <span class="text-[10px] text-[var(--color-text-muted)]">dashed</span>
+        </div>
+        <div class="flex h-16 w-24 items-center justify-center rounded-lg border-2 border-dotted border-[var(--color-border)] bg-[var(--color-surface)]">
+          <span class="text-[10px] text-[var(--color-text-muted)]">dotted</span>
+        </div>
+        <div class="flex h-16 w-24 items-center justify-center rounded-lg border-4 border-double border-[var(--color-border)] bg-[var(--color-surface)]">
+          <span class="text-[10px] text-[var(--color-text-muted)]">double</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dividers -->
+    <div appScrollAnimate="fade-up" [animateDelay]="300">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Dividers</h3>
+      <div class="space-y-6 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
+        <div>
+          <div class="mb-2 text-sm">Horizontal Divider</div>
+          <div class="h-px bg-[var(--color-border)]"></div>
+        </div>
+        <div>
+          <div class="mb-2 text-sm">Divider with Text</div>
+          <div class="flex items-center gap-4">
+            <div class="h-px flex-1 bg-[var(--color-border)]"></div>
+            <span class="text-sm text-[var(--color-text-muted)]">or</span>
+            <div class="h-px flex-1 bg-[var(--color-border)]"></div>
+          </div>
+        </div>
+        <div>
+          <div class="mb-2 text-sm">Vertical Divider</div>
+          <div class="flex h-16 items-center gap-4">
+            <span class="text-sm">Left</span>
+            <div class="h-full w-px bg-[var(--color-border)]"></div>
+            <span class="text-sm">Right</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gradient Borders -->
+    <div appScrollAnimate="fade-up" [animateDelay]="400">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Gradient Borders</h3>
+      <div class="flex flex-wrap gap-4">
+        <div class="rounded-lg bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-accent-500)] p-0.5">
+          <div class="flex h-20 w-32 items-center justify-center rounded-[calc(0.5rem-2px)] bg-[var(--color-surface)]">
+            <span class="text-xs text-[var(--color-text-muted)]">Gradient</span>
+          </div>
+        </div>
+        <div class="rounded-lg bg-gradient-to-br from-[var(--color-success-500)] via-[var(--color-info-500)] to-[var(--color-primary-500)] p-0.5">
+          <div class="flex h-20 w-32 items-center justify-center rounded-[calc(0.5rem-2px)] bg-[var(--color-surface)]">
+            <span class="text-xs text-[var(--color-text-muted)]">Multi-color</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

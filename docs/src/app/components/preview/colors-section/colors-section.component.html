@@ -1,0 +1,62 @@
+<section id="colors" class="mb-16 scroll-mt-24">
+  <h2
+    appScrollAnimate="fade-right"
+    class="mb-6 border-b border-[var(--color-border)] pb-2 text-2xl font-semibold"
+  >Colors</h2>
+
+  <!-- Primary -->
+  <div appScrollAnimate="fade-up" class="mb-6">
+    <h3 class="mb-2 text-sm font-medium text-[var(--color-text-muted)]">Primary</h3>
+    <div class="flex flex-wrap gap-2" appStaggerChildren [staggerDelay]="30">
+      @for (shade of colorShades; track shade) {
+        <div
+          class="flex h-14 w-14 items-center justify-center rounded-lg text-xs font-medium transition-transform hover:scale-105"
+          [style.background-color]="'var(--color-primary-' + shade + ')'"
+          [class.text-white]="shade >= 400"
+          [class.text-[var(--color-primary-900)]]="shade < 400"
+        >{{ shade }}</div>
+      }
+    </div>
+  </div>
+
+  <!-- Secondary -->
+  <div appScrollAnimate="fade-up" [animateDelay]="100" class="mb-6">
+    <h3 class="mb-2 text-sm font-medium text-[var(--color-text-muted)]">Secondary</h3>
+    <div class="flex flex-wrap gap-2" appStaggerChildren [staggerDelay]="30">
+      @for (shade of colorShades; track shade) {
+        <div
+          class="flex h-14 w-14 items-center justify-center rounded-lg text-xs font-medium transition-transform hover:scale-105"
+          [style.background-color]="'var(--color-secondary-' + shade + ')'"
+          [class.text-white]="shade >= 400"
+          [class.text-[var(--color-secondary-900)]]="shade < 400"
+        >{{ shade }}</div>
+      }
+    </div>
+  </div>
+
+  <!-- Accent -->
+  <div appScrollAnimate="fade-up" [animateDelay]="200" class="mb-6">
+    <h3 class="mb-2 text-sm font-medium text-[var(--color-text-muted)]">Accent</h3>
+    <div class="flex flex-wrap gap-2" appStaggerChildren [staggerDelay]="30">
+      @for (shade of colorShades; track shade) {
+        <div
+          class="flex h-14 w-14 items-center justify-center rounded-lg text-xs font-medium transition-transform hover:scale-105"
+          [style.background-color]="'var(--color-accent-' + shade + ')'"
+          [class.text-white]="shade >= 400"
+          [class.text-[var(--color-accent-900)]]="shade < 400"
+        >{{ shade }}</div>
+      }
+    </div>
+  </div>
+
+  <!-- Semantic -->
+  <div appScrollAnimate="fade-up" [animateDelay]="300">
+    <h3 class="mb-2 text-sm font-medium text-[var(--color-text-muted)]">Semantic</h3>
+    <div class="flex flex-wrap gap-2" appStaggerChildren [staggerDelay]="80">
+      <div class="flex h-14 w-24 items-center justify-center rounded-lg bg-[var(--color-success-500)] text-xs font-medium text-white">Success</div>
+      <div class="flex h-14 w-24 items-center justify-center rounded-lg bg-[var(--color-warning-500)] text-xs font-medium text-white">Warning</div>
+      <div class="flex h-14 w-24 items-center justify-center rounded-lg bg-[var(--color-error-500)] text-xs font-medium text-white">Error</div>
+      <div class="flex h-14 w-24 items-center justify-center rounded-lg bg-[var(--color-info-500)] text-xs font-medium text-white">Info</div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,6 @@
+@use "tailwindcss";
+@use "../../../../src/themes/sketchy.scss";
+
+html {
+  scroll-behavior: smooth;
+}

@@ -1,0 +1,105 @@
+<section id="buttons" class="mb-16 scroll-mt-24">
+  <h2
+    appScrollAnimate="fade-right"
+    class="mb-6 border-b border-[var(--color-border)] pb-2 text-2xl font-semibold"
+  >Buttons</h2>
+
+  <div class="space-y-6">
+    <div appScrollAnimate="fade-up">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Solid Buttons</h3>
+      <div class="flex flex-wrap gap-3" appStaggerChildren [staggerDelay]="60">
+        <button class="rounded-lg bg-[var(--color-primary-500)] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[var(--color-primary-600)]">Primary</button>
+        <button class="rounded-lg bg-[var(--color-secondary-500)] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[var(--color-secondary-600)]">Secondary</button>
+        <button class="rounded-lg bg-[var(--color-accent-500)] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[var(--color-accent-600)]">Accent</button>
+      </div>
+    </div>
+
+    <div appScrollAnimate="fade-up" [animateDelay]="100">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Semantic Buttons</h3>
+      <div class="flex flex-wrap gap-3" appStaggerChildren [staggerDelay]="60">
+        <button class="rounded-lg bg-[var(--color-success-500)] px-4 py-2 text-sm font-medium text-white transition-colors hover:brightness-90">Success</button>
+        <button class="rounded-lg bg-[var(--color-warning-500)] px-4 py-2 text-sm font-medium text-white transition-colors hover:brightness-90">Warning</button>
+        <button class="rounded-lg bg-[var(--color-error-500)] px-4 py-2 text-sm font-medium text-white transition-colors hover:brightness-90">Error</button>
+        <button class="rounded-lg bg-[var(--color-info-500)] px-4 py-2 text-sm font-medium text-white transition-colors hover:brightness-90">Info</button>
+      </div>
+    </div>
+
+    <div appScrollAnimate="fade-up" [animateDelay]="200">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Outline Buttons</h3>
+      <div class="flex flex-wrap gap-3" appStaggerChildren [staggerDelay]="60">
+        <button class="rounded-lg border-2 border-[var(--color-primary-500)] bg-transparent px-4 py-2 text-sm font-medium text-[var(--color-primary-500)] transition-colors hover:bg-[var(--color-primary-500)] hover:text-white">Primary</button>
+        <button class="rounded-lg border-2 border-[var(--color-secondary-500)] bg-transparent px-4 py-2 text-sm font-medium text-[var(--color-secondary-500)] transition-colors hover:bg-[var(--color-secondary-500)] hover:text-white">Secondary</button>
+        <button class="rounded-lg border-2 border-[var(--color-accent-500)] bg-transparent px-4 py-2 text-sm font-medium text-[var(--color-accent-500)] transition-colors hover:bg-[var(--color-accent-500)] hover:text-white">Accent</button>
+      </div>
+    </div>
+
+    <div appScrollAnimate="fade-up" [animateDelay]="300">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Button Sizes</h3>
+      <div class="flex flex-wrap items-center gap-3" appStaggerChildren [staggerDelay]="60">
+        <button class="rounded-lg bg-[var(--color-primary-500)] px-2.5 py-1 text-xs font-medium text-white transition-colors hover:bg-[var(--color-primary-600)]">Extra Small</button>
+        <button class="rounded-lg bg-[var(--color-primary-500)] px-3 py-1.5 text-sm font-medium text-white transition-colors hover:bg-[var(--color-primary-600)]">Small</button>
+        <button class="rounded-lg bg-[var(--color-primary-500)] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[var(--color-primary-600)]">Medium</button>
+        <button class="rounded-lg bg-[var(--color-primary-500)] px-5 py-2.5 text-base font-medium text-white transition-colors hover:bg-[var(--color-primary-600)]">Large</button>
+        <button class="rounded-lg bg-[var(--color-primary-500)] px-6 py-3 text-lg font-medium text-white transition-colors hover:bg-[var(--color-primary-600)]">Extra Large</button>
+      </div>
+    </div>
+
+    <div appScrollAnimate="fade-up" [animateDelay]="400">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Button States</h3>
+      <div class="flex flex-wrap gap-3" appStaggerChildren [staggerDelay]="80">
+        <button class="rounded-lg bg-[var(--color-primary-500)] px-4 py-2 text-sm font-medium text-white">Normal</button>
+        <button class="rounded-lg bg-[var(--color-primary-500)] px-4 py-2 text-sm font-medium text-white opacity-50 cursor-not-allowed" disabled>Disabled</button>
+        <button class="rounded-lg bg-[var(--color-primary-500)] px-4 py-2 text-sm font-medium text-white flex items-center gap-2">
+          <fa-icon [icon]="['fas', 'spinner']" animation="spin" class="text-sm"></fa-icon>
+          Loading
+        </button>
+      </div>
+    </div>
+
+    <div appScrollAnimate="bounce-in" [animateDelay]="500">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Icon Buttons</h3>
+      <div class="flex flex-wrap gap-3" appStaggerChildren [staggerDelay]="80">
+        <button class="rounded-lg bg-[var(--color-primary-500)] p-2.5 text-white transition-colors hover:bg-[var(--color-primary-600)]">
+          <fa-icon [icon]="['fas', 'plus']" class="text-base"></fa-icon>
+        </button>
+        <button class="rounded-lg bg-[var(--color-secondary-500)] p-2.5 text-white transition-colors hover:bg-[var(--color-secondary-600)]">
+          <fa-icon [icon]="['fas', 'heart']" class="text-base"></fa-icon>
+        </button>
+        <button class="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-2.5 text-[var(--color-text)] transition-colors hover:bg-[var(--color-surface-elevated)]">
+          <fa-icon [icon]="['fas', 'gear']" class="text-base"></fa-icon>
+        </button>
+        <button class="rounded-lg bg-[var(--color-accent-500)] p-2.5 text-white transition-colors hover:bg-[var(--color-accent-600)]">
+          <fa-icon [icon]="['fas', 'download']" class="text-base"></fa-icon>
+        </button>
+        <button class="rounded-lg bg-[var(--color-success-500)] p-2.5 text-white transition-colors hover:brightness-90">
+          <fa-icon [icon]="['fas', 'check']" class="text-base"></fa-icon>
+        </button>
+        <button class="rounded-lg bg-[var(--color-error-500)] p-2.5 text-white transition-colors hover:brightness-90">
+          <fa-icon [icon]="['fas', 'trash']" class="text-base"></fa-icon>
+        </button>
+      </div>
+    </div>
+
+    <div appScrollAnimate="bounce-in" [animateDelay]="600">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Buttons with Icons</h3>
+      <div class="flex flex-wrap gap-3" appStaggerChildren [staggerDelay]="80">
+        <button class="inline-flex items-center gap-2 rounded-lg bg-[var(--color-primary-500)] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[var(--color-primary-600)]">
+          <fa-icon [icon]="['fas', 'download']"></fa-icon>
+          Download
+        </button>
+        <button class="inline-flex items-center gap-2 rounded-lg bg-[var(--color-secondary-500)] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[var(--color-secondary-600)]">
+          <fa-icon [icon]="['fas', 'upload']"></fa-icon>
+          Upload
+        </button>
+        <button class="inline-flex items-center gap-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2 text-sm font-medium text-[var(--color-text)] transition-colors hover:bg-[var(--color-surface-muted)]">
+          <fa-icon [icon]="['fab', 'github']"></fa-icon>
+          GitHub
+        </button>
+        <button class="inline-flex items-center gap-2 rounded-lg bg-[var(--color-success-500)] px-4 py-2 text-sm font-medium text-white transition-colors hover:brightness-90">
+          Save
+          <fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

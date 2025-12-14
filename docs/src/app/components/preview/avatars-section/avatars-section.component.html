@@ -1,0 +1,78 @@
+<section id="avatars" class="mb-16 scroll-mt-24">
+  <h2
+    appScrollAnimate="fade-right"
+    class="mb-6 border-b border-[var(--color-border)] pb-2 text-2xl font-semibold"
+  >Avatars</h2>
+
+  <div class="space-y-6">
+    <!-- Avatar Sizes -->
+    <div appScrollAnimate="fade-up">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Avatar Sizes</h3>
+      <div class="flex flex-wrap items-end gap-4" appStaggerChildren [staggerDelay]="60">
+        <div class="flex h-6 w-6 items-center justify-center rounded-full bg-[var(--color-primary-500)] text-xs font-medium text-white">XS</div>
+        <div class="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--color-secondary-500)] text-xs font-medium text-white">SM</div>
+        <div class="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-accent-500)] text-sm font-medium text-white">MD</div>
+        <div class="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-success-500)] text-sm font-medium text-white">LG</div>
+        <div class="flex h-16 w-16 items-center justify-center rounded-full bg-[var(--color-warning-500)] text-base font-medium text-white">XL</div>
+        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-[var(--color-error-500)] text-lg font-medium text-white">2XL</div>
+      </div>
+    </div>
+
+    <!-- Avatar with Initials -->
+    <div appScrollAnimate="fade-up" [animateDelay]="100">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Avatar with Initials</h3>
+      <div class="flex flex-wrap gap-4" appStaggerChildren [staggerDelay]="60">
+        <div class="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-primary-500)] text-sm font-medium text-white">JD</div>
+        <div class="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-secondary-500)] text-sm font-medium text-white">AB</div>
+        <div class="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-accent-500)] text-sm font-medium text-white">CD</div>
+        <div class="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-success-500)] text-sm font-medium text-white">EF</div>
+        <div class="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-info-500)] text-sm font-medium text-white">GH</div>
+      </div>
+    </div>
+
+    <!-- Avatar with Status -->
+    <div appScrollAnimate="fade-up" [animateDelay]="200">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Avatar with Status</h3>
+      <div class="flex flex-wrap gap-6" appStaggerChildren [staggerDelay]="80">
+        <div class="relative">
+          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-primary-500)] text-sm font-medium text-white">JD</div>
+          <span class="absolute bottom-0 right-0 h-3 w-3 rounded-full border-2 border-[var(--color-background)] bg-[var(--color-success-500)]"></span>
+        </div>
+        <div class="relative">
+          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-secondary-500)] text-sm font-medium text-white">AB</div>
+          <span class="absolute bottom-0 right-0 h-3 w-3 rounded-full border-2 border-[var(--color-background)] bg-[var(--color-warning-500)]"></span>
+        </div>
+        <div class="relative">
+          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-accent-500)] text-sm font-medium text-white">CD</div>
+          <span class="absolute bottom-0 right-0 h-3 w-3 rounded-full border-2 border-[var(--color-background)] bg-[var(--color-error-500)]"></span>
+        </div>
+        <div class="relative">
+          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-info-500)] text-sm font-medium text-white">EF</div>
+          <span class="absolute bottom-0 right-0 h-3 w-3 rounded-full border-2 border-[var(--color-background)] bg-[var(--color-text-muted)]"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Avatar Group -->
+    <div appScrollAnimate="bounce-in" [animateDelay]="300">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Avatar Group</h3>
+      <div class="flex -space-x-3">
+        <div class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[var(--color-background)] bg-[var(--color-primary-500)] text-sm font-medium text-white">JD</div>
+        <div class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[var(--color-background)] bg-[var(--color-secondary-500)] text-sm font-medium text-white">AB</div>
+        <div class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[var(--color-background)] bg-[var(--color-accent-500)] text-sm font-medium text-white">CD</div>
+        <div class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[var(--color-background)] bg-[var(--color-success-500)] text-sm font-medium text-white">EF</div>
+        <div class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[var(--color-background)] bg-[var(--color-surface-muted)] text-xs font-medium text-[var(--color-text-muted)]">+5</div>
+      </div>
+    </div>
+
+    <!-- Square Avatars -->
+    <div appScrollAnimate="bounce-in" [animateDelay]="400">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Square Avatars</h3>
+      <div class="flex flex-wrap gap-4" appStaggerChildren [staggerDelay]="80">
+        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--color-primary-500)] text-sm font-medium text-white">JD</div>
+        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--color-secondary-500)] text-sm font-medium text-white">AB</div>
+        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--color-accent-500)] text-sm font-medium text-white">CD</div>
+      </div>
+    </div>
+  </div>
+</section>

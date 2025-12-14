@@ -1,0 +1,124 @@
+<section id="skeletons" class="mb-16 scroll-mt-24">
+  <h2 appScrollAnimate="fade-right" class="mb-6 border-b border-[var(--color-border)] pb-2 text-2xl font-semibold">Skeleton Loaders</h2>
+
+  <div class="space-y-8">
+    <!-- Basic Skeletons -->
+    <div appScrollAnimate="fade-up">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Basic Skeletons</h3>
+      <div class="space-y-3" appStaggerChildren [staggerDelay]="80">
+        <div class="h-4 w-3/4 animate-pulse rounded bg-[var(--color-secondary-200)]"></div>
+        <div class="h-4 w-full animate-pulse rounded bg-[var(--color-secondary-200)]"></div>
+        <div class="h-4 w-5/6 animate-pulse rounded bg-[var(--color-secondary-200)]"></div>
+        <div class="h-4 w-1/2 animate-pulse rounded bg-[var(--color-secondary-200)]"></div>
+      </div>
+    </div>
+
+    <!-- Card Skeleton -->
+    <div appScrollAnimate="fade-up" [animateDelay]="100">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Card Skeleton</h3>
+      <div class="grid gap-4 md:grid-cols-3" appStaggerChildren [staggerDelay]="100">
+        @for (i of [1,2,3]; track i) {
+          <div class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4">
+            <div class="mb-4 h-32 animate-pulse rounded-lg bg-[var(--color-secondary-200)]"></div>
+            <div class="space-y-2">
+              <div class="h-4 w-3/4 animate-pulse rounded bg-[var(--color-secondary-200)]"></div>
+              <div class="h-3 w-full animate-pulse rounded bg-[var(--color-secondary-200)]"></div>
+              <div class="h-3 w-5/6 animate-pulse rounded bg-[var(--color-secondary-200)]"></div>
+            </div>
+            <div class="mt-4 flex items-center gap-2">
+              <div class="h-8 w-8 animate-pulse rounded-full bg-[var(--color-secondary-200)]"></div>
+              <div class="h-3 w-24 animate-pulse rounded bg-[var(--color-secondary-200)]"></div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- List Skeleton -->
+    <div appScrollAnimate="fade-up" [animateDelay]="200">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">List Skeleton</h3>
+      <div class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] divide-y divide-[var(--color-border)]">
+        @for (i of [1,2,3,4]; track i) {
+          <div class="flex items-center gap-4 p-4">
+            <div class="h-12 w-12 animate-pulse rounded-full bg-[var(--color-secondary-200)]"></div>
+            <div class="flex-1 space-y-2">
+              <div class="h-4 w-1/3 animate-pulse rounded bg-[var(--color-secondary-200)]"></div>
+              <div class="h-3 w-1/2 animate-pulse rounded bg-[var(--color-secondary-200)]"></div>
+            </div>
+            <div class="h-8 w-20 animate-pulse rounded-lg bg-[var(--color-secondary-200)]"></div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Profile Skeleton -->
+    <div appScrollAnimate="fade-up" [animateDelay]="300">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Profile Skeleton</h3>
+      <div class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
+        <div class="flex items-start gap-6">
+          <div class="h-24 w-24 animate-pulse rounded-full bg-[var(--color-secondary-200)]"></div>
+          <div class="flex-1 space-y-4">
+            <div>
+              <div class="mb-2 h-6 w-48 animate-pulse rounded bg-[var(--color-secondary-200)]"></div>
+              <div class="h-4 w-32 animate-pulse rounded bg-[var(--color-secondary-200)]"></div>
+            </div>
+            <div class="space-y-2">
+              <div class="h-3 w-full animate-pulse rounded bg-[var(--color-secondary-200)]"></div>
+              <div class="h-3 w-5/6 animate-pulse rounded bg-[var(--color-secondary-200)]"></div>
+              <div class="h-3 w-4/6 animate-pulse rounded bg-[var(--color-secondary-200)]"></div>
+            </div>
+            <div class="flex gap-2">
+              <div class="h-8 w-24 animate-pulse rounded-lg bg-[var(--color-secondary-200)]"></div>
+              <div class="h-8 w-24 animate-pulse rounded-lg bg-[var(--color-secondary-200)]"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Table Skeleton -->
+    <div appScrollAnimate="fade-up" [animateDelay]="400">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Table Skeleton</h3>
+      <div class="overflow-hidden rounded-xl border border-[var(--color-border)]">
+        <div class="bg-[var(--color-surface-muted)] p-3">
+          <div class="flex gap-4">
+            <div class="h-4 w-1/4 animate-pulse rounded bg-[var(--color-secondary-300)]"></div>
+            <div class="h-4 w-1/4 animate-pulse rounded bg-[var(--color-secondary-300)]"></div>
+            <div class="h-4 w-1/4 animate-pulse rounded bg-[var(--color-secondary-300)]"></div>
+            <div class="h-4 w-1/4 animate-pulse rounded bg-[var(--color-secondary-300)]"></div>
+          </div>
+        </div>
+        @for (i of [1,2,3,4,5]; track i) {
+          <div class="border-t border-[var(--color-border)] bg-[var(--color-surface)] p-3">
+            <div class="flex gap-4">
+              <div class="h-4 w-1/4 animate-pulse rounded bg-[var(--color-secondary-200)]"></div>
+              <div class="h-4 w-1/4 animate-pulse rounded bg-[var(--color-secondary-200)]"></div>
+              <div class="h-4 w-1/4 animate-pulse rounded bg-[var(--color-secondary-200)]"></div>
+              <div class="h-4 w-1/4 animate-pulse rounded bg-[var(--color-secondary-200)]"></div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Shimmer Effect -->
+    <div appScrollAnimate="fade-up" [animateDelay]="500">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Shimmer Gradient</h3>
+      <div class="grid gap-4 md:grid-cols-2">
+        <div class="relative overflow-hidden rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4">
+          <div class="absolute inset-0 -translate-x-full animate-[shimmer_2s_infinite] bg-gradient-to-r from-transparent via-[var(--color-secondary-100)] to-transparent"></div>
+          <div class="mb-4 h-40 rounded-lg bg-[var(--color-secondary-200)]"></div>
+          <div class="h-4 w-3/4 rounded bg-[var(--color-secondary-200)]"></div>
+          <div class="mt-2 h-3 w-full rounded bg-[var(--color-secondary-200)]"></div>
+        </div>
+        <div class="relative overflow-hidden rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4">
+          <div class="absolute inset-0 -translate-x-full animate-[shimmer_2s_infinite] bg-gradient-to-r from-transparent via-[var(--color-secondary-100)] to-transparent"></div>
+          <div class="mb-4 h-40 rounded-lg bg-[var(--color-secondary-200)]"></div>
+          <div class="h-4 w-3/4 rounded bg-[var(--color-secondary-200)]"></div>
+          <div class="mt-2 h-3 w-full rounded bg-[var(--color-secondary-200)]"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

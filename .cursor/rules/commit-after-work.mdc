@@ -1,0 +1,29 @@
+---
+description: Always commit changes after completing work
+globs:
+alwaysApply: true
+---
+
+# Commit After Work
+
+After completing a task or set of changes, always commit the work to git with a descriptive commit message.
+
+## Guidelines
+
+1. **When to commit**: After finishing any task, feature, bug fix, or meaningful set of changes
+2. **Commit message format**: Use conventional commit format when appropriate:
+   - `feat:` for new features
+   - `fix:` for bug fixes
+   - `docs:` for documentation changes
+   - `style:` for formatting/styling changes
+   - `refactor:` for code refactoring
+   - `chore:` for maintenance tasks
+3. **Commit scope**: Group related changes together in a single commit
+4. **Don't forget**: Stage all relevant files before committing
+
+## Example
+
+```bash
+git add -A
+git commit -m "feat: add scrollable side navigation"
+```

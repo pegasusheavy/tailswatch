@@ -1,0 +1,193 @@
+<section id="dropdowns" class="mb-16 scroll-mt-24">
+  <h2 appScrollAnimate="fade-right" class="mb-6 border-b border-[var(--color-border)] pb-2 text-2xl font-semibold">Dropdowns</h2>
+
+  <div class="space-y-8">
+    <!-- Basic Dropdowns -->
+    <div appScrollAnimate="fade-up">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Dropdown Menus</h3>
+      <div class="flex flex-wrap gap-4" appStaggerChildren [staggerDelay]="100">
+        <!-- Simple Dropdown -->
+        <div class="relative">
+          <button
+            (click)="toggleDropdown1()"
+            class="inline-flex items-center gap-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2 text-sm font-medium transition-colors hover:bg-[var(--color-surface-muted)]">
+            Options
+            <fa-icon [icon]="['fas', 'chevron-down']" class="text-xs transition-transform" [class.rotate-180]="dropdown1Open()"></fa-icon>
+          </button>
+          @if (dropdown1Open()) {
+            <div class="absolute left-0 top-full z-10 mt-1 w-48 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] py-1 shadow-lg">
+              <a href="#" class="block px-4 py-2 text-sm hover:bg-[var(--color-surface-muted)]">Edit</a>
+              <a href="#" class="block px-4 py-2 text-sm hover:bg-[var(--color-surface-muted)]">Duplicate</a>
+              <a href="#" class="block px-4 py-2 text-sm hover:bg-[var(--color-surface-muted)]">Archive</a>
+              <div class="my-1 h-px bg-[var(--color-border)]"></div>
+              <a href="#" class="block px-4 py-2 text-sm text-[var(--color-error-500)] hover:bg-[var(--color-error-500)]/10">Delete</a>
+            </div>
+          }
+        </div>
+
+        <!-- Primary Dropdown -->
+        <div class="relative">
+          <button
+            (click)="toggleDropdown2()"
+            class="inline-flex items-center gap-2 rounded-lg bg-[var(--color-primary-500)] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[var(--color-primary-600)]">
+            Actions
+            <fa-icon [icon]="['fas', 'chevron-down']" class="text-xs transition-transform" [class.rotate-180]="dropdown2Open()"></fa-icon>
+          </button>
+          @if (dropdown2Open()) {
+            <div class="absolute left-0 top-full z-10 mt-1 w-48 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] py-1 shadow-lg">
+              <a href="#" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-[var(--color-surface-muted)]">
+                <fa-icon [icon]="['fas', 'download']" class="w-4 text-[var(--color-text-muted)]"></fa-icon>
+                Download
+              </a>
+              <a href="#" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-[var(--color-surface-muted)]">
+                <fa-icon [icon]="['fas', 'share']" class="w-4 text-[var(--color-text-muted)]"></fa-icon>
+                Share
+              </a>
+              <a href="#" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-[var(--color-surface-muted)]">
+                <fa-icon [icon]="['fas', 'copy']" class="w-4 text-[var(--color-text-muted)]"></fa-icon>
+                Copy Link
+              </a>
+            </div>
+          }
+        </div>
+
+        <!-- User Dropdown -->
+        <div class="relative">
+          <button
+            (click)="toggleDropdown3()"
+            class="inline-flex items-center gap-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-1.5 text-sm transition-colors hover:bg-[var(--color-surface-muted)]">
+            <div class="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--color-primary-500)]">
+              <fa-icon [icon]="['fas', 'user']" class="text-xs text-white"></fa-icon>
+            </div>
+            <span>John Doe</span>
+            <fa-icon [icon]="['fas', 'chevron-down']" class="text-xs transition-transform" [class.rotate-180]="dropdown3Open()"></fa-icon>
+          </button>
+          @if (dropdown3Open()) {
+            <div class="absolute right-0 top-full z-10 mt-1 w-56 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] py-1 shadow-lg">
+              <div class="border-b border-[var(--color-border)] px-4 py-3">
+                <div class="font-medium">John Doe</div>
+                <div class="text-sm text-[var(--color-text-muted)]">john&#64;example.com</div>
+              </div>
+              <a href="#" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-[var(--color-surface-muted)]">
+                <fa-icon [icon]="['fas', 'user']" class="w-4 text-[var(--color-text-muted)]"></fa-icon>
+                Profile
+              </a>
+              <a href="#" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-[var(--color-surface-muted)]">
+                <fa-icon [icon]="['fas', 'gear']" class="w-4 text-[var(--color-text-muted)]"></fa-icon>
+                Settings
+              </a>
+              <a href="#" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-[var(--color-surface-muted)]">
+                <fa-icon [icon]="['fas', 'bell']" class="w-4 text-[var(--color-text-muted)]"></fa-icon>
+                Notifications
+              </a>
+              <div class="my-1 h-px bg-[var(--color-border)]"></div>
+              <a href="#" class="flex items-center gap-2 px-4 py-2 text-sm text-[var(--color-error-500)] hover:bg-[var(--color-error-500)]/10">
+                <fa-icon [icon]="['fas', 'arrow-right-from-bracket']" class="w-4"></fa-icon>
+                Sign out
+              </a>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- CSS-Only Hover Dropdowns -->
+    <div appScrollAnimate="fade-up" [animateDelay]="100">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">CSS-Only Hover Dropdowns</h3>
+      <div class="flex flex-wrap gap-4">
+        <div class="group relative">
+          <button class="inline-flex items-center gap-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2 text-sm font-medium transition-colors hover:bg-[var(--color-surface-muted)]">
+            Hover Me
+            <fa-icon [icon]="['fas', 'chevron-down']" class="text-xs transition-transform group-hover:rotate-180"></fa-icon>
+          </button>
+          <div class="invisible absolute left-0 top-full z-10 mt-1 w-48 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] py-1 opacity-0 shadow-lg transition-all group-hover:visible group-hover:opacity-100">
+            <a href="#" class="block px-4 py-2 text-sm hover:bg-[var(--color-surface-muted)]">Menu Item 1</a>
+            <a href="#" class="block px-4 py-2 text-sm hover:bg-[var(--color-surface-muted)]">Menu Item 2</a>
+            <a href="#" class="block px-4 py-2 text-sm hover:bg-[var(--color-surface-muted)]">Menu Item 3</a>
+          </div>
+        </div>
+
+        <!-- Mega Menu Preview -->
+        <div class="group relative">
+          <button class="inline-flex items-center gap-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2 text-sm font-medium transition-colors hover:bg-[var(--color-surface-muted)]">
+            Mega Menu
+            <fa-icon [icon]="['fas', 'chevron-down']" class="text-xs transition-transform group-hover:rotate-180"></fa-icon>
+          </button>
+          <div class="invisible absolute left-0 top-full z-10 mt-1 w-96 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-4 opacity-0 shadow-lg transition-all group-hover:visible group-hover:opacity-100">
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <h4 class="mb-2 text-xs font-semibold uppercase text-[var(--color-text-muted)]">Products</h4>
+                <a href="#" class="flex items-center gap-2 rounded-lg p-2 text-sm hover:bg-[var(--color-surface-muted)]">
+                  <fa-icon [icon]="['fas', 'code']" class="text-[var(--color-primary-500)]"></fa-icon>
+                  Developer Tools
+                </a>
+                <a href="#" class="flex items-center gap-2 rounded-lg p-2 text-sm hover:bg-[var(--color-surface-muted)]">
+                  <fa-icon [icon]="['fas', 'chart-bar']" class="text-[var(--color-success-500)]"></fa-icon>
+                  Analytics
+                </a>
+                <a href="#" class="flex items-center gap-2 rounded-lg p-2 text-sm hover:bg-[var(--color-surface-muted)]">
+                  <fa-icon [icon]="['fas', 'shield']" class="text-[var(--color-accent-500)]"></fa-icon>
+                  Security
+                </a>
+              </div>
+              <div>
+                <h4 class="mb-2 text-xs font-semibold uppercase text-[var(--color-text-muted)]">Resources</h4>
+                <a href="#" class="flex items-center gap-2 rounded-lg p-2 text-sm hover:bg-[var(--color-surface-muted)]">
+                  <fa-icon [icon]="['fas', 'file']" class="text-[var(--color-info-500)]"></fa-icon>
+                  Documentation
+                </a>
+                <a href="#" class="flex items-center gap-2 rounded-lg p-2 text-sm hover:bg-[var(--color-surface-muted)]">
+                  <fa-icon [icon]="['fab', 'github']" class="text-[var(--color-text-muted)]"></fa-icon>
+                  GitHub
+                </a>
+                <a href="#" class="flex items-center gap-2 rounded-lg p-2 text-sm hover:bg-[var(--color-surface-muted)]">
+                  <fa-icon [icon]="['fas', 'comment']" class="text-[var(--color-warning-500)]"></fa-icon>
+                  Community
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Select Menus -->
+    <div appScrollAnimate="fade-up" [animateDelay]="200">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Select Menus (Native)</h3>
+      <div class="flex flex-wrap gap-4">
+        <div class="relative">
+          <select class="appearance-none rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2 pr-10 text-sm focus:border-[var(--color-primary-500)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)]/20">
+            <option>Select an option</option>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+          </select>
+          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+            <fa-icon [icon]="['fas', 'chevron-down']" class="text-xs text-[var(--color-text-muted)]"></fa-icon>
+          </div>
+        </div>
+
+        <div class="relative">
+          <select class="appearance-none rounded-lg border-2 border-[var(--color-primary-500)] bg-[var(--color-surface)] px-4 py-2 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)]/20">
+            <option>Primary select</option>
+            <option>Option A</option>
+            <option>Option B</option>
+          </select>
+          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+            <fa-icon [icon]="['fas', 'chevron-down']" class="text-xs text-[var(--color-primary-500)]"></fa-icon>
+          </div>
+        </div>
+
+        <div class="relative">
+          <select disabled class="appearance-none rounded-lg border border-[var(--color-border)] bg-[var(--color-surface-muted)] px-4 py-2 pr-10 text-sm opacity-50 cursor-not-allowed">
+            <option>Disabled</option>
+          </select>
+          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+            <fa-icon [icon]="['fas', 'chevron-down']" class="text-xs text-[var(--color-text-muted)]"></fa-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

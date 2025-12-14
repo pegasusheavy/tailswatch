@@ -1,0 +1,380 @@
+<div class="flex h-screen bg-[var(--color-background)]">
+  <!-- Mobile Sidebar Overlay -->
+  @if (sidebarOpen()) {
+    <div class="fixed inset-0 z-40 bg-black/50 lg:hidden" (click)="toggleSidebar()"></div>
+  }
+
+  <!-- Sidebar -->
+  <aside
+    class="fixed inset-y-0 left-0 z-50 w-64 transform border-r border-[var(--color-border)] bg-[var(--color-surface)] transition-transform lg:relative lg:translate-x-0"
+    [class.translate-x-0]="sidebarOpen()"
+    [class.-translate-x-full]="!sidebarOpen()">
+
+    <!-- Logo -->
+    <div class="flex h-16 items-center justify-between border-b border-[var(--color-border)] px-4">
+      <div class="flex items-center gap-3">
+        <a routerLink="/" class="flex items-center justify-center rounded-lg p-2 text-[var(--color-text-muted)] transition-colors hover:bg-[var(--color-surface-muted)] hover:text-[var(--color-text)]" title="Back to Home">
+          <fa-icon [icon]="['fas', 'arrow-left']"></fa-icon>
+        </a>
+        <div class="flex items-center gap-2">
+          <span class="text-2xl">🛒</span>
+          <span class="text-xl font-bold">ShopSwap</span>
+        </div>
+      </div>
+      <button (click)="toggleSidebar()" class="rounded-lg p-2 hover:bg-[var(--color-surface-muted)] lg:hidden">
+        <fa-icon [icon]="['fas', 'xmark']"></fa-icon>
+      </button>
+    </div>
+
+    <!-- Categories -->
+    <nav class="p-4">
+      <h3 class="mb-3 text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">Categories</h3>
+      <ul class="space-y-1">
+        @for (cat of categories; track cat.id) {
+          <li>
+            <button
+              (click)="setCategory(cat.id)"
+              class="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors"
+              [class.bg-[var(--color-primary-500)]]="selectedCategory() === cat.id"
+              [class.text-white]="selectedCategory() === cat.id"
+              [class.hover:bg-[var(--color-surface-muted)]]="selectedCategory() !== cat.id">
+              <fa-icon [icon]="['fas', cat.icon]" class="w-5"></fa-icon>
+              {{ cat.name }}
+            </button>
+          </li>
+        }
+      </ul>
+
+      <div class="my-6 h-px bg-[var(--color-border)]"></div>
+
+      <!-- Filters -->
+      <h3 class="mb-3 text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">Price Range</h3>
+      <div class="space-y-2">
+        <label class="flex items-center gap-2 text-sm">
+          <input type="checkbox" class="h-4 w-4 rounded border-[var(--color-border)]">
+          Under $50
+        </label>
+        <label class="flex items-center gap-2 text-sm">
+          <input type="checkbox" class="h-4 w-4 rounded border-[var(--color-border)]">
+          $50 - $100
+        </label>
+        <label class="flex items-center gap-2 text-sm">
+          <input type="checkbox" class="h-4 w-4 rounded border-[var(--color-border)]">
+          $100 - $200
+        </label>
+        <label class="flex items-center gap-2 text-sm">
+          <input type="checkbox" class="h-4 w-4 rounded border-[var(--color-border)]">
+          Over $200
+        </label>
+      </div>
+
+      <div class="my-6 h-px bg-[var(--color-border)]"></div>
+
+      <!-- Rating Filter -->
+      <h3 class="mb-3 text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">Rating</h3>
+      <div class="space-y-2">
+        @for (r of [4, 3, 2, 1]; track r) {
+          <label class="flex items-center gap-2 text-sm">
+            <input type="checkbox" class="h-4 w-4 rounded border-[var(--color-border)]">
+            <span class="flex items-center gap-1">
+              @for (s of [1,2,3,4,5]; track s) {
+                <fa-icon [icon]="['fas', 'star']" class="text-xs" [class.text-yellow-400]="s <= r" [class.text-[var(--color-surface-muted)]]="s > r"></fa-icon>
+              }
+              & Up
+            </span>
+          </label>
+        }
+      </div>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="flex flex-1 flex-col overflow-hidden">
+    <!-- Header -->
+    <header class="flex h-16 items-center justify-between border-b border-[var(--color-border)] bg-[var(--color-surface)] px-4">
+      <div class="flex items-center gap-4">
+        <button (click)="toggleSidebar()" class="rounded-lg p-2 hover:bg-[var(--color-surface-muted)] lg:hidden">
+          <fa-icon [icon]="['fas', 'bars']"></fa-icon>
+        </button>
+
+        <!-- Search -->
+        <div class="relative hidden sm:block">
+          <fa-icon [icon]="['fas', 'magnifying-glass']" class="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--color-text-muted)]"></fa-icon>
+          <input
+            type="text"
+            placeholder="Search products..."
+            [value]="searchQuery()"
+            (input)="searchQuery.set($any($event.target).value)"
+            class="w-80 rounded-lg border border-[var(--color-border)] bg-[var(--color-background)] py-2 pl-10 pr-4 text-sm focus:border-[var(--color-primary-500)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)]/20">
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <app-theme-selector />
+
+        <!-- Wishlist -->
+        <button class="relative rounded-lg p-2 hover:bg-[var(--color-surface-muted)]">
+          <fa-icon [icon]="['fas', 'heart']"></fa-icon>
+          <span class="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-[var(--color-error-500)] text-xs text-white">3</span>
+        </button>
+
+        <!-- Cart -->
+        <button (click)="toggleCart()" class="relative rounded-lg p-2 hover:bg-[var(--color-surface-muted)]">
+          <fa-icon [icon]="['fas', 'cart-shopping']"></fa-icon>
+          @if (cartCount() > 0) {
+            <span class="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-[var(--color-primary-500)] text-xs text-white">{{ cartCount() }}</span>
+          }
+        </button>
+
+        <!-- User -->
+        <button class="flex items-center gap-2 rounded-lg border border-[var(--color-border)] px-3 py-1.5 hover:bg-[var(--color-surface-muted)]">
+          <div class="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--color-primary-500)]">
+            <fa-icon [icon]="['fas', 'user']" class="text-xs text-white"></fa-icon>
+          </div>
+          <span class="hidden text-sm sm:inline">Account</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <main class="flex-1 overflow-y-auto p-4 lg:p-6">
+      <!-- Breadcrumb & Results -->
+      <div class="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <nav class="mb-1 flex items-center gap-2 text-sm text-[var(--color-text-muted)]">
+            <a routerLink="/" class="hover:text-[var(--color-primary-500)]">Home</a>
+            <fa-icon [icon]="['fas', 'chevron-right']" class="text-xs"></fa-icon>
+            <span>Products</span>
+            @if (selectedCategory() !== 'all') {
+              <fa-icon [icon]="['fas', 'chevron-right']" class="text-xs"></fa-icon>
+              <span class="capitalize">{{ selectedCategory() }}</span>
+            }
+          </nav>
+          <h1 class="text-2xl font-bold">{{ filteredProducts().length }} Products</h1>
+        </div>
+        <div class="flex items-center gap-3">
+          <select class="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-2 text-sm">
+            <option>Sort by: Featured</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+            <option>Rating</option>
+            <option>Newest</option>
+          </select>
+          <div class="flex rounded-lg border border-[var(--color-border)]">
+            <button class="p-2 hover:bg-[var(--color-surface-muted)]">
+              <fa-icon [icon]="['fas', 'th-large']"></fa-icon>
+            </button>
+            <button class="border-l border-[var(--color-border)] p-2 hover:bg-[var(--color-surface-muted)]">
+              <fa-icon [icon]="['fas', 'list']"></fa-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Banner -->
+      <div class="mb-6 overflow-hidden rounded-2xl bg-gradient-to-r from-[var(--color-primary-600)] to-[var(--color-accent-600)] p-6 text-white lg:p-8">
+        <div class="flex flex-col items-center justify-between gap-4 md:flex-row">
+          <div>
+            <span class="mb-2 inline-block rounded-full bg-white/20 px-3 py-1 text-sm">Limited Time Offer</span>
+            <h2 class="mb-2 text-2xl font-bold lg:text-3xl">Summer Sale - Up to 50% Off</h2>
+            <p class="text-white/80">Get the best deals on electronics, clothing, and more!</p>
+          </div>
+          <button class="rounded-lg bg-white px-6 py-3 font-medium text-[var(--color-primary-600)] transition-transform hover:scale-105">
+            Shop Now
+          </button>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        @for (product of filteredProducts(); track product.id) {
+          <div class="group relative overflow-hidden rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] transition-all hover:shadow-lg">
+            <!-- Badge -->
+            @if (product.badge) {
+              <span
+                class="absolute left-3 top-3 z-10 rounded-full px-2 py-1 text-xs font-medium text-white"
+                [class.bg-[var(--color-error-500)]]="product.badge === 'Sale'"
+                [class.bg-[var(--color-success-500)]]="product.badge === 'New'"
+                [class.bg-[var(--color-primary-500)]]="product.badge === 'Best Seller'">
+                {{ product.badge }}
+              </span>
+            }
+
+            <!-- Wishlist Button -->
+            <button class="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-[var(--color-text-muted)] opacity-0 transition-all hover:bg-white hover:text-[var(--color-error-500)] group-hover:opacity-100">
+              <fa-icon [icon]="['far', 'heart']"></fa-icon>
+            </button>
+
+            <!-- Image -->
+            <div class="relative h-48 overflow-hidden bg-[var(--color-surface-muted)]">
+              <img
+                [src]="product.image"
+                [alt]="product.name"
+                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                loading="lazy">
+            </div>
+
+            <!-- Content -->
+            <div class="p-4">
+              <div class="mb-1 text-xs text-[var(--color-text-muted)] capitalize">{{ product.category }}</div>
+              <h3 class="mb-2 font-medium line-clamp-1">{{ product.name }}</h3>
+
+              <!-- Rating -->
+              <div class="mb-2 flex items-center gap-1">
+                @for (star of getRatingStars(product.rating); track $index) {
+                  <fa-icon
+                    [icon]="['fas', 'star']"
+                    class="text-xs"
+                    [class.text-yellow-400]="star === 'full'"
+                    [class.text-[var(--color-surface-muted)]]="star === 'empty'">
+                  </fa-icon>
+                }
+                <span class="ml-1 text-xs text-[var(--color-text-muted)]">({{ product.reviews }})</span>
+              </div>
+
+              <!-- Colors -->
+              @if (product.colors) {
+                <div class="mb-3 flex gap-1">
+                  @for (color of product.colors; track color) {
+                    <button
+                      class="h-4 w-4 rounded-full border border-[var(--color-border)]"
+                      [style.background-color]="color">
+                    </button>
+                  }
+                </div>
+              }
+
+              <!-- Price & Add to Cart -->
+              <div class="flex items-center justify-between">
+                <div class="flex items-baseline gap-2">
+                  <span class="text-lg font-bold text-[var(--color-primary-500)]">${{ product.price }}</span>
+                  @if (product.originalPrice) {
+                    <span class="text-sm text-[var(--color-text-muted)] line-through">${{ product.originalPrice }}</span>
+                  }
+                </div>
+                <button
+                  (click)="addToCart(product)"
+                  class="flex h-9 w-9 items-center justify-center rounded-lg bg-[var(--color-primary-500)] text-white transition-colors hover:bg-[var(--color-primary-600)]">
+                  <fa-icon [icon]="['fas', 'plus']"></fa-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+
+      <!-- Pagination -->
+      <div class="mt-8 flex items-center justify-center gap-2">
+        <button class="rounded-lg border border-[var(--color-border)] px-3 py-2 text-sm hover:bg-[var(--color-surface-muted)]">
+          <fa-icon [icon]="['fas', 'chevron-left']"></fa-icon>
+        </button>
+        @for (page of [1,2,3,4,5]; track page) {
+          <button
+            class="h-10 w-10 rounded-lg text-sm transition-colors"
+            [class.bg-[var(--color-primary-500)]]="page === 1"
+            [class.text-white]="page === 1"
+            [class.border]="page !== 1"
+            [class.border-[var(--color-border)]]="page !== 1"
+            [class.hover:bg-[var(--color-surface-muted)]]="page !== 1">
+            {{ page }}
+          </button>
+        }
+        <button class="rounded-lg border border-[var(--color-border)] px-3 py-2 text-sm hover:bg-[var(--color-surface-muted)]">
+          <fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>
+        </button>
+      </div>
+    </main>
+  </div>
+
+  <!-- Cart Sidebar -->
+  @if (cartOpen()) {
+    <div class="fixed inset-0 z-50">
+      <div class="absolute inset-0 bg-black/50" (click)="toggleCart()"></div>
+      <div class="absolute inset-y-0 right-0 w-full max-w-md border-l border-[var(--color-border)] bg-[var(--color-surface)]">
+        <!-- Cart Header -->
+        <div class="flex h-16 items-center justify-between border-b border-[var(--color-border)] px-4">
+          <h2 class="text-lg font-semibold">Shopping Cart ({{ cartCount() }})</h2>
+          <button (click)="toggleCart()" class="rounded-lg p-2 hover:bg-[var(--color-surface-muted)]">
+            <fa-icon [icon]="['fas', 'xmark']"></fa-icon>
+          </button>
+        </div>
+
+        <!-- Cart Items -->
+        <div class="flex-1 overflow-y-auto p-4" style="height: calc(100vh - 200px)">
+          @if (cartItems().length === 0) {
+            <div class="flex flex-col items-center justify-center py-12 text-center">
+              <fa-icon [icon]="['fas', 'cart-shopping']" class="mb-4 text-4xl text-[var(--color-text-muted)]"></fa-icon>
+              <p class="text-[var(--color-text-muted)]">Your cart is empty</p>
+              <button (click)="toggleCart()" class="mt-4 rounded-lg bg-[var(--color-primary-500)] px-4 py-2 text-sm text-white hover:bg-[var(--color-primary-600)]">
+                Continue Shopping
+              </button>
+            </div>
+          } @else {
+            <div class="space-y-4">
+              @for (item of cartItems(); track item.product.id) {
+                <div class="flex gap-4 rounded-lg border border-[var(--color-border)] p-3">
+                  <div class="h-20 w-20 overflow-hidden rounded-lg bg-[var(--color-surface-muted)]">
+                    <img
+                      [src]="item.product.image"
+                      [alt]="item.product.name"
+                      class="h-full w-full object-cover">
+                  </div>
+                  <div class="flex-1">
+                    <h4 class="font-medium line-clamp-1">{{ item.product.name }}</h4>
+                    <p class="text-sm text-[var(--color-primary-500)]">${{ item.product.price }}</p>
+                    <div class="mt-2 flex items-center gap-2">
+                      <button
+                        (click)="updateQuantity(item.product.id, -1)"
+                        class="flex h-7 w-7 items-center justify-center rounded border border-[var(--color-border)] hover:bg-[var(--color-surface-muted)]">
+                        <fa-icon [icon]="['fas', 'minus']" class="text-xs"></fa-icon>
+                      </button>
+                      <span class="w-8 text-center text-sm">{{ item.quantity }}</span>
+                      <button
+                        (click)="updateQuantity(item.product.id, 1)"
+                        class="flex h-7 w-7 items-center justify-center rounded border border-[var(--color-border)] hover:bg-[var(--color-surface-muted)]">
+                        <fa-icon [icon]="['fas', 'plus']" class="text-xs"></fa-icon>
+                      </button>
+                    </div>
+                  </div>
+                  <button
+                    (click)="removeFromCart(item.product.id)"
+                    class="text-[var(--color-text-muted)] hover:text-[var(--color-error-500)]">
+                    <fa-icon [icon]="['fas', 'trash']"></fa-icon>
+                  </button>
+                </div>
+              }
+            </div>
+          }
+        </div>
+
+        <!-- Cart Footer -->
+        @if (cartItems().length > 0) {
+          <div class="border-t border-[var(--color-border)] p-4">
+            <div class="mb-4 space-y-2">
+              <div class="flex justify-between text-sm">
+                <span class="text-[var(--color-text-muted)]">Subtotal</span>
+                <span>${{ cartTotal() }}</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-[var(--color-text-muted)]">Shipping</span>
+                <span class="text-[var(--color-success-500)]">Free</span>
+              </div>
+              <div class="h-px bg-[var(--color-border)]"></div>
+              <div class="flex justify-between font-semibold">
+                <span>Total</span>
+                <span>${{ cartTotal() }}</span>
+              </div>
+            </div>
+            <button class="w-full rounded-lg bg-[var(--color-primary-500)] py-3 font-medium text-white transition-colors hover:bg-[var(--color-primary-600)]">
+              Checkout
+            </button>
+            <button (click)="toggleCart()" class="mt-2 w-full rounded-lg border border-[var(--color-border)] py-3 text-sm font-medium transition-colors hover:bg-[var(--color-surface-muted)]">
+              Continue Shopping
+            </button>
+          </div>
+        }
+      </div>
+    </div>
+  }
+</div>
+

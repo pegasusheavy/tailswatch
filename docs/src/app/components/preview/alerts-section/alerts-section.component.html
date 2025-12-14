@@ -1,0 +1,105 @@
+<section id="alerts" class="mb-16 scroll-mt-24">
+  <h2
+    appScrollAnimate="fade-right"
+    class="mb-6 border-b border-[var(--color-border)] pb-2 text-2xl font-semibold"
+  >Alerts & Badges</h2>
+
+  <div class="space-y-8">
+    <!-- Alerts -->
+    <div appScrollAnimate="fade-up">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Alerts</h3>
+      <div class="space-y-3" appStaggerChildren [staggerDelay]="100">
+        <div class="flex items-start gap-3 rounded-lg bg-[var(--color-success-500)]/10 border border-[var(--color-success-500)]/20 p-4">
+          <fa-icon [icon]="['fas', 'circle-check']" class="shrink-0 text-lg text-[var(--color-success-500)]"></fa-icon>
+          <div>
+            <h4 class="font-medium text-[var(--color-success-500)]">Success</h4>
+            <p class="text-sm text-[var(--color-success-500)]/80">Your changes have been saved successfully.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3 rounded-lg bg-[var(--color-warning-500)]/10 border border-[var(--color-warning-500)]/20 p-4">
+          <fa-icon [icon]="['fas', 'triangle-exclamation']" class="shrink-0 text-lg text-[var(--color-warning-500)]"></fa-icon>
+          <div>
+            <h4 class="font-medium text-[var(--color-warning-500)]">Warning</h4>
+            <p class="text-sm text-[var(--color-warning-500)]/80">Please review your input before continuing.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3 rounded-lg bg-[var(--color-error-500)]/10 border border-[var(--color-error-500)]/20 p-4">
+          <fa-icon [icon]="['fas', 'circle-xmark']" class="shrink-0 text-lg text-[var(--color-error-500)]"></fa-icon>
+          <div>
+            <h4 class="font-medium text-[var(--color-error-500)]">Error</h4>
+            <p class="text-sm text-[var(--color-error-500)]/80">Something went wrong. Please try again.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3 rounded-lg bg-[var(--color-info-500)]/10 border border-[var(--color-info-500)]/20 p-4">
+          <fa-icon [icon]="['fas', 'circle-info']" class="shrink-0 text-lg text-[var(--color-info-500)]"></fa-icon>
+          <div>
+            <h4 class="font-medium text-[var(--color-info-500)]">Info</h4>
+            <p class="text-sm text-[var(--color-info-500)]/80">Here's some helpful information for you.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Badges -->
+    <div appScrollAnimate="bounce-in" [animateDelay]="200">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Badges</h3>
+      <div class="flex flex-wrap gap-3" appStaggerChildren [staggerDelay]="50">
+        <span class="inline-flex items-center rounded-full bg-[var(--color-primary-500)] px-2.5 py-0.5 text-xs font-medium text-white">Primary</span>
+        <span class="inline-flex items-center rounded-full bg-[var(--color-secondary-500)] px-2.5 py-0.5 text-xs font-medium text-white">Secondary</span>
+        <span class="inline-flex items-center rounded-full bg-[var(--color-accent-500)] px-2.5 py-0.5 text-xs font-medium text-white">Accent</span>
+        <span class="inline-flex items-center rounded-full bg-[var(--color-success-500)] px-2.5 py-0.5 text-xs font-medium text-white">Success</span>
+        <span class="inline-flex items-center rounded-full bg-[var(--color-warning-500)] px-2.5 py-0.5 text-xs font-medium text-white">Warning</span>
+        <span class="inline-flex items-center rounded-full bg-[var(--color-error-500)] px-2.5 py-0.5 text-xs font-medium text-white">Error</span>
+        <span class="inline-flex items-center rounded-full bg-[var(--color-info-500)] px-2.5 py-0.5 text-xs font-medium text-white">Info</span>
+      </div>
+    </div>
+
+    <!-- Outline Badges -->
+    <div appScrollAnimate="bounce-in" [animateDelay]="300">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Outline Badges</h3>
+      <div class="flex flex-wrap gap-3" appStaggerChildren [staggerDelay]="50">
+        <span class="inline-flex items-center rounded-full border border-[var(--color-primary-500)] px-2.5 py-0.5 text-xs font-medium text-[var(--color-primary-500)]">Primary</span>
+        <span class="inline-flex items-center rounded-full border border-[var(--color-secondary-500)] px-2.5 py-0.5 text-xs font-medium text-[var(--color-secondary-500)]">Secondary</span>
+        <span class="inline-flex items-center rounded-full border border-[var(--color-accent-500)] px-2.5 py-0.5 text-xs font-medium text-[var(--color-accent-500)]">Accent</span>
+        <span class="inline-flex items-center rounded-full border border-[var(--color-success-500)] px-2.5 py-0.5 text-xs font-medium text-[var(--color-success-500)]">Success</span>
+        <span class="inline-flex items-center rounded-full border border-[var(--color-warning-500)] px-2.5 py-0.5 text-xs font-medium text-[var(--color-warning-500)]">Warning</span>
+        <span class="inline-flex items-center rounded-full border border-[var(--color-error-500)] px-2.5 py-0.5 text-xs font-medium text-[var(--color-error-500)]">Error</span>
+        <span class="inline-flex items-center rounded-full border border-[var(--color-info-500)] px-2.5 py-0.5 text-xs font-medium text-[var(--color-info-500)]">Info</span>
+      </div>
+    </div>
+
+    <!-- Badges with Icons -->
+    <div appScrollAnimate="bounce-in" [animateDelay]="400">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Badges with Icons</h3>
+      <div class="flex flex-wrap gap-3" appStaggerChildren [staggerDelay]="80">
+        <span class="inline-flex items-center gap-1.5 rounded-full bg-[var(--color-primary-500)] px-2.5 py-0.5 text-xs font-medium text-white">
+          <fa-icon [icon]="['fas', 'star']" class="text-[10px]"></fa-icon>
+          Featured
+        </span>
+        <span class="inline-flex items-center gap-1.5 rounded-full bg-[var(--color-success-500)] px-2.5 py-0.5 text-xs font-medium text-white">
+          <fa-icon [icon]="['fas', 'check']" class="text-[10px]"></fa-icon>
+          Verified
+        </span>
+        <span class="inline-flex items-center gap-1.5 rounded-full bg-[var(--color-error-500)] px-2.5 py-0.5 text-xs font-medium text-white">
+          <fa-icon [icon]="['fas', 'fire']" class="text-[10px]"></fa-icon>
+          Hot
+        </span>
+        <span class="inline-flex items-center gap-1.5 rounded-full bg-[var(--color-info-500)] px-2.5 py-0.5 text-xs font-medium text-white">
+          <fa-icon [icon]="['fas', 'bolt']" class="text-[10px]"></fa-icon>
+          New
+        </span>
+        <span class="inline-flex items-center gap-1.5 rounded-full bg-[var(--color-warning-500)] px-2.5 py-0.5 text-xs font-medium text-white">
+          <fa-icon [icon]="['fas', 'clock']" class="text-[10px]"></fa-icon>
+          Pending
+        </span>
+        <span class="inline-flex items-center gap-1.5 rounded-full bg-[var(--color-accent-500)] px-2.5 py-0.5 text-xs font-medium text-white">
+          <fa-icon [icon]="['fas', 'crown']" class="text-[10px]"></fa-icon>
+          Premium
+        </span>
+      </div>
+    </div>
+  </div>
+</section>

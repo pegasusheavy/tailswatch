@@ -1,0 +1,178 @@
+@use "tailwindcss";
+
+// ============================================
+// UNITED THEME
+// Ubuntu orange and unique font - Bootswatch
+// ============================================
+
+:root {
+  --font-sans: "Ubuntu", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: "Ubuntu", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Ubuntu Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  // Primary - Orange (#E95420)
+  --color-primary-50: #fdf0eb;
+  --color-primary-100: #f9d9cd;
+  --color-primary-200: #f5bfab;
+  --color-primary-300: #f1a589;
+  --color-primary-400: #ed8b67;
+  --color-primary-500: #e95420;
+  --color-primary-600: #c6471b;
+  --color-primary-700: #a33a16;
+  --color-primary-800: #802d11;
+  --color-primary-900: #5d200c;
+  --color-primary-950: #3a1307;
+
+  // Secondary - Purple (#772953)
+  --color-secondary-50: #f6ebf1;
+  --color-secondary-100: #e8ceda;
+  --color-secondary-200: #d6adc1;
+  --color-secondary-300: #c48ca8;
+  --color-secondary-400: #b26b8f;
+  --color-secondary-500: #772953;
+  --color-secondary-600: #652346;
+  --color-secondary-700: #531d39;
+  --color-secondary-800: #41172c;
+  --color-secondary-900: #2f111f;
+  --color-secondary-950: #1d0b12;
+
+  // Accent - Teal (#17a2b8)
+  --color-accent-50: #e6f6f8;
+  --color-accent-100: #b8e6ed;
+  --color-accent-200: #8ad6e2;
+  --color-accent-300: #5cc6d7;
+  --color-accent-400: #2eb6cc;
+  --color-accent-500: #17a2b8;
+  --color-accent-600: #148a9c;
+  --color-accent-700: #117180;
+  --color-accent-800: #0d5964;
+  --color-accent-900: #0a4148;
+  --color-accent-950: #06292c;
+
+  // Success
+  --color-success-50: #e8f7eb;
+  --color-success-100: #c6ebce;
+  --color-success-200: #a0ddb0;
+  --color-success-300: #7acf91;
+  --color-success-400: #54c173;
+  --color-success-500: #38b44a;
+  --color-success-600: #30993f;
+  --color-success-700: #287e34;
+  --color-success-800: #206329;
+  --color-success-900: #18481e;
+  --color-success-950: #102d13;
+
+  // Warning
+  --color-warning-50: #fef6e6;
+  --color-warning-100: #fce8b8;
+  --color-warning-200: #f9d88a;
+  --color-warning-300: #f7c85c;
+  --color-warning-400: #f5b82e;
+  --color-warning-500: #efb73e;
+  --color-warning-600: #cb9c35;
+  --color-warning-700: #a7812c;
+  --color-warning-800: #836623;
+  --color-warning-900: #5f4b1a;
+  --color-warning-950: #3b3011;
+
+  // Error
+  --color-error-50: #fdecea;
+  --color-error-100: #f9cfca;
+  --color-error-200: #f5ada5;
+  --color-error-300: #f08a7f;
+  --color-error-400: #ec685a;
+  --color-error-500: #df382c;
+  --color-error-600: #bd2f25;
+  --color-error-700: #9b261e;
+  --color-error-800: #791d17;
+  --color-error-900: #571410;
+  --color-error-950: #350b09;
+
+  // Info
+  --color-info-50: #e6f6f8;
+  --color-info-100: #b8e6ed;
+  --color-info-200: #8ad6e2;
+  --color-info-300: #5cc6d7;
+  --color-info-400: #2eb6cc;
+  --color-info-500: #17a2b8;
+  --color-info-600: #148a9c;
+  --color-info-700: #117180;
+  --color-info-800: #0d5964;
+  --color-info-900: #0a4148;
+  --color-info-950: #06292c;
+
+  // Surface
+  --color-background: #ffffff;
+  --color-foreground: #333333;
+  --color-surface: #fcfcfc;
+  --color-surface-elevated: #ffffff;
+  --color-surface-muted: #f8f9fa;
+  --color-border: #dee2e6;
+  --color-border-muted: #e9ecef;
+
+  // Text
+  --color-text: #333333;
+  --color-text-muted: #777777;
+  --color-text-subtle: #aaaaaa;
+  --color-text-inverse: #ffffff;
+
+  --radius-sm: 0.2rem;
+  --radius-default: 0.25rem;
+  --radius-md: 0.3rem;
+  --radius-lg: 0.35rem;
+  --radius-xl: 0.4rem;
+
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.05);
+  --shadow-default: 0 1px 3px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px rgb(0 0 0 / 0.1);
+
+  color-scheme: light;
+}
+
+@theme {
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+  --color-primary-50: var(--color-primary-50);
+  --color-primary-100: var(--color-primary-100);
+  --color-primary-200: var(--color-primary-200);
+  --color-primary-300: var(--color-primary-300);
+  --color-primary-400: var(--color-primary-400);
+  --color-primary-500: var(--color-primary-500);
+  --color-primary-600: var(--color-primary-600);
+  --color-primary-700: var(--color-primary-700);
+  --color-primary-800: var(--color-primary-800);
+  --color-primary-900: var(--color-primary-900);
+  --color-primary-950: var(--color-primary-950);
+  --color-secondary-50: var(--color-secondary-50);
+  --color-secondary-100: var(--color-secondary-100);
+  --color-secondary-200: var(--color-secondary-200);
+  --color-secondary-300: var(--color-secondary-300);
+  --color-secondary-400: var(--color-secondary-400);
+  --color-secondary-500: var(--color-secondary-500);
+  --color-secondary-600: var(--color-secondary-600);
+  --color-secondary-700: var(--color-secondary-700);
+  --color-secondary-800: var(--color-secondary-800);
+  --color-secondary-900: var(--color-secondary-900);
+  --color-secondary-950: var(--color-secondary-950);
+  --color-accent-50: var(--color-accent-50);
+  --color-accent-100: var(--color-accent-100);
+  --color-accent-200: var(--color-accent-200);
+  --color-accent-300: var(--color-accent-300);
+  --color-accent-400: var(--color-accent-400);
+  --color-accent-500: var(--color-accent-500);
+  --color-accent-600: var(--color-accent-600);
+  --color-accent-700: var(--color-accent-700);
+  --color-accent-800: var(--color-accent-800);
+  --color-accent-900: var(--color-accent-900);
+  --color-accent-950: var(--color-accent-950);
+  --color-success-500: var(--color-success-500);
+  --color-warning-500: var(--color-warning-500);
+  --color-error-500: var(--color-error-500);
+  --color-info-500: var(--color-info-500);
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-border: var(--color-border);
+  --color-text: var(--color-text);
+  --color-text-muted: var(--color-text-muted);
+}

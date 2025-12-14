@@ -1,0 +1,350 @@
+<div class="min-h-screen bg-[var(--color-background)] text-[var(--color-text)]">
+  <!-- Navigation -->
+  <nav class="fixed left-0 right-0 top-0 z-50 border-b border-[var(--color-border)]/50 bg-[var(--color-background)]/80 backdrop-blur-xl">
+    <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center gap-8">
+        <div class="flex items-center gap-3">
+          <a routerLink="/" class="flex items-center justify-center rounded-lg p-2 text-[var(--color-text-muted)] transition-colors hover:bg-[var(--color-surface-muted)] hover:text-[var(--color-text)]" title="Back to Home">
+            <fa-icon [icon]="['fas', 'arrow-left']"></fa-icon>
+          </a>
+          <div class="flex items-center gap-2">
+            <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-[var(--color-primary-500)] to-[var(--color-accent-500)] text-white font-bold">F</div>
+            <span class="text-xl font-bold">FlowSync</span>
+          </div>
+        </div>
+        <div class="hidden items-center gap-6 md:flex">
+          <a href="#features" class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)]">Features</a>
+          <a href="#pricing" class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)]">Pricing</a>
+          <a href="#testimonials" class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)]">Customers</a>
+          <a href="#faq" class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)]">FAQ</a>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <app-theme-selector></app-theme-selector>
+        <button class="hidden text-sm font-medium text-[var(--color-text-muted)] hover:text-[var(--color-text)] md:block">Sign In</button>
+        <button class="rounded-lg bg-[var(--color-primary-500)] px-4 py-2 text-sm font-medium text-white hover:bg-[var(--color-primary-600)]">Get Started</button>
+        <button (click)="toggleMenu()" class="rounded-lg p-2 md:hidden">
+          <fa-icon [icon]="['fas', mobileMenuOpen() ? 'xmark' : 'bars']"></fa-icon>
+        </button>
+      </div>
+    </div>
+    @if (mobileMenuOpen()) {
+      <div class="border-t border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-4 md:hidden">
+        <div class="space-y-3">
+          <a href="#features" class="block text-sm" (click)="toggleMenu()">Features</a>
+          <a href="#pricing" class="block text-sm" (click)="toggleMenu()">Pricing</a>
+          <a href="#testimonials" class="block text-sm" (click)="toggleMenu()">Customers</a>
+          <a href="#faq" class="block text-sm" (click)="toggleMenu()">FAQ</a>
+        </div>
+      </div>
+    }
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-32">
+    <div class="absolute inset-0 bg-gradient-to-b from-[var(--color-primary-500)]/5 via-transparent to-transparent"></div>
+    <div class="absolute -top-40 left-1/2 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-[var(--color-primary-500)]/20 blur-3xl"></div>
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-1.5 text-sm">
+          <span class="flex h-2 w-2 rounded-full bg-[var(--color-success-500)]"></span>
+          <span>Now with AI-powered workflows</span>
+          <fa-icon [icon]="['fas', 'arrow-right']" class="text-xs text-[var(--color-text-muted)]"></fa-icon>
+        </div>
+        <h1 class="mx-auto max-w-4xl text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+          The modern platform for
+          <span class="bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-accent-500)] bg-clip-text text-transparent">team productivity</span>
+        </h1>
+        <p class="mx-auto mt-6 max-w-2xl text-lg text-[var(--color-text-muted)]">
+          FlowSync brings your team's work together in one place. Manage projects, automate workflows, and ship faster—all powered by AI.
+        </p>
+        <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <button class="w-full rounded-lg bg-[var(--color-primary-500)] px-8 py-3 text-sm font-medium text-white shadow-lg shadow-[var(--color-primary-500)]/25 hover:bg-[var(--color-primary-600)] sm:w-auto">
+            Start Free Trial
+          </button>
+          <button class="flex w-full items-center justify-center gap-2 rounded-lg border border-[var(--color-border)] px-8 py-3 text-sm font-medium hover:bg-[var(--color-surface)] sm:w-auto">
+            <fa-icon [icon]="['fas', 'play']" class="text-xs"></fa-icon>
+            Watch Demo
+          </button>
+        </div>
+        <p class="mt-4 text-sm text-[var(--color-text-muted)]">No credit card required · Free 14-day trial</p>
+      </div>
+
+      <!-- Hero Image/Dashboard Preview -->
+      <div class="relative mt-16">
+        <div class="overflow-hidden rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] shadow-2xl">
+          <div class="flex items-center gap-2 border-b border-[var(--color-border)] bg-[var(--color-surface-muted)] px-4 py-3">
+            <div class="flex gap-1.5">
+              <div class="h-3 w-3 rounded-full bg-[var(--color-error-500)]"></div>
+              <div class="h-3 w-3 rounded-full bg-[var(--color-warning-500)]"></div>
+              <div class="h-3 w-3 rounded-full bg-[var(--color-success-500)]"></div>
+            </div>
+            <div class="flex-1 text-center text-xs text-[var(--color-text-muted)]">FlowSync Dashboard</div>
+          </div>
+          <div class="aspect-video bg-gradient-to-br from-[var(--color-surface)] to-[var(--color-surface-muted)] p-8">
+            <div class="grid h-full grid-cols-4 gap-4">
+              <div class="col-span-1 space-y-3 rounded-lg bg-[var(--color-background)] p-4">
+                <div class="h-4 w-20 rounded bg-[var(--color-surface-muted)]"></div>
+                <div class="space-y-2">
+                  <div class="h-3 w-full rounded bg-[var(--color-primary-500)]/20"></div>
+                  <div class="h-3 w-full rounded bg-[var(--color-surface-muted)]"></div>
+                  <div class="h-3 w-full rounded bg-[var(--color-surface-muted)]"></div>
+                </div>
+              </div>
+              <div class="col-span-3 rounded-lg bg-[var(--color-background)] p-4">
+                <div class="mb-4 flex items-center justify-between">
+                  <div class="h-4 w-32 rounded bg-[var(--color-surface-muted)]"></div>
+                  <div class="h-8 w-24 rounded bg-[var(--color-primary-500)]"></div>
+                </div>
+                <div class="grid grid-cols-3 gap-4">
+                  <div class="rounded-lg bg-[var(--color-surface)] p-4">
+                    <div class="mb-2 h-3 w-16 rounded bg-[var(--color-surface-muted)]"></div>
+                    <div class="h-8 w-20 rounded bg-[var(--color-primary-500)]/30"></div>
+                  </div>
+                  <div class="rounded-lg bg-[var(--color-surface)] p-4">
+                    <div class="mb-2 h-3 w-16 rounded bg-[var(--color-surface-muted)]"></div>
+                    <div class="h-8 w-20 rounded bg-[var(--color-success-500)]/30"></div>
+                  </div>
+                  <div class="rounded-lg bg-[var(--color-surface)] p-4">
+                    <div class="mb-2 h-3 w-16 rounded bg-[var(--color-surface-muted)]"></div>
+                    <div class="h-8 w-20 rounded bg-[var(--color-accent-500)]/30"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Logos Section -->
+  <section class="border-y border-[var(--color-border)] bg-[var(--color-surface)] py-12">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <p class="mb-8 text-center text-sm text-[var(--color-text-muted)]">Trusted by 50,000+ teams at companies like</p>
+      <div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
+        @for (logo of logos; track logo.name) {
+          <div class="flex items-center gap-2 opacity-60 grayscale transition-all hover:opacity-100 hover:grayscale-0">
+            @if (logo.style === 'gradient') {
+              <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-[var(--color-primary-500)] to-[var(--color-accent-500)] text-lg font-bold text-white">{{ logo.icon }}</div>
+            } @else if (logo.style === 'outline') {
+              <div class="flex h-8 w-8 items-center justify-center rounded-lg border-2 border-[var(--color-primary-500)] text-lg text-[var(--color-primary-500)]">{{ logo.icon }}</div>
+            } @else {
+              <div class="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--color-primary-500)] text-lg text-white">{{ logo.icon }}</div>
+            }
+            <span class="text-lg font-semibold tracking-tight">{{ logo.name }}</span>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="bg-[var(--color-surface)] py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 gap-8 lg:grid-cols-4">
+        @for (stat of stats; track stat.label) {
+          <div class="text-center">
+            <div class="text-4xl font-bold text-[var(--color-primary-500)]">{{ stat.value }}</div>
+            <div class="mt-1 text-sm text-[var(--color-text-muted)]">{{ stat.label }}</div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-20 scroll-mt-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <p class="text-sm font-medium text-[var(--color-primary-500)]">FEATURES</p>
+        <h2 class="mt-2 text-3xl font-bold sm:text-4xl">Everything you need to ship faster</h2>
+        <p class="mx-auto mt-4 max-w-2xl text-[var(--color-text-muted)]">
+          Powerful features designed to help modern teams collaborate, automate, and deliver exceptional results.
+        </p>
+      </div>
+      <div class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        @for (feature of features; track feature.title) {
+          <div class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 transition-all hover:border-[var(--color-primary-500)]/50 hover:shadow-lg">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--color-primary-500)]/10 text-2xl">{{ feature.icon }}</div>
+            <h3 class="mb-2 text-lg font-semibold">{{ feature.title }}</h3>
+            <p class="text-sm text-[var(--color-text-muted)]">{{ feature.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="overflow-hidden rounded-3xl bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-accent-500)] p-px">
+        <div class="rounded-3xl bg-[var(--color-background)] p-8 sm:p-12 lg:p-16">
+          <div class="flex flex-col items-center gap-8 lg:flex-row lg:justify-between">
+            <div class="text-center lg:text-left">
+              <h2 class="text-2xl font-bold sm:text-3xl">Ready to transform your workflow?</h2>
+              <p class="mt-2 text-[var(--color-text-muted)]">Join 10M+ users and start your free trial today.</p>
+            </div>
+            <div class="flex flex-col gap-3 sm:flex-row">
+              <button class="rounded-lg bg-[var(--color-primary-500)] px-6 py-3 text-sm font-medium text-white hover:bg-[var(--color-primary-600)]">Start Free Trial</button>
+              <button class="rounded-lg border border-[var(--color-border)] px-6 py-3 text-sm font-medium hover:bg-[var(--color-surface)]">Talk to Sales</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="bg-[var(--color-surface)] py-20 scroll-mt-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <p class="text-sm font-medium text-[var(--color-primary-500)]">PRICING</p>
+        <h2 class="mt-2 text-3xl font-bold sm:text-4xl">Simple, transparent pricing</h2>
+        <p class="mx-auto mt-4 max-w-2xl text-[var(--color-text-muted)]">
+          Choose the plan that's right for you. All plans include a 14-day free trial.
+        </p>
+        <div class="mt-8 inline-flex items-center rounded-full border border-[var(--color-border)] bg-[var(--color-background)] p-1">
+          <button (click)="billingPeriod.set('monthly')" class="rounded-full px-4 py-2 text-sm font-medium transition-colors" [class.bg-[var(--color-primary-500)]]="billingPeriod() === 'monthly'" [class.text-white]="billingPeriod() === 'monthly'">Monthly</button>
+          <button (click)="billingPeriod.set('annual')" class="rounded-full px-4 py-2 text-sm font-medium transition-colors" [class.bg-[var(--color-primary-500)]]="billingPeriod() === 'annual'" [class.text-white]="billingPeriod() === 'annual'">Annual (Save 20%)</button>
+        </div>
+      </div>
+      <div class="mt-12 grid gap-8 lg:grid-cols-3">
+        @for (plan of plans; track plan.name) {
+          <div class="relative rounded-2xl border bg-[var(--color-background)] p-8" [class.border-[var(--color-primary-500)]]="plan.highlighted" [class.border-[var(--color-border)]]="!plan.highlighted" [class.shadow-xl]="plan.highlighted">
+            @if (plan.highlighted) {
+              <div class="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-[var(--color-primary-500)] px-4 py-1 text-xs font-medium text-white">Most Popular</div>
+            }
+            <h3 class="text-lg font-semibold">{{ plan.name }}</h3>
+            <p class="mt-1 text-sm text-[var(--color-text-muted)]">{{ plan.description }}</p>
+            <div class="mt-6">
+              <span class="text-4xl font-bold">${{ getPrice(plan) }}</span>
+              <span class="text-[var(--color-text-muted)]">{{ plan.price === 0 ? '' : '/' + (billingPeriod() === 'annual' ? 'mo' : 'month') }}</span>
+            </div>
+            <button class="mt-6 w-full rounded-lg py-3 text-sm font-medium transition-colors" [class.bg-[var(--color-primary-500)]]="plan.highlighted" [class.text-white]="plan.highlighted" [class.hover:bg-[var(--color-primary-600)]]="plan.highlighted" [class.border]="!plan.highlighted" [class.border-[var(--color-border)]]="!plan.highlighted" [class.hover:bg-[var(--color-surface)]]="!plan.highlighted">{{ plan.cta }}</button>
+            <ul class="mt-8 space-y-3">
+              @for (feature of plan.features; track feature) {
+                <li class="flex items-start gap-3 text-sm">
+                  <fa-icon [icon]="['fas', 'check']" class="mt-0.5 text-[var(--color-success-500)]"></fa-icon>
+                  {{ feature }}
+                </li>
+              }
+            </ul>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-20 scroll-mt-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <p class="text-sm font-medium text-[var(--color-primary-500)]">TESTIMONIALS</p>
+        <h2 class="mt-2 text-3xl font-bold sm:text-4xl">Loved by teams worldwide</h2>
+      </div>
+      <div class="mt-12 grid gap-8 md:grid-cols-3">
+        @for (testimonial of testimonials; track testimonial.author) {
+          <div class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
+            <div class="mb-4 flex gap-1 text-[var(--color-warning-500)]">
+              @for (s of [1,2,3,4,5]; track s) {
+                <fa-icon [icon]="['fas', 'star']" class="text-sm"></fa-icon>
+              }
+            </div>
+            <p class="text-[var(--color-text)]">"{{ testimonial.quote }}"</p>
+            <div class="mt-6 flex items-center gap-3">
+              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-surface-muted)] text-xl">{{ testimonial.avatar }}</div>
+              <div>
+                <div class="font-medium">{{ testimonial.author }}</div>
+                <div class="text-sm text-[var(--color-text-muted)]">{{ testimonial.role }}, {{ testimonial.company }}</div>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="bg-[var(--color-surface)] py-20 scroll-mt-20">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <p class="text-sm font-medium text-[var(--color-primary-500)]">FAQ</p>
+        <h2 class="mt-2 text-3xl font-bold sm:text-4xl">Frequently asked questions</h2>
+      </div>
+      <div class="mt-12 space-y-4">
+        @for (faq of faqs; track faq.question; let i = $index) {
+          <div class="rounded-xl border border-[var(--color-border)] bg-[var(--color-background)]">
+            <button (click)="toggleFaq(i)" class="flex w-full items-center justify-between p-6 text-left">
+              <span class="font-medium">{{ faq.question }}</span>
+              <fa-icon [icon]="['fas', faqOpen() === i ? 'minus' : 'plus']" class="text-[var(--color-text-muted)]"></fa-icon>
+            </button>
+            @if (faqOpen() === i) {
+              <div class="border-t border-[var(--color-border)] px-6 py-4 text-[var(--color-text-muted)]">{{ faq.answer }}</div>
+            }
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold sm:text-4xl">Start building with FlowSync today</h2>
+      <p class="mx-auto mt-4 max-w-xl text-[var(--color-text-muted)]">Join thousands of teams already using FlowSync to ship faster and collaborate better.</p>
+      <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <button class="w-full rounded-lg bg-[var(--color-primary-500)] px-8 py-3 text-sm font-medium text-white shadow-lg shadow-[var(--color-primary-500)]/25 hover:bg-[var(--color-primary-600)] sm:w-auto">Start Free Trial</button>
+        <button class="flex w-full items-center justify-center gap-2 rounded-lg border border-[var(--color-border)] px-8 py-3 text-sm font-medium hover:bg-[var(--color-surface)] sm:w-auto">Schedule a Demo</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-[var(--color-border)] bg-[var(--color-surface)] py-12">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-8 md:grid-cols-4">
+        <div>
+          <div class="flex items-center gap-2">
+            <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-[var(--color-primary-500)] to-[var(--color-accent-500)] text-white font-bold">F</div>
+            <span class="text-xl font-bold">FlowSync</span>
+          </div>
+          <p class="mt-4 text-sm text-[var(--color-text-muted)]">The modern platform for team productivity.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold">Product</h4>
+          <ul class="mt-4 space-y-2 text-sm text-[var(--color-text-muted)]">
+            <li><a href="#" class="hover:text-[var(--color-primary-500)]">Features</a></li>
+            <li><a href="#" class="hover:text-[var(--color-primary-500)]">Pricing</a></li>
+            <li><a href="#" class="hover:text-[var(--color-primary-500)]">Integrations</a></li>
+            <li><a href="#" class="hover:text-[var(--color-primary-500)]">Changelog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold">Company</h4>
+          <ul class="mt-4 space-y-2 text-sm text-[var(--color-text-muted)]">
+            <li><a href="#" class="hover:text-[var(--color-primary-500)]">About</a></li>
+            <li><a href="#" class="hover:text-[var(--color-primary-500)]">Blog</a></li>
+            <li><a href="#" class="hover:text-[var(--color-primary-500)]">Careers</a></li>
+            <li><a href="#" class="hover:text-[var(--color-primary-500)]">Press</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold">Legal</h4>
+          <ul class="mt-4 space-y-2 text-sm text-[var(--color-text-muted)]">
+            <li><a href="#" class="hover:text-[var(--color-primary-500)]">Privacy</a></li>
+            <li><a href="#" class="hover:text-[var(--color-primary-500)]">Terms</a></li>
+            <li><a href="#" class="hover:text-[var(--color-primary-500)]">Security</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-[var(--color-border)] pt-8 sm:flex-row">
+        <p class="text-sm text-[var(--color-text-muted)]">© 2025 FlowSync. All rights reserved.</p>
+        <div class="flex items-center gap-4">
+          <a routerLink="/" class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary-500)]">← Back to Tailswatch</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+

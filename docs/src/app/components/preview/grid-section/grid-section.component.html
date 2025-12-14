@@ -1,0 +1,134 @@
+<section id="grid" class="mb-16 scroll-mt-24">
+  <h2 appScrollAnimate="fade-right" class="mb-6 border-b border-[var(--color-border)] pb-2 text-2xl font-semibold">Grid & Layout</h2>
+
+  <div class="space-y-8">
+    <!-- Grid Columns -->
+    <div appScrollAnimate="fade-up">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Grid Columns</h3>
+      <div class="space-y-4">
+        <div class="grid grid-cols-2 gap-2">
+          @for (i of [1,2]; track i) {
+            <div class="flex h-12 items-center justify-center rounded bg-[var(--color-primary-500)]/20 text-xs text-[var(--color-primary-500)]">1/2</div>
+          }
+        </div>
+        <div class="grid grid-cols-3 gap-2">
+          @for (i of [1,2,3]; track i) {
+            <div class="flex h-12 items-center justify-center rounded bg-[var(--color-secondary-500)]/20 text-xs text-[var(--color-secondary-500)]">1/3</div>
+          }
+        </div>
+        <div class="grid grid-cols-4 gap-2">
+          @for (i of [1,2,3,4]; track i) {
+            <div class="flex h-12 items-center justify-center rounded bg-[var(--color-accent-500)]/20 text-xs text-[var(--color-accent-500)]">1/4</div>
+          }
+        </div>
+        <div class="grid grid-cols-6 gap-2">
+          @for (i of [1,2,3,4,5,6]; track i) {
+            <div class="flex h-12 items-center justify-center rounded bg-[var(--color-success-500)]/20 text-xs text-[var(--color-success-500)]">1/6</div>
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Gap Sizes -->
+    <div appScrollAnimate="fade-up" [animateDelay]="100">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Gap Sizes</h3>
+      <div class="grid grid-cols-3 gap-8">
+        <div>
+          <div class="mb-2 text-xs text-[var(--color-text-muted)]">gap-1</div>
+          <div class="grid grid-cols-3 gap-1">
+            @for (i of [1,2,3,4,5,6]; track i) {
+              <div class="h-8 rounded bg-[var(--color-primary-500)]"></div>
+            }
+          </div>
+        </div>
+        <div>
+          <div class="mb-2 text-xs text-[var(--color-text-muted)]">gap-2</div>
+          <div class="grid grid-cols-3 gap-2">
+            @for (i of [1,2,3,4,5,6]; track i) {
+              <div class="h-8 rounded bg-[var(--color-primary-500)]"></div>
+            }
+          </div>
+        </div>
+        <div>
+          <div class="mb-2 text-xs text-[var(--color-text-muted)]">gap-4</div>
+          <div class="grid grid-cols-3 gap-4">
+            @for (i of [1,2,3,4,5,6]; track i) {
+              <div class="h-8 rounded bg-[var(--color-primary-500)]"></div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flexbox -->
+    <div appScrollAnimate="fade-up" [animateDelay]="200">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Flexbox Alignment</h3>
+      <div class="grid gap-4 md:grid-cols-2">
+        <div>
+          <div class="mb-2 text-xs text-[var(--color-text-muted)]">justify-start</div>
+          <div class="flex h-16 justify-start gap-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-2">
+            <div class="h-full w-12 rounded bg-[var(--color-primary-500)]"></div>
+            <div class="h-full w-12 rounded bg-[var(--color-primary-500)]"></div>
+          </div>
+        </div>
+        <div>
+          <div class="mb-2 text-xs text-[var(--color-text-muted)]">justify-center</div>
+          <div class="flex h-16 justify-center gap-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-2">
+            <div class="h-full w-12 rounded bg-[var(--color-secondary-500)]"></div>
+            <div class="h-full w-12 rounded bg-[var(--color-secondary-500)]"></div>
+          </div>
+        </div>
+        <div>
+          <div class="mb-2 text-xs text-[var(--color-text-muted)]">justify-end</div>
+          <div class="flex h-16 justify-end gap-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-2">
+            <div class="h-full w-12 rounded bg-[var(--color-accent-500)]"></div>
+            <div class="h-full w-12 rounded bg-[var(--color-accent-500)]"></div>
+          </div>
+        </div>
+        <div>
+          <div class="mb-2 text-xs text-[var(--color-text-muted)]">justify-between</div>
+          <div class="flex h-16 justify-between gap-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-2">
+            <div class="h-full w-12 rounded bg-[var(--color-success-500)]"></div>
+            <div class="h-full w-12 rounded bg-[var(--color-success-500)]"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Responsive Grid -->
+    <div appScrollAnimate="fade-up" [animateDelay]="300">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Responsive Grid (resize to see)</h3>
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        @for (i of [1,2,3,4,5,6,7,8]; track i) {
+          <div class="flex h-20 items-center justify-center rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)]">
+            <span class="text-sm text-[var(--color-text-muted)]">Item {{ i }}</span>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Aspect Ratios -->
+    <div appScrollAnimate="fade-up" [animateDelay]="400">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Aspect Ratios</h3>
+      <div class="grid grid-cols-4 gap-4">
+        <div>
+          <div class="mb-2 text-xs text-[var(--color-text-muted)]">1:1 (square)</div>
+          <div class="aspect-square rounded-lg bg-gradient-to-br from-[var(--color-primary-400)] to-[var(--color-primary-600)]"></div>
+        </div>
+        <div>
+          <div class="mb-2 text-xs text-[var(--color-text-muted)]">16:9 (video)</div>
+          <div class="aspect-video rounded-lg bg-gradient-to-br from-[var(--color-secondary-400)] to-[var(--color-secondary-600)]"></div>
+        </div>
+        <div>
+          <div class="mb-2 text-xs text-[var(--color-text-muted)]">4:3</div>
+          <div class="aspect-[4/3] rounded-lg bg-gradient-to-br from-[var(--color-accent-400)] to-[var(--color-accent-600)]"></div>
+        </div>
+        <div>
+          <div class="mb-2 text-xs text-[var(--color-text-muted)]">3:2</div>
+          <div class="aspect-[3/2] rounded-lg bg-gradient-to-br from-[var(--color-success-400)] to-[var(--color-success-600)]"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

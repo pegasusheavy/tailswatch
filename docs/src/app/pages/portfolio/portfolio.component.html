@@ -1,0 +1,411 @@
+<div class="min-h-screen bg-[var(--color-background)] text-[var(--color-text)]">
+  <!-- Navigation -->
+  <nav class="fixed left-0 right-0 top-0 z-40 border-b border-[var(--color-border)]/50 bg-[var(--color-background)]/80 backdrop-blur-lg">
+    <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center gap-3">
+        <a routerLink="/" class="flex items-center justify-center rounded-lg p-2 text-[var(--color-text-muted)] transition-colors hover:bg-[var(--color-surface-muted)] hover:text-[var(--color-text)]" title="Back to Home">
+          <fa-icon [icon]="['fas', 'arrow-left']"></fa-icon>
+        </a>
+        <span class="text-xl font-light tracking-widest">ALEX RIVERS</span>
+      </div>
+
+      <!-- Desktop Nav -->
+      <div class="hidden items-center gap-8 md:flex">
+        <a href="#work" class="text-sm tracking-wide text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-text)]">Work</a>
+        <a href="#about" class="text-sm tracking-wide text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-text)]">About</a>
+        <a href="#testimonials" class="text-sm tracking-wide text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-text)]">Testimonials</a>
+        <a href="#contact" class="text-sm tracking-wide text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-text)]">Contact</a>
+        <app-theme-selector />
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="flex items-center gap-4 md:hidden">
+        <app-theme-selector />
+        <button (click)="toggleMenu()" class="p-2">
+          <fa-icon [icon]="['fas', menuOpen() ? 'xmark' : 'bars']"></fa-icon>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    @if (menuOpen()) {
+      <div class="border-t border-[var(--color-border)] bg-[var(--color-surface)] md:hidden">
+        <div class="space-y-1 px-4 py-3">
+          <a href="#work" class="block py-2 text-sm" (click)="toggleMenu()">Work</a>
+          <a href="#about" class="block py-2 text-sm" (click)="toggleMenu()">About</a>
+          <a href="#testimonials" class="block py-2 text-sm" (click)="toggleMenu()">Testimonials</a>
+          <a href="#contact" class="block py-2 text-sm" (click)="toggleMenu()">Contact</a>
+        </div>
+      </div>
+    }
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative flex h-screen items-center justify-center overflow-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-primary-500)]/10 via-transparent to-[var(--color-accent-500)]/10"></div>
+    <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(circle at 1px 1px, var(--color-text-muted) 1px, transparent 0); background-size: 40px 40px;"></div>
+
+    <div class="relative z-10 px-4 text-center">
+      <p class="mb-4 text-sm uppercase tracking-[0.3em] text-[var(--color-text-muted)]">Photographer & Visual Artist</p>
+      <h1 class="mb-6 text-5xl font-light tracking-tight md:text-7xl lg:text-8xl">
+        Capturing <span class="bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-accent-500)] bg-clip-text text-transparent">Moments</span>
+      </h1>
+      <p class="mx-auto mb-8 max-w-xl text-lg text-[var(--color-text-muted)]">
+        Specializing in portraits, landscapes, and storytelling through the lens.
+      </p>
+      <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <a href="#work" class="rounded-full bg-[var(--color-text)] px-8 py-3 text-sm font-medium text-[var(--color-background)] transition-transform hover:scale-105">
+          View Portfolio
+        </a>
+        <a href="#contact" class="rounded-full border border-[var(--color-border)] px-8 py-3 text-sm font-medium transition-colors hover:bg-[var(--color-surface)]">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
+      <div class="flex flex-col items-center gap-2 text-[var(--color-text-muted)]">
+        <span class="text-xs uppercase tracking-widest">Scroll</span>
+        <div class="h-12 w-px animate-pulse bg-gradient-to-b from-[var(--color-text-muted)] to-transparent"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Section -->
+  <section id="work" class="py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mb-12 text-center">
+        <h2 class="mb-4 text-3xl font-light tracking-tight md:text-4xl">Selected Work</h2>
+        <p class="text-[var(--color-text-muted)]">A curated collection of my favorite photographs</p>
+      </div>
+
+      <!-- Category Filter -->
+      <div class="mb-12 flex flex-wrap justify-center gap-2">
+        @for (cat of categories; track cat.id) {
+          <button
+            (click)="setCategory(cat.id)"
+            class="rounded-full px-5 py-2 text-sm transition-all"
+            [class.bg-[var(--color-text)]]="selectedCategory() === cat.id"
+            [class.text-[var(--color-background)]]="selectedCategory() === cat.id"
+            [class.bg-[var(--color-surface)]]="selectedCategory() !== cat.id"
+            [class.hover:bg-[var(--color-surface-muted)]]="selectedCategory() !== cat.id">
+            {{ cat.name }}
+          </button>
+        }
+      </div>
+
+      <!-- Photo Grid (Masonry-like) -->
+      <div class="columns-1 gap-4 sm:columns-2 lg:columns-3">
+        @for (photo of filteredPhotos; track photo.id) {
+          <div
+            (click)="openLightbox(photo)"
+            class="group mb-4 cursor-pointer overflow-hidden rounded-lg break-inside-avoid">
+            <div
+              class="relative overflow-hidden"
+              [class.h-64]="photo.aspect === 'landscape'"
+              [class.h-80]="photo.aspect === 'square'"
+              [class.h-96]="photo.aspect === 'portrait'">
+              <img
+                [src]="photo.image"
+                [alt]="photo.title"
+                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy">
+
+              <!-- Overlay -->
+              <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div>
+                  <h3 class="text-lg font-medium text-white">{{ photo.title }}</h3>
+                  <p class="text-sm capitalize text-white/70">{{ photo.category }}</p>
+                </div>
+              </div>
+
+              <!-- Expand Icon -->
+              <div class="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white opacity-0 backdrop-blur-sm transition-opacity group-hover:opacity-100">
+                <fa-icon [icon]="['fas', 'expand']"></fa-icon>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="bg-[var(--color-surface)] py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid items-center gap-12 lg:grid-cols-2">
+        <!-- Image -->
+        <div class="relative">
+          <div class="aspect-[4/5] overflow-hidden rounded-2xl">
+            <img
+              [src]="profileImage"
+              alt="Alex Rivers - Photographer"
+              class="h-full w-full object-cover"
+              loading="lazy">
+          </div>
+          <!-- Stats Overlay -->
+          <div class="absolute -bottom-6 -right-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 shadow-xl">
+            <div class="grid grid-cols-2 gap-6 text-center">
+              <div>
+                <div class="text-3xl font-light text-[var(--color-primary-500)]">10+</div>
+                <div class="text-xs text-[var(--color-text-muted)]">Years Experience</div>
+              </div>
+              <div>
+                <div class="text-3xl font-light text-[var(--color-primary-500)]">500+</div>
+                <div class="text-xs text-[var(--color-text-muted)]">Projects Done</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div>
+          <p class="mb-2 text-sm uppercase tracking-widest text-[var(--color-primary-500)]">About Me</p>
+          <h2 class="mb-6 text-3xl font-light tracking-tight md:text-4xl">Hello, I'm Alex Rivers</h2>
+          <div class="space-y-4 text-[var(--color-text-muted)]">
+            <p>
+              I'm a professional photographer based in San Francisco with over a decade of experience capturing life's most precious moments. My journey began with a borrowed camera and an insatiable curiosity about how light shapes our world.
+            </p>
+            <p>
+              Today, I specialize in portrait photography, landscape work, and event coverage. My approach combines technical precision with an artistic eye, always striving to tell authentic stories through my images.
+            </p>
+            <p>
+              When I'm not behind the camera, you'll find me hiking the California coast, teaching photography workshops, or experimenting with new editing techniques.
+            </p>
+          </div>
+
+          <!-- Skills -->
+          <div class="mt-8 flex flex-wrap gap-2">
+            @for (skill of ['Portrait', 'Landscape', 'Events', 'Product', 'Editorial', 'Retouching']; track skill) {
+              <span class="rounded-full border border-[var(--color-border)] px-4 py-1.5 text-sm">{{ skill }}</span>
+            }
+          </div>
+
+          <!-- Social Links -->
+          <div class="mt-8 flex gap-4">
+            <a href="#" class="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--color-border)] transition-colors hover:bg-[var(--color-surface-muted)]">
+              <fa-icon [icon]="['fab', 'instagram']"></fa-icon>
+            </a>
+            <a href="#" class="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--color-border)] transition-colors hover:bg-[var(--color-surface-muted)]">
+              <fa-icon [icon]="['fab', 'twitter']"></fa-icon>
+            </a>
+            <a href="#" class="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--color-border)] transition-colors hover:bg-[var(--color-surface-muted)]">
+              <fa-icon [icon]="['fab', 'linkedin']"></fa-icon>
+            </a>
+            <a href="#" class="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--color-border)] transition-colors hover:bg-[var(--color-surface-muted)]">
+              <fa-icon [icon]="['fab', 'youtube']"></fa-icon>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mb-12 text-center">
+        <h2 class="mb-4 text-3xl font-light tracking-tight md:text-4xl">Client Stories</h2>
+        <p class="text-[var(--color-text-muted)]">What people are saying about working with me</p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-3">
+        @for (testimonial of testimonials; track testimonial.name) {
+          <div class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-8">
+            <div class="mb-4 flex gap-1 text-[var(--color-primary-500)]">
+              @for (s of [1,2,3,4,5]; track s) {
+                <fa-icon [icon]="['fas', 'star']" class="text-sm"></fa-icon>
+              }
+            </div>
+            <p class="mb-6 text-[var(--color-text-muted)]">"{{ testimonial.text }}"</p>
+            <div class="flex items-center gap-3">
+              <div class="h-12 w-12 overflow-hidden rounded-full bg-[var(--color-surface-muted)]">
+                <img
+                  [src]="testimonial.image"
+                  [alt]="testimonial.name"
+                  class="h-full w-full object-cover">
+              </div>
+              <div>
+                <div class="font-medium">{{ testimonial.name }}</div>
+                <div class="text-sm text-[var(--color-text-muted)]">{{ testimonial.role }}</div>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="bg-[var(--color-surface)] py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mb-12 text-center">
+        <h2 class="mb-4 text-3xl font-light tracking-tight md:text-4xl">Services</h2>
+        <p class="text-[var(--color-text-muted)]">Professional photography services for every occasion</p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        @for (service of [
+          { icon: '👤', title: 'Portraits', desc: 'Professional headshots and creative portraits', price: 'From $299' },
+          { icon: '💍', title: 'Weddings', desc: 'Full-day coverage of your special moment', price: 'From $2,499' },
+          { icon: '🏢', title: 'Commercial', desc: 'Brand photography and product shoots', price: 'From $599' },
+          { icon: '🎉', title: 'Events', desc: 'Corporate events, parties, and celebrations', price: 'From $499' }
+        ]; track service.title) {
+          <div class="group rounded-2xl border border-[var(--color-border)] bg-[var(--color-background)] p-6 transition-all hover:border-[var(--color-primary-500)] hover:shadow-lg">
+            <div class="mb-4 text-4xl">{{ service.icon }}</div>
+            <h3 class="mb-2 text-lg font-medium">{{ service.title }}</h3>
+            <p class="mb-4 text-sm text-[var(--color-text-muted)]">{{ service.desc }}</p>
+            <div class="flex items-center justify-between">
+              <span class="font-medium text-[var(--color-primary-500)]">{{ service.price }}</span>
+              <fa-icon [icon]="['fas', 'arrow-right']" class="text-[var(--color-text-muted)] transition-transform group-hover:translate-x-1"></fa-icon>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-2">
+        <!-- Info -->
+        <div>
+          <p class="mb-2 text-sm uppercase tracking-widest text-[var(--color-primary-500)]">Get in Touch</p>
+          <h2 class="mb-6 text-3xl font-light tracking-tight md:text-4xl">Let's Create Something Beautiful</h2>
+          <p class="mb-8 text-[var(--color-text-muted)]">
+            Have a project in mind? I'd love to hear about it. Fill out the form or reach out directly through any of the channels below.
+          </p>
+
+          <div class="space-y-4">
+            <div class="flex items-center gap-4">
+              <div class="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-surface)]">
+                <fa-icon [icon]="['fas', 'envelope']" class="text-[var(--color-primary-500)]"></fa-icon>
+              </div>
+              <div>
+                <div class="text-sm text-[var(--color-text-muted)]">Email</div>
+                <div>alex&#64;alexrivers.photo</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-surface)]">
+                <fa-icon [icon]="['fas', 'phone']" class="text-[var(--color-primary-500)]"></fa-icon>
+              </div>
+              <div>
+                <div class="text-sm text-[var(--color-text-muted)]">Phone</div>
+                <div>+1 (555) 123-4567</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-surface)]">
+                <fa-icon [icon]="['fas', 'location-dot']" class="text-[var(--color-primary-500)]"></fa-icon>
+              </div>
+              <div>
+                <div class="text-sm text-[var(--color-text-muted)]">Studio</div>
+                <div>San Francisco, California</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-8">
+          <form class="space-y-6">
+            <div class="grid gap-6 sm:grid-cols-2">
+              <div>
+                <label class="mb-2 block text-sm font-medium">Name</label>
+                <input
+                  type="text"
+                  placeholder="Your name"
+                  class="w-full rounded-lg border border-[var(--color-border)] bg-[var(--color-background)] px-4 py-3 text-sm focus:border-[var(--color-primary-500)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)]/20">
+              </div>
+              <div>
+                <label class="mb-2 block text-sm font-medium">Email</label>
+                <input
+                  type="email"
+                  placeholder="your@email.com"
+                  class="w-full rounded-lg border border-[var(--color-border)] bg-[var(--color-background)] px-4 py-3 text-sm focus:border-[var(--color-primary-500)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)]/20">
+              </div>
+            </div>
+            <div>
+              <label class="mb-2 block text-sm font-medium">Service Interested In</label>
+              <select class="w-full rounded-lg border border-[var(--color-border)] bg-[var(--color-background)] px-4 py-3 text-sm focus:border-[var(--color-primary-500)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)]/20">
+                <option>Select a service</option>
+                <option>Portrait Session</option>
+                <option>Wedding Photography</option>
+                <option>Commercial/Product</option>
+                <option>Event Coverage</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label class="mb-2 block text-sm font-medium">Message</label>
+              <textarea
+                rows="4"
+                placeholder="Tell me about your project..."
+                class="w-full resize-none rounded-lg border border-[var(--color-border)] bg-[var(--color-background)] px-4 py-3 text-sm focus:border-[var(--color-primary-500)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)]/20"></textarea>
+            </div>
+            <button
+              type="submit"
+              class="w-full rounded-lg bg-[var(--color-primary-500)] py-3 font-medium text-white transition-colors hover:bg-[var(--color-primary-600)]">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-[var(--color-border)] py-8">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
+        <p class="text-sm text-[var(--color-text-muted)]">© 2025 Alex Rivers Photography. All rights reserved.</p>
+        <div class="flex items-center gap-4">
+          <a routerLink="/" class="text-sm text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-primary-500)]">← Back to Tailswatch</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  @if (lightboxOpen() && selectedPhoto()) {
+    <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4">
+      <!-- Close Button -->
+      <button
+        (click)="closeLightbox()"
+        class="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full text-white/70 transition-colors hover:bg-white/10 hover:text-white">
+        <fa-icon [icon]="['fas', 'xmark']" class="text-xl"></fa-icon>
+      </button>
+
+      <!-- Navigation -->
+      <button
+        (click)="navigatePhoto(-1)"
+        class="absolute left-4 flex h-12 w-12 items-center justify-center rounded-full text-white/70 transition-colors hover:bg-white/10 hover:text-white">
+        <fa-icon [icon]="['fas', 'chevron-left']" class="text-xl"></fa-icon>
+      </button>
+      <button
+        (click)="navigatePhoto(1)"
+        class="absolute right-4 flex h-12 w-12 items-center justify-center rounded-full text-white/70 transition-colors hover:bg-white/10 hover:text-white">
+        <fa-icon [icon]="['fas', 'chevron-right']" class="text-xl"></fa-icon>
+      </button>
+
+      <!-- Image -->
+      <div class="relative max-h-[80vh] max-w-[90vw] overflow-hidden rounded-lg">
+        <img
+          [src]="selectedPhoto()?.image"
+          [alt]="selectedPhoto()?.title"
+          class="max-h-[80vh] max-w-full object-contain">
+      </div>
+
+      <!-- Caption -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-center">
+        <h3 class="text-xl font-medium text-white">{{ selectedPhoto()?.title }}</h3>
+        <p class="capitalize text-white/60">{{ selectedPhoto()?.category }}</p>
+      </div>
+    </div>
+  }
+</div>
+

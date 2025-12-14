@@ -1,0 +1,119 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "tailswatch-docs": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "standalone": true
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/tailswatch-docs",
+            "index": "src/index.html",
+            "browser": "src/main.ts",
+            "polyfills": [],
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "styles": [
+              { "input": "src/styles/themes/default.scss", "bundleName": "default", "inject": true },
+              { "input": "src/styles/themes/cerulean.scss", "bundleName": "cerulean", "inject": false },
+              { "input": "src/styles/themes/cosmo.scss", "bundleName": "cosmo", "inject": false },
+              { "input": "src/styles/themes/cyborg.scss", "bundleName": "cyborg", "inject": false },
+              { "input": "src/styles/themes/darkly.scss", "bundleName": "darkly", "inject": false },
+              { "input": "src/styles/themes/evergreen.scss", "bundleName": "evergreen", "inject": false },
+              { "input": "src/styles/themes/flatly.scss", "bundleName": "flatly", "inject": false },
+              { "input": "src/styles/themes/gopher.scss", "bundleName": "gopher", "inject": false },
+              { "input": "src/styles/themes/journal.scss", "bundleName": "journal", "inject": false },
+              { "input": "src/styles/themes/litera.scss", "bundleName": "litera", "inject": false },
+              { "input": "src/styles/themes/lumen.scss", "bundleName": "lumen", "inject": false },
+              { "input": "src/styles/themes/lux.scss", "bundleName": "lux", "inject": false },
+              { "input": "src/styles/themes/materia.scss", "bundleName": "materia", "inject": false },
+              { "input": "src/styles/themes/minty.scss", "bundleName": "minty", "inject": false },
+              { "input": "src/styles/themes/morph.scss", "bundleName": "morph", "inject": false },
+              { "input": "src/styles/themes/oxide.scss", "bundleName": "oxide", "inject": false },
+              { "input": "src/styles/themes/pulse.scss", "bundleName": "pulse", "inject": false },
+              { "input": "src/styles/themes/quartz.scss", "bundleName": "quartz", "inject": false },
+              { "input": "src/styles/themes/sandstone.scss", "bundleName": "sandstone", "inject": false },
+              { "input": "src/styles/themes/simplex.scss", "bundleName": "simplex", "inject": false },
+              { "input": "src/styles/themes/sketchy.scss", "bundleName": "sketchy", "inject": false },
+              { "input": "src/styles/themes/slate.scss", "bundleName": "slate", "inject": false },
+              { "input": "src/styles/themes/solar.scss", "bundleName": "solar", "inject": false },
+              { "input": "src/styles/themes/spacelab.scss", "bundleName": "spacelab", "inject": false },
+              { "input": "src/styles/themes/superhero.scss", "bundleName": "superhero", "inject": false },
+              { "input": "src/styles/themes/united.scss", "bundleName": "united", "inject": false },
+              { "input": "src/styles/themes/vapor.scss", "bundleName": "vapor", "inject": false },
+              { "input": "src/styles/themes/yeti.scss", "bundleName": "yeti", "inject": false },
+              { "input": "src/styles/themes/zephyr.scss", "bundleName": "zephyr", "inject": false },
+              { "input": "src/styles/themes/kernel.scss", "bundleName": "kernel", "inject": false }
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all",
+              "optimization": {
+                "fonts": false
+              }
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "tailswatch-docs:build:production"
+            },
+            "development": {
+              "buildTarget": "tailswatch-docs:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "tsconfig.spec.json",
+            "buildTarget": "tailswatch-docs:build:development"
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": false
+  }
+}

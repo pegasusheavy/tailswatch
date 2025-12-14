@@ -1,0 +1,6 @@
+@use "tailwindcss";
+@use "../../../../src/themes/darkly.scss";
+
+html {
+  scroll-behavior: smooth;
+}

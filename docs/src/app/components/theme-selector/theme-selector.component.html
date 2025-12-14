@@ -1,0 +1,22 @@
+<div class="relative">
+  <label for="theme-select" class="sr-only">Select theme</label>
+  <fa-icon
+    [icon]="['fas', 'swatchbook']"
+    class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[var(--color-text-muted)]"
+  ></fa-icon>
+  <select
+    id="theme-select"
+    (change)="onThemeChange($event)"
+    class="cursor-pointer appearance-none rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] py-2 pl-9 pr-10 text-sm font-medium text-[var(--color-text)] transition-colors hover:border-[var(--color-primary-500)] focus:border-[var(--color-primary-500)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)]/20"
+  >
+    @for (theme of themeService.themes; track theme.id) {
+      <option [value]="theme.id" [selected]="theme.id === themeService.currentThemeId()">
+        {{ theme.name }}
+      </option>
+    }
+  </select>
+  <fa-icon
+    [icon]="['fas', 'chevron-down']"
+    class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-sm text-[var(--color-text-muted)]"
+  ></fa-icon>
+</div>

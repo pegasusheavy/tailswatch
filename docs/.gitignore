@@ -1,0 +1,171 @@
+# ============================================
+# TAILSWATCH DOCS - ANGULAR 21+ APP GITIGNORE
+# ============================================
+
+# ----------------------------------------
+# DEPENDENCIES
+# ----------------------------------------
+node_modules/
+.pnpm-store/
+.yarn/
+.npm/
+
+# ----------------------------------------
+# BUILD OUTPUTS
+# ----------------------------------------
+dist/
+build/
+out/
+.output/
+*.tsbuildinfo
+
+# Angular specific
+.angular/
+.nx/
+.cache/
+
+# Server-side rendering
+.nitro/
+.vercel_build_output/
+
+# ----------------------------------------
+# IDE & EDITORS
+# ----------------------------------------
+# VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Cursor
+.cursor/*
+!.cursor/rules
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Vim/Neovim
+*.swp
+*.swo
+*.swn
+*~
+.netrwhist
+Session.vim
+tags
+
+# Emacs
+\#*\#
+.#*
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# ----------------------------------------
+# OPERATING SYSTEM
+# ----------------------------------------
+# macOS
+.DS_Store
+.DS_Store?
+.AppleDouble
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ----------------------------------------
+# LOGS
+# ----------------------------------------
+*.log
+logs/
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ----------------------------------------
+# ENVIRONMENT & SECRETS
+# ----------------------------------------
+.env
+.env.*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+!.env.example
+!.env.template
+
+# ----------------------------------------
+# TESTING
+# ----------------------------------------
+coverage/
+.nyc_output/
+test-results/
+playwright-report/
+playwright/.cache/
+cypress/videos/
+cypress/screenshots/
+junit.xml
+.vitest/
+
+# ----------------------------------------
+# CACHING
+# ----------------------------------------
+.cache/
+.turbo/
+.eslintcache
+.stylelintcache
+.sass-cache/
+
+# ----------------------------------------
+# TEMP FILES
+# ----------------------------------------
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.backup
+*.orig
+
+# ----------------------------------------
+# TYPESCRIPT
+# ----------------------------------------
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+
+# ----------------------------------------
+# PROJECT SPECIFIC
+# ----------------------------------------
+# Copied themes from root project (regenerated on build)
+public/themes/*.css
+
+# Generated environment files
+src/environments/environment.prod.ts.bak
+
+# SSR output
+server/
+
+# Prerender output
+browser/
+
+# Analytics/tracking
+.gtm/
+
+# Local development
+.scratch/
+NOTES.md

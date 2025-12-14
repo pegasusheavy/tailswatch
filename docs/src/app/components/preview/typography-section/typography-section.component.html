@@ -1,0 +1,50 @@
+<section id="typography" class="mb-16 scroll-mt-24">
+  <h2
+    appScrollAnimate="fade-right"
+    class="mb-6 border-b border-[var(--color-border)] pb-2 text-2xl font-semibold"
+  >Typography</h2>
+
+  <div class="space-y-6">
+    <div class="grid gap-4 md:grid-cols-2">
+      <div appScrollAnimate="fade-up">
+        <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Headings</h3>
+        <div class="space-y-3">
+          <h1 class="text-5xl font-bold">Heading 1</h1>
+          <h2 class="text-4xl font-bold">Heading 2</h2>
+          <h3 class="text-3xl font-semibold">Heading 3</h3>
+          <h4 class="text-2xl font-semibold">Heading 4</h4>
+          <h5 class="text-xl font-medium">Heading 5</h5>
+          <h6 class="text-lg font-medium">Heading 6</h6>
+        </div>
+      </div>
+      <div appScrollAnimate="fade-up" [animateDelay]="100">
+        <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Text Styles</h3>
+        <div class="space-y-3">
+          <p class="text-base">Regular body text for content and paragraphs.</p>
+          <p class="text-sm text-[var(--color-text-muted)]">Smaller muted text for secondary information.</p>
+          <p class="text-xs text-[var(--color-text-muted)]">Extra small text for captions and labels.</p>
+          <p class="font-bold">Bold text for emphasis.</p>
+          <p class="italic">Italic text for citations or emphasis.</p>
+          <p><a href="#" class="text-[var(--color-primary-500)] underline hover:text-[var(--color-primary-600)]">Link text with hover state</a></p>
+          <p><code class="rounded bg-[var(--color-surface)] px-1.5 py-0.5 text-sm text-[var(--color-primary-500)]">Inline code</code></p>
+        </div>
+      </div>
+    </div>
+
+    <div appScrollAnimate="fade-up" [animateDelay]="200">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Paragraph</h3>
+      <p class="max-w-2xl text-base leading-relaxed">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </div>
+
+    <div appScrollAnimate="fade-up" [animateDelay]="300">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Blockquote</h3>
+      <blockquote class="border-l-4 border-[var(--color-primary-500)] pl-4 italic text-[var(--color-text-muted)]">
+        "Design is not just what it looks like and feels like. Design is how it works."
+        <footer class="mt-2 text-sm not-italic">— Steve Jobs</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,6 @@
+@use "tailwindcss";
+@use "../../../../src/themes/slate.scss";
+
+html {
+  scroll-behavior: smooth;
+}

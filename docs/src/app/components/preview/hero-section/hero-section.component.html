@@ -1,0 +1,21 @@
+<section class="mb-12 border-b border-[var(--color-border)] pb-12 text-center">
+  <h1
+    appScrollAnimate="zoom-in"
+    class="mb-4 text-5xl font-bold text-[var(--color-primary-500)]"
+  >Tailswatch</h1>
+  <p
+    appScrollAnimate="fade-up"
+    [animateDelay]="100"
+    class="mb-2 text-xl text-[var(--color-text-muted)]"
+  >
+    Free customizable Tailwind CSS 4+ themes for your next project
+  </p>
+  <p
+    appScrollAnimate="fade-up"
+    [animateDelay]="200"
+    class="text-sm text-[var(--color-text-muted)]"
+  >
+    Currently viewing: <strong>{{ themeService.currentTheme().name }}</strong>
+    — {{ themeService.currentTheme().description }}
+  </p>
+</section>

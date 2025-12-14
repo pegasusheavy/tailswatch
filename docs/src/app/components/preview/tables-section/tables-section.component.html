@@ -1,0 +1,58 @@
+<section id="tables" class="mb-16 scroll-mt-24">
+  <h2
+    appScrollAnimate="fade-right"
+    class="mb-6 border-b border-[var(--color-border)] pb-2 text-2xl font-semibold"
+  >Tables</h2>
+
+  <div appScrollAnimate="flip-up" class="overflow-x-auto rounded-lg border border-[var(--color-border)]">
+    <table class="w-full text-left text-sm">
+      <thead class="bg-[var(--color-surface-muted)] text-xs uppercase text-[var(--color-text-muted)]">
+        <tr>
+          <th class="px-6 py-3">Name</th>
+          <th class="px-6 py-3">Email</th>
+          <th class="px-6 py-3">Role</th>
+          <th class="px-6 py-3">Status</th>
+          <th class="px-6 py-3">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-[var(--color-border)]">
+        <tr class="bg-[var(--color-surface)] hover:bg-[var(--color-surface-muted)]">
+          <td class="px-6 py-4 font-medium">John Doe</td>
+          <td class="px-6 py-4">john&#64;example.com</td>
+          <td class="px-6 py-4">Admin</td>
+          <td class="px-6 py-4"><span class="inline-flex items-center rounded-full bg-[var(--color-success-500)] px-2 py-0.5 text-xs font-medium text-white">Active</span></td>
+          <td class="px-6 py-4">
+            <button class="text-[var(--color-primary-500)] hover:underline">Edit</button>
+          </td>
+        </tr>
+        <tr class="bg-[var(--color-surface)] hover:bg-[var(--color-surface-muted)]">
+          <td class="px-6 py-4 font-medium">Jane Smith</td>
+          <td class="px-6 py-4">jane&#64;example.com</td>
+          <td class="px-6 py-4">Editor</td>
+          <td class="px-6 py-4"><span class="inline-flex items-center rounded-full bg-[var(--color-success-500)] px-2 py-0.5 text-xs font-medium text-white">Active</span></td>
+          <td class="px-6 py-4">
+            <button class="text-[var(--color-primary-500)] hover:underline">Edit</button>
+          </td>
+        </tr>
+        <tr class="bg-[var(--color-surface)] hover:bg-[var(--color-surface-muted)]">
+          <td class="px-6 py-4 font-medium">Bob Wilson</td>
+          <td class="px-6 py-4">bob&#64;example.com</td>
+          <td class="px-6 py-4">Viewer</td>
+          <td class="px-6 py-4"><span class="inline-flex items-center rounded-full bg-[var(--color-warning-500)] px-2 py-0.5 text-xs font-medium text-white">Pending</span></td>
+          <td class="px-6 py-4">
+            <button class="text-[var(--color-primary-500)] hover:underline">Edit</button>
+          </td>
+        </tr>
+        <tr class="bg-[var(--color-surface)] hover:bg-[var(--color-surface-muted)]">
+          <td class="px-6 py-4 font-medium">Alice Brown</td>
+          <td class="px-6 py-4">alice&#64;example.com</td>
+          <td class="px-6 py-4">Viewer</td>
+          <td class="px-6 py-4"><span class="inline-flex items-center rounded-full bg-[var(--color-error-500)] px-2 py-0.5 text-xs font-medium text-white">Inactive</span></td>
+          <td class="px-6 py-4">
+            <button class="text-[var(--color-primary-500)] hover:underline">Edit</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

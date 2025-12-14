@@ -1,0 +1,160 @@
+<section id="animations" class="mb-16 scroll-mt-24">
+  <h2 appScrollAnimate="fade-right" class="mb-6 border-b border-[var(--color-border)] pb-2 text-2xl font-semibold">Animations & Transitions</h2>
+
+  <div class="space-y-8">
+    <!-- Built-in Animations -->
+    <div appScrollAnimate="fade-up">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Tailwind Built-in Animations</h3>
+      <div class="flex flex-wrap gap-6" appStaggerChildren [staggerDelay]="80">
+        <div class="flex flex-col items-center gap-2">
+          <div class="flex h-16 w-16 animate-spin items-center justify-center rounded-xl bg-[var(--color-primary-500)]">
+            <fa-icon [icon]="['fas', 'gear']" class="text-xl text-white"></fa-icon>
+          </div>
+          <span class="text-xs text-[var(--color-text-muted)]">spin</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="flex h-16 w-16 animate-ping items-center justify-center rounded-full bg-[var(--color-success-500)]">
+            <fa-icon [icon]="['fas', 'bell']" class="text-xl text-white"></fa-icon>
+          </div>
+          <span class="text-xs text-[var(--color-text-muted)]">ping</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="flex h-16 w-16 animate-pulse items-center justify-center rounded-xl bg-[var(--color-secondary-500)]">
+            <fa-icon [icon]="['fas', 'heart']" class="text-xl text-white"></fa-icon>
+          </div>
+          <span class="text-xs text-[var(--color-text-muted)]">pulse</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="flex h-16 w-16 animate-bounce items-center justify-center rounded-xl bg-[var(--color-accent-500)]">
+            <fa-icon [icon]="['fas', 'arrow-down']" class="text-xl text-white"></fa-icon>
+          </div>
+          <span class="text-xs text-[var(--color-text-muted)]">bounce</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Transition Durations -->
+    <div appScrollAnimate="fade-up" [animateDelay]="100">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Transition Durations (hover)</h3>
+      <div class="flex flex-wrap gap-4" appStaggerChildren [staggerDelay]="60">
+        <button class="rounded-lg bg-[var(--color-primary-500)] px-4 py-2 text-sm text-white transition-transform duration-75 hover:scale-110">75ms</button>
+        <button class="rounded-lg bg-[var(--color-primary-500)] px-4 py-2 text-sm text-white transition-transform duration-150 hover:scale-110">150ms</button>
+        <button class="rounded-lg bg-[var(--color-primary-500)] px-4 py-2 text-sm text-white transition-transform duration-300 hover:scale-110">300ms</button>
+        <button class="rounded-lg bg-[var(--color-primary-500)] px-4 py-2 text-sm text-white transition-transform duration-500 hover:scale-110">500ms</button>
+        <button class="rounded-lg bg-[var(--color-primary-500)] px-4 py-2 text-sm text-white transition-transform duration-700 hover:scale-110">700ms</button>
+        <button class="rounded-lg bg-[var(--color-primary-500)] px-4 py-2 text-sm text-white transition-transform duration-1000 hover:scale-110">1000ms</button>
+      </div>
+    </div>
+
+    <!-- Easing Functions -->
+    <div appScrollAnimate="fade-up" [animateDelay]="200">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Easing Functions (hover)</h3>
+      <div class="flex flex-wrap gap-4" appStaggerChildren [staggerDelay]="60">
+        <button class="rounded-lg bg-[var(--color-secondary-500)] px-4 py-2 text-sm text-white transition-all duration-500 ease-linear hover:-translate-y-4">linear</button>
+        <button class="rounded-lg bg-[var(--color-secondary-500)] px-4 py-2 text-sm text-white transition-all duration-500 ease-in hover:-translate-y-4">ease-in</button>
+        <button class="rounded-lg bg-[var(--color-secondary-500)] px-4 py-2 text-sm text-white transition-all duration-500 ease-out hover:-translate-y-4">ease-out</button>
+        <button class="rounded-lg bg-[var(--color-secondary-500)] px-4 py-2 text-sm text-white transition-all duration-500 ease-in-out hover:-translate-y-4">ease-in-out</button>
+      </div>
+    </div>
+
+    <!-- Transform Effects -->
+    <div appScrollAnimate="fade-up" [animateDelay]="300">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Transform Effects (hover)</h3>
+      <div class="flex flex-wrap gap-6" appStaggerChildren [staggerDelay]="80">
+        <div class="flex flex-col items-center gap-2">
+          <div class="flex h-20 w-20 items-center justify-center rounded-xl bg-[var(--color-surface)] border border-[var(--color-border)] transition-transform duration-300 hover:scale-110 cursor-pointer">
+            <span class="text-sm">Scale</span>
+          </div>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="flex h-20 w-20 items-center justify-center rounded-xl bg-[var(--color-surface)] border border-[var(--color-border)] transition-transform duration-300 hover:rotate-12 cursor-pointer">
+            <span class="text-sm">Rotate</span>
+          </div>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="flex h-20 w-20 items-center justify-center rounded-xl bg-[var(--color-surface)] border border-[var(--color-border)] transition-transform duration-300 hover:skew-x-6 cursor-pointer">
+            <span class="text-sm">Skew</span>
+          </div>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="flex h-20 w-20 items-center justify-center rounded-xl bg-[var(--color-surface)] border border-[var(--color-border)] transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg cursor-pointer">
+            <span class="text-sm">Lift</span>
+          </div>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="flex h-20 w-20 items-center justify-center rounded-xl bg-[var(--color-surface)] border border-[var(--color-border)] transition-all duration-300 hover:scale-110 hover:rotate-6 hover:shadow-xl cursor-pointer">
+            <span class="text-sm">Combo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Color Transitions -->
+    <div appScrollAnimate="fade-up" [animateDelay]="400">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Color Transitions (hover)</h3>
+      <div class="flex flex-wrap gap-4" appStaggerChildren [staggerDelay]="60">
+        <button class="rounded-lg bg-[var(--color-primary-500)] px-4 py-2 text-sm text-white transition-colors duration-300 hover:bg-[var(--color-success-500)]">Primary → Success</button>
+        <button class="rounded-lg bg-[var(--color-secondary-500)] px-4 py-2 text-sm text-white transition-colors duration-300 hover:bg-[var(--color-accent-500)]">Secondary → Accent</button>
+        <button class="rounded-lg border-2 border-[var(--color-primary-500)] bg-transparent px-4 py-2 text-sm text-[var(--color-primary-500)] transition-all duration-300 hover:bg-[var(--color-primary-500)] hover:text-white">Outline Fill</button>
+        <div class="rounded-lg bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-accent-500)] p-0.5 transition-all duration-500 hover:from-[var(--color-success-500)] hover:to-[var(--color-info-500)]">
+          <button class="rounded-[calc(0.5rem-2px)] bg-[var(--color-surface)] px-4 py-2 text-sm">Gradient Shift</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Cards -->
+    <div appScrollAnimate="fade-up" [animateDelay]="500">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Interactive Cards</h3>
+      <div class="grid gap-4 md:grid-cols-3">
+        <!-- Lift Card -->
+        <div class="group cursor-pointer rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+          <fa-icon [icon]="['fas', 'arrow-up']" class="mb-3 text-2xl text-[var(--color-primary-500)] transition-transform group-hover:-translate-y-1"></fa-icon>
+          <h4 class="font-medium">Lift Effect</h4>
+          <p class="mt-2 text-sm text-[var(--color-text-muted)]">Card lifts up on hover with shadow</p>
+        </div>
+
+        <!-- Glow Card -->
+        <div class="group cursor-pointer rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 transition-all duration-300 hover:border-[var(--color-primary-500)] hover:shadow-[0_0_30px_-5px_var(--color-primary-500)]">
+          <fa-icon [icon]="['fas', 'bolt']" class="mb-3 text-2xl text-[var(--color-accent-500)] transition-transform group-hover:scale-110"></fa-icon>
+          <h4 class="font-medium">Glow Effect</h4>
+          <p class="mt-2 text-sm text-[var(--color-text-muted)]">Card glows with primary color</p>
+        </div>
+
+        <!-- Scale Card -->
+        <div class="group cursor-pointer rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 transition-all duration-300 hover:scale-105">
+          <fa-icon [icon]="['fas', 'expand']" class="mb-3 text-2xl text-[var(--color-success-500)] transition-transform group-hover:rotate-90"></fa-icon>
+          <h4 class="font-medium">Scale Effect</h4>
+          <p class="mt-2 text-sm text-[var(--color-text-muted)]">Card scales up on hover</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loading Spinners -->
+    <div appScrollAnimate="fade-up" [animateDelay]="600">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Loading Indicators</h3>
+      <div class="flex flex-wrap items-center gap-8">
+        <!-- Spinner -->
+        <div class="h-8 w-8 animate-spin rounded-full border-4 border-[var(--color-surface-muted)] border-t-[var(--color-primary-500)]"></div>
+
+        <!-- Dots -->
+        <div class="flex gap-1">
+          <div class="h-2 w-2 animate-bounce rounded-full bg-[var(--color-primary-500)] [animation-delay:-0.3s]"></div>
+          <div class="h-2 w-2 animate-bounce rounded-full bg-[var(--color-primary-500)] [animation-delay:-0.15s]"></div>
+          <div class="h-2 w-2 animate-bounce rounded-full bg-[var(--color-primary-500)]"></div>
+        </div>
+
+        <!-- Pulse Ring -->
+        <div class="relative flex h-8 w-8 items-center justify-center">
+          <div class="absolute h-full w-full animate-ping rounded-full bg-[var(--color-success-500)]/30"></div>
+          <div class="relative h-4 w-4 rounded-full bg-[var(--color-success-500)]"></div>
+        </div>
+
+        <!-- Bar Loading -->
+        <div class="h-1 w-32 overflow-hidden rounded-full bg-[var(--color-surface-muted)]">
+          <div class="h-full w-1/3 animate-[loading_1.5s_ease-in-out_infinite] rounded-full bg-[var(--color-accent-500)]"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

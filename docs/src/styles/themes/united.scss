@@ -1,0 +1,6 @@
+@use "tailwindcss";
+@use "../../../../src/themes/united.scss";
+
+html {
+  scroll-behavior: smooth;
+}

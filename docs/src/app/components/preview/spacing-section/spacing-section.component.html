@@ -1,0 +1,121 @@
+<section id="spacing" class="mb-16 scroll-mt-24">
+  <h2 appScrollAnimate="fade-right" class="mb-6 border-b border-[var(--color-border)] pb-2 text-2xl font-semibold">Spacing</h2>
+
+  <div class="space-y-8">
+    <!-- Spacing Scale -->
+    <div appScrollAnimate="fade-up">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Spacing Scale</h3>
+      <div class="space-y-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-4">
+        @for (space of spacingScale; track space.name) {
+          <div class="flex items-center gap-4">
+            <span class="w-8 text-xs text-[var(--color-text-muted)]">{{ space.name }}</span>
+            <div
+              class="h-4 bg-[var(--color-primary-500)]"
+              [style.width]="space.name === '0' ? '2px' : 'calc(' + space.name + ' * 0.25rem)'">
+            </div>
+            <span class="text-xs text-[var(--color-text-muted)]">{{ space.value }}</span>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Padding Examples -->
+    <div appScrollAnimate="fade-up" [animateDelay]="100">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Padding (p-*)</h3>
+      <div class="flex flex-wrap gap-4">
+        @for (p of [1, 2, 4, 6, 8]; track p) {
+          <div class="border-2 border-dashed border-[var(--color-primary-500)]">
+            <div
+              class="bg-[var(--color-primary-500)]/20"
+              [class]="'p-' + p">
+              <div class="rounded bg-[var(--color-surface)] px-2 py-1 text-xs">p-{{ p }}</div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Margin Examples -->
+    <div appScrollAnimate="fade-up" [animateDelay]="200">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Margin (m-*)</h3>
+      <div class="flex flex-wrap gap-6">
+        @for (m of [1, 2, 4, 6, 8]; track m) {
+          <div class="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface-muted)]">
+            <div
+              class="rounded bg-[var(--color-secondary-500)] text-white text-xs px-3 py-2"
+              [class]="'m-' + m">
+              m-{{ m }}
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Space Between -->
+    <div appScrollAnimate="fade-up" [animateDelay]="300">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Space Between (space-x-*, space-y-*)</h3>
+      <div class="grid gap-6 md:grid-cols-2">
+        <div>
+          <div class="mb-2 text-xs text-[var(--color-text-muted)]">space-x-4</div>
+          <div class="flex space-x-4 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-4">
+            @for (i of [1,2,3]; track i) {
+              <div class="h-12 w-12 rounded-lg bg-[var(--color-primary-500)]"></div>
+            }
+          </div>
+        </div>
+        <div>
+          <div class="mb-2 text-xs text-[var(--color-text-muted)]">space-y-2</div>
+          <div class="space-y-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-4">
+            @for (i of [1,2,3]; track i) {
+              <div class="h-8 rounded-lg bg-[var(--color-secondary-500)]"></div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Container Sizes -->
+    <div appScrollAnimate="fade-up" [animateDelay]="400">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Max Width (max-w-*)</h3>
+      <div class="space-y-3">
+        @for (w of ['xs', 'sm', 'md', 'lg', 'xl', '2xl']; track w) {
+          <div class="relative">
+            <div
+              class="h-6 rounded bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-accent-500)]"
+              [class]="'max-w-' + w">
+            </div>
+            <span class="absolute left-2 top-1/2 -translate-y-1/2 text-xs text-white">max-w-{{ w }}</span>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Width & Height -->
+    <div appScrollAnimate="fade-up" [animateDelay]="500">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Width & Height (w-*, h-*)</h3>
+      <div class="flex flex-wrap items-end gap-4">
+        <div class="text-center">
+          <div class="mx-auto h-8 w-8 rounded bg-[var(--color-primary-500)]"></div>
+          <span class="mt-1 text-xs text-[var(--color-text-muted)]">8</span>
+        </div>
+        <div class="text-center">
+          <div class="mx-auto h-12 w-12 rounded bg-[var(--color-primary-500)]"></div>
+          <span class="mt-1 text-xs text-[var(--color-text-muted)]">12</span>
+        </div>
+        <div class="text-center">
+          <div class="mx-auto h-16 w-16 rounded bg-[var(--color-primary-500)]"></div>
+          <span class="mt-1 text-xs text-[var(--color-text-muted)]">16</span>
+        </div>
+        <div class="text-center">
+          <div class="mx-auto h-20 w-20 rounded bg-[var(--color-primary-500)]"></div>
+          <span class="mt-1 text-xs text-[var(--color-text-muted)]">20</span>
+        </div>
+        <div class="text-center">
+          <div class="mx-auto h-24 w-24 rounded bg-[var(--color-primary-500)]"></div>
+          <span class="mt-1 text-xs text-[var(--color-text-muted)]">24</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

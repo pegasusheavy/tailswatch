@@ -1,0 +1,107 @@
+<section id="shadows" class="mb-16 scroll-mt-24">
+  <h2 appScrollAnimate="fade-right" class="mb-6 border-b border-[var(--color-border)] pb-2 text-2xl font-semibold">Shadows & Effects</h2>
+
+  <div class="space-y-8">
+    <!-- Box Shadows -->
+    <div appScrollAnimate="fade-up">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Box Shadows</h3>
+      <div class="flex flex-wrap gap-6" appStaggerChildren [staggerDelay]="80">
+        <div class="flex h-24 w-24 items-center justify-center rounded-lg bg-[var(--color-surface)] shadow-sm">
+          <span class="text-xs text-[var(--color-text-muted)]">sm</span>
+        </div>
+        <div class="flex h-24 w-24 items-center justify-center rounded-lg bg-[var(--color-surface)] shadow">
+          <span class="text-xs text-[var(--color-text-muted)]">default</span>
+        </div>
+        <div class="flex h-24 w-24 items-center justify-center rounded-lg bg-[var(--color-surface)] shadow-md">
+          <span class="text-xs text-[var(--color-text-muted)]">md</span>
+        </div>
+        <div class="flex h-24 w-24 items-center justify-center rounded-lg bg-[var(--color-surface)] shadow-lg">
+          <span class="text-xs text-[var(--color-text-muted)]">lg</span>
+        </div>
+        <div class="flex h-24 w-24 items-center justify-center rounded-lg bg-[var(--color-surface)] shadow-xl">
+          <span class="text-xs text-[var(--color-text-muted)]">xl</span>
+        </div>
+        <div class="flex h-24 w-24 items-center justify-center rounded-lg bg-[var(--color-surface)] shadow-2xl">
+          <span class="text-xs text-[var(--color-text-muted)]">2xl</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Colored Shadows -->
+    <div appScrollAnimate="fade-up" [animateDelay]="100">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Colored Shadows</h3>
+      <div class="flex flex-wrap gap-6" appStaggerChildren [staggerDelay]="80">
+        <div class="flex h-24 w-24 items-center justify-center rounded-lg bg-[var(--color-primary-500)] shadow-lg shadow-[var(--color-primary-500)]/40">
+          <span class="text-xs text-white">Primary</span>
+        </div>
+        <div class="flex h-24 w-24 items-center justify-center rounded-lg bg-[var(--color-secondary-500)] shadow-lg shadow-[var(--color-secondary-500)]/40">
+          <span class="text-xs text-white">Secondary</span>
+        </div>
+        <div class="flex h-24 w-24 items-center justify-center rounded-lg bg-[var(--color-accent-500)] shadow-lg shadow-[var(--color-accent-500)]/40">
+          <span class="text-xs text-white">Accent</span>
+        </div>
+        <div class="flex h-24 w-24 items-center justify-center rounded-lg bg-[var(--color-success-500)] shadow-lg shadow-[var(--color-success-500)]/40">
+          <span class="text-xs text-white">Success</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Opacity -->
+    <div appScrollAnimate="fade-up" [animateDelay]="200">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Opacity</h3>
+      <div class="flex flex-wrap gap-4" appStaggerChildren [staggerDelay]="50">
+        <div class="flex h-16 w-16 items-center justify-center rounded-lg bg-[var(--color-primary-500)] opacity-100">
+          <span class="text-[10px] text-white">100</span>
+        </div>
+        <div class="flex h-16 w-16 items-center justify-center rounded-lg bg-[var(--color-primary-500)] opacity-80">
+          <span class="text-[10px] text-white">80</span>
+        </div>
+        <div class="flex h-16 w-16 items-center justify-center rounded-lg bg-[var(--color-primary-500)] opacity-60">
+          <span class="text-[10px] text-white">60</span>
+        </div>
+        <div class="flex h-16 w-16 items-center justify-center rounded-lg bg-[var(--color-primary-500)] opacity-40">
+          <span class="text-[10px] text-white">40</span>
+        </div>
+        <div class="flex h-16 w-16 items-center justify-center rounded-lg bg-[var(--color-primary-500)] opacity-20">
+          <span class="text-[10px] text-white">20</span>
+        </div>
+        <div class="flex h-16 w-16 items-center justify-center rounded-lg bg-[var(--color-primary-500)] opacity-10">
+          <span class="text-[10px] text-white">10</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blur Effects -->
+    <div appScrollAnimate="fade-up" [animateDelay]="300">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Blur & Backdrop Effects</h3>
+      <div class="relative h-48 overflow-hidden rounded-xl bg-gradient-to-br from-[var(--color-primary-400)] via-[var(--color-accent-500)] to-[var(--color-secondary-500)]">
+        <div class="absolute inset-0 flex items-center justify-center gap-4 p-4">
+          <div class="flex h-32 w-32 items-center justify-center rounded-lg border border-white/20 bg-white/10 backdrop-blur-sm">
+            <span class="text-xs text-white">blur-sm</span>
+          </div>
+          <div class="flex h-32 w-32 items-center justify-center rounded-lg border border-white/20 bg-white/10 backdrop-blur-md">
+            <span class="text-xs text-white">blur-md</span>
+          </div>
+          <div class="flex h-32 w-32 items-center justify-center rounded-lg border border-white/20 bg-white/10 backdrop-blur-lg">
+            <span class="text-xs text-white">blur-lg</span>
+          </div>
+          <div class="flex h-32 w-32 items-center justify-center rounded-lg border border-white/20 bg-white/10 backdrop-blur-xl">
+            <span class="text-xs text-white">blur-xl</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ring -->
+    <div appScrollAnimate="fade-up" [animateDelay]="400">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Focus Rings</h3>
+      <div class="flex flex-wrap gap-6">
+        <button class="rounded-lg bg-[var(--color-surface)] px-4 py-2 text-sm ring-2 ring-[var(--color-primary-500)]">Ring Primary</button>
+        <button class="rounded-lg bg-[var(--color-surface)] px-4 py-2 text-sm ring-2 ring-[var(--color-success-500)]">Ring Success</button>
+        <button class="rounded-lg bg-[var(--color-surface)] px-4 py-2 text-sm ring-2 ring-[var(--color-error-500)]">Ring Error</button>
+        <button class="rounded-lg bg-[var(--color-surface)] px-4 py-2 text-sm ring-2 ring-offset-2 ring-offset-[var(--color-background)] ring-[var(--color-primary-500)]">Ring Offset</button>
+      </div>
+    </div>
+  </div>
+</section>
+

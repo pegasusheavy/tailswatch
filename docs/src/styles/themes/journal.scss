@@ -1,0 +1,6 @@
+@use "tailwindcss";
+@use "../../../../src/themes/journal.scss";
+
+html {
+  scroll-behavior: smooth;
+}

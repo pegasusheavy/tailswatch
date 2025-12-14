@@ -1,0 +1,104 @@
+<section id="navigation" class="mb-16 scroll-mt-24">
+  <h2
+    appScrollAnimate="fade-right"
+    class="mb-6 border-b border-[var(--color-border)] pb-2 text-2xl font-semibold"
+  >Navigation</h2>
+
+  <div class="space-y-8">
+    <!-- Tabs -->
+    <div appScrollAnimate="fade-up">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Tabs</h3>
+      <div class="border-b border-[var(--color-border)]">
+        <nav class="-mb-px flex gap-4">
+          <a href="#" class="border-b-2 border-[var(--color-primary-500)] px-1 pb-3 text-sm font-medium text-[var(--color-primary-500)]">Active Tab</a>
+          <a href="#" class="border-b-2 border-transparent px-1 pb-3 text-sm font-medium text-[var(--color-text-muted)] hover:border-[var(--color-border)] hover:text-[var(--color-text)]">Tab Two</a>
+          <a href="#" class="border-b-2 border-transparent px-1 pb-3 text-sm font-medium text-[var(--color-text-muted)] hover:border-[var(--color-border)] hover:text-[var(--color-text)]">Tab Three</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Pills -->
+    <div appScrollAnimate="fade-up" [animateDelay]="100">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Pills</h3>
+      <nav class="flex flex-wrap gap-2">
+        <a href="#" class="rounded-full bg-[var(--color-primary-500)] px-4 py-2 text-sm font-medium text-white">Active</a>
+        <a href="#" class="rounded-full bg-[var(--color-surface)] px-4 py-2 text-sm font-medium text-[var(--color-text)] hover:bg-[var(--color-surface-muted)]">Link</a>
+        <a href="#" class="rounded-full bg-[var(--color-surface)] px-4 py-2 text-sm font-medium text-[var(--color-text)] hover:bg-[var(--color-surface-muted)]">Link</a>
+      </nav>
+    </div>
+
+    <!-- Breadcrumbs -->
+    <div appScrollAnimate="fade-up" [animateDelay]="200">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Breadcrumbs</h3>
+      <nav class="flex" aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2 text-sm">
+          <li>
+            <a href="#" class="flex items-center gap-1 text-[var(--color-text-muted)] hover:text-[var(--color-primary-500)]">
+              <fa-icon [icon]="['fas', 'home']" class="text-xs"></fa-icon>
+              Home
+            </a>
+          </li>
+          <li><fa-icon [icon]="['fas', 'chevron-right']" class="text-[10px] text-[var(--color-text-muted)]"></fa-icon></li>
+          <li><a href="#" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-500)]">Products</a></li>
+          <li><fa-icon [icon]="['fas', 'chevron-right']" class="text-[10px] text-[var(--color-text-muted)]"></fa-icon></li>
+          <li><a href="#" class="text-[var(--color-text-muted)] hover:text-[var(--color-primary-500)]">Category</a></li>
+          <li><fa-icon [icon]="['fas', 'chevron-right']" class="text-[10px] text-[var(--color-text-muted)]"></fa-icon></li>
+          <li class="font-medium text-[var(--color-text)]">Current Page</li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- Pagination -->
+    <div appScrollAnimate="fade-up" [animateDelay]="300">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Pagination</h3>
+      <nav class="flex items-center gap-1">
+        <a href="#" class="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-2 text-sm text-[var(--color-text-muted)] hover:bg-[var(--color-surface-muted)]">
+          <fa-icon [icon]="['fas', 'chevron-left']"></fa-icon>
+        </a>
+        <a href="#" class="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-2 text-sm font-medium text-[var(--color-text)] hover:bg-[var(--color-surface-muted)]">1</a>
+        <a href="#" class="rounded-lg border border-[var(--color-primary-500)] bg-[var(--color-primary-500)] px-3 py-2 text-sm font-medium text-white">2</a>
+        <a href="#" class="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-2 text-sm font-medium text-[var(--color-text)] hover:bg-[var(--color-surface-muted)]">3</a>
+        <span class="px-2 text-[var(--color-text-muted)]">
+          <fa-icon [icon]="['fas', 'ellipsis']"></fa-icon>
+        </span>
+        <a href="#" class="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-2 text-sm font-medium text-[var(--color-text)] hover:bg-[var(--color-surface-muted)]">10</a>
+        <a href="#" class="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-2 text-sm text-[var(--color-text-muted)] hover:bg-[var(--color-surface-muted)]">
+          <fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Navbar -->
+    <div appScrollAnimate="flip-up" [animateDelay]="400">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Navbar</h3>
+      <nav class="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-8">
+            <span class="flex items-center gap-2 text-lg font-bold text-[var(--color-primary-500)]">
+              <fa-icon [icon]="['fas', 'bolt']"></fa-icon>
+              Brand
+            </span>
+            <div class="hidden items-center gap-6 md:flex">
+              <a href="#" class="flex items-center gap-1 text-sm font-medium text-[var(--color-text)] hover:text-[var(--color-primary-500)]">
+                <fa-icon [icon]="['fas', 'home']" class="text-xs"></fa-icon>
+                Home
+              </a>
+              <a href="#" class="text-sm font-medium text-[var(--color-text-muted)] hover:text-[var(--color-primary-500)]">About</a>
+              <a href="#" class="text-sm font-medium text-[var(--color-text-muted)] hover:text-[var(--color-primary-500)]">Services</a>
+              <a href="#" class="text-sm font-medium text-[var(--color-text-muted)] hover:text-[var(--color-primary-500)]">Contact</a>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <button class="rounded-lg p-2 text-[var(--color-text-muted)] hover:bg-[var(--color-surface-muted)] hover:text-[var(--color-text)]">
+              <fa-icon [icon]="['fas', 'bell']"></fa-icon>
+            </button>
+            <button class="rounded-lg bg-[var(--color-primary-500)] px-4 py-2 text-sm font-medium text-white hover:bg-[var(--color-primary-600)]">
+              <fa-icon [icon]="['fas', 'arrow-right-to-bracket']" class="mr-2"></fa-icon>
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</section>

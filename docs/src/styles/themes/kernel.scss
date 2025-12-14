@@ -1,0 +1,7 @@
+@use "tailwindcss";
+@use "../../../../src/themes/kernel.scss";
+
+html {
+  scroll-behavior: smooth;
+}
+

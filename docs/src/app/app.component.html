@@ -1,0 +1,71 @@
+@if (isFullPageLayout) {
+  <!-- Dashboard/E-commerce have their own full-page layout -->
+  <router-outlet />
+} @else {
+  <div class="min-h-screen bg-[var(--color-background)] text-[var(--color-text)] transition-colors duration-300">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 border-b border-[var(--color-border)] bg-[var(--color-surface)]">
+      <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center gap-3">
+          <span class="text-2xl">🎨</span>
+          <a href="/" class="text-xl font-semibold hover:text-[var(--color-primary-500)]">Tailswatch</a>
+        </div>
+        <div class="flex items-center gap-4">
+          <a
+            href="/dashboard"
+            class="hidden rounded-lg border border-[var(--color-border)] px-3 py-1.5 text-sm font-medium transition-colors hover:bg-[var(--color-surface-muted)] sm:block"
+          >
+            Dashboard →
+          </a>
+          <a
+            href="/ecommerce"
+            class="hidden rounded-lg border border-[var(--color-border)] px-3 py-1.5 text-sm font-medium transition-colors hover:bg-[var(--color-surface-muted)] sm:block"
+          >
+            E-Commerce →
+          </a>
+          <a
+            href="/portfolio"
+            class="hidden rounded-lg border border-[var(--color-border)] px-3 py-1.5 text-sm font-medium transition-colors hover:bg-[var(--color-surface-muted)] lg:block"
+          >
+            Portfolio →
+          </a>
+          <a
+            href="/forum"
+            class="hidden rounded-lg border border-[var(--color-border)] px-3 py-1.5 text-sm font-medium transition-colors hover:bg-[var(--color-surface-muted)] lg:block"
+          >
+            Forum →
+          </a>
+          <a
+            href="/saas"
+            class="hidden rounded-lg border border-[var(--color-border)] px-3 py-1.5 text-sm font-medium transition-colors hover:bg-[var(--color-surface-muted)] lg:block"
+          >
+            SaaS →
+          </a>
+          <app-theme-selector />
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <router-outlet />
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-[var(--color-border)] bg-[var(--color-surface)] py-6 text-center text-sm text-[var(--color-text-muted)]">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
+          <p>© 2025 Pegasus Heavy Industries LLC. MIT License.</p>
+          <div class="flex gap-4">
+            <a href="https://github.com/PegasusHeavyIndustries/tailswatch" target="_blank" class="transition-colors hover:text-[var(--color-primary-500)]">GitHub</a>
+            <a href="/dashboard" class="transition-colors hover:text-[var(--color-primary-500)]">Dashboard</a>
+            <a href="/ecommerce" class="transition-colors hover:text-[var(--color-primary-500)]">E-Commerce</a>
+            <a href="/portfolio" class="transition-colors hover:text-[var(--color-primary-500)]">Portfolio</a>
+            <a href="/forum" class="transition-colors hover:text-[var(--color-primary-500)]">Forum</a>
+            <a href="/saas" class="transition-colors hover:text-[var(--color-primary-500)]">SaaS</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+}

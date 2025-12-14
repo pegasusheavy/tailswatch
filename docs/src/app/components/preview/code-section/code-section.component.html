@@ -1,0 +1,121 @@
+<section id="code" class="mb-16 scroll-mt-24">
+  <div class="mb-6 flex items-center justify-between border-b border-[var(--color-border)] pb-2">
+    <h2 appScrollAnimate="fade-right" class="text-2xl font-semibold">Code Blocks</h2>
+    <div class="flex gap-2">
+      <button
+        (click)="expandAll()"
+        class="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-1.5 text-xs font-medium text-[var(--color-text-muted)] transition-colors hover:bg-[var(--color-surface-muted)] hover:text-[var(--color-text)]"
+      >
+        <fa-icon [icon]="['fas', 'expand']" class="mr-1.5"></fa-icon>
+        Expand All
+      </button>
+      <button
+        (click)="collapseAll()"
+        class="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-1.5 text-xs font-medium text-[var(--color-text-muted)] transition-colors hover:bg-[var(--color-surface-muted)] hover:text-[var(--color-text)]"
+      >
+        <fa-icon [icon]="['fas', 'compress']" class="mr-1.5"></fa-icon>
+        Collapse All
+      </button>
+    </div>
+  </div>
+
+  <div class="space-y-4" appStaggerChildren [staggerDelay]="80">
+    @for (example of codeExamples; track example.id) {
+      <div class="overflow-hidden rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)]">
+        <!-- Header -->
+        <button
+          (click)="toggleBlock(example.id)"
+          class="flex w-full items-center justify-between px-4 py-3 text-left transition-colors hover:bg-[var(--color-surface-muted)]"
+        >
+          <div class="flex items-center gap-3">
+            <span class="inline-flex items-center rounded-md bg-[var(--color-primary-500)]/10 px-2 py-1 text-xs font-medium text-[var(--color-primary-500)]">
+              {{ example.language }}
+            </span>
+            <span class="font-medium">{{ example.title }}</span>
+          </div>
+          <fa-icon
+            [icon]="['fas', 'chevron-down']"
+            class="text-sm text-[var(--color-text-muted)] transition-transform duration-200"
+            [class.rotate-180]="isExpanded(example.id)"
+          ></fa-icon>
+        </button>
+
+        <!-- Code Content -->
+        @if (isExpanded(example.id)) {
+          <div class="border-t border-[var(--color-border)]">
+            <div class="relative">
+              <!-- Copy Button -->
+              <button
+                class="absolute right-2 top-2 rounded-md bg-[var(--color-surface-elevated)] p-1.5 text-[var(--color-text-muted)] opacity-0 transition-opacity hover:text-[var(--color-text)] group-hover:opacity-100 [div:hover_&]:opacity-100"
+                title="Copy code"
+              >
+                <fa-icon [icon]="['fas', 'copy']" class="text-sm"></fa-icon>
+              </button>
+
+              <!-- Code Block -->
+              <pre class="overflow-x-auto bg-[var(--color-background)] p-4 text-sm leading-relaxed"><code class="font-mono text-[var(--color-text)]">{{ example.code }}</code></pre>
+            </div>
+          </div>
+        }
+      </div>
+    }
+  </div>
+
+  <!-- Inline Code Examples -->
+  <div appScrollAnimate="fade-up" [animateDelay]="300" class="mt-8">
+    <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Inline Code Styles</h3>
+    <div class="space-y-3 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-4">
+      <p class="text-sm">
+        Use <code class="rounded bg-[var(--color-background)] px-1.5 py-0.5 font-mono text-[var(--color-primary-500)]">const</code>
+        and <code class="rounded bg-[var(--color-background)] px-1.5 py-0.5 font-mono text-[var(--color-primary-500)]">let</code>
+        instead of <code class="rounded bg-[var(--color-background)] px-1.5 py-0.5 font-mono text-[var(--color-error-500)] line-through">var</code>.
+      </p>
+      <p class="text-sm">
+        Call <code class="rounded bg-[var(--color-background)] px-1.5 py-0.5 font-mono text-[var(--color-accent-500)]">fetchData()</code>
+        to retrieve the user object from the API endpoint at
+        <code class="rounded bg-[var(--color-background)] px-1.5 py-0.5 font-mono text-[var(--color-success-500)]">/api/v1/users</code>.
+      </p>
+      <p class="text-sm">
+        Set the environment variable
+        <code class="rounded bg-[var(--color-background)] px-1.5 py-0.5 font-mono text-[var(--color-warning-500)]">NODE_ENV=production</code>
+        before deploying.
+      </p>
+    </div>
+  </div>
+
+  <!-- Terminal/Console Output -->
+  <div appScrollAnimate="fade-up" [animateDelay]="400" class="mt-8">
+    <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Terminal Output</h3>
+    <div class="overflow-hidden rounded-lg border border-[var(--color-border)]">
+      <!-- Terminal Header -->
+      <div class="flex items-center gap-2 border-b border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2">
+        <div class="flex gap-1.5">
+          <div class="h-3 w-3 rounded-full bg-[var(--color-error-500)]"></div>
+          <div class="h-3 w-3 rounded-full bg-[var(--color-warning-500)]"></div>
+          <div class="h-3 w-3 rounded-full bg-[var(--color-success-500)]"></div>
+        </div>
+        <span class="ml-2 text-xs text-[var(--color-text-muted)]">Terminal</span>
+      </div>
+      <!-- Terminal Content -->
+      <div class="bg-[var(--color-background)] p-4 font-mono text-sm">
+        <div class="text-[var(--color-text-muted)]">$ npm install tailswatch</div>
+        <div class="mt-2 text-[var(--color-success-500)]">✓ Packages installed successfully</div>
+        <div class="mt-1 text-[var(--color-text-muted)]">$ npm run build</div>
+        <div class="mt-2">
+          <span class="text-[var(--color-info-500)]">info</span>
+          <span class="text-[var(--color-text)]"> - Compiling themes...</span>
+        </div>
+        <div class="mt-1">
+          <span class="text-[var(--color-warning-500)]">warn</span>
+          <span class="text-[var(--color-text)]"> - Using experimental features</span>
+        </div>
+        <div class="mt-1">
+          <span class="text-[var(--color-success-500)]">success</span>
+          <span class="text-[var(--color-text)]"> - Build completed in 2.4s</span>
+        </div>
+        <div class="mt-2 text-[var(--color-text-muted)]">$ <span class="animate-pulse">▋</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,6 @@
+@use "tailwindcss";
+@use "../../../../src/themes/spacelab.scss";
+
+html {
+  scroll-behavior: smooth;
+}

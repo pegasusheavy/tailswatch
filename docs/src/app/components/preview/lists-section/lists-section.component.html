@@ -1,0 +1,99 @@
+<section id="lists" class="mb-16 scroll-mt-24">
+  <h2
+    appScrollAnimate="fade-right"
+    class="mb-6 border-b border-[var(--color-border)] pb-2 text-2xl font-semibold"
+  >Lists</h2>
+
+  <div class="grid gap-8 lg:grid-cols-2" appStaggerChildren [staggerDelay]="150">
+    <!-- Simple List -->
+    <div>
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Simple List</h3>
+      <ul class="divide-y divide-[var(--color-border)] rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)]">
+        <li class="px-4 py-3">First item</li>
+        <li class="px-4 py-3">Second item</li>
+        <li class="px-4 py-3">Third item</li>
+        <li class="px-4 py-3">Fourth item</li>
+      </ul>
+    </div>
+
+    <!-- List with Actions -->
+    <div>
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">List with Actions</h3>
+      <ul class="divide-y divide-[var(--color-border)] rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)]">
+        <li class="flex items-center justify-between px-4 py-3">
+          <span>List item one</span>
+          <button class="text-sm text-[var(--color-primary-500)] hover:underline">
+            <fa-icon [icon]="['fas', 'pen']" class="mr-1"></fa-icon>Edit
+          </button>
+        </li>
+        <li class="flex items-center justify-between px-4 py-3">
+          <span>List item two</span>
+          <button class="text-sm text-[var(--color-primary-500)] hover:underline">
+            <fa-icon [icon]="['fas', 'pen']" class="mr-1"></fa-icon>Edit
+          </button>
+        </li>
+        <li class="flex items-center justify-between px-4 py-3">
+          <span>List item three</span>
+          <button class="text-sm text-[var(--color-primary-500)] hover:underline">
+            <fa-icon [icon]="['fas', 'pen']" class="mr-1"></fa-icon>Edit
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- List with Icons -->
+    <div>
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">List with Icons</h3>
+      <ul class="divide-y divide-[var(--color-border)] rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)]">
+        <li class="flex items-center gap-3 px-4 py-3">
+          <fa-icon [icon]="['fas', 'envelope']" class="text-lg text-[var(--color-primary-500)]"></fa-icon>
+          <span>Messages</span>
+        </li>
+        <li class="flex items-center gap-3 px-4 py-3">
+          <fa-icon [icon]="['fas', 'bell']" class="text-lg text-[var(--color-secondary-500)]"></fa-icon>
+          <span>Notifications</span>
+        </li>
+        <li class="flex items-center gap-3 px-4 py-3">
+          <fa-icon [icon]="['fas', 'gear']" class="text-lg text-[var(--color-accent-500)]"></fa-icon>
+          <span>Settings</span>
+        </li>
+        <li class="flex items-center gap-3 px-4 py-3">
+          <fa-icon [icon]="['fas', 'shield-halved']" class="text-lg text-[var(--color-success-500)]"></fa-icon>
+          <span>Security</span>
+        </li>
+        <li class="flex items-center gap-3 px-4 py-3">
+          <fa-icon [icon]="['fas', 'credit-card']" class="text-lg text-[var(--color-warning-500)]"></fa-icon>
+          <span>Billing</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- List with Descriptions -->
+    <div>
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">List with Descriptions</h3>
+      <ul class="divide-y divide-[var(--color-border)] rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)]">
+        <li class="flex items-center gap-3 px-4 py-3">
+          <fa-icon [icon]="['fas', 'user']" class="text-lg text-[var(--color-text-muted)]"></fa-icon>
+          <div>
+            <div class="font-medium">Account Settings</div>
+            <div class="text-sm text-[var(--color-text-muted)]">Manage your account preferences</div>
+          </div>
+        </li>
+        <li class="flex items-center gap-3 px-4 py-3">
+          <fa-icon [icon]="['fas', 'lock']" class="text-lg text-[var(--color-text-muted)]"></fa-icon>
+          <div>
+            <div class="font-medium">Privacy</div>
+            <div class="text-sm text-[var(--color-text-muted)]">Control your privacy settings</div>
+          </div>
+        </li>
+        <li class="flex items-center gap-3 px-4 py-3">
+          <fa-icon [icon]="['fas', 'bell']" class="text-lg text-[var(--color-text-muted)]"></fa-icon>
+          <div>
+            <div class="font-medium">Notifications</div>
+            <div class="text-sm text-[var(--color-text-muted)]">Choose what updates you receive</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

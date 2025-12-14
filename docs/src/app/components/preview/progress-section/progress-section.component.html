@@ -1,0 +1,114 @@
+<section id="progress" class="mb-16 scroll-mt-24">
+  <h2
+    appScrollAnimate="fade-right"
+    class="mb-6 border-b border-[var(--color-border)] pb-2 text-2xl font-semibold"
+  >Progress</h2>
+
+  <div class="space-y-6">
+    <!-- Progress Bars -->
+    <div appScrollAnimate="fade-up">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Progress Bars</h3>
+      <div class="space-y-4" appStaggerChildren [staggerDelay]="100">
+        <div>
+          <div class="mb-1 flex justify-between text-sm">
+            <span>Primary</span>
+            <span class="text-[var(--color-text-muted)]">75%</span>
+          </div>
+          <div class="h-2 w-full overflow-hidden rounded-full bg-[var(--color-surface-muted)]">
+            <div class="h-full w-3/4 rounded-full bg-[var(--color-primary-500)]"></div>
+          </div>
+        </div>
+        <div>
+          <div class="mb-1 flex justify-between text-sm">
+            <span>Secondary</span>
+            <span class="text-[var(--color-text-muted)]">50%</span>
+          </div>
+          <div class="h-2 w-full overflow-hidden rounded-full bg-[var(--color-surface-muted)]">
+            <div class="h-full w-1/2 rounded-full bg-[var(--color-secondary-500)]"></div>
+          </div>
+        </div>
+        <div>
+          <div class="mb-1 flex justify-between text-sm">
+            <span>Success</span>
+            <span class="text-[var(--color-text-muted)]">100%</span>
+          </div>
+          <div class="h-2 w-full overflow-hidden rounded-full bg-[var(--color-surface-muted)]">
+            <div class="h-full w-full rounded-full bg-[var(--color-success-500)]"></div>
+          </div>
+        </div>
+        <div>
+          <div class="mb-1 flex justify-between text-sm">
+            <span>Warning</span>
+            <span class="text-[var(--color-text-muted)]">33%</span>
+          </div>
+          <div class="h-2 w-full overflow-hidden rounded-full bg-[var(--color-surface-muted)]">
+            <div class="h-full w-1/3 rounded-full bg-[var(--color-warning-500)]"></div>
+          </div>
+        </div>
+        <div>
+          <div class="mb-1 flex justify-between text-sm">
+            <span>Error</span>
+            <span class="text-[var(--color-text-muted)]">10%</span>
+          </div>
+          <div class="h-2 w-full overflow-hidden rounded-full bg-[var(--color-surface-muted)]">
+            <div class="h-full w-[10%] rounded-full bg-[var(--color-error-500)]"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Different Sizes -->
+    <div appScrollAnimate="fade-up" [animateDelay]="200">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Different Sizes</h3>
+      <div class="space-y-4" appStaggerChildren [staggerDelay]="80">
+        <div>
+          <span class="mb-1 block text-xs text-[var(--color-text-muted)]">Extra Small</span>
+          <div class="h-1 w-full overflow-hidden rounded-full bg-[var(--color-surface-muted)]">
+            <div class="h-full w-3/4 rounded-full bg-[var(--color-primary-500)]"></div>
+          </div>
+        </div>
+        <div>
+          <span class="mb-1 block text-xs text-[var(--color-text-muted)]">Small</span>
+          <div class="h-1.5 w-full overflow-hidden rounded-full bg-[var(--color-surface-muted)]">
+            <div class="h-full w-3/4 rounded-full bg-[var(--color-primary-500)]"></div>
+          </div>
+        </div>
+        <div>
+          <span class="mb-1 block text-xs text-[var(--color-text-muted)]">Medium</span>
+          <div class="h-2.5 w-full overflow-hidden rounded-full bg-[var(--color-surface-muted)]">
+            <div class="h-full w-3/4 rounded-full bg-[var(--color-primary-500)]"></div>
+          </div>
+        </div>
+        <div>
+          <span class="mb-1 block text-xs text-[var(--color-text-muted)]">Large</span>
+          <div class="h-4 w-full overflow-hidden rounded-full bg-[var(--color-surface-muted)]">
+            <div class="h-full w-3/4 rounded-full bg-[var(--color-primary-500)]"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Spinners -->
+    <div appScrollAnimate="zoom-in" [animateDelay]="300">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Spinners</h3>
+      <div class="flex flex-wrap items-center gap-6" appStaggerChildren [staggerDelay]="100">
+        <svg class="h-5 w-5 animate-spin text-[var(--color-primary-500)]" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        <svg class="h-6 w-6 animate-spin text-[var(--color-secondary-500)]" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        <svg class="h-8 w-8 animate-spin text-[var(--color-accent-500)]" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        <svg class="h-10 w-10 animate-spin text-[var(--color-success-500)]" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>

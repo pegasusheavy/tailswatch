@@ -1,0 +1,113 @@
+@use "tailwindcss";
+
+// ============================================
+// DARK THEME
+// A modern dark theme with vibrant accents
+// ============================================
+
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+@theme {
+  // ----------------------------------------
+  // PRIMARY COLOR - Blue (adjusted for dark)
+  // ----------------------------------------
+
+  --color-primary-50: oklch(0.282 0.091 267.9);
+  --color-primary-100: oklch(0.379 0.146 265.5);
+  --color-primary-200: oklch(0.424 0.199 265.6);
+  --color-primary-300: oklch(0.488 0.243 264.4);
+  --color-primary-400: oklch(0.546 0.245 262.9);
+  --color-primary-500: oklch(0.623 0.214 259.1);
+  --color-primary-600: oklch(0.707 0.165 254.6);
+  --color-primary-700: oklch(0.809 0.105 251.8);
+  --color-primary-800: oklch(0.882 0.059 254.1);
+  --color-primary-900: oklch(0.932 0.032 255.5);
+  --color-primary-950: oklch(0.97 0.014 254.6);
+
+  // ----------------------------------------
+  // SECONDARY COLOR - Slate (inverted)
+  // ----------------------------------------
+
+  --color-secondary-50: oklch(0.129 0.042 264.7);
+  --color-secondary-100: oklch(0.208 0.042 265.8);
+  --color-secondary-200: oklch(0.279 0.041 260.0);
+  --color-secondary-300: oklch(0.372 0.044 257.3);
+  --color-secondary-400: oklch(0.446 0.043 257.3);
+  --color-secondary-500: oklch(0.554 0.046 257.4);
+  --color-secondary-600: oklch(0.704 0.04 256.8);
+  --color-secondary-700: oklch(0.869 0.022 252.9);
+  --color-secondary-800: oklch(0.929 0.013 255.5);
+  --color-secondary-900: oklch(0.968 0.007 247.9);
+  --color-secondary-950: oklch(0.984 0.003 247.9);
+
+  // ----------------------------------------
+  // ACCENT COLOR - Amber (vibrant in dark)
+  // ----------------------------------------
+
+  --color-accent-50: oklch(0.279 0.077 45.6);
+  --color-accent-100: oklch(0.414 0.112 45.9);
+  --color-accent-200: oklch(0.473 0.137 46.2);
+  --color-accent-300: oklch(0.555 0.163 48.9);
+  --color-accent-400: oklch(0.666 0.179 58.3);
+  --color-accent-500: oklch(0.769 0.188 70.1);
+  --color-accent-600: oklch(0.828 0.189 84.4);
+  --color-accent-700: oklch(0.879 0.169 91.6);
+  --color-accent-800: oklch(0.924 0.12 95.0);
+  --color-accent-900: oklch(0.962 0.059 95.6);
+  --color-accent-950: oklch(0.987 0.022 95.3);
+
+  // ----------------------------------------
+  // SEMANTIC COLORS (Dark adjusted)
+  // ----------------------------------------
+
+  // Success - Green
+  --color-success-50: oklch(0.166 0.054 155.8);
+  --color-success-500: oklch(0.723 0.191 142.5);
+  --color-success-600: oklch(0.792 0.177 138.2);
+  --color-success-700: oklch(0.845 0.143 136.5);
+
+  // Warning - Yellow
+  --color-warning-50: oklch(0.218 0.044 60.3);
+  --color-warning-500: oklch(0.795 0.184 86.0);
+  --color-warning-600: oklch(0.852 0.199 91.9);
+  --color-warning-700: oklch(0.905 0.182 98.1);
+
+  // Error - Red
+  --color-error-50: oklch(0.212 0.063 25.7);
+  --color-error-500: oklch(0.637 0.237 25.3);
+  --color-error-600: oklch(0.704 0.191 22.2);
+  --color-error-700: oklch(0.771 0.15 20.9);
+
+  // Info - Cyan
+  --color-info-50: oklch(0.183 0.038 220.7);
+  --color-info-500: oklch(0.715 0.143 215.2);
+  --color-info-600: oklch(0.789 0.109 210.5);
+  --color-info-700: oklch(0.865 0.075 207.0);
+
+  // ----------------------------------------
+  // SURFACE COLORS
+  // ----------------------------------------
+
+  --color-background: oklch(0.145 0 0);
+  --color-foreground: oklch(0.985 0 0);
+  --color-surface: oklch(0.205 0 0);
+  --color-surface-elevated: oklch(0.269 0 0);
+  --color-border: oklch(0.371 0 0);
+  --color-border-muted: oklch(0.269 0 0);
+
+  // ----------------------------------------
+  // TEXT COLORS
+  // ----------------------------------------
+
+  --color-text: oklch(0.97 0 0);
+  --color-text-muted: oklch(0.708 0 0);
+  --color-text-subtle: oklch(0.556 0 0);
+  --color-text-inverse: oklch(0.145 0 0);
+}
+
+// Dark mode base styles
+:root {
+  color-scheme: dark;
+}
+

@@ -1,0 +1,192 @@
+@use "tailwindcss";
+
+// ============================================
+// OXIDE THEME
+// A dark theme inspired by the Rust programming language
+// Features rust orange on dark charcoal backgrounds
+// ============================================
+
+:root {
+  // Typography
+  --font-sans: "Fira Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-heading: "Fira Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Fira Code", "JetBrains Mono", ui-monospace, monospace;
+
+  // Primary - Rust Orange
+  --color-primary-50: #fff3e0;
+  --color-primary-100: #ffe0b2;
+  --color-primary-200: #ffcc80;
+  --color-primary-300: #ffb74d;
+  --color-primary-400: #ffa726;
+  --color-primary-500: #ff9800;
+  --color-primary-600: #f57c00;
+  --color-primary-700: #e65100;
+  --color-primary-800: #d84315;
+  --color-primary-900: #bf360c;
+  --color-primary-950: #8c2703;
+
+  // Secondary - Charcoal
+  --color-secondary-50: #f5f5f5;
+  --color-secondary-100: #e0e0e0;
+  --color-secondary-200: #bdbdbd;
+  --color-secondary-300: #9e9e9e;
+  --color-secondary-400: #757575;
+  --color-secondary-500: #616161;
+  --color-secondary-600: #4a4a4a;
+  --color-secondary-700: #3a3a3a;
+  --color-secondary-800: #2d2d2d;
+  --color-secondary-900: #1a1a1a;
+  --color-secondary-950: #0d0d0d;
+
+  // Accent - Copper/Bronze
+  --color-accent-50: #fdf2e6;
+  --color-accent-100: #f9dfc4;
+  --color-accent-200: #f3c89e;
+  --color-accent-300: #ecb178;
+  --color-accent-400: #e49a5a;
+  --color-accent-500: #d98543;
+  --color-accent-600: #c47536;
+  --color-accent-700: #a86230;
+  --color-accent-800: #8c5028;
+  --color-accent-900: #703e20;
+  --color-accent-950: #432512;
+
+  // Success
+  --color-success-50: #e0f2f1;
+  --color-success-100: #b2dfdb;
+  --color-success-200: #80cbc4;
+  --color-success-300: #4db6ac;
+  --color-success-400: #26a69a;
+  --color-success-500: #009688;
+  --color-success-600: #00897b;
+  --color-success-700: #00796b;
+  --color-success-800: #00695c;
+  --color-success-900: #004d40;
+  --color-success-950: #002e26;
+
+  // Warning
+  --color-warning-50: #fff8e1;
+  --color-warning-100: #ffecb3;
+  --color-warning-200: #ffe082;
+  --color-warning-300: #ffd54f;
+  --color-warning-400: #ffca28;
+  --color-warning-500: #ffc107;
+  --color-warning-600: #ffb300;
+  --color-warning-700: #ffa000;
+  --color-warning-800: #ff8f00;
+  --color-warning-900: #ff6f00;
+  --color-warning-950: #e65100;
+
+  // Error
+  --color-error-50: #ffebee;
+  --color-error-100: #ffcdd2;
+  --color-error-200: #ef9a9a;
+  --color-error-300: #e57373;
+  --color-error-400: #ef5350;
+  --color-error-500: #f44336;
+  --color-error-600: #e53935;
+  --color-error-700: #d32f2f;
+  --color-error-800: #c62828;
+  --color-error-900: #b71c1c;
+  --color-error-950: #7f0000;
+
+  // Info
+  --color-info-50: #e3f2fd;
+  --color-info-100: #bbdefb;
+  --color-info-200: #90caf9;
+  --color-info-300: #64b5f6;
+  --color-info-400: #42a5f5;
+  --color-info-500: #2196f3;
+  --color-info-600: #1e88e5;
+  --color-info-700: #1976d2;
+  --color-info-800: #1565c0;
+  --color-info-900: #0d47a1;
+  --color-info-950: #082f6a;
+
+  // Surface
+  --color-background: #1a1410;
+  --color-foreground: #f5f0eb;
+  --color-surface: #241e19;
+  --color-surface-elevated: #2e2620;
+  --color-surface-muted: #1f1914;
+  --color-border: #3d352d;
+  --color-border-muted: #302822;
+
+  // Text
+  --color-text: #f5f0eb;
+  --color-text-muted: #a89c90;
+  --color-text-subtle: #7a7068;
+  --color-text-inverse: #1a1410;
+
+  --radius-sm: 0.125rem;
+  --radius-default: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.625rem;
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
+  --shadow-default: 0 1px 3px 0 rgb(0 0 0 / 0.6);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.6);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.6);
+
+  color-scheme: dark;
+}
+
+@theme {
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+  --font-mono: var(--font-mono);
+
+  --color-primary-50: var(--color-primary-50);
+  --color-primary-100: var(--color-primary-100);
+  --color-primary-200: var(--color-primary-200);
+  --color-primary-300: var(--color-primary-300);
+  --color-primary-400: var(--color-primary-400);
+  --color-primary-500: var(--color-primary-500);
+  --color-primary-600: var(--color-primary-600);
+  --color-primary-700: var(--color-primary-700);
+  --color-primary-800: var(--color-primary-800);
+  --color-primary-900: var(--color-primary-900);
+  --color-primary-950: var(--color-primary-950);
+
+  --color-secondary-50: var(--color-secondary-50);
+  --color-secondary-100: var(--color-secondary-100);
+  --color-secondary-200: var(--color-secondary-200);
+  --color-secondary-300: var(--color-secondary-300);
+  --color-secondary-400: var(--color-secondary-400);
+  --color-secondary-500: var(--color-secondary-500);
+  --color-secondary-600: var(--color-secondary-600);
+  --color-secondary-700: var(--color-secondary-700);
+  --color-secondary-800: var(--color-secondary-800);
+  --color-secondary-900: var(--color-secondary-900);
+  --color-secondary-950: var(--color-secondary-950);
+
+  --color-accent-50: var(--color-accent-50);
+  --color-accent-100: var(--color-accent-100);
+  --color-accent-200: var(--color-accent-200);
+  --color-accent-300: var(--color-accent-300);
+  --color-accent-400: var(--color-accent-400);
+  --color-accent-500: var(--color-accent-500);
+  --color-accent-600: var(--color-accent-600);
+  --color-accent-700: var(--color-accent-700);
+  --color-accent-800: var(--color-accent-800);
+  --color-accent-900: var(--color-accent-900);
+  --color-accent-950: var(--color-accent-950);
+
+  --color-success-500: var(--color-success-500);
+  --color-warning-500: var(--color-warning-500);
+  --color-error-500: var(--color-error-500);
+  --color-info-500: var(--color-info-500);
+
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+  --color-surface: var(--color-surface);
+  --color-border: var(--color-border);
+  --color-text: var(--color-text);
+  --color-text-muted: var(--color-text-muted);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}

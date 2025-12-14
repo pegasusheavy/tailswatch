@@ -1,0 +1,202 @@
+<section id="stats" class="mb-16 scroll-mt-24">
+  <h2 appScrollAnimate="fade-right" class="mb-6 border-b border-[var(--color-border)] pb-2 text-2xl font-semibold">Stats & Metrics</h2>
+
+  <div class="space-y-8">
+    <!-- Simple Stats -->
+    <div appScrollAnimate="fade-up">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Simple Stats</h3>
+      <div class="grid gap-4 md:grid-cols-4" appStaggerChildren [staggerDelay]="80">
+        <div class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 text-center">
+          <div class="text-3xl font-bold text-[var(--color-primary-500)]">2,847</div>
+          <div class="mt-1 text-sm text-[var(--color-text-muted)]">Total Users</div>
+        </div>
+        <div class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 text-center">
+          <div class="text-3xl font-bold text-[var(--color-success-500)]">$48.2K</div>
+          <div class="mt-1 text-sm text-[var(--color-text-muted)]">Revenue</div>
+        </div>
+        <div class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 text-center">
+          <div class="text-3xl font-bold text-[var(--color-secondary-500)]">12,459</div>
+          <div class="mt-1 text-sm text-[var(--color-text-muted)]">Page Views</div>
+        </div>
+        <div class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 text-center">
+          <div class="text-3xl font-bold text-[var(--color-accent-500)]">98.3%</div>
+          <div class="mt-1 text-sm text-[var(--color-text-muted)]">Uptime</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats with Icons -->
+    <div appScrollAnimate="fade-up" [animateDelay]="100">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Stats with Icons</h3>
+      <div class="grid gap-4 md:grid-cols-3" appStaggerChildren [staggerDelay]="100">
+        <div class="flex items-center gap-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5">
+          <div class="flex h-14 w-14 items-center justify-center rounded-xl bg-[var(--color-primary-500)]/10">
+            <fa-icon [icon]="['fas', 'users']" class="text-2xl text-[var(--color-primary-500)]"></fa-icon>
+          </div>
+          <div>
+            <div class="text-2xl font-bold">45,281</div>
+            <div class="text-sm text-[var(--color-text-muted)]">Total Subscribers</div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5">
+          <div class="flex h-14 w-14 items-center justify-center rounded-xl bg-[var(--color-success-500)]/10">
+            <fa-icon [icon]="['fas', 'dollar-sign']" class="text-2xl text-[var(--color-success-500)]"></fa-icon>
+          </div>
+          <div>
+            <div class="text-2xl font-bold">$124,563</div>
+            <div class="text-sm text-[var(--color-text-muted)]">Total Sales</div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5">
+          <div class="flex h-14 w-14 items-center justify-center rounded-xl bg-[var(--color-info-500)]/10">
+            <fa-icon [icon]="['fas', 'chart-line']" class="text-2xl text-[var(--color-info-500)]"></fa-icon>
+          </div>
+          <div>
+            <div class="text-2xl font-bold">+23.5%</div>
+            <div class="text-sm text-[var(--color-text-muted)]">Growth Rate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats with Trends -->
+    <div appScrollAnimate="fade-up" [animateDelay]="200">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Stats with Trends</h3>
+      <div class="grid gap-4 md:grid-cols-4" appStaggerChildren [staggerDelay]="80">
+        <div class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5">
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-[var(--color-text-muted)]">Revenue</span>
+            <span class="flex items-center gap-1 text-sm font-medium text-[var(--color-success-500)]">
+              <fa-icon [icon]="['fas', 'arrow-trend-up']"></fa-icon>
+              +12.5%
+            </span>
+          </div>
+          <div class="mt-2 text-2xl font-bold">$84,254</div>
+          <div class="mt-3 h-1 w-full overflow-hidden rounded-full bg-[var(--color-surface-muted)]">
+            <div class="h-full w-3/4 rounded-full bg-[var(--color-success-500)]"></div>
+          </div>
+        </div>
+
+        <div class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5">
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-[var(--color-text-muted)]">Orders</span>
+            <span class="flex items-center gap-1 text-sm font-medium text-[var(--color-success-500)]">
+              <fa-icon [icon]="['fas', 'arrow-trend-up']"></fa-icon>
+              +8.3%
+            </span>
+          </div>
+          <div class="mt-2 text-2xl font-bold">1,453</div>
+          <div class="mt-3 h-1 w-full overflow-hidden rounded-full bg-[var(--color-surface-muted)]">
+            <div class="h-full w-2/3 rounded-full bg-[var(--color-primary-500)]"></div>
+          </div>
+        </div>
+
+        <div class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5">
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-[var(--color-text-muted)]">Visitors</span>
+            <span class="flex items-center gap-1 text-sm font-medium text-[var(--color-error-500)]">
+              <fa-icon [icon]="['fas', 'arrow-trend-down']"></fa-icon>
+              -3.2%
+            </span>
+          </div>
+          <div class="mt-2 text-2xl font-bold">38,219</div>
+          <div class="mt-3 h-1 w-full overflow-hidden rounded-full bg-[var(--color-surface-muted)]">
+            <div class="h-full w-1/2 rounded-full bg-[var(--color-error-500)]"></div>
+          </div>
+        </div>
+
+        <div class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5">
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-[var(--color-text-muted)]">Bounce Rate</span>
+            <span class="flex items-center gap-1 text-sm font-medium text-[var(--color-warning-500)]">
+              <fa-icon [icon]="['fas', 'minus']"></fa-icon>
+              0.0%
+            </span>
+          </div>
+          <div class="mt-2 text-2xl font-bold">24.8%</div>
+          <div class="mt-3 h-1 w-full overflow-hidden rounded-full bg-[var(--color-surface-muted)]">
+            <div class="h-full w-1/4 rounded-full bg-[var(--color-warning-500)]"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Colorful Stats -->
+    <div appScrollAnimate="fade-up" [animateDelay]="300">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Gradient Cards</h3>
+      <div class="grid gap-4 md:grid-cols-3" appStaggerChildren [staggerDelay]="100">
+        <div class="rounded-xl bg-gradient-to-br from-[var(--color-primary-500)] to-[var(--color-primary-700)] p-6 text-white">
+          <div class="flex items-center justify-between">
+            <fa-icon [icon]="['fas', 'shopping-cart']" class="text-2xl text-white/80"></fa-icon>
+            <span class="rounded-full bg-white/20 px-2 py-0.5 text-xs">+12%</span>
+          </div>
+          <div class="mt-4 text-3xl font-bold">3,462</div>
+          <div class="text-sm text-white/80">Total Orders</div>
+        </div>
+
+        <div class="rounded-xl bg-gradient-to-br from-[var(--color-success-500)] to-[var(--color-success-700)] p-6 text-white">
+          <div class="flex items-center justify-between">
+            <fa-icon [icon]="['fas', 'credit-card']" class="text-2xl text-white/80"></fa-icon>
+            <span class="rounded-full bg-white/20 px-2 py-0.5 text-xs">+8.5%</span>
+          </div>
+          <div class="mt-4 text-3xl font-bold">$94,382</div>
+          <div class="text-sm text-white/80">Revenue</div>
+        </div>
+
+        <div class="rounded-xl bg-gradient-to-br from-[var(--color-accent-500)] to-[var(--color-accent-700)] p-6 text-white">
+          <div class="flex items-center justify-between">
+            <fa-icon [icon]="['fas', 'user-plus']" class="text-2xl text-white/80"></fa-icon>
+            <span class="rounded-full bg-white/20 px-2 py-0.5 text-xs">+24%</span>
+          </div>
+          <div class="mt-4 text-3xl font-bold">847</div>
+          <div class="text-sm text-white/80">New Users</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mini Sparklines -->
+    <div appScrollAnimate="fade-up" [animateDelay]="400">
+      <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Inline Stats</h3>
+      <div class="flex flex-wrap gap-8">
+        <div class="flex items-center gap-3">
+          <div class="flex h-10 items-end gap-0.5">
+            @for (h of [40, 60, 45, 80, 55, 70, 65]; track $index) {
+              <div class="w-1 rounded-t bg-[var(--color-primary-500)]" [style.height.%]="h"></div>
+            }
+          </div>
+          <div>
+            <div class="font-semibold">$4,382</div>
+            <div class="text-xs text-[var(--color-text-muted)]">This week</div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <div class="flex h-10 items-end gap-0.5">
+            @for (h of [30, 45, 60, 40, 70, 85, 90]; track $index) {
+              <div class="w-1 rounded-t bg-[var(--color-success-500)]" [style.height.%]="h"></div>
+            }
+          </div>
+          <div>
+            <div class="font-semibold">+23.5%</div>
+            <div class="text-xs text-[var(--color-text-muted)]">Growth</div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <div class="flex h-10 items-end gap-0.5">
+            @for (h of [80, 65, 70, 55, 45, 40, 35]; track $index) {
+              <div class="w-1 rounded-t bg-[var(--color-error-500)]" [style.height.%]="h"></div>
+            }
+          </div>
+          <div>
+            <div class="font-semibold">-12.3%</div>
+            <div class="text-xs text-[var(--color-text-muted)]">Decline</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

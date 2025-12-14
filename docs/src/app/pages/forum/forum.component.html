@@ -1,0 +1,164 @@
+<div class="min-h-screen bg-[var(--color-background)]">
+  <header class="sticky top-0 z-40 border-b border-[var(--color-border)] bg-[var(--color-surface)]">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <div class="flex items-center gap-6">
+          <div class="flex items-center gap-3">
+            <a routerLink="/" class="flex items-center justify-center rounded-lg p-2 text-[var(--color-text-muted)] transition-colors hover:bg-[var(--color-surface-muted)] hover:text-[var(--color-text)]" title="Back to Home">
+              <fa-icon [icon]="['fas', 'arrow-left']"></fa-icon>
+            </a>
+            <div class="flex items-center gap-2">
+              <span class="text-2xl">💬</span>
+              <span class="text-xl font-bold">DevTalk</span>
+            </div>
+          </div>
+          <nav class="hidden items-center gap-1 md:flex">
+            <button (click)="currentView.set('categories'); selectedCategory.set(null)" class="rounded-lg px-3 py-2 text-sm font-medium transition-colors hover:bg-[var(--color-surface-muted)]">Forums</button>
+          </nav>
+        </div>
+        <div class="flex items-center gap-3">
+          <button (click)="searchOpen.set(!searchOpen())" class="rounded-lg p-2 text-[var(--color-text-muted)] transition-colors hover:bg-[var(--color-surface-muted)]">
+            <fa-icon [icon]="['fas', 'magnifying-glass']"></fa-icon>
+          </button>
+          <app-theme-selector></app-theme-selector>
+          <button class="flex items-center gap-2 rounded-lg border border-[var(--color-border)] px-3 py-1.5">
+            <span class="text-xl">🧑‍💻</span>
+            <span class="hidden text-sm font-medium sm:inline">DevUser</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+    <div class="flex gap-6">
+      <main class="min-w-0 flex-1">
+        @if (currentView() === 'categories') {
+          <div class="mb-6 flex items-center justify-between">
+            <h1 class="text-2xl font-bold">Forum Categories</h1>
+            <button class="rounded-lg bg-[var(--color-primary-500)] px-4 py-2 text-sm font-medium text-white">
+              <fa-icon [icon]="['fas', 'plus']" class="mr-2"></fa-icon>
+              New Thread
+            </button>
+          </div>
+          <div class="space-y-3">
+            @for (category of categories; track category.id) {
+              <div (click)="viewCategory(category.id)" class="cursor-pointer rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4 hover:shadow-md">
+                <div class="flex items-start gap-4">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--color-surface-muted)] text-2xl">{{ category.icon }}</div>
+                  <div class="flex-1">
+                    <h3 class="font-semibold">{{ category.name }}</h3>
+                    <p class="text-sm text-[var(--color-text-muted)]">{{ category.description }}</p>
+                    <div class="mt-2 flex items-center gap-2 text-xs text-[var(--color-text-muted)]">
+                      <span>{{ category.threads | number }} threads</span>
+                      <span>·</span>
+                      <span>{{ category.posts | number }} posts</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            }
+          </div>
+        }
+
+        @if (currentView() === 'threads') {
+          <div class="mb-6 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <button (click)="goBack()" class="rounded-lg p-2 text-[var(--color-text-muted)] hover:bg-[var(--color-surface-muted)]">
+                <fa-icon [icon]="['fas', 'arrow-left']"></fa-icon>
+              </button>
+              <h1 class="text-xl font-bold">{{ getCategoryName(selectedCategory()!) }}</h1>
+            </div>
+          </div>
+          <div class="overflow-hidden rounded-xl border border-[var(--color-border)]">
+            @for (thread of threads; track thread.id) {
+              <div (click)="viewThread(thread)" class="flex cursor-pointer gap-4 border-b border-[var(--color-border)] bg-[var(--color-surface)] p-4 last:border-b-0 hover:bg-[var(--color-surface-muted)]">
+                <div class="flex-1">
+                  <h3 class="font-medium">{{ thread.title }}</h3>
+                  <div class="mt-1 text-xs text-[var(--color-text-muted)]">
+                    <span>{{ thread.author }}</span>
+                    <span class="mx-1">·</span>
+                    <span>{{ thread.replies }} replies</span>
+                  </div>
+                </div>
+              </div>
+            }
+          </div>
+        }
+
+        @if (currentView() === 'thread') {
+          <div class="mb-6 flex items-center gap-3">
+            <button (click)="goBack()" class="rounded-lg p-2 text-[var(--color-text-muted)] hover:bg-[var(--color-surface-muted)]">
+              <fa-icon [icon]="['fas', 'arrow-left']"></fa-icon>
+            </button>
+            <h1 class="text-xl font-bold">{{ selectedThread()?.title }}</h1>
+          </div>
+          <div class="space-y-4">
+            @for (post of posts; track post.id) {
+              <div class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4">
+                <div class="mb-3 flex items-center gap-3">
+                  <div class="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-surface-muted)] text-xl">{{ post.avatar }}</div>
+                  <div>
+                    <div class="font-medium">{{ post.author }}</div>
+                    <div class="text-xs text-[var(--color-text-muted)]">{{ post.time }}</div>
+                  </div>
+                </div>
+                <div class="whitespace-pre-line text-[var(--color-text)]">{{ post.content }}</div>
+                <div class="mt-4 flex items-center gap-4 border-t border-[var(--color-border)] pt-4">
+                  <button class="flex items-center gap-1 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary-500)]">
+                    <fa-icon [icon]="['fas', 'heart']"></fa-icon>
+                    {{ post.likes }}
+                  </button>
+                </div>
+              </div>
+            }
+          </div>
+          <div class="mt-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4">
+            <h3 class="mb-3 font-medium">Post a Reply</h3>
+            <textarea rows="4" placeholder="Write your reply..." class="w-full resize-none rounded-lg border border-[var(--color-border)] bg-[var(--color-background)] p-3 text-sm"></textarea>
+            <div class="mt-3 flex justify-end">
+              <button class="rounded-lg bg-[var(--color-primary-500)] px-4 py-2 text-sm font-medium text-white">Post Reply</button>
+            </div>
+          </div>
+        }
+      </main>
+
+      <aside class="hidden w-64 shrink-0 lg:block">
+        <div class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4">
+          <h3 class="mb-4 font-semibold">Forum Statistics</h3>
+          <div class="space-y-2 text-sm">
+            <div class="flex justify-between">
+              <span class="text-[var(--color-text-muted)]">Members:</span>
+              <span class="font-medium">{{ stats.members | number }}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-[var(--color-text-muted)]">Threads:</span>
+              <span class="font-medium">{{ stats.threads | number }}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-[var(--color-text-muted)]">Posts:</span>
+              <span class="font-medium">{{ stats.posts | number }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4">
+          <h3 class="mb-4 font-semibold">Online Now</h3>
+          <div class="space-y-2">
+            @for (user of onlineUsers; track user.name) {
+              <div class="flex items-center gap-2">
+                <div class="flex h-6 w-6 items-center justify-center rounded-full bg-[var(--color-surface-muted)] text-xs">{{ user.avatar }}</div>
+                <span class="text-sm">{{ user.name }}</span>
+              </div>
+            }
+          </div>
+        </div>
+        <div class="mt-4">
+          <a routerLink="/" class="flex items-center gap-2 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary-500)]">
+            <fa-icon [icon]="['fas', 'arrow-left']"></fa-icon>
+            Back to Tailswatch
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+@use "tailwindcss";
+@use "../../../../src/themes/simplex.scss";
+
+html {
+  scroll-behavior: smooth;
+}

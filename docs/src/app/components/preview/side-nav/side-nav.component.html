@@ -1,0 +1,14 @@
+<nav class="sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto">
+  <h3 class="mb-4 text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">On this page</h3>
+  <div class="space-y-1">
+    @for (item of navItems; track item.id) {
+      <a
+        [href]="'#' + item.id"
+        class="block rounded-lg px-3 py-2 text-sm text-[var(--color-text-muted)] transition-colors hover:bg-[var(--color-surface-muted)] hover:text-[var(--color-text)]"
+      >
+        {{ item.label }}
+      </a>
+    }
+  </div>
+</nav>
+

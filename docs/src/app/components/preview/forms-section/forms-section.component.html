@@ -1,0 +1,128 @@
+<section id="forms" class="mb-16 scroll-mt-24">
+  <h2
+    appScrollAnimate="fade-right"
+    class="mb-6 border-b border-[var(--color-border)] pb-2 text-2xl font-semibold"
+  >Forms</h2>
+
+  <div class="grid gap-8 lg:grid-cols-2">
+    <div appScrollAnimate="fade-left" class="space-y-6">
+      <!-- Text Inputs -->
+      <div>
+        <label class="mb-2 block text-sm font-medium">Text Input</label>
+        <input type="text" placeholder="Enter text..." class="w-full rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2 text-sm text-[var(--color-text)] placeholder:text-[var(--color-text-muted)] transition-colors focus:border-[var(--color-primary-500)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)]/20">
+      </div>
+
+      <!-- Email Input -->
+      <div>
+        <label class="mb-2 block text-sm font-medium">Email Input</label>
+        <input type="email" placeholder="you@example.com" class="w-full rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2 text-sm text-[var(--color-text)] placeholder:text-[var(--color-text-muted)] transition-colors focus:border-[var(--color-primary-500)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)]/20">
+      </div>
+
+      <!-- Password Input -->
+      <div>
+        <label class="mb-2 block text-sm font-medium">Password Input</label>
+        <input type="password" placeholder="••••••••" class="w-full rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2 text-sm text-[var(--color-text)] placeholder:text-[var(--color-text-muted)] transition-colors focus:border-[var(--color-primary-500)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)]/20">
+      </div>
+
+      <!-- Select -->
+      <div>
+        <label class="mb-2 block text-sm font-medium">Select</label>
+        <select class="w-full rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2 text-sm text-[var(--color-text)] transition-colors focus:border-[var(--color-primary-500)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)]/20">
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+        </select>
+      </div>
+
+      <!-- Textarea -->
+      <div>
+        <label class="mb-2 block text-sm font-medium">Textarea</label>
+        <textarea placeholder="Enter your message..." rows="4" class="w-full resize-y rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2 text-sm text-[var(--color-text)] placeholder:text-[var(--color-text-muted)] transition-colors focus:border-[var(--color-primary-500)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)]/20"></textarea>
+      </div>
+    </div>
+
+    <div appScrollAnimate="fade-right" [animateDelay]="150" class="space-y-6">
+      <!-- Checkboxes -->
+      <div>
+        <label class="mb-2 block text-sm font-medium">Checkboxes</label>
+        <div class="space-y-2">
+          <label class="flex cursor-pointer items-center gap-3">
+            <input type="checkbox" checked class="h-4 w-4 rounded border-[var(--color-border)] accent-[var(--color-primary-500)]">
+            <span class="text-sm">Option A (checked)</span>
+          </label>
+          <label class="flex cursor-pointer items-center gap-3">
+            <input type="checkbox" class="h-4 w-4 rounded border-[var(--color-border)] accent-[var(--color-primary-500)]">
+            <span class="text-sm">Option B</span>
+          </label>
+          <label class="flex cursor-pointer items-center gap-3">
+            <input type="checkbox" disabled class="h-4 w-4 rounded border-[var(--color-border)] opacity-50">
+            <span class="text-sm text-[var(--color-text-muted)]">Option C (disabled)</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Radio Buttons -->
+      <div>
+        <label class="mb-2 block text-sm font-medium">Radio Buttons</label>
+        <div class="space-y-2">
+          <label class="flex cursor-pointer items-center gap-3">
+            <input type="radio" name="radio-group" checked class="h-4 w-4 border-[var(--color-border)] accent-[var(--color-primary-500)]">
+            <span class="text-sm">Option 1</span>
+          </label>
+          <label class="flex cursor-pointer items-center gap-3">
+            <input type="radio" name="radio-group" class="h-4 w-4 border-[var(--color-border)] accent-[var(--color-primary-500)]">
+            <span class="text-sm">Option 2</span>
+          </label>
+          <label class="flex cursor-pointer items-center gap-3">
+            <input type="radio" name="radio-group" class="h-4 w-4 border-[var(--color-border)] accent-[var(--color-primary-500)]">
+            <span class="text-sm">Option 3</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Toggle Switch -->
+      <div>
+        <label class="mb-2 block text-sm font-medium">Toggle Switches</label>
+        <div class="space-y-3">
+          <label class="flex cursor-pointer items-center gap-3">
+            <div class="relative">
+              <input type="checkbox" checked class="peer sr-only">
+              <div class="h-6 w-11 rounded-full bg-[var(--color-border)] peer-checked:bg-[var(--color-primary-500)] transition-colors"></div>
+              <div class="absolute left-0.5 top-0.5 h-5 w-5 rounded-full bg-white transition-transform peer-checked:translate-x-5"></div>
+            </div>
+            <span class="text-sm">Enabled</span>
+          </label>
+          <label class="flex cursor-pointer items-center gap-3">
+            <div class="relative">
+              <input type="checkbox" class="peer sr-only">
+              <div class="h-6 w-11 rounded-full bg-[var(--color-border)] peer-checked:bg-[var(--color-primary-500)] transition-colors"></div>
+              <div class="absolute left-0.5 top-0.5 h-5 w-5 rounded-full bg-white transition-transform peer-checked:translate-x-5"></div>
+            </div>
+            <span class="text-sm">Disabled</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Input with Icon -->
+      <div>
+        <label class="mb-2 block text-sm font-medium">Input with Icon</label>
+        <div class="relative">
+          <fa-icon [icon]="['fas', 'magnifying-glass']" class="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--color-text-muted)]"></fa-icon>
+          <input type="text" placeholder="Search..." class="w-full rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] py-2 pl-10 pr-4 text-sm text-[var(--color-text)] placeholder:text-[var(--color-text-muted)] transition-colors focus:border-[var(--color-primary-500)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)]/20">
+        </div>
+      </div>
+
+      <!-- Input Group -->
+      <div>
+        <label class="mb-2 block text-sm font-medium">Input Group</label>
+        <div class="flex">
+          <span class="inline-flex items-center gap-2 rounded-l-lg border border-r-0 border-[var(--color-border)] bg-[var(--color-surface-muted)] px-3 text-sm text-[var(--color-text-muted)]">
+            <fa-icon [icon]="['fas', 'globe']"></fa-icon>
+            https://
+          </span>
+          <input type="text" placeholder="example.com" class="flex-1 rounded-r-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2 text-sm text-[var(--color-text)] placeholder:text-[var(--color-text-muted)] transition-colors focus:border-[var(--color-primary-500)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)]/20">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

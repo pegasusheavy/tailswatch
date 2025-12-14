@@ -1,0 +1,6 @@
+@use "tailwindcss";
+@use "../../../../src/themes/materia.scss";
+
+html {
+  scroll-behavior: smooth;
+}

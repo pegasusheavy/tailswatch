@@ -1,0 +1,6 @@
+@use "tailwindcss";
+@use "../../../../src/themes/litera.scss";
+
+html {
+  scroll-behavior: smooth;
+}

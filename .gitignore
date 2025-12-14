@@ -1,0 +1,371 @@
+# ============================================
+# TAILSWATCH - COMPREHENSIVE GITIGNORE
+# Tailwind CSS 4+ Theme Library
+# ============================================
+
+# ----------------------------------------
+# DEPENDENCIES
+# ----------------------------------------
+node_modules/
+.pnpm-store/
+.yarn/
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+.npm/
+package-lock.json
+yarn.lock
+# Keep pnpm-lock.yaml for reproducible builds
+
+# Bower (legacy)
+bower_components/
+
+# ----------------------------------------
+# BUILD OUTPUTS
+# ----------------------------------------
+dist/
+build/
+out/
+.output/
+*.tsbuildinfo
+*.js.map
+*.d.ts.map
+
+# Angular specific
+.angular/
+.nx/
+.cache/
+
+# Vite
+.vite/
+
+# Next.js
+.next/
+
+# Nuxt
+.nuxt/
+
+# Compiled CSS from SCSS
+*.css.map
+*.scss.css
+
+# ----------------------------------------
+# IDE & EDITORS
+# ----------------------------------------
+# VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/snippets/
+*.code-workspace
+
+# Cursor
+.cursor/*
+!.cursor/rules
+
+# JetBrains IDEs (WebStorm, IntelliJ, etc.)
+.idea/
+*.iml
+*.ipr
+*.iws
+.idea_modules/
+cmake-build-*/
+
+# Vim
+*.swp
+*.swo
+*.swn
+*~
+.netrwhist
+Session.vim
+.vim/
+tags
+
+# Emacs
+\#*\#
+.#*
+*.elc
+auto-save-list
+tramp
+.emacs.desktop
+.emacs.desktop.lock
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# TextMate
+*.tmproj
+*.tmproject
+tmtags
+
+# Notepad++
+nppBackup/
+
+# ----------------------------------------
+# OPERATING SYSTEM
+# ----------------------------------------
+# macOS
+.DS_Store
+.DS_Store?
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+Icon?
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.directory
+.Trash-*
+.nfs*
+.fuse_hidden*
+
+# ----------------------------------------
+# LOGS & DEBUG
+# ----------------------------------------
+*.log
+logs/
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+.eslintcache
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Diagnostic reports
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# ----------------------------------------
+# ENVIRONMENT & SECRETS
+# ----------------------------------------
+.env
+.env.*
+.env.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.production
+.env.production.local
+.env.staging
+!.env.example
+!.env.template
+!.env.sample
+
+# API keys and secrets
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+secrets/
+.secrets/
+credentials.json
+service-account*.json
+*-credentials.json
+
+# ----------------------------------------
+# TESTING
+# ----------------------------------------
+coverage/
+.nyc_output/
+*.lcov
+.coverage
+htmlcov/
+test-results/
+playwright-report/
+playwright/.cache/
+test-report/
+junit.xml
+cypress/videos/
+cypress/screenshots/
+.vitest/
+
+# ----------------------------------------
+# CACHING
+# ----------------------------------------
+.cache/
+.parcel-cache/
+.turbo/
+.eslintcache
+.stylelintcache
+*.tscache
+.sass-cache/
+.node_repl_history
+.grunt/
+.lock-wscript
+
+# Snowpack dependency directory
+web_modules/
+
+# ----------------------------------------
+# TEMP FILES
+# ----------------------------------------
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.backup
+*.orig
+*.rej
+*.patch
+
+# ----------------------------------------
+# TYPESCRIPT
+# ----------------------------------------
+*.tsbuildinfo
+.tscache/
+tsconfig.tsbuildinfo
+
+# ----------------------------------------
+# BUNDLER ARTIFACTS
+# ----------------------------------------
+# Rollup
+.rollup.cache/
+
+# esbuild
+.esbuild/
+
+# Webpack
+.webpack/
+
+# Parcel
+.parcel-cache/
+
+# Vite
+.vite/
+
+# ----------------------------------------
+# DOCUMENTATION
+# ----------------------------------------
+# Storybook
+storybook-static/
+
+# Documentation generators
+.docusaurus/
+.vuepress/dist/
+api-docs/
+typedoc/
+
+# ----------------------------------------
+# SERVERLESS & CLOUD
+# ----------------------------------------
+.serverless/
+.netlify/
+.vercel/
+.amplify/
+.firebase/
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+
+# ----------------------------------------
+# DATABASE
+# ----------------------------------------
+# SQLite
+*.sqlite
+*.sqlite3
+*.db
+
+# DynamoDB Local
+.dynamodb/
+
+# ----------------------------------------
+# MISC
+# ----------------------------------------
+# FuseBox
+.fusebox/
+
+# TernJS
+.tern-port
+
+# VS Code extensions testing
+.vscode-test/
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn
+.yarn-integrity
+.pnp.*
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Husky
+.husky/_/
+
+# Debug
+.debug/
+
+# ----------------------------------------
+# PROJECT SPECIFIC
+# ----------------------------------------
+# Compiled theme outputs (regenerated on build)
+dist/themes/
+
+# Generated documentation
+docs/dist/
+
+# Local development notes
+NOTES.md
+TODO.local.md
+.scratch/
+scratch/
+sandbox/
+
+# Benchmark results
+benchmarks/results/
+
+# Generated type declarations
+types/

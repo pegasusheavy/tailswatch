@@ -1,0 +1,6 @@
+@use "tailwindcss";
+@use "../../../../src/themes/yeti.scss";
+
+html {
+  scroll-behavior: smooth;
+}
