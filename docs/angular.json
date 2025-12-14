@@ -60,7 +60,19 @@
               { "input": "src/styles/themes/vapor.scss", "bundleName": "vapor", "inject": false },
               { "input": "src/styles/themes/yeti.scss", "bundleName": "yeti", "inject": false },
               { "input": "src/styles/themes/zephyr.scss", "bundleName": "zephyr", "inject": false },
-              { "input": "src/styles/themes/kernel.scss", "bundleName": "kernel", "inject": false }
+              { "input": "src/styles/themes/kernel.scss", "bundleName": "kernel", "inject": false },
+              { "input": "src/styles/themes/material-light-blue.scss", "bundleName": "material-light-blue", "inject": false },
+              { "input": "src/styles/themes/material-dark-blue.scss", "bundleName": "material-dark-blue", "inject": false },
+              { "input": "src/styles/themes/material-light-indigo.scss", "bundleName": "material-light-indigo", "inject": false },
+              { "input": "src/styles/themes/material-dark-indigo.scss", "bundleName": "material-dark-indigo", "inject": false },
+              { "input": "src/styles/themes/material-light-purple.scss", "bundleName": "material-light-purple", "inject": false },
+              { "input": "src/styles/themes/material-dark-purple.scss", "bundleName": "material-dark-purple", "inject": false },
+              { "input": "src/styles/themes/material-light-teal.scss", "bundleName": "material-light-teal", "inject": false },
+              { "input": "src/styles/themes/material-dark-teal.scss", "bundleName": "material-dark-teal", "inject": false },
+              { "input": "src/styles/themes/material-light-green.scss", "bundleName": "material-light-green", "inject": false },
+              { "input": "src/styles/themes/material-dark-green.scss", "bundleName": "material-dark-green", "inject": false },
+              { "input": "src/styles/themes/material-light-deeporange.scss", "bundleName": "material-light-deeporange", "inject": false },
+              { "input": "src/styles/themes/material-dark-deeporange.scss", "bundleName": "material-dark-deeporange", "inject": false }
             ],
             "scripts": []
           },
