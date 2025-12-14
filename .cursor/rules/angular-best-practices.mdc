@@ -1,0 +1,109 @@
+---
+description: Angular best practices and conventions
+globs:
+  - "docs/**/*.ts"
+  - "docs/**/*.html"
+  - "docs/**/*.scss"
+alwaysApply: false
+---
+
+# Angular Best Practices
+
+Follow these conventions when working with Angular code in this project.
+
+## Component Architecture
+
+1. **Standalone components**: Always use standalone components (`standalone: true`)
+2. **Signals over BehaviorSubject**: Prefer Angular signals (`signal()`, `computed()`) over RxJS for component state
+3. **Zoneless change detection**: This project uses `provideExperimentalZonelessChangeDetection()`
+4. **Smart/dumb components**: Keep pages as smart components, extract reusable UI into dumb components
+
+## File Organization
+
+```
+component-name/
+  component-name.component.ts
+  component-name.component.html
+  component-name.component.scss
+```
+
+- Use separate template and style files (not inline)
+- Group related components in feature folders
+- Use barrel exports (`index.ts`) for component groups
+
+## Templates
+
+1. **Control flow**: Use new Angular control flow syntax (`@if`, `@for`, `@switch`) instead of `*ngIf`, `*ngFor`
+2. **Track functions**: Always provide `track` in `@for` loops
+3. **Semantic HTML**: Use proper HTML elements for accessibility
+4. **No custom CSS**: Use only Tailwind utility classes, no custom SCSS styling
+
+```html
+<!-- Good -->
+@if (isVisible()) {
+  <div>Content</div>
+}
+
+@for (item of items; track item.id) {
+  <div>{{ item.name }}</div>
+}
+
+<!-- Bad -->
+<div *ngIf="isVisible">Content</div>
+<div *ngFor="let item of items">{{ item.name }}</div>
+```
+
+## TypeScript
+
+1. **Strict typing**: Always define interfaces for data structures
+2. **Inject function**: Use `inject()` instead of constructor injection
+3. **Readonly signals**: Mark signals as `readonly` when exposed publicly
+4. **Computed for derived state**: Use `computed()` for derived values
+
+```typescript
+// Good
+readonly items = signal<Item[]>([]);
+readonly itemCount = computed(() => this.items().length);
+private readonly service = inject(MyService);
+
+// Bad
+items = new BehaviorSubject<Item[]>([]);
+constructor(private service: MyService) {}
+```
+
+## Services
+
+1. **providedIn: 'root'**: Use tree-shakable providers
+2. **Signals for state**: Use signals for reactive state management
+3. **SSR safety**: Check for browser APIs before using them
+
+```typescript
+@Injectable({ providedIn: 'root' })
+export class MyService {
+  private readonly state = signal<State>(initialState);
+  
+  constructor() {
+    if (typeof localStorage !== 'undefined') {
+      // Safe to use localStorage
+    }
+  }
+}
+```
+
+## Imports
+
+1. **Import only what's needed**: Don't import entire modules
+2. **RouterModule for routing**: Import `RouterModule` for `routerLink`
+3. **CommonModule rarely needed**: With standalone components, import individual pipes/directives
+
+## Performance
+
+1. **OnPush not needed**: Signals + zoneless handles change detection efficiently
+2. **Lazy load routes**: Use lazy loading for feature modules
+3. **trackBy in loops**: Always use `track` in `@for`
+
+## Testing
+
+1. **Use Vitest**: This project uses Vitest, not Karma/Jasmine
+2. **Component testing**: Use `@angular/core/testing` utilities
+3. **Mock services**: Use dependency injection for testability
