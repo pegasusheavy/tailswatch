@@ -5,16 +5,12 @@
   "author": "Pegasus Heavy Industries LLC",
   "license": "MIT",
   "type": "module",
-  "main": "dist/index.css",
-  "style": "dist/index.css",
+  "main": "dist/themes/default.css",
+  "style": "dist/themes/default.css",
   "exports": {
     ".": {
-      "style": "./dist/index.css",
-      "default": "./dist/index.css"
-    },
-    "./base": {
-      "style": "./dist/base/index.css",
-      "default": "./dist/base/index.css"
+      "style": "./dist/themes/default.css",
+      "default": "./dist/themes/default.css"
     },
     "./themes/*": {
       "style": "./dist/themes/*.css",
