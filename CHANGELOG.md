@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.1] - 2025-12-15
+
+### Fixed
+
+- Fixed GitHub Actions CI workflows for pnpm v10 compatibility
+- Fixed GitHub Pages deployment configuration
+- Added proper pnpm lockfile for reproducible builds
+- Corrected docs build output path for deployment
+
 ## [1.1.0] - 2025-12-15
 
 ### Changed
@@ -83,6 +92,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Example pages: Admin Dashboard, E-commerce, Photography Portfolio, Forum, SaaS Landing Page
 - Comprehensive UI component examples
 
+[1.1.1]: https://github.com/pegasusheavy/tailswatch/releases/tag/v1.1.1
 [1.1.0]: https://github.com/pegasusheavy/tailswatch/releases/tag/v1.1.0
 [1.0.0]: https://github.com/pegasusheavy/tailswatch/releases/tag/v1.0.0
 
