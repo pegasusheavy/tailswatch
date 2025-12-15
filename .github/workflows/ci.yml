@@ -66,11 +66,14 @@ jobs:
         run: pnpm run build
 
       - name: Install docs dependencies
-        run: cd docs && pnpm install
+        working-directory: docs
+        run: pnpm install --ignore-workspace
 
       - name: Build docs
-        run: cd docs && pnpm run build
+        working-directory: docs
+        run: pnpm run build
 
       - name: Run tests
-        run: cd docs && pnpm run test --run
+        working-directory: docs
+        run: pnpm run test --run
 

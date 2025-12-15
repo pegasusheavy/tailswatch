@@ -43,10 +43,12 @@ jobs:
         run: pnpm run build
 
       - name: Install docs dependencies
-        run: cd docs && pnpm install
+        working-directory: docs
+        run: pnpm install --ignore-workspace
 
       - name: Build docs for production
-        run: cd docs && pnpm run build:gh-pages
+        working-directory: docs
+        run: pnpm run build:gh-pages
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
