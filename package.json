@@ -1,7 +1,7 @@
 {
-  "name": "tailswatch",
-  "version": "0.1.0",
-  "description": "Customizable Tailwind CSS 4+ themes for import into other applications",
+  "name": "@pegasusheavy/tailswatch",
+  "version": "1.0.0",
+  "description": "Customizable Tailwind CSS 4+ themes for import into other applications. Bootswatch-inspired themes, Material Design themes, and programming language-inspired themes.",
   "author": "Pegasus Heavy Industries LLC",
   "license": "MIT",
   "type": "module",
@@ -33,14 +33,47 @@
   },
   "keywords": [
     "tailwindcss",
+    "tailwind",
+    "tailwind-css",
+    "tailwindcss-themes",
     "themes",
+    "theming",
     "css",
     "scss",
+    "sass",
     "design-system",
-    "customizable"
+    "design-tokens",
+    "customizable",
+    "bootswatch",
+    "material-design",
+    "material-ui",
+    "dark-mode",
+    "dark-theme",
+    "light-theme",
+    "color-scheme",
+    "css-variables",
+    "css-custom-properties",
+    "styling",
+    "ui-themes",
+    "frontend",
+    "web-design"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/PegasusHeavyIndustries/tailswatch.git"
-  }
+    "url": "git+https://github.com/pegasusheavy/tailswatch.git"
+  },
+  "homepage": "https://pegasusheavy.github.io/tailswatch",
+  "bugs": {
+    "url": "https://github.com/pegasusheavy/tailswatch/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ]
 }
