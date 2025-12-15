@@ -8,7 +8,12 @@
   <!-- Navigation -->
   <nav class="fixed left-0 right-0 top-0 z-40 border-b border-[var(--color-border)]/50 bg-[var(--color-background)]/80 backdrop-blur-lg">
     <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-      <span class="text-xl font-light tracking-widest">ALEX RIVERS</span>
+      <div class="flex items-center gap-3">
+        <a routerLink="/" class="flex items-center justify-center rounded-lg p-2 text-[var(--color-text-muted)] transition-colors hover:bg-[var(--color-surface-muted)] hover:text-[var(--color-primary-500)]" title="Back to Tailswatch">
+          <fa-icon [icon]="['fas', 'home']"></fa-icon>
+        </a>
+        <span class="text-xl font-light tracking-widest">ALEX RIVERS</span>
+      </div>
 
       <!-- Desktop Nav -->
       <div class="hidden items-center gap-8 md:flex">
