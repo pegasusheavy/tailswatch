@@ -32,6 +32,9 @@ jobs:
         with:
           node-version: '20'
           cache: 'pnpm'
+          cache-dependency-path: |
+            pnpm-lock.yaml
+            docs/pnpm-lock.yaml
 
       - name: Install root dependencies
         run: pnpm install
@@ -40,12 +43,10 @@ jobs:
         run: pnpm run build
 
       - name: Install docs dependencies
-        working-directory: docs
-        run: pnpm install
+        run: cd docs && pnpm install
 
       - name: Build docs for production
-        working-directory: docs
-        run: pnpm run build --base-href /tailswatch/
+        run: cd docs && pnpm run build:gh-pages
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

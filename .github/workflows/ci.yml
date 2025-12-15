@@ -55,6 +55,9 @@ jobs:
         with:
           node-version: '20'
           cache: 'pnpm'
+          cache-dependency-path: |
+            pnpm-lock.yaml
+            docs/pnpm-lock.yaml
 
       - name: Install root dependencies
         run: pnpm install
@@ -63,14 +66,11 @@ jobs:
         run: pnpm run build
 
       - name: Install docs dependencies
-        working-directory: docs
-        run: pnpm install
+        run: cd docs && pnpm install
 
       - name: Build docs
-        working-directory: docs
-        run: pnpm run build
+        run: cd docs && pnpm run build
 
       - name: Run tests
-        working-directory: docs
-        run: pnpm run test
+        run: cd docs && pnpm run test --run
 
