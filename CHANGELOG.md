@@ -1,0 +1,73 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [1.0.0] - 2024-12-15
+
+### Added
+
+- **43 customizable Tailwind CSS 4+ themes**
+- Full color palette with 50-950 shades for primary, secondary, accent, success, warning, error, and info colors
+- CSS custom properties for easy customization
+- Explicit npm exports for all themes
+
+#### Bootswatch-Inspired Themes (25)
+
+- Cerulean - A calm blue sky theme
+- Cosmo - An ode to Metro
+- Cyborg - Jet black and electric blue
+- Darkly - Flatly in night mode
+- Flatly - Flat and modern
+- Journal - Crisp like a new sheet of paper
+- Litera - The medium is the message
+- Lumen - Light and shadow
+- Lux - A touch of class
+- Materia - Material is the metaphor
+- Minty - A fresh feel
+- Morph - A neumorphic layer
+- Pulse - A trace of purple
+- Quartz - A glassmorphic layer
+- Sandstone - A touch of warmth
+- Simplex - Mini and minimalist
+- Sketchy - A hand-drawn look
+- Slate - Shades of gunmetal gray
+- Solar - A spin on Solarized
+- Spacelab - Silvery and sleek
+- Superhero - The brave and the blue
+- United - Ubuntu orange and unique font
+- Vapor - A cyberpunk aesthetic
+- Yeti - A friendly foundation
+- Zephyr - Breezy and light
+
+#### Material Design Themes (12)
+
+- material-light-blue / material-dark-blue
+- material-light-indigo / material-dark-indigo
+- material-light-purple / material-dark-purple
+- material-light-teal / material-dark-teal
+- material-light-green / material-dark-green
+- material-light-deeporange / material-dark-deeporange
+
+#### Programming Language-Inspired Themes (4)
+
+- Oxide - Rust programming language inspired
+- Gopher - Go programming language inspired
+- Evergreen - Node.js ecosystem inspired
+- Kernel - C/C++ inspired, professional and battle-tested
+
+#### Base Themes (2)
+
+- Default - Generic Tailwind CSS with no customization
+- Dark - A dark mode base theme
+
+### Documentation
+
+- Interactive documentation site with live theme previews
+- Example pages: Admin Dashboard, E-commerce, Photography Portfolio, Forum, SaaS Landing Page
+- Comprehensive UI component examples
+
+[1.0.0]: https://github.com/pegasusheavy/tailswatch/releases/tag/v1.0.0
+
