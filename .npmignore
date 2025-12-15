@@ -1,0 +1,50 @@
+# Development
+docs/
+scripts/
+build/
+
+# IDE & Editor
+.cursor/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Config files
+.editorconfig
+.prettierrc*
+.eslintrc*
+tsconfig*.json
+vitest.config.*
+karma.conf.*
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.travis.yml
+azure-pipelines.yml
+
+# Documentation (README is kept)
+CHANGELOG.md
+CONTRIBUTING.md
+*.md
+!README.md
+
+# Test files
+*.spec.*
+*.test.*
+__tests__/
+coverage/
+
+# Misc
+*.log
+*.tgz
+.DS_Store
+Thumbs.db
+
