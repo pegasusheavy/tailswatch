@@ -5,7 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.0] - 2024-12-15
+## [1.1.0] - 2025-12-15
+
+### Changed
+
+- **Themes are now uncompiled CSS** - Output contains CSS variables and `@theme` blocks for downstream Tailwind CSS processing
+- Downstream developers import themes alongside their own Tailwind CSS installation
+- Moved `tailwindcss` from devDependency to peerDependency
+- Simplified build process - just SCSS syntax preprocessing
+
+### Fixed
+
+- Build script now properly strips SCSS-style comments
+- Removed references to deleted base files in dark theme
+
+## [1.0.0] - 2025-12-15
 
 ### Added
 
@@ -69,5 +83,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Example pages: Admin Dashboard, E-commerce, Photography Portfolio, Forum, SaaS Landing Page
 - Comprehensive UI component examples
 
+[1.1.0]: https://github.com/pegasusheavy/tailswatch/releases/tag/v1.1.0
 [1.0.0]: https://github.com/pegasusheavy/tailswatch/releases/tag/v1.0.0
 
