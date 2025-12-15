@@ -25,13 +25,13 @@ if (!existsSync(OUTPUT_DIR)) {
 function preprocessScss(content) {
   // Remove @use statements that reference local files (not tailwindcss)
   content = content.replace(/@use\s+["'][^"']*(?:variables|mixins)[^"']*["'].*?;?\n?/g, '');
-  
+
   // Convert section header comments to CSS block comments
   content = content.replace(/^\s*\/\/\s*={3,}.*$/gm, (match) => {
     const text = match.replace(/^\s*\/\/\s*/, '').trim();
     return `/* ${text} */`;
   });
-  
+
   // Convert meaningful single-line comments to CSS comments
   content = content.replace(/^\s*\/\/\s*-{3,}.*$/gm, ''); // Remove divider lines
   content = content.replace(/^\s*\/\/\s*(.+)$/gm, (match, p1) => {
@@ -41,13 +41,13 @@ function preprocessScss(content) {
     }
     return '';
   });
-  
+
   // Remove inline // comments (but be careful not to remove URLs)
   content = content.replace(/(?<!:)\/\/(?!\/)[^\n]*/g, '');
-  
+
   // Clean up extra blank lines
   content = content.replace(/\n{3,}/g, '\n\n');
-  
+
   return content.trim() + '\n';
 }
 
@@ -67,7 +67,7 @@ for (const file of themeFiles) {
     // Read and preprocess the SCSS file
     const content = readFileSync(sourcePath, 'utf-8');
     const processedContent = preprocessScss(content);
-    
+
     // Write to dist
     writeFileSync(outputPath, processedContent);
     console.log(`  ✓ ${themeName}`);
