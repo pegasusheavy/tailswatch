@@ -117,7 +117,7 @@ That's it! Your Tailwind classes will now use the Cosmo theme colors.
 
 <script>
   function switchTheme(themeName) {
-    document.getElementById('theme').href = 
+    document.getElementById('theme').href =
       `node_modules/@pegasusheavy/tailswatch/dist/themes/${themeName}.css`;
   }
 </script>
