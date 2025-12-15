@@ -69,19 +69,12 @@
     "src"
   ],
   "scripts": {
-    "dev": "pnpm run compile:scss && tailwindcss -i ./build/index.css -o ./dist/index.css --watch",
-    "build": "pnpm run clean && pnpm run compile:scss && pnpm run build:css",
-    "compile:scss": "sass src:build --style=expanded --no-source-map",
-    "compile:scss:watch": "sass src:build --style=expanded --no-source-map --watch",
-    "build:css": "pnpm run build:base && pnpm run build:themes && pnpm run build:main",
-    "build:main": "tailwindcss -i ./build/index.css -o ./dist/index.css --minify",
-    "build:base": "tailwindcss -i ./build/base/index.css -o ./dist/base/index.css --minify",
+    "build": "pnpm run clean && pnpm run build:themes",
     "build:themes": "node scripts/build-themes.js",
     "clean": "rm -rf dist build",
     "prepublishOnly": "pnpm run build"
   },
   "devDependencies": {
-    "sass": "^1.83.0",
     "tailwindcss": "^4.0.0"
   },
   "keywords": [
