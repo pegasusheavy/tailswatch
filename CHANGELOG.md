@@ -26,6 +26,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **NFC North:** Bears, Lions, Packers, Vikings
 - **NFC South:** Falcons, Panthers, Saints, Buccaneers
 - **NFC West:** Cardinals, Rams, 49ers, Seahawks
+
+### NBA Team Themes (30 total)
+- **Atlantic:** Celtics, Nets, Knicks, 76ers, Raptors
+- **Central:** Bulls, Cavaliers, Pistons, Pacers, Bucks
+- **Southeast:** Hawks, Hornets, Heat, Magic, Wizards
+- **Northwest:** Nuggets, Timberwolves, Thunder, Trail Blazers, Jazz
+- **Pacific:** Warriors, Clippers, Lakers, Suns, Kings
+- **Southwest:** Mavericks, Rockets, Grizzlies, Pelicans, Spurs
 - **Zig theme** - Zig golden orange (#F7A41D) with electric blue accent
 - **9 Cloud Provider themes**
   - AWS - Amazon Web Services orange and squid ink

@@ -6,7 +6,8 @@ export type ThemeCategory =
   | 'Material Design'
   | 'Programming'
   | 'Cloud Providers'
-  | 'NFL';
+  | 'NFL'
+  | 'NBA';
 
 export interface ThemeInfo {
   id: string;
@@ -146,11 +147,53 @@ export class ThemeService {
     { id: 'nfl-rams', name: 'Los Angeles Rams', description: 'Rams Royal Blue and Sol Gold', isDark: false, category: 'NFL' },
     { id: 'nfl-49ers', name: 'San Francisco 49ers', description: '49ers Red and Gold', isDark: false, category: 'NFL' },
     { id: 'nfl-seahawks', name: 'Seattle Seahawks', description: 'Seahawks Navy and Action Green', isDark: false, category: 'NFL' },
+
+    // NBA Team themes - Atlantic Division
+    { id: 'nba-celtics', name: 'Boston Celtics', description: 'Celtics Green and Gold', isDark: false, category: 'NBA' },
+    { id: 'nba-nets', name: 'Brooklyn Nets', description: 'Nets Black and White', isDark: false, category: 'NBA' },
+    { id: 'nba-knicks', name: 'New York Knicks', description: 'Knicks Blue and Orange', isDark: false, category: 'NBA' },
+    { id: 'nba-76ers', name: 'Philadelphia 76ers', description: '76ers Blue and Red', isDark: false, category: 'NBA' },
+    { id: 'nba-raptors', name: 'Toronto Raptors', description: 'Raptors Red and Black', isDark: false, category: 'NBA' },
+
+    // NBA Team themes - Central Division
+    { id: 'nba-bulls', name: 'Chicago Bulls', description: 'Bulls Red and Black', isDark: false, category: 'NBA' },
+    { id: 'nba-cavaliers', name: 'Cleveland Cavaliers', description: 'Cavaliers Wine and Gold', isDark: false, category: 'NBA' },
+    { id: 'nba-pistons', name: 'Detroit Pistons', description: 'Pistons Blue and Red', isDark: false, category: 'NBA' },
+    { id: 'nba-pacers', name: 'Indiana Pacers', description: 'Pacers Navy and Gold', isDark: false, category: 'NBA' },
+    { id: 'nba-bucks', name: 'Milwaukee Bucks', description: 'Bucks Green and Cream', isDark: false, category: 'NBA' },
+
+    // NBA Team themes - Southeast Division
+    { id: 'nba-hawks', name: 'Atlanta Hawks', description: 'Hawks Red, Black, and Gold', isDark: false, category: 'NBA' },
+    { id: 'nba-hornets', name: 'Charlotte Hornets', description: 'Hornets Purple and Teal', isDark: false, category: 'NBA' },
+    { id: 'nba-heat', name: 'Miami Heat', description: 'Heat Red, Black, and Yellow', isDark: false, category: 'NBA' },
+    { id: 'nba-magic', name: 'Orlando Magic', description: 'Magic Blue and Black', isDark: false, category: 'NBA' },
+    { id: 'nba-wizards', name: 'Washington Wizards', description: 'Wizards Navy and Red', isDark: false, category: 'NBA' },
+
+    // NBA Team themes - Northwest Division
+    { id: 'nba-nuggets', name: 'Denver Nuggets', description: 'Nuggets Navy and Gold', isDark: false, category: 'NBA' },
+    { id: 'nba-timberwolves', name: 'Minnesota Timberwolves', description: 'Timberwolves Navy, Blue, and Green', isDark: false, category: 'NBA' },
+    { id: 'nba-thunder', name: 'Oklahoma City Thunder', description: 'Thunder Blue and Orange', isDark: false, category: 'NBA' },
+    { id: 'nba-trailblazers', name: 'Portland Trail Blazers', description: 'Blazers Red and Black', isDark: false, category: 'NBA' },
+    { id: 'nba-jazz', name: 'Utah Jazz', description: 'Jazz Navy, Yellow, and Green', isDark: false, category: 'NBA' },
+
+    // NBA Team themes - Pacific Division
+    { id: 'nba-warriors', name: 'Golden State Warriors', description: 'Warriors Blue and Gold', isDark: false, category: 'NBA' },
+    { id: 'nba-clippers', name: 'LA Clippers', description: 'Clippers Red and Blue', isDark: false, category: 'NBA' },
+    { id: 'nba-lakers', name: 'Los Angeles Lakers', description: 'Lakers Purple and Gold', isDark: false, category: 'NBA' },
+    { id: 'nba-suns', name: 'Phoenix Suns', description: 'Suns Purple and Orange', isDark: false, category: 'NBA' },
+    { id: 'nba-kings', name: 'Sacramento Kings', description: 'Kings Purple and Gray', isDark: false, category: 'NBA' },
+
+    // NBA Team themes - Southwest Division
+    { id: 'nba-mavericks', name: 'Dallas Mavericks', description: 'Mavericks Blue and Navy', isDark: false, category: 'NBA' },
+    { id: 'nba-rockets', name: 'Houston Rockets', description: 'Rockets Red', isDark: false, category: 'NBA' },
+    { id: 'nba-grizzlies', name: 'Memphis Grizzlies', description: 'Grizzlies Navy and Beale Street Blue', isDark: false, category: 'NBA' },
+    { id: 'nba-pelicans', name: 'New Orleans Pelicans', description: 'Pelicans Navy, Gold, and Red', isDark: false, category: 'NBA' },
+    { id: 'nba-spurs', name: 'San Antonio Spurs', description: 'Spurs Silver and Black', isDark: false, category: 'NBA' },
   ];
 
   /** Themes grouped by category */
   readonly themesByCategory = computed<ThemeGroup[]>(() => {
-    const categories: ThemeCategory[] = ['Base', 'Bootswatch', 'Material Design', 'Programming', 'Cloud Providers', 'NFL'];
+    const categories: ThemeCategory[] = ['Base', 'Bootswatch', 'Material Design', 'Programming', 'Cloud Providers', 'NFL', 'NBA'];
     return categories.map(category => ({
       category,
       themes: this.themes.filter(t => t.category === category)
