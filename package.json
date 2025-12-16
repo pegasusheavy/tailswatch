@@ -51,6 +51,7 @@
     "./themes/kotlin": "./dist/themes/kotlin.css",
     "./themes/oxide": "./dist/themes/oxide.css",
     "./themes/python": "./dist/themes/python.css",
+    "./themes/zig": "./dist/themes/zig.css",
     "./themes/material-light-blue": "./dist/themes/material-light-blue.css",
     "./themes/material-dark-blue": "./dist/themes/material-dark-blue.css",
     "./themes/material-light-indigo": "./dist/themes/material-light-indigo.css",
@@ -128,7 +129,8 @@
     "kotlin",
     "jetbrains",
     "java",
-    "python"
+    "python",
+    "zig"
   ],
   "repository": {
     "type": "git",

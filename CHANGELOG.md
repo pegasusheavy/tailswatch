@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Kotlin theme** - Kotlin / JetBrains orange-to-purple theme with Kotlin Orange (#F88909) and Purple (#7F52FF)
 - **Java theme** - Java red-orange (#E76F00) and blue (#5382A1) with coffee brown accent
 - **Python theme** - Python Blue (#3776AB) and Yellow (#FFD43B) two-snake logo colors
+- **Zig theme** - Zig golden orange (#F7A41D) with electric blue accent
 - **9 Cloud Provider themes**
   - AWS - Amazon Web Services orange and squid ink
   - Azure - Microsoft Azure professional blue

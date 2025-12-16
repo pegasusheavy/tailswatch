@@ -1,0 +1,7 @@
+@use "tailwindcss";
+@use "../../../../src/themes/zig.scss";
+
+html {
+  scroll-behavior: smooth;
+}
+
