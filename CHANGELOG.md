@@ -34,6 +34,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Northwest:** Nuggets, Timberwolves, Thunder, Trail Blazers, Jazz
 - **Pacific:** Warriors, Clippers, Lakers, Suns, Kings
 - **Southwest:** Mavericks, Rockets, Grizzlies, Pelicans, Spurs
+
+### NHL Team Themes (32 total)
+- **Atlantic:** Bruins, Sabres, Red Wings, Panthers, Canadiens, Senators, Lightning, Maple Leafs
+- **Metropolitan:** Hurricanes, Blue Jackets, Devils, Islanders, Rangers, Flyers, Penguins, Capitals
+- **Central:** Utah HC, Blackhawks, Avalanche, Stars, Wild, Predators, Blues, Jets
+- **Pacific:** Ducks, Flames, Oilers, Kings, Sharks, Kraken, Canucks, Golden Knights
+
+### Motorsports Themes
+- **Formula 1** - F1 Racing Red (#E10600) and Black
+
 - **Zig theme** - Zig golden orange (#F7A41D) with electric blue accent
 - **9 Cloud Provider themes**
   - AWS - Amazon Web Services orange and squid ink

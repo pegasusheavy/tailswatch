@@ -1,6 +1,2 @@
 @use "tailwindcss";
-@use "../../../../src/themes/nfl-falcons.scss";
-
-html {
-  scroll-behavior: smooth;
-}
+@use "../../../../src/themes/nfl-falcons";

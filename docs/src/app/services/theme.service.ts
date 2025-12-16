@@ -8,6 +8,7 @@ export type ThemeCategory =
   | 'Cloud Providers'
   | 'NFL'
   | 'NBA'
+  | 'NHL'
   | 'Motorsports';
 
 export interface ThemeInfo {
@@ -191,13 +192,53 @@ export class ThemeService {
     { id: 'nba-pelicans', name: 'New Orleans Pelicans', description: 'Pelicans Navy, Gold, and Red', isDark: false, category: 'NBA' },
     { id: 'nba-spurs', name: 'San Antonio Spurs', description: 'Spurs Silver and Black', isDark: false, category: 'NBA' },
 
+    // NHL Team themes - Atlantic Division
+    { id: 'nhl-bruins', name: 'Boston Bruins', description: 'Bruins Black and Gold', isDark: false, category: 'NHL' },
+    { id: 'nhl-sabres', name: 'Buffalo Sabres', description: 'Sabres Royal Blue and Gold', isDark: false, category: 'NHL' },
+    { id: 'nhl-redwings', name: 'Detroit Red Wings', description: 'Red Wings Red and White', isDark: false, category: 'NHL' },
+    { id: 'nhl-panthers', name: 'Florida Panthers', description: 'Panthers Red and Navy', isDark: false, category: 'NHL' },
+    { id: 'nhl-canadiens', name: 'Montreal Canadiens', description: 'Canadiens Red, White, and Blue', isDark: false, category: 'NHL' },
+    { id: 'nhl-senators', name: 'Ottawa Senators', description: 'Senators Red, Black, and Gold', isDark: false, category: 'NHL' },
+    { id: 'nhl-lightning', name: 'Tampa Bay Lightning', description: 'Lightning Blue and White', isDark: false, category: 'NHL' },
+    { id: 'nhl-mapleleafs', name: 'Toronto Maple Leafs', description: 'Maple Leafs Blue and White', isDark: false, category: 'NHL' },
+
+    // NHL Team themes - Metropolitan Division
+    { id: 'nhl-hurricanes', name: 'Carolina Hurricanes', description: 'Hurricanes Red, Black, and Gray', isDark: false, category: 'NHL' },
+    { id: 'nhl-bluejackets', name: 'Columbus Blue Jackets', description: 'Blue Jackets Navy, Red, and Silver', isDark: false, category: 'NHL' },
+    { id: 'nhl-devils', name: 'New Jersey Devils', description: 'Devils Red and Black', isDark: false, category: 'NHL' },
+    { id: 'nhl-islanders', name: 'New York Islanders', description: 'Islanders Blue and Orange', isDark: false, category: 'NHL' },
+    { id: 'nhl-rangers', name: 'New York Rangers', description: 'Rangers Blue and Red', isDark: false, category: 'NHL' },
+    { id: 'nhl-flyers', name: 'Philadelphia Flyers', description: 'Flyers Orange and Black', isDark: false, category: 'NHL' },
+    { id: 'nhl-penguins', name: 'Pittsburgh Penguins', description: 'Penguins Black and Gold', isDark: false, category: 'NHL' },
+    { id: 'nhl-capitals', name: 'Washington Capitals', description: 'Capitals Red, White, and Blue', isDark: false, category: 'NHL' },
+
+    // NHL Team themes - Central Division
+    { id: 'nhl-utahhc', name: 'Utah Hockey Club', description: 'Utah HC Black, Blue, and White', isDark: false, category: 'NHL' },
+    { id: 'nhl-blackhawks', name: 'Chicago Blackhawks', description: 'Blackhawks Red and Black', isDark: false, category: 'NHL' },
+    { id: 'nhl-avalanche', name: 'Colorado Avalanche', description: 'Avalanche Burgundy and Blue', isDark: false, category: 'NHL' },
+    { id: 'nhl-stars', name: 'Dallas Stars', description: 'Stars Victory Green and Silver', isDark: false, category: 'NHL' },
+    { id: 'nhl-wild', name: 'Minnesota Wild', description: 'Wild Forest Green and Red', isDark: false, category: 'NHL' },
+    { id: 'nhl-predators', name: 'Nashville Predators', description: 'Predators Gold and Navy', isDark: false, category: 'NHL' },
+    { id: 'nhl-blues', name: 'St. Louis Blues', description: 'Blues Blue and Gold', isDark: false, category: 'NHL' },
+    { id: 'nhl-jets', name: 'Winnipeg Jets', description: 'Jets Navy and Aviator Blue', isDark: false, category: 'NHL' },
+
+    // NHL Team themes - Pacific Division
+    { id: 'nhl-ducks', name: 'Anaheim Ducks', description: 'Ducks Black, Gold, and Orange', isDark: false, category: 'NHL' },
+    { id: 'nhl-flames', name: 'Calgary Flames', description: 'Flames Red and Gold', isDark: false, category: 'NHL' },
+    { id: 'nhl-oilers', name: 'Edmonton Oilers', description: 'Oilers Orange and Blue', isDark: false, category: 'NHL' },
+    { id: 'nhl-kings', name: 'Los Angeles Kings', description: 'Kings Black and Silver', isDark: false, category: 'NHL' },
+    { id: 'nhl-sharks', name: 'San Jose Sharks', description: 'Sharks Teal and Black', isDark: false, category: 'NHL' },
+    { id: 'nhl-kraken', name: 'Seattle Kraken', description: 'Kraken Deep Sea Blue and Ice Blue', isDark: false, category: 'NHL' },
+    { id: 'nhl-canucks', name: 'Vancouver Canucks', description: 'Canucks Blue and Green', isDark: false, category: 'NHL' },
+    { id: 'nhl-goldenknights', name: 'Vegas Golden Knights', description: 'Golden Knights Gold and Black', isDark: false, category: 'NHL' },
+
     // Motorsports themes
     { id: 'f1', name: 'Formula 1', description: 'F1 Racing Red and Black', isDark: false, category: 'Motorsports' },
   ];
 
   /** Themes grouped by category */
   readonly themesByCategory = computed<ThemeGroup[]>(() => {
-    const categories: ThemeCategory[] = ['Base', 'Bootswatch', 'Material Design', 'Programming', 'Cloud Providers', 'NFL', 'NBA', 'Motorsports'];
+    const categories: ThemeCategory[] = ['Base', 'Bootswatch', 'Material Design', 'Programming', 'Cloud Providers', 'NFL', 'NBA', 'NHL', 'Motorsports'];
     return categories.map(category => ({
       category,
       themes: this.themes.filter(t => t.category === category)
