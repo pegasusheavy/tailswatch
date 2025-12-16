@@ -62,6 +62,7 @@
               { "input": "src/styles/themes/yeti.scss", "bundleName": "yeti", "inject": false },
               { "input": "src/styles/themes/zephyr.scss", "bundleName": "zephyr", "inject": false },
               { "input": "src/styles/themes/kernel.scss", "bundleName": "kernel", "inject": false },
+              { "input": "src/styles/themes/kotlin.scss", "bundleName": "kotlin", "inject": false },
               { "input": "src/styles/themes/material-light-blue.scss", "bundleName": "material-light-blue", "inject": false },
               { "input": "src/styles/themes/material-dark-blue.scss", "bundleName": "material-dark-blue", "inject": false },
               { "input": "src/styles/themes/material-light-indigo.scss", "bundleName": "material-light-indigo", "inject": false },

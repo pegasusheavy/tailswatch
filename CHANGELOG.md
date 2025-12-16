@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - **C# theme** - C# / .NET / Visual Studio purple theme with .NET Purple (#512BD4) primary color
+- **Kotlin theme** - Kotlin / JetBrains orange-to-purple theme with Kotlin Orange (#F88909) and Purple (#7F52FF)
 - **9 Cloud Provider themes**
   - AWS - Amazon Web Services orange and squid ink
   - Azure - Microsoft Azure professional blue

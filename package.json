@@ -47,6 +47,7 @@
     "./themes/evergreen": "./dist/themes/evergreen.css",
     "./themes/gopher": "./dist/themes/gopher.css",
     "./themes/kernel": "./dist/themes/kernel.css",
+    "./themes/kotlin": "./dist/themes/kotlin.css",
     "./themes/oxide": "./dist/themes/oxide.css",
     "./themes/material-light-blue": "./dist/themes/material-light-blue.css",
     "./themes/material-dark-blue": "./dist/themes/material-dark-blue.css",
@@ -121,7 +122,9 @@
     "cloud-themes",
     "csharp",
     "dotnet",
-    "visual-studio"
+    "visual-studio",
+    "kotlin",
+    "jetbrains"
   ],
   "repository": {
     "type": "git",
