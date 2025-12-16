@@ -1,0 +1,105 @@
+// Tailswatch: New York Islanders - Orange (#F47D30), Blue (#00539B)
+:root {
+  --color-primary-50: #fef2eb; --color-primary-100: #fde5d7; --color-primary-200: #fbcbaf;
+  --color-primary-300: #f9b187; --color-primary-400: #f7975f; --color-primary-500: #f47d30;
+  --color-primary-600: #c36426; --color-primary-700: #924b1d; --color-primary-800: #623213;
+  --color-primary-900: #31190a; --color-primary-950: #180c05;
+
+  --color-secondary-50: #e6eef5; --color-secondary-100: #cddceb; --color-secondary-200: #9bb9d7;
+  --color-secondary-300: #6996c3; --color-secondary-400: #3773af; --color-secondary-500: #00539b;
+  --color-secondary-600: #00427c; --color-secondary-700: #00325d; --color-secondary-800: #00213e;
+  --color-secondary-900: #00111f; --color-secondary-950: #000810;
+
+  --color-accent-50: #ffffff; --color-accent-100: #fafafa; --color-accent-200: #f5f5f5;
+  --color-accent-300: #e0e0e0; --color-accent-400: #c0c0c0; --color-accent-500: #a0a0a0;
+  --color-accent-600: #808080; --color-accent-700: #606060; --color-accent-800: #404040;
+  --color-accent-900: #202020; --color-accent-950: #101010;
+
+  --color-success-50: #f0fdf4; --color-success-100: #dcfce7; --color-success-200: #bbf7d0;
+  --color-success-300: #86efac; --color-success-400: #4ade80; --color-success-500: #22c55e;
+  --color-success-600: #16a34a; --color-success-700: #15803d; --color-success-800: #166534;
+  --color-success-900: #14532d; --color-success-950: #052e16;
+
+  --color-warning-50: #fffbeb; --color-warning-100: #fef3c7; --color-warning-200: #fde68a;
+  --color-warning-300: #fcd34d; --color-warning-400: #fbbf24; --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706; --color-warning-700: #b45309; --color-warning-800: #92400e;
+  --color-warning-900: #78350f; --color-warning-950: #451a03;
+
+  --color-error-50: #fef2f2; --color-error-100: #fee2e2; --color-error-200: #fecaca;
+  --color-error-300: #fca5a5; --color-error-400: #f87171; --color-error-500: #ef4444;
+  --color-error-600: #dc2626; --color-error-700: #b91c1c; --color-error-800: #991b1b;
+  --color-error-900: #7f1d1d; --color-error-950: #450a0a;
+
+  --color-info-50: #eff6ff; --color-info-100: #dbeafe; --color-info-200: #bfdbfe;
+  --color-info-300: #93c5fd; --color-info-400: #60a5fa; --color-info-500: #3b82f6;
+  --color-info-600: #2563eb; --color-info-700: #1d4ed8; --color-info-800: #1e40af;
+  --color-info-900: #1e3a8a; --color-info-950: #172554;
+
+  --color-background: #ffffff;
+  --color-surface: #f8f8f8;
+  --color-surface-muted: #f0f0f0;
+  --color-border: #e0e0e0;
+  --color-text: #111111;
+  --color-text-muted: #64748b;
+  --color-text-inverted: #ffffff;
+}
+
+@theme {
+  --color-primary-50: var(--color-primary-50); --color-primary-100: var(--color-primary-100);
+  --color-primary-200: var(--color-primary-200); --color-primary-300: var(--color-primary-300);
+  --color-primary-400: var(--color-primary-400); --color-primary-500: var(--color-primary-500);
+  --color-primary-600: var(--color-primary-600); --color-primary-700: var(--color-primary-700);
+  --color-primary-800: var(--color-primary-800); --color-primary-900: var(--color-primary-900);
+  --color-primary-950: var(--color-primary-950);
+
+  --color-secondary-50: var(--color-secondary-50); --color-secondary-100: var(--color-secondary-100);
+  --color-secondary-200: var(--color-secondary-200); --color-secondary-300: var(--color-secondary-300);
+  --color-secondary-400: var(--color-secondary-400); --color-secondary-500: var(--color-secondary-500);
+  --color-secondary-600: var(--color-secondary-600); --color-secondary-700: var(--color-secondary-700);
+  --color-secondary-800: var(--color-secondary-800); --color-secondary-900: var(--color-secondary-900);
+  --color-secondary-950: var(--color-secondary-950);
+
+  --color-accent-50: var(--color-accent-50); --color-accent-100: var(--color-accent-100);
+  --color-accent-200: var(--color-accent-200); --color-accent-300: var(--color-accent-300);
+  --color-accent-400: var(--color-accent-400); --color-accent-500: var(--color-accent-500);
+  --color-accent-600: var(--color-accent-600); --color-accent-700: var(--color-accent-700);
+  --color-accent-800: var(--color-accent-800); --color-accent-900: var(--color-accent-900);
+  --color-accent-950: var(--color-accent-950);
+
+  --color-success-50: var(--color-success-50); --color-success-100: var(--color-success-100);
+  --color-success-200: var(--color-success-200); --color-success-300: var(--color-success-300);
+  --color-success-400: var(--color-success-400); --color-success-500: var(--color-success-500);
+  --color-success-600: var(--color-success-600); --color-success-700: var(--color-success-700);
+  --color-success-800: var(--color-success-800); --color-success-900: var(--color-success-900);
+  --color-success-950: var(--color-success-950);
+
+  --color-warning-50: var(--color-warning-50); --color-warning-100: var(--color-warning-100);
+  --color-warning-200: var(--color-warning-200); --color-warning-300: var(--color-warning-300);
+  --color-warning-400: var(--color-warning-400); --color-warning-500: var(--color-warning-500);
+  --color-warning-600: var(--color-warning-600); --color-warning-700: var(--color-warning-700);
+  --color-warning-800: var(--color-warning-800); --color-warning-900: var(--color-warning-900);
+  --color-warning-950: var(--color-warning-950);
+
+  --color-error-50: var(--color-error-50); --color-error-100: var(--color-error-100);
+  --color-error-200: var(--color-error-200); --color-error-300: var(--color-error-300);
+  --color-error-400: var(--color-error-400); --color-error-500: var(--color-error-500);
+  --color-error-600: var(--color-error-600); --color-error-700: var(--color-error-700);
+  --color-error-800: var(--color-error-800); --color-error-900: var(--color-error-900);
+  --color-error-950: var(--color-error-950);
+
+  --color-info-50: var(--color-info-50); --color-info-100: var(--color-info-100);
+  --color-info-200: var(--color-info-200); --color-info-300: var(--color-info-300);
+  --color-info-400: var(--color-info-400); --color-info-500: var(--color-info-500);
+  --color-info-600: var(--color-info-600); --color-info-700: var(--color-info-700);
+  --color-info-800: var(--color-info-800); --color-info-900: var(--color-info-900);
+  --color-info-950: var(--color-info-950);
+
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-surface-muted: var(--color-surface-muted);
+  --color-border: var(--color-border);
+  --color-text: var(--color-text);
+  --color-text-muted: var(--color-text-muted);
+  --color-text-inverted: var(--color-text-inverted);
+}
+

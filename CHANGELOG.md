@@ -5,6 +5,67 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- **C# theme** - C# / .NET / Visual Studio purple theme with .NET Purple (#512BD4) primary color
+- **Kotlin theme** - Kotlin / JetBrains orange-to-purple theme with Kotlin Orange (#F88909) and Purple (#7F52FF)
+- **Java theme** - Java red-orange (#E76F00) and blue (#5382A1) with coffee brown accent
+- **JavaScript theme** - JavaScript Yellow (#F7DF1E) with modern purple accent
+- **Python theme** - Python Blue (#3776AB) and Yellow (#FFD43B) two-snake logo colors
+- **TypeScript theme** - TypeScript Blue (#3178C6) with cyan accent
+- **WebAssembly theme** - WASM Purple (#654FF0) with electric cyan accent
+
+### NFL Team Themes (32 total)
+- **AFC East:** Bills, Dolphins, Patriots, Jets
+- **AFC North:** Ravens, Bengals, Browns, Steelers
+- **AFC South:** Texans, Colts, Jaguars, Titans
+- **AFC West:** Broncos, Chiefs, Raiders, Chargers
+- **NFC East:** Cowboys, Giants, Eagles, Commanders
+- **NFC North:** Bears, Lions, Packers, Vikings
+- **NFC South:** Falcons, Panthers, Saints, Buccaneers
+- **NFC West:** Cardinals, Rams, 49ers, Seahawks
+
+### NBA Team Themes (30 total)
+- **Atlantic:** Celtics, Nets, Knicks, 76ers, Raptors
+- **Central:** Bulls, Cavaliers, Pistons, Pacers, Bucks
+- **Southeast:** Hawks, Hornets, Heat, Magic, Wizards
+- **Northwest:** Nuggets, Timberwolves, Thunder, Trail Blazers, Jazz
+- **Pacific:** Warriors, Clippers, Lakers, Suns, Kings
+- **Southwest:** Mavericks, Rockets, Grizzlies, Pelicans, Spurs
+
+### NHL Team Themes (32 total)
+- **Atlantic:** Bruins, Sabres, Red Wings, Panthers, Canadiens, Senators, Lightning, Maple Leafs
+- **Metropolitan:** Hurricanes, Blue Jackets, Devils, Islanders, Rangers, Flyers, Penguins, Capitals
+- **Central:** Utah HC, Blackhawks, Avalanche, Stars, Wild, Predators, Blues, Jets
+- **Pacific:** Ducks, Flames, Oilers, Kings, Sharks, Kraken, Canucks, Golden Knights
+
+### Motorsports Themes
+- **Formula 1** - F1 Racing Red (#E10600) and Black
+
+- **Zig theme** - Zig golden orange (#F7A41D) with electric blue accent
+- **9 Cloud Provider themes**
+  - AWS - Amazon Web Services orange and squid ink
+  - Azure - Microsoft Azure professional blue
+  - Google Cloud - Google Cloud Platform multi-color palette
+  - Firebase - Google Firebase yellow and orange
+  - Vercel - Vercel minimalist black and white
+  - DigitalOcean - DigitalOcean ocean blue and teal
+  - Cloudflare - Cloudflare orange and blue
+  - Netlify - Netlify teal with dark accents
+  - Heroku - Heroku classic purple
+
+### Changed
+
+- Theme selector dropdown now groups themes by category (Base, Bootswatch, Material Design, Programming, Cloud Providers)
+- **Material Design themes enhanced with M3 design tokens:**
+  - 4dp grid spacing system (`--spacing-1` through `--spacing-24`)
+  - Material 3 border radius (rounded corners: `--radius-xs` through `--radius-xl`, `--radius-full`)
+  - 5-level elevation system (`--shadow-none` through `--shadow-xl`)
+  - Typography tokens (`--tracking-*`, `--leading-*`)
+  - Motion/easing tokens (`--duration-*`, `--easing-*`)
+
 ## [1.1.1] - 2025-12-15
 
 ### Fixed

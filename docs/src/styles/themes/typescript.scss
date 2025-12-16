@@ -1,0 +1,7 @@
+@use "tailwindcss";
+@use "../../../../src/themes/typescript.scss";
+
+html {
+  scroll-behavior: smooth;
+}
+

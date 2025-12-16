@@ -9,10 +9,14 @@
     (change)="onThemeChange($event)"
     class="cursor-pointer appearance-none rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] py-2 pl-9 pr-10 text-sm font-medium text-[var(--color-text)] transition-colors hover:border-[var(--color-primary-500)] focus:border-[var(--color-primary-500)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)]/20"
   >
-    @for (theme of themeService.themes; track theme.id) {
-      <option [value]="theme.id" [selected]="theme.id === themeService.currentThemeId()">
-        {{ theme.name }}
-      </option>
+    @for (group of themeService.themesByCategory(); track group.category) {
+      <optgroup [label]="group.category">
+        @for (theme of group.themes; track theme.id) {
+          <option [value]="theme.id" [selected]="theme.id === themeService.currentThemeId()">
+            {{ theme.name }}
+          </option>
+        }
+      </optgroup>
     }
   </select>
   <fa-icon

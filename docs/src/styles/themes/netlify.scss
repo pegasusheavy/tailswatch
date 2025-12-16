@@ -1,0 +1,7 @@
+@use "tailwindcss";
+@use "../../../../src/themes/netlify.scss";
+
+html {
+  scroll-behavior: smooth;
+}
+

@@ -1,10 +1,27 @@
 import { Injectable, signal, computed } from '@angular/core';
 
+export type ThemeCategory =
+  | 'Base'
+  | 'Bootswatch'
+  | 'Material Design'
+  | 'Programming'
+  | 'Cloud Providers'
+  | 'NFL'
+  | 'NBA'
+  | 'NHL'
+  | 'Motorsports';
+
 export interface ThemeInfo {
   id: string;
   name: string;
   description: string;
   isDark: boolean;
+  category: ThemeCategory;
+}
+
+export interface ThemeGroup {
+  category: ThemeCategory;
+  themes: ThemeInfo[];
 }
 
 @Injectable({
@@ -14,58 +31,219 @@ export class ThemeService {
   private readonly STORAGE_KEY = 'tailswatch-theme';
   private readonly THEME_LINK_ID = 'tailswatch-theme-link';
 
-  /** Available themes - Bootswatch-inspired + custom themes */
+  /** Available themes - organized by category */
   readonly themes: ThemeInfo[] = [
-    // Default
-    { id: 'default', name: 'Default', description: 'Generic Tailwind CSS with no customization', isDark: false },
+    // Base themes
+    { id: 'default', name: 'Default', description: 'Generic Tailwind CSS with no customization', isDark: false, category: 'Base' },
 
     // Bootswatch themes (alphabetical)
-    { id: 'cerulean', name: 'Cerulean', description: 'A calm blue sky theme', isDark: false },
-    { id: 'cosmo', name: 'Cosmo', description: 'An ode to Metro with vibrant blue', isDark: false },
-    { id: 'cyborg', name: 'Cyborg', description: 'Jet black with electric cyan accents', isDark: true },
-    { id: 'darkly', name: 'Darkly', description: 'Dark mode version of Flatly', isDark: true },
-    { id: 'flatly', name: 'Flatly', description: 'Flat theme with teal accents', isDark: false },
-    { id: 'journal', name: 'Journal', description: 'Crisp like a new sheet of paper', isDark: false },
-    { id: 'litera', name: 'Litera', description: 'The medium is the message', isDark: false },
-    { id: 'lumen', name: 'Lumen', description: 'Light and shadow', isDark: false },
-    { id: 'lux', name: 'Lux', description: 'A touch of class', isDark: false },
-    { id: 'materia', name: 'Materia', description: 'Material design inspired', isDark: false },
-    { id: 'minty', name: 'Minty', description: 'A fresh feel', isDark: false },
-    { id: 'morph', name: 'Morph', description: 'Soft neumorphism', isDark: false },
-    { id: 'pulse', name: 'Pulse', description: 'A trace of purple', isDark: false },
-    { id: 'quartz', name: 'Quartz', description: 'Glassmorphism aesthetic', isDark: true },
-    { id: 'sandstone', name: 'Sandstone', description: 'A touch of warmth', isDark: false },
-    { id: 'simplex', name: 'Simplex', description: 'Mini and minimalist', isDark: false },
-    { id: 'sketchy', name: 'Sketchy', description: 'A hand-drawn look', isDark: false },
-    { id: 'slate', name: 'Slate', description: 'Shades of gunmetal gray', isDark: true },
-    { id: 'solar', name: 'Solar', description: 'A spin on Solarized', isDark: true },
-    { id: 'spacelab', name: 'Spacelab', description: 'Silvery and sleek', isDark: false },
-    { id: 'superhero', name: 'Superhero', description: 'The brave and the blue', isDark: true },
-    { id: 'united', name: 'United', description: 'Ubuntu orange and unique font', isDark: false },
-    { id: 'vapor', name: 'Vapor', description: 'Vaporwave aesthetic', isDark: true },
-    { id: 'yeti', name: 'Yeti', description: 'A friendly foundation', isDark: false },
-    { id: 'zephyr', name: 'Zephyr', description: 'Breezy and bright', isDark: false },
-
-    // Custom programming-inspired themes
-    { id: 'evergreen', name: 'Evergreen', description: 'Node.js-inspired dark theme', isDark: true },
-    { id: 'gopher', name: 'Gopher', description: 'Go-inspired bright theme with cyan', isDark: false },
-    { id: 'kernel', name: 'Kernel', description: 'C/C++ inspired battle-tested classic', isDark: true },
-    { id: 'oxide', name: 'Oxide', description: 'Rust-inspired dark theme with orange', isDark: true },
+    { id: 'cerulean', name: 'Cerulean', description: 'A calm blue sky theme', isDark: false, category: 'Bootswatch' },
+    { id: 'cosmo', name: 'Cosmo', description: 'An ode to Metro with vibrant blue', isDark: false, category: 'Bootswatch' },
+    { id: 'cyborg', name: 'Cyborg', description: 'Jet black with electric cyan accents', isDark: true, category: 'Bootswatch' },
+    { id: 'darkly', name: 'Darkly', description: 'Dark mode version of Flatly', isDark: true, category: 'Bootswatch' },
+    { id: 'flatly', name: 'Flatly', description: 'Flat theme with teal accents', isDark: false, category: 'Bootswatch' },
+    { id: 'journal', name: 'Journal', description: 'Crisp like a new sheet of paper', isDark: false, category: 'Bootswatch' },
+    { id: 'litera', name: 'Litera', description: 'The medium is the message', isDark: false, category: 'Bootswatch' },
+    { id: 'lumen', name: 'Lumen', description: 'Light and shadow', isDark: false, category: 'Bootswatch' },
+    { id: 'lux', name: 'Lux', description: 'A touch of class', isDark: false, category: 'Bootswatch' },
+    { id: 'materia', name: 'Materia', description: 'Material design inspired', isDark: false, category: 'Bootswatch' },
+    { id: 'minty', name: 'Minty', description: 'A fresh feel', isDark: false, category: 'Bootswatch' },
+    { id: 'morph', name: 'Morph', description: 'Soft neumorphism', isDark: false, category: 'Bootswatch' },
+    { id: 'pulse', name: 'Pulse', description: 'A trace of purple', isDark: false, category: 'Bootswatch' },
+    { id: 'quartz', name: 'Quartz', description: 'Glassmorphism aesthetic', isDark: true, category: 'Bootswatch' },
+    { id: 'sandstone', name: 'Sandstone', description: 'A touch of warmth', isDark: false, category: 'Bootswatch' },
+    { id: 'simplex', name: 'Simplex', description: 'Mini and minimalist', isDark: false, category: 'Bootswatch' },
+    { id: 'sketchy', name: 'Sketchy', description: 'A hand-drawn look', isDark: false, category: 'Bootswatch' },
+    { id: 'slate', name: 'Slate', description: 'Shades of gunmetal gray', isDark: true, category: 'Bootswatch' },
+    { id: 'solar', name: 'Solar', description: 'A spin on Solarized', isDark: true, category: 'Bootswatch' },
+    { id: 'spacelab', name: 'Spacelab', description: 'Silvery and sleek', isDark: false, category: 'Bootswatch' },
+    { id: 'superhero', name: 'Superhero', description: 'The brave and the blue', isDark: true, category: 'Bootswatch' },
+    { id: 'united', name: 'United', description: 'Ubuntu orange and unique font', isDark: false, category: 'Bootswatch' },
+    { id: 'vapor', name: 'Vapor', description: 'Vaporwave aesthetic', isDark: true, category: 'Bootswatch' },
+    { id: 'yeti', name: 'Yeti', description: 'A friendly foundation', isDark: false, category: 'Bootswatch' },
+    { id: 'zephyr', name: 'Zephyr', description: 'Breezy and bright', isDark: false, category: 'Bootswatch' },
 
     // Material Design themes
-    { id: 'material-light-blue', name: 'Material Light Blue', description: 'Material Design with Blue primary', isDark: false },
-    { id: 'material-dark-blue', name: 'Material Dark Blue', description: 'Dark Material with Blue primary', isDark: true },
-    { id: 'material-light-indigo', name: 'Material Light Indigo', description: 'Material Design with Indigo primary', isDark: false },
-    { id: 'material-dark-indigo', name: 'Material Dark Indigo', description: 'Dark Material with Indigo primary', isDark: true },
-    { id: 'material-light-purple', name: 'Material Light Purple', description: 'Material Design with Purple primary', isDark: false },
-    { id: 'material-dark-purple', name: 'Material Dark Purple', description: 'Dark Material with Purple primary', isDark: true },
-    { id: 'material-light-teal', name: 'Material Light Teal', description: 'Material Design with Teal primary', isDark: false },
-    { id: 'material-dark-teal', name: 'Material Dark Teal', description: 'Dark Material with Teal primary', isDark: true },
-    { id: 'material-light-green', name: 'Material Light Green', description: 'Material Design with Green primary', isDark: false },
-    { id: 'material-dark-green', name: 'Material Dark Green', description: 'Dark Material with Green primary', isDark: true },
-    { id: 'material-light-deeporange', name: 'Material Light Deep Orange', description: 'Material Design with Deep Orange primary', isDark: false },
-    { id: 'material-dark-deeporange', name: 'Material Dark Deep Orange', description: 'Dark Material with Deep Orange primary', isDark: true },
+    { id: 'material-light-blue', name: 'Material Light Blue', description: 'Material Design with Blue primary', isDark: false, category: 'Material Design' },
+    { id: 'material-dark-blue', name: 'Material Dark Blue', description: 'Dark Material with Blue primary', isDark: true, category: 'Material Design' },
+    { id: 'material-light-indigo', name: 'Material Light Indigo', description: 'Material Design with Indigo primary', isDark: false, category: 'Material Design' },
+    { id: 'material-dark-indigo', name: 'Material Dark Indigo', description: 'Dark Material with Indigo primary', isDark: true, category: 'Material Design' },
+    { id: 'material-light-purple', name: 'Material Light Purple', description: 'Material Design with Purple primary', isDark: false, category: 'Material Design' },
+    { id: 'material-dark-purple', name: 'Material Dark Purple', description: 'Dark Material with Purple primary', isDark: true, category: 'Material Design' },
+    { id: 'material-light-teal', name: 'Material Light Teal', description: 'Material Design with Teal primary', isDark: false, category: 'Material Design' },
+    { id: 'material-dark-teal', name: 'Material Dark Teal', description: 'Dark Material with Teal primary', isDark: true, category: 'Material Design' },
+    { id: 'material-light-green', name: 'Material Light Green', description: 'Material Design with Green primary', isDark: false, category: 'Material Design' },
+    { id: 'material-dark-green', name: 'Material Dark Green', description: 'Dark Material with Green primary', isDark: true, category: 'Material Design' },
+    { id: 'material-light-deeporange', name: 'Material Light Deep Orange', description: 'Material Design with Deep Orange primary', isDark: false, category: 'Material Design' },
+    { id: 'material-dark-deeporange', name: 'Material Dark Deep Orange', description: 'Dark Material with Deep Orange primary', isDark: true, category: 'Material Design' },
+
+    // Programming language-inspired themes
+    { id: 'csharp', name: 'C#', description: 'C# / .NET / Visual Studio purple theme', isDark: false, category: 'Programming' },
+    { id: 'evergreen', name: 'Evergreen', description: 'Node.js-inspired dark theme', isDark: true, category: 'Programming' },
+    { id: 'gopher', name: 'Gopher', description: 'Go-inspired bright theme with cyan', isDark: false, category: 'Programming' },
+    { id: 'java', name: 'Java', description: 'Java red-orange and blue theme', isDark: false, category: 'Programming' },
+    { id: 'javascript', name: 'JavaScript', description: 'JavaScript yellow theme', isDark: false, category: 'Programming' },
+    { id: 'kernel', name: 'Kernel', description: 'C/C++ inspired battle-tested classic', isDark: true, category: 'Programming' },
+    { id: 'kotlin', name: 'Kotlin', description: 'Kotlin / JetBrains orange-to-purple theme', isDark: false, category: 'Programming' },
+    { id: 'oxide', name: 'Oxide', description: 'Rust-inspired dark theme with orange', isDark: true, category: 'Programming' },
+    { id: 'python', name: 'Python', description: 'Python blue and yellow theme', isDark: false, category: 'Programming' },
+    { id: 'typescript', name: 'TypeScript', description: 'TypeScript blue theme', isDark: false, category: 'Programming' },
+    { id: 'wasm', name: 'WebAssembly', description: 'WebAssembly purple theme', isDark: false, category: 'Programming' },
+    { id: 'zig', name: 'Zig', description: 'Zig golden orange theme', isDark: false, category: 'Programming' },
+
+    // Cloud Provider themes
+    { id: 'aws', name: 'AWS', description: 'Amazon Web Services orange and squid ink', isDark: false, category: 'Cloud Providers' },
+    { id: 'azure', name: 'Azure', description: 'Microsoft Azure professional blue', isDark: false, category: 'Cloud Providers' },
+    { id: 'gcloud', name: 'Google Cloud', description: 'Google Cloud Platform multi-color palette', isDark: false, category: 'Cloud Providers' },
+    { id: 'firebase', name: 'Firebase', description: 'Google Firebase yellow and orange', isDark: false, category: 'Cloud Providers' },
+    { id: 'vercel', name: 'Vercel', description: 'Vercel minimalist black and white', isDark: false, category: 'Cloud Providers' },
+    { id: 'digitalocean', name: 'DigitalOcean', description: 'DigitalOcean ocean blue and teal', isDark: false, category: 'Cloud Providers' },
+    { id: 'cloudflare', name: 'Cloudflare', description: 'Cloudflare orange and blue', isDark: false, category: 'Cloud Providers' },
+    { id: 'netlify', name: 'Netlify', description: 'Netlify teal and dark accents', isDark: false, category: 'Cloud Providers' },
+    { id: 'heroku', name: 'Heroku', description: 'Heroku classic purple', isDark: false, category: 'Cloud Providers' },
+
+    // NFL Team themes - AFC East
+    { id: 'nfl-bills', name: 'Buffalo Bills', description: 'Bills Blue and Red', isDark: false, category: 'NFL' },
+    { id: 'nfl-dolphins', name: 'Miami Dolphins', description: 'Dolphins Aqua and Orange', isDark: false, category: 'NFL' },
+    { id: 'nfl-patriots', name: 'New England Patriots', description: 'Patriots Navy, Red, and Silver', isDark: false, category: 'NFL' },
+    { id: 'nfl-jets', name: 'New York Jets', description: 'Jets Green', isDark: false, category: 'NFL' },
+
+    // NFL Team themes - AFC North
+    { id: 'nfl-ravens', name: 'Baltimore Ravens', description: 'Ravens Purple and Gold', isDark: false, category: 'NFL' },
+    { id: 'nfl-bengals', name: 'Cincinnati Bengals', description: 'Bengals Orange and Black', isDark: false, category: 'NFL' },
+    { id: 'nfl-browns', name: 'Cleveland Browns', description: 'Browns Brown and Orange', isDark: false, category: 'NFL' },
+    { id: 'nfl-steelers', name: 'Pittsburgh Steelers', description: 'Steelers Black and Gold', isDark: false, category: 'NFL' },
+
+    // NFL Team themes - AFC South
+    { id: 'nfl-texans', name: 'Houston Texans', description: 'Texans Deep Steel Blue and Red', isDark: false, category: 'NFL' },
+    { id: 'nfl-colts', name: 'Indianapolis Colts', description: 'Colts Royal Blue', isDark: false, category: 'NFL' },
+    { id: 'nfl-jaguars', name: 'Jacksonville Jaguars', description: 'Jaguars Teal and Gold', isDark: false, category: 'NFL' },
+    { id: 'nfl-titans', name: 'Tennessee Titans', description: 'Titans Navy and Light Blue', isDark: false, category: 'NFL' },
+
+    // NFL Team themes - AFC West
+    { id: 'nfl-broncos', name: 'Denver Broncos', description: 'Broncos Orange and Navy', isDark: false, category: 'NFL' },
+    { id: 'nfl-chiefs', name: 'Kansas City Chiefs', description: 'Chiefs Red and Gold', isDark: false, category: 'NFL' },
+    { id: 'nfl-raiders', name: 'Las Vegas Raiders', description: 'Raiders Silver and Black', isDark: false, category: 'NFL' },
+    { id: 'nfl-chargers', name: 'Los Angeles Chargers', description: 'Chargers Powder Blue and Gold', isDark: false, category: 'NFL' },
+
+    // NFL Team themes - NFC East
+    { id: 'nfl-cowboys', name: 'Dallas Cowboys', description: 'Cowboys Navy and Silver', isDark: false, category: 'NFL' },
+    { id: 'nfl-giants', name: 'New York Giants', description: 'Giants Blue and Red', isDark: false, category: 'NFL' },
+    { id: 'nfl-eagles', name: 'Philadelphia Eagles', description: 'Eagles Midnight Green', isDark: false, category: 'NFL' },
+    { id: 'nfl-commanders', name: 'Washington Commanders', description: 'Commanders Burgundy and Gold', isDark: false, category: 'NFL' },
+
+    // NFL Team themes - NFC North
+    { id: 'nfl-bears', name: 'Chicago Bears', description: 'Bears Navy and Orange', isDark: false, category: 'NFL' },
+    { id: 'nfl-lions', name: 'Detroit Lions', description: 'Lions Honolulu Blue and Silver', isDark: false, category: 'NFL' },
+    { id: 'nfl-packers', name: 'Green Bay Packers', description: 'Packers Green and Gold', isDark: false, category: 'NFL' },
+    { id: 'nfl-vikings', name: 'Minnesota Vikings', description: 'Vikings Purple and Gold', isDark: false, category: 'NFL' },
+
+    // NFL Team themes - NFC South
+    { id: 'nfl-falcons', name: 'Atlanta Falcons', description: 'Falcons Red and Black', isDark: false, category: 'NFL' },
+    { id: 'nfl-panthers', name: 'Carolina Panthers', description: 'Panthers Blue, Black, and Silver', isDark: false, category: 'NFL' },
+    { id: 'nfl-saints', name: 'New Orleans Saints', description: 'Saints Gold and Black', isDark: false, category: 'NFL' },
+    { id: 'nfl-buccaneers', name: 'Tampa Bay Buccaneers', description: 'Buccaneers Red and Pewter', isDark: false, category: 'NFL' },
+
+    // NFL Team themes - NFC West
+    { id: 'nfl-cardinals', name: 'Arizona Cardinals', description: 'Cardinals Cardinal Red', isDark: false, category: 'NFL' },
+    { id: 'nfl-rams', name: 'Los Angeles Rams', description: 'Rams Royal Blue and Sol Gold', isDark: false, category: 'NFL' },
+    { id: 'nfl-49ers', name: 'San Francisco 49ers', description: '49ers Red and Gold', isDark: false, category: 'NFL' },
+    { id: 'nfl-seahawks', name: 'Seattle Seahawks', description: 'Seahawks Navy and Action Green', isDark: false, category: 'NFL' },
+
+    // NBA Team themes - Atlantic Division
+    { id: 'nba-celtics', name: 'Boston Celtics', description: 'Celtics Green and Gold', isDark: false, category: 'NBA' },
+    { id: 'nba-nets', name: 'Brooklyn Nets', description: 'Nets Black and White', isDark: false, category: 'NBA' },
+    { id: 'nba-knicks', name: 'New York Knicks', description: 'Knicks Blue and Orange', isDark: false, category: 'NBA' },
+    { id: 'nba-76ers', name: 'Philadelphia 76ers', description: '76ers Blue and Red', isDark: false, category: 'NBA' },
+    { id: 'nba-raptors', name: 'Toronto Raptors', description: 'Raptors Red and Black', isDark: false, category: 'NBA' },
+
+    // NBA Team themes - Central Division
+    { id: 'nba-bulls', name: 'Chicago Bulls', description: 'Bulls Red and Black', isDark: false, category: 'NBA' },
+    { id: 'nba-cavaliers', name: 'Cleveland Cavaliers', description: 'Cavaliers Wine and Gold', isDark: false, category: 'NBA' },
+    { id: 'nba-pistons', name: 'Detroit Pistons', description: 'Pistons Blue and Red', isDark: false, category: 'NBA' },
+    { id: 'nba-pacers', name: 'Indiana Pacers', description: 'Pacers Navy and Gold', isDark: false, category: 'NBA' },
+    { id: 'nba-bucks', name: 'Milwaukee Bucks', description: 'Bucks Green and Cream', isDark: false, category: 'NBA' },
+
+    // NBA Team themes - Southeast Division
+    { id: 'nba-hawks', name: 'Atlanta Hawks', description: 'Hawks Red, Black, and Gold', isDark: false, category: 'NBA' },
+    { id: 'nba-hornets', name: 'Charlotte Hornets', description: 'Hornets Purple and Teal', isDark: false, category: 'NBA' },
+    { id: 'nba-heat', name: 'Miami Heat', description: 'Heat Red, Black, and Yellow', isDark: false, category: 'NBA' },
+    { id: 'nba-magic', name: 'Orlando Magic', description: 'Magic Blue and Black', isDark: false, category: 'NBA' },
+    { id: 'nba-wizards', name: 'Washington Wizards', description: 'Wizards Navy and Red', isDark: false, category: 'NBA' },
+
+    // NBA Team themes - Northwest Division
+    { id: 'nba-nuggets', name: 'Denver Nuggets', description: 'Nuggets Navy and Gold', isDark: false, category: 'NBA' },
+    { id: 'nba-timberwolves', name: 'Minnesota Timberwolves', description: 'Timberwolves Navy, Blue, and Green', isDark: false, category: 'NBA' },
+    { id: 'nba-thunder', name: 'Oklahoma City Thunder', description: 'Thunder Blue and Orange', isDark: false, category: 'NBA' },
+    { id: 'nba-trailblazers', name: 'Portland Trail Blazers', description: 'Blazers Red and Black', isDark: false, category: 'NBA' },
+    { id: 'nba-jazz', name: 'Utah Jazz', description: 'Jazz Navy, Yellow, and Green', isDark: false, category: 'NBA' },
+
+    // NBA Team themes - Pacific Division
+    { id: 'nba-warriors', name: 'Golden State Warriors', description: 'Warriors Blue and Gold', isDark: false, category: 'NBA' },
+    { id: 'nba-clippers', name: 'LA Clippers', description: 'Clippers Red and Blue', isDark: false, category: 'NBA' },
+    { id: 'nba-lakers', name: 'Los Angeles Lakers', description: 'Lakers Purple and Gold', isDark: false, category: 'NBA' },
+    { id: 'nba-suns', name: 'Phoenix Suns', description: 'Suns Purple and Orange', isDark: false, category: 'NBA' },
+    { id: 'nba-kings', name: 'Sacramento Kings', description: 'Kings Purple and Gray', isDark: false, category: 'NBA' },
+
+    // NBA Team themes - Southwest Division
+    { id: 'nba-mavericks', name: 'Dallas Mavericks', description: 'Mavericks Blue and Navy', isDark: false, category: 'NBA' },
+    { id: 'nba-rockets', name: 'Houston Rockets', description: 'Rockets Red', isDark: false, category: 'NBA' },
+    { id: 'nba-grizzlies', name: 'Memphis Grizzlies', description: 'Grizzlies Navy and Beale Street Blue', isDark: false, category: 'NBA' },
+    { id: 'nba-pelicans', name: 'New Orleans Pelicans', description: 'Pelicans Navy, Gold, and Red', isDark: false, category: 'NBA' },
+    { id: 'nba-spurs', name: 'San Antonio Spurs', description: 'Spurs Silver and Black', isDark: false, category: 'NBA' },
+
+    // NHL Team themes - Atlantic Division
+    { id: 'nhl-bruins', name: 'Boston Bruins', description: 'Bruins Black and Gold', isDark: false, category: 'NHL' },
+    { id: 'nhl-sabres', name: 'Buffalo Sabres', description: 'Sabres Royal Blue and Gold', isDark: false, category: 'NHL' },
+    { id: 'nhl-redwings', name: 'Detroit Red Wings', description: 'Red Wings Red and White', isDark: false, category: 'NHL' },
+    { id: 'nhl-panthers', name: 'Florida Panthers', description: 'Panthers Red and Navy', isDark: false, category: 'NHL' },
+    { id: 'nhl-canadiens', name: 'Montreal Canadiens', description: 'Canadiens Red, White, and Blue', isDark: false, category: 'NHL' },
+    { id: 'nhl-senators', name: 'Ottawa Senators', description: 'Senators Red, Black, and Gold', isDark: false, category: 'NHL' },
+    { id: 'nhl-lightning', name: 'Tampa Bay Lightning', description: 'Lightning Blue and White', isDark: false, category: 'NHL' },
+    { id: 'nhl-mapleleafs', name: 'Toronto Maple Leafs', description: 'Maple Leafs Blue and White', isDark: false, category: 'NHL' },
+
+    // NHL Team themes - Metropolitan Division
+    { id: 'nhl-hurricanes', name: 'Carolina Hurricanes', description: 'Hurricanes Red, Black, and Gray', isDark: false, category: 'NHL' },
+    { id: 'nhl-bluejackets', name: 'Columbus Blue Jackets', description: 'Blue Jackets Navy, Red, and Silver', isDark: false, category: 'NHL' },
+    { id: 'nhl-devils', name: 'New Jersey Devils', description: 'Devils Red and Black', isDark: false, category: 'NHL' },
+    { id: 'nhl-islanders', name: 'New York Islanders', description: 'Islanders Blue and Orange', isDark: false, category: 'NHL' },
+    { id: 'nhl-rangers', name: 'New York Rangers', description: 'Rangers Blue and Red', isDark: false, category: 'NHL' },
+    { id: 'nhl-flyers', name: 'Philadelphia Flyers', description: 'Flyers Orange and Black', isDark: false, category: 'NHL' },
+    { id: 'nhl-penguins', name: 'Pittsburgh Penguins', description: 'Penguins Black and Gold', isDark: false, category: 'NHL' },
+    { id: 'nhl-capitals', name: 'Washington Capitals', description: 'Capitals Red, White, and Blue', isDark: false, category: 'NHL' },
+
+    // NHL Team themes - Central Division
+    { id: 'nhl-utahhc', name: 'Utah Hockey Club', description: 'Utah HC Black, Blue, and White', isDark: false, category: 'NHL' },
+    { id: 'nhl-blackhawks', name: 'Chicago Blackhawks', description: 'Blackhawks Red and Black', isDark: false, category: 'NHL' },
+    { id: 'nhl-avalanche', name: 'Colorado Avalanche', description: 'Avalanche Burgundy and Blue', isDark: false, category: 'NHL' },
+    { id: 'nhl-stars', name: 'Dallas Stars', description: 'Stars Victory Green and Silver', isDark: false, category: 'NHL' },
+    { id: 'nhl-wild', name: 'Minnesota Wild', description: 'Wild Forest Green and Red', isDark: false, category: 'NHL' },
+    { id: 'nhl-predators', name: 'Nashville Predators', description: 'Predators Gold and Navy', isDark: false, category: 'NHL' },
+    { id: 'nhl-blues', name: 'St. Louis Blues', description: 'Blues Blue and Gold', isDark: false, category: 'NHL' },
+    { id: 'nhl-jets', name: 'Winnipeg Jets', description: 'Jets Navy and Aviator Blue', isDark: false, category: 'NHL' },
+
+    // NHL Team themes - Pacific Division
+    { id: 'nhl-ducks', name: 'Anaheim Ducks', description: 'Ducks Black, Gold, and Orange', isDark: false, category: 'NHL' },
+    { id: 'nhl-flames', name: 'Calgary Flames', description: 'Flames Red and Gold', isDark: false, category: 'NHL' },
+    { id: 'nhl-oilers', name: 'Edmonton Oilers', description: 'Oilers Orange and Blue', isDark: false, category: 'NHL' },
+    { id: 'nhl-kings', name: 'Los Angeles Kings', description: 'Kings Black and Silver', isDark: false, category: 'NHL' },
+    { id: 'nhl-sharks', name: 'San Jose Sharks', description: 'Sharks Teal and Black', isDark: false, category: 'NHL' },
+    { id: 'nhl-kraken', name: 'Seattle Kraken', description: 'Kraken Deep Sea Blue and Ice Blue', isDark: false, category: 'NHL' },
+    { id: 'nhl-canucks', name: 'Vancouver Canucks', description: 'Canucks Blue and Green', isDark: false, category: 'NHL' },
+    { id: 'nhl-goldenknights', name: 'Vegas Golden Knights', description: 'Golden Knights Gold and Black', isDark: false, category: 'NHL' },
+
+    // Motorsports themes
+    { id: 'f1', name: 'Formula 1', description: 'F1 Racing Red and Black', isDark: false, category: 'Motorsports' },
   ];
+
+  /** Themes grouped by category */
+  readonly themesByCategory = computed<ThemeGroup[]>(() => {
+    const categories: ThemeCategory[] = ['Base', 'Bootswatch', 'Material Design', 'Programming', 'Cloud Providers', 'NFL', 'NBA', 'NHL', 'Motorsports'];
+    return categories.map(category => ({
+      category,
+      themes: this.themes.filter(t => t.category === category)
+    })).filter(group => group.themes.length > 0);
+  });
 
   /** Currently active theme ID */
   readonly currentThemeId = signal<string>(this.loadSavedTheme());
