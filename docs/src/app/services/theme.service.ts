@@ -82,6 +82,7 @@ export class ThemeService {
     { id: 'kotlin', name: 'Kotlin', description: 'Kotlin / JetBrains orange-to-purple theme', isDark: false, category: 'Programming' },
     { id: 'oxide', name: 'Oxide', description: 'Rust-inspired dark theme with orange', isDark: true, category: 'Programming' },
     { id: 'python', name: 'Python', description: 'Python blue and yellow theme', isDark: false, category: 'Programming' },
+    { id: 'typescript', name: 'TypeScript', description: 'TypeScript blue theme', isDark: false, category: 'Programming' },
     { id: 'zig', name: 'Zig', description: 'Zig golden orange theme', isDark: false, category: 'Programming' },
 
     // Cloud Provider themes

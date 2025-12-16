@@ -59,6 +59,7 @@
               { "input": "src/styles/themes/solar.scss", "bundleName": "solar", "inject": false },
               { "input": "src/styles/themes/spacelab.scss", "bundleName": "spacelab", "inject": false },
               { "input": "src/styles/themes/superhero.scss", "bundleName": "superhero", "inject": false },
+              { "input": "src/styles/themes/typescript.scss", "bundleName": "typescript", "inject": false },
               { "input": "src/styles/themes/united.scss", "bundleName": "united", "inject": false },
               { "input": "src/styles/themes/vapor.scss", "bundleName": "vapor", "inject": false },
               { "input": "src/styles/themes/yeti.scss", "bundleName": "yeti", "inject": false },
