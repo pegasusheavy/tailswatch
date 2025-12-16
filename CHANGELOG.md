@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **JavaScript theme** - JavaScript Yellow (#F7DF1E) with modern purple accent
 - **Python theme** - Python Blue (#3776AB) and Yellow (#FFD43B) two-snake logo colors
 - **TypeScript theme** - TypeScript Blue (#3178C6) with cyan accent
+- **WebAssembly theme** - WASM Purple (#654FF0) with electric cyan accent
 - **Zig theme** - Zig golden orange (#F7A41D) with electric blue accent
 - **9 Cloud Provider themes**
   - AWS - Amazon Web Services orange and squid ink

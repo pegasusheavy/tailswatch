@@ -53,6 +53,7 @@
     "./themes/oxide": "./dist/themes/oxide.css",
     "./themes/python": "./dist/themes/python.css",
     "./themes/typescript": "./dist/themes/typescript.css",
+    "./themes/wasm": "./dist/themes/wasm.css",
     "./themes/zig": "./dist/themes/zig.css",
     "./themes/material-light-blue": "./dist/themes/material-light-blue.css",
     "./themes/material-dark-blue": "./dist/themes/material-dark-blue.css",
@@ -134,6 +135,8 @@
     "javascript",
     "python",
     "typescript",
+    "wasm",
+    "webassembly",
     "zig"
   ],
   "repository": {
