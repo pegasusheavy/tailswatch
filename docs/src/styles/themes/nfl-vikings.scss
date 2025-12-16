@@ -1,0 +1,6 @@
+@use "tailwindcss";
+@use "../../../../src/themes/nfl-vikings.scss";
+
+html {
+  scroll-behavior: smooth;
+}

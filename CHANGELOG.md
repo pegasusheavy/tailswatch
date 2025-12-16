@@ -16,6 +16,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Python theme** - Python Blue (#3776AB) and Yellow (#FFD43B) two-snake logo colors
 - **TypeScript theme** - TypeScript Blue (#3178C6) with cyan accent
 - **WebAssembly theme** - WASM Purple (#654FF0) with electric cyan accent
+
+### NFL Team Themes (32 total)
+- **AFC East:** Bills, Dolphins, Patriots, Jets
+- **AFC North:** Ravens, Bengals, Browns, Steelers
+- **AFC South:** Texans, Colts, Jaguars, Titans
+- **AFC West:** Broncos, Chiefs, Raiders, Chargers
+- **NFC East:** Cowboys, Giants, Eagles, Commanders
+- **NFC North:** Bears, Lions, Packers, Vikings
+- **NFC South:** Falcons, Panthers, Saints, Buccaneers
+- **NFC West:** Cardinals, Rams, 49ers, Seahawks
 - **Zig theme** - Zig golden orange (#F7A41D) with electric blue accent
 - **9 Cloud Provider themes**
   - AWS - Amazon Web Services orange and squid ink

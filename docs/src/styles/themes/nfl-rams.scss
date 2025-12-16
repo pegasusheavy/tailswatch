@@ -1,0 +1,6 @@
+@use "tailwindcss";
+@use "../../../../src/themes/nfl-rams.scss";
+
+html {
+  scroll-behavior: smooth;
+}

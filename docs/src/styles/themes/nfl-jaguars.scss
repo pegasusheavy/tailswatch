@@ -1,0 +1,6 @@
+@use "tailwindcss";
+@use "../../../../src/themes/nfl-jaguars.scss";
+
+html {
+  scroll-behavior: smooth;
+}

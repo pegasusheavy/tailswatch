@@ -1,0 +1,6 @@
+@use "tailwindcss";
+@use "../../../../src/themes/nfl-cowboys.scss";
+
+html {
+  scroll-behavior: smooth;
+}

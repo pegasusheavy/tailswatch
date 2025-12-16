@@ -1,0 +1,6 @@
+@use "tailwindcss";
+@use "../../../../src/themes/nfl-cardinals.scss";
+
+html {
+  scroll-behavior: smooth;
+}

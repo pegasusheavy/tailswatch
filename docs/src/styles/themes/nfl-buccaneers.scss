@@ -1,0 +1,6 @@
+@use "tailwindcss";
+@use "../../../../src/themes/nfl-buccaneers.scss";
+
+html {
+  scroll-behavior: smooth;
+}

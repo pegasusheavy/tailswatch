@@ -5,7 +5,8 @@ export type ThemeCategory =
   | 'Bootswatch'
   | 'Material Design'
   | 'Programming'
-  | 'Cloud Providers';
+  | 'Cloud Providers'
+  | 'NFL';
 
 export interface ThemeInfo {
   id: string;
@@ -97,11 +98,59 @@ export class ThemeService {
     { id: 'cloudflare', name: 'Cloudflare', description: 'Cloudflare orange and blue', isDark: false, category: 'Cloud Providers' },
     { id: 'netlify', name: 'Netlify', description: 'Netlify teal and dark accents', isDark: false, category: 'Cloud Providers' },
     { id: 'heroku', name: 'Heroku', description: 'Heroku classic purple', isDark: false, category: 'Cloud Providers' },
+
+    // NFL Team themes - AFC East
+    { id: 'nfl-bills', name: 'Buffalo Bills', description: 'Bills Blue and Red', isDark: false, category: 'NFL' },
+    { id: 'nfl-dolphins', name: 'Miami Dolphins', description: 'Dolphins Aqua and Orange', isDark: false, category: 'NFL' },
+    { id: 'nfl-patriots', name: 'New England Patriots', description: 'Patriots Navy, Red, and Silver', isDark: false, category: 'NFL' },
+    { id: 'nfl-jets', name: 'New York Jets', description: 'Jets Green', isDark: false, category: 'NFL' },
+
+    // NFL Team themes - AFC North
+    { id: 'nfl-ravens', name: 'Baltimore Ravens', description: 'Ravens Purple and Gold', isDark: false, category: 'NFL' },
+    { id: 'nfl-bengals', name: 'Cincinnati Bengals', description: 'Bengals Orange and Black', isDark: false, category: 'NFL' },
+    { id: 'nfl-browns', name: 'Cleveland Browns', description: 'Browns Brown and Orange', isDark: false, category: 'NFL' },
+    { id: 'nfl-steelers', name: 'Pittsburgh Steelers', description: 'Steelers Black and Gold', isDark: false, category: 'NFL' },
+
+    // NFL Team themes - AFC South
+    { id: 'nfl-texans', name: 'Houston Texans', description: 'Texans Deep Steel Blue and Red', isDark: false, category: 'NFL' },
+    { id: 'nfl-colts', name: 'Indianapolis Colts', description: 'Colts Royal Blue', isDark: false, category: 'NFL' },
+    { id: 'nfl-jaguars', name: 'Jacksonville Jaguars', description: 'Jaguars Teal and Gold', isDark: false, category: 'NFL' },
+    { id: 'nfl-titans', name: 'Tennessee Titans', description: 'Titans Navy and Light Blue', isDark: false, category: 'NFL' },
+
+    // NFL Team themes - AFC West
+    { id: 'nfl-broncos', name: 'Denver Broncos', description: 'Broncos Orange and Navy', isDark: false, category: 'NFL' },
+    { id: 'nfl-chiefs', name: 'Kansas City Chiefs', description: 'Chiefs Red and Gold', isDark: false, category: 'NFL' },
+    { id: 'nfl-raiders', name: 'Las Vegas Raiders', description: 'Raiders Silver and Black', isDark: false, category: 'NFL' },
+    { id: 'nfl-chargers', name: 'Los Angeles Chargers', description: 'Chargers Powder Blue and Gold', isDark: false, category: 'NFL' },
+
+    // NFL Team themes - NFC East
+    { id: 'nfl-cowboys', name: 'Dallas Cowboys', description: 'Cowboys Navy and Silver', isDark: false, category: 'NFL' },
+    { id: 'nfl-giants', name: 'New York Giants', description: 'Giants Blue and Red', isDark: false, category: 'NFL' },
+    { id: 'nfl-eagles', name: 'Philadelphia Eagles', description: 'Eagles Midnight Green', isDark: false, category: 'NFL' },
+    { id: 'nfl-commanders', name: 'Washington Commanders', description: 'Commanders Burgundy and Gold', isDark: false, category: 'NFL' },
+
+    // NFL Team themes - NFC North
+    { id: 'nfl-bears', name: 'Chicago Bears', description: 'Bears Navy and Orange', isDark: false, category: 'NFL' },
+    { id: 'nfl-lions', name: 'Detroit Lions', description: 'Lions Honolulu Blue and Silver', isDark: false, category: 'NFL' },
+    { id: 'nfl-packers', name: 'Green Bay Packers', description: 'Packers Green and Gold', isDark: false, category: 'NFL' },
+    { id: 'nfl-vikings', name: 'Minnesota Vikings', description: 'Vikings Purple and Gold', isDark: false, category: 'NFL' },
+
+    // NFL Team themes - NFC South
+    { id: 'nfl-falcons', name: 'Atlanta Falcons', description: 'Falcons Red and Black', isDark: false, category: 'NFL' },
+    { id: 'nfl-panthers', name: 'Carolina Panthers', description: 'Panthers Blue, Black, and Silver', isDark: false, category: 'NFL' },
+    { id: 'nfl-saints', name: 'New Orleans Saints', description: 'Saints Gold and Black', isDark: false, category: 'NFL' },
+    { id: 'nfl-buccaneers', name: 'Tampa Bay Buccaneers', description: 'Buccaneers Red and Pewter', isDark: false, category: 'NFL' },
+
+    // NFL Team themes - NFC West
+    { id: 'nfl-cardinals', name: 'Arizona Cardinals', description: 'Cardinals Cardinal Red', isDark: false, category: 'NFL' },
+    { id: 'nfl-rams', name: 'Los Angeles Rams', description: 'Rams Royal Blue and Sol Gold', isDark: false, category: 'NFL' },
+    { id: 'nfl-49ers', name: 'San Francisco 49ers', description: '49ers Red and Gold', isDark: false, category: 'NFL' },
+    { id: 'nfl-seahawks', name: 'Seattle Seahawks', description: 'Seahawks Navy and Action Green', isDark: false, category: 'NFL' },
   ];
 
   /** Themes grouped by category */
   readonly themesByCategory = computed<ThemeGroup[]>(() => {
-    const categories: ThemeCategory[] = ['Base', 'Bootswatch', 'Material Design', 'Programming', 'Cloud Providers'];
+    const categories: ThemeCategory[] = ['Base', 'Bootswatch', 'Material Design', 'Programming', 'Cloud Providers', 'NFL'];
     return categories.map(category => ({
       category,
       themes: this.themes.filter(t => t.category === category)

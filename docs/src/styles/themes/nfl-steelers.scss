@@ -1,0 +1,6 @@
+@use "tailwindcss";
+@use "../../../../src/themes/nfl-steelers.scss";
+
+html {
+  scroll-behavior: smooth;
+}
