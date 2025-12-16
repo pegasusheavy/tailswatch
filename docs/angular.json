@@ -34,6 +34,7 @@
               { "input": "src/styles/themes/default.scss", "bundleName": "default", "inject": true },
               { "input": "src/styles/themes/cerulean.scss", "bundleName": "cerulean", "inject": false },
               { "input": "src/styles/themes/cosmo.scss", "bundleName": "cosmo", "inject": false },
+              { "input": "src/styles/themes/csharp.scss", "bundleName": "csharp", "inject": false },
               { "input": "src/styles/themes/cyborg.scss", "bundleName": "cyborg", "inject": false },
               { "input": "src/styles/themes/darkly.scss", "bundleName": "darkly", "inject": false },
               { "input": "src/styles/themes/evergreen.scss", "bundleName": "evergreen", "inject": false },

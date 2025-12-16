@@ -74,6 +74,7 @@ export class ThemeService {
     { id: 'material-dark-deeporange', name: 'Material Dark Deep Orange', description: 'Dark Material with Deep Orange primary', isDark: true, category: 'Material Design' },
 
     // Programming language-inspired themes
+    { id: 'csharp', name: 'C#', description: 'C# / .NET / Visual Studio purple theme', isDark: false, category: 'Programming' },
     { id: 'evergreen', name: 'Evergreen', description: 'Node.js-inspired dark theme', isDark: true, category: 'Programming' },
     { id: 'gopher', name: 'Gopher', description: 'Go-inspired bright theme with cyan', isDark: false, category: 'Programming' },
     { id: 'kernel', name: 'Kernel', description: 'C/C++ inspired battle-tested classic', isDark: true, category: 'Programming' },

@@ -20,6 +20,7 @@
     "./themes/dark": "./dist/themes/dark.css",
     "./themes/cerulean": "./dist/themes/cerulean.css",
     "./themes/cosmo": "./dist/themes/cosmo.css",
+    "./themes/csharp": "./dist/themes/csharp.css",
     "./themes/cyborg": "./dist/themes/cyborg.css",
     "./themes/darkly": "./dist/themes/darkly.css",
     "./themes/flatly": "./dist/themes/flatly.css",
@@ -117,7 +118,10 @@
     "netlify",
     "heroku",
     "firebase",
-    "cloud-themes"
+    "cloud-themes",
+    "csharp",
+    "dotnet",
+    "visual-studio"
   ],
   "repository": {
     "type": "git",
