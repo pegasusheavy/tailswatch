@@ -151,7 +151,8 @@
               { "input": "src/styles/themes/nba-rockets.scss", "bundleName": "nba-rockets", "inject": false },
               { "input": "src/styles/themes/nba-grizzlies.scss", "bundleName": "nba-grizzlies", "inject": false },
               { "input": "src/styles/themes/nba-pelicans.scss", "bundleName": "nba-pelicans", "inject": false },
-              { "input": "src/styles/themes/nba-spurs.scss", "bundleName": "nba-spurs", "inject": false }
+              { "input": "src/styles/themes/nba-spurs.scss", "bundleName": "nba-spurs", "inject": false },
+              { "input": "src/styles/themes/f1.scss", "bundleName": "f1", "inject": false }
             ],
             "scripts": []
           },

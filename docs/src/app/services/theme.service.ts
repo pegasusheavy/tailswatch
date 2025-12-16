@@ -7,7 +7,8 @@ export type ThemeCategory =
   | 'Programming'
   | 'Cloud Providers'
   | 'NFL'
-  | 'NBA';
+  | 'NBA'
+  | 'Motorsports';
 
 export interface ThemeInfo {
   id: string;
@@ -189,11 +190,14 @@ export class ThemeService {
     { id: 'nba-grizzlies', name: 'Memphis Grizzlies', description: 'Grizzlies Navy and Beale Street Blue', isDark: false, category: 'NBA' },
     { id: 'nba-pelicans', name: 'New Orleans Pelicans', description: 'Pelicans Navy, Gold, and Red', isDark: false, category: 'NBA' },
     { id: 'nba-spurs', name: 'San Antonio Spurs', description: 'Spurs Silver and Black', isDark: false, category: 'NBA' },
+
+    // Motorsports themes
+    { id: 'f1', name: 'Formula 1', description: 'F1 Racing Red and Black', isDark: false, category: 'Motorsports' },
   ];
 
   /** Themes grouped by category */
   readonly themesByCategory = computed<ThemeGroup[]>(() => {
-    const categories: ThemeCategory[] = ['Base', 'Bootswatch', 'Material Design', 'Programming', 'Cloud Providers', 'NFL', 'NBA'];
+    const categories: ThemeCategory[] = ['Base', 'Bootswatch', 'Material Design', 'Programming', 'Cloud Providers', 'NFL', 'NBA', 'Motorsports'];
     return categories.map(category => ({
       category,
       themes: this.themes.filter(t => t.category === category)

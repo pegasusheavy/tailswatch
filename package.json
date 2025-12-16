@@ -1,7 +1,7 @@
 {
   "name": "@pegasusheavy/tailswatch",
   "version": "1.1.1",
-  "description": "Customizable Tailwind CSS 4+ themes for import into other applications. Bootswatch-inspired themes, Material Design themes, programming language-inspired themes, cloud provider themes, NFL team themes, and NBA team themes.",
+  "description": "Customizable Tailwind CSS 4+ themes for import into other applications. Bootswatch-inspired themes, Material Design themes, programming language-inspired themes, cloud provider themes, NFL team themes, NBA team themes, and motorsports themes.",
   "author": "Pegasus Heavy Industries LLC",
   "license": "MIT",
   "type": "module",
@@ -137,7 +137,8 @@
     "./themes/nba-rockets": "./dist/themes/nba-rockets.css",
     "./themes/nba-grizzlies": "./dist/themes/nba-grizzlies.css",
     "./themes/nba-pelicans": "./dist/themes/nba-pelicans.css",
-    "./themes/nba-spurs": "./dist/themes/nba-spurs.css"
+    "./themes/nba-spurs": "./dist/themes/nba-spurs.css",
+    "./themes/f1": "./dist/themes/f1.css"
   },
   "files": [
     "dist",
@@ -236,7 +237,12 @@
     "houston-rockets",
     "memphis-grizzlies",
     "new-orleans-pelicans",
-    "san-antonio-spurs"
+    "san-antonio-spurs",
+    "f1",
+    "formula-1",
+    "formula-one",
+    "motorsports",
+    "racing"
   ],
   "repository": {
     "type": "git",
