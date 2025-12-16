@@ -1,107 +1,107 @@
 // ============================================
-// Tailswatch: Vercel Theme
-// Inspired by Vercel's minimalist brand aesthetic
+// Tailswatch: Vercel Theme (Dark)
+// Inspired by Vercel's signature dark mode aesthetic
 // ============================================
 
 :root {
-  // Primary - Vercel Black/White (monochrome with purpose)
-  --color-primary-50: #fafafa;
-  --color-primary-100: #f5f5f5;
-  --color-primary-200: #e5e5e5;
-  --color-primary-300: #d4d4d4;
-  --color-primary-400: #a3a3a3;
-  --color-primary-500: #171717;
-  --color-primary-600: #141414;
-  --color-primary-700: #0f0f0f;
-  --color-primary-800: #0a0a0a;
-  --color-primary-900: #050505;
-  --color-primary-950: #000000;
+  // Primary - Vercel White on Dark (inverted for dark mode)
+  --color-primary-50: #000000;
+  --color-primary-100: #0a0a0a;
+  --color-primary-200: #171717;
+  --color-primary-300: #262626;
+  --color-primary-400: #404040;
+  --color-primary-500: #fafafa;
+  --color-primary-600: #f5f5f5;
+  --color-primary-700: #e5e5e5;
+  --color-primary-800: #d4d4d4;
+  --color-primary-900: #a3a3a3;
+  --color-primary-950: #737373;
 
-  // Secondary - Vercel Grays
-  --color-secondary-50: #fafafa;
-  --color-secondary-100: #f4f4f5;
-  --color-secondary-200: #e4e4e7;
-  --color-secondary-300: #d4d4d8;
-  --color-secondary-400: #a1a1aa;
+  // Secondary - Vercel Dark Grays
+  --color-secondary-50: #09090b;
+  --color-secondary-100: #18181b;
+  --color-secondary-200: #27272a;
+  --color-secondary-300: #3f3f46;
+  --color-secondary-400: #52525b;
   --color-secondary-500: #71717a;
-  --color-secondary-600: #52525b;
-  --color-secondary-700: #3f3f46;
-  --color-secondary-800: #27272a;
-  --color-secondary-900: #18181b;
-  --color-secondary-950: #09090b;
+  --color-secondary-600: #a1a1aa;
+  --color-secondary-700: #d4d4d8;
+  --color-secondary-800: #e4e4e7;
+  --color-secondary-900: #f4f4f5;
+  --color-secondary-950: #fafafa;
 
-  // Accent - Vercel Blue (used for links and highlights)
-  --color-accent-50: #eff6ff;
-  --color-accent-100: #dbeafe;
-  --color-accent-200: #bfdbfe;
-  --color-accent-300: #93c5fd;
-  --color-accent-400: #60a5fa;
-  --color-accent-500: #0070f3;
-  --color-accent-600: #0064d9;
-  --color-accent-700: #0058bf;
-  --color-accent-800: #004ca5;
-  --color-accent-900: #00408b;
-  --color-accent-950: #002d62;
+  // Accent - Vercel Blue (their signature link color)
+  --color-accent-50: #002d62;
+  --color-accent-100: #00408b;
+  --color-accent-200: #004ca5;
+  --color-accent-300: #0058bf;
+  --color-accent-400: #0070f3;
+  --color-accent-500: #3291ff;
+  --color-accent-600: #60a5fa;
+  --color-accent-700: #93c5fd;
+  --color-accent-800: #bfdbfe;
+  --color-accent-900: #dbeafe;
+  --color-accent-950: #eff6ff;
 
-  // Semantic Colors
-  --color-success-50: #ecfdf5;
-  --color-success-100: #d1fae5;
-  --color-success-200: #a7f3d0;
-  --color-success-300: #6ee7b7;
-  --color-success-400: #34d399;
+  // Semantic Colors (adjusted for dark mode)
+  --color-success-50: #022c22;
+  --color-success-100: #065f46;
+  --color-success-200: #047857;
+  --color-success-300: #059669;
+  --color-success-400: #10b981;
   --color-success-500: #50e3c2;
-  --color-success-600: #10b981;
-  --color-success-700: #059669;
-  --color-success-800: #047857;
-  --color-success-900: #065f46;
-  --color-success-950: #022c22;
+  --color-success-600: #34d399;
+  --color-success-700: #6ee7b7;
+  --color-success-800: #a7f3d0;
+  --color-success-900: #d1fae5;
+  --color-success-950: #ecfdf5;
 
-  --color-warning-50: #fffbeb;
-  --color-warning-100: #fef3c7;
-  --color-warning-200: #fde68a;
-  --color-warning-300: #fcd34d;
-  --color-warning-400: #fbbf24;
+  --color-warning-50: #451a03;
+  --color-warning-100: #78350f;
+  --color-warning-200: #92400e;
+  --color-warning-300: #b45309;
+  --color-warning-400: #d97706;
   --color-warning-500: #f5a623;
-  --color-warning-600: #d97706;
-  --color-warning-700: #b45309;
-  --color-warning-800: #92400e;
-  --color-warning-900: #78350f;
-  --color-warning-950: #451a03;
+  --color-warning-600: #fbbf24;
+  --color-warning-700: #fcd34d;
+  --color-warning-800: #fde68a;
+  --color-warning-900: #fef3c7;
+  --color-warning-950: #fffbeb;
 
-  --color-error-50: #fef2f2;
-  --color-error-100: #fee2e2;
-  --color-error-200: #fecaca;
-  --color-error-300: #fca5a5;
-  --color-error-400: #f87171;
-  --color-error-500: #ee0000;
-  --color-error-600: #dc2626;
-  --color-error-700: #b91c1c;
-  --color-error-800: #991b1b;
-  --color-error-900: #7f1d1d;
-  --color-error-950: #450a0a;
+  --color-error-50: #450a0a;
+  --color-error-100: #7f1d1d;
+  --color-error-200: #991b1b;
+  --color-error-300: #b91c1c;
+  --color-error-400: #dc2626;
+  --color-error-500: #f31260;
+  --color-error-600: #f87171;
+  --color-error-700: #fca5a5;
+  --color-error-800: #fecaca;
+  --color-error-900: #fee2e2;
+  --color-error-950: #fef2f2;
 
-  --color-info-50: #eff6ff;
-  --color-info-100: #dbeafe;
-  --color-info-200: #bfdbfe;
-  --color-info-300: #93c5fd;
-  --color-info-400: #60a5fa;
-  --color-info-500: #0070f3;
-  --color-info-600: #0064d9;
-  --color-info-700: #0058bf;
-  --color-info-800: #004ca5;
-  --color-info-900: #00408b;
-  --color-info-950: #002d62;
+  --color-info-50: #002d62;
+  --color-info-100: #00408b;
+  --color-info-200: #004ca5;
+  --color-info-300: #0058bf;
+  --color-info-400: #0070f3;
+  --color-info-500: #3291ff;
+  --color-info-600: #60a5fa;
+  --color-info-700: #93c5fd;
+  --color-info-800: #bfdbfe;
+  --color-info-900: #dbeafe;
+  --color-info-950: #eff6ff;
 
-  // Surface Colors - Vercel's crisp light style
-  --color-background: #ffffff;
-  --color-surface: #fafafa;
-  --color-surface-muted: #f5f5f5;
-  --color-border: #eaeaea;
+  // Surface Colors - Vercel's signature dark mode
+  --color-background: #000000;
+  --color-surface: #111111;
+  --color-surface-muted: #1a1a1a;
+  --color-border: #333333;
 
   // Text Colors
-  --color-text: #171717;
-  --color-text-muted: #666666;
-  --color-text-inverted: #ffffff;
+  --color-text: #ededed;
+  --color-text-muted: #888888;
+  --color-text-inverted: #000000;
 }
 
 @theme {
