@@ -65,6 +65,13 @@ export class ThemeService {
     { id: 'material-dark-green', name: 'Material Dark Green', description: 'Dark Material with Green primary', isDark: true },
     { id: 'material-light-deeporange', name: 'Material Light Deep Orange', description: 'Material Design with Deep Orange primary', isDark: false },
     { id: 'material-dark-deeporange', name: 'Material Dark Deep Orange', description: 'Dark Material with Deep Orange primary', isDark: true },
+
+    // Cloud Provider themes
+    { id: 'aws', name: 'AWS', description: 'Amazon Web Services orange and squid ink', isDark: false },
+    { id: 'azure', name: 'Azure', description: 'Microsoft Azure professional blue', isDark: false },
+    { id: 'gcloud', name: 'Google Cloud', description: 'Google Cloud Platform multi-color palette', isDark: false },
+    { id: 'vercel', name: 'Vercel', description: 'Vercel minimalist black and white', isDark: false },
+    { id: 'digitalocean', name: 'DigitalOcean', description: 'DigitalOcean ocean blue and teal', isDark: false },
   ];
 
   /** Currently active theme ID */

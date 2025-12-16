@@ -72,7 +72,12 @@
               { "input": "src/styles/themes/material-light-green.scss", "bundleName": "material-light-green", "inject": false },
               { "input": "src/styles/themes/material-dark-green.scss", "bundleName": "material-dark-green", "inject": false },
               { "input": "src/styles/themes/material-light-deeporange.scss", "bundleName": "material-light-deeporange", "inject": false },
-              { "input": "src/styles/themes/material-dark-deeporange.scss", "bundleName": "material-dark-deeporange", "inject": false }
+              { "input": "src/styles/themes/material-dark-deeporange.scss", "bundleName": "material-dark-deeporange", "inject": false },
+              { "input": "src/styles/themes/aws.scss", "bundleName": "aws", "inject": false },
+              { "input": "src/styles/themes/azure.scss", "bundleName": "azure", "inject": false },
+              { "input": "src/styles/themes/gcloud.scss", "bundleName": "gcloud", "inject": false },
+              { "input": "src/styles/themes/vercel.scss", "bundleName": "vercel", "inject": false },
+              { "input": "src/styles/themes/digitalocean.scss", "bundleName": "digitalocean", "inject": false }
             ],
             "scripts": []
           },

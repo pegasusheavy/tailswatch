@@ -1,7 +1,7 @@
 {
   "name": "@pegasusheavy/tailswatch",
   "version": "1.1.1",
-  "description": "Customizable Tailwind CSS 4+ themes for import into other applications. Bootswatch-inspired themes, Material Design themes, and programming language-inspired themes.",
+  "description": "Customizable Tailwind CSS 4+ themes for import into other applications. Bootswatch-inspired themes, Material Design themes, programming language-inspired themes, and cloud provider themes.",
   "author": "Pegasus Heavy Industries LLC",
   "license": "MIT",
   "type": "module",
@@ -58,7 +58,12 @@
     "./themes/material-light-green": "./dist/themes/material-light-green.css",
     "./themes/material-dark-green": "./dist/themes/material-dark-green.css",
     "./themes/material-light-deeporange": "./dist/themes/material-light-deeporange.css",
-    "./themes/material-dark-deeporange": "./dist/themes/material-dark-deeporange.css"
+    "./themes/material-dark-deeporange": "./dist/themes/material-dark-deeporange.css",
+    "./themes/aws": "./dist/themes/aws.css",
+    "./themes/azure": "./dist/themes/azure.css",
+    "./themes/gcloud": "./dist/themes/gcloud.css",
+    "./themes/vercel": "./dist/themes/vercel.css",
+    "./themes/digitalocean": "./dist/themes/digitalocean.css"
   },
   "files": [
     "dist",
@@ -98,7 +103,13 @@
     "styling",
     "ui-themes",
     "frontend",
-    "web-design"
+    "web-design",
+    "aws",
+    "azure",
+    "google-cloud",
+    "vercel",
+    "digitalocean",
+    "cloud-themes"
   ],
   "repository": {
     "type": "git",
