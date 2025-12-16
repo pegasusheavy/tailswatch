@@ -79,13 +79,13 @@ export class ThemeService {
 
     // Programming language-inspired themes
     { id: 'csharp', name: 'C#', description: 'C# / .NET / Visual Studio purple theme', isDark: false, category: 'Programming' },
-    { id: 'evergreen', name: 'Evergreen', description: 'Node.js-inspired dark theme', isDark: true, category: 'Programming' },
-    { id: 'gopher', name: 'Gopher', description: 'Go-inspired bright theme with cyan', isDark: false, category: 'Programming' },
+    { id: 'evergreen', name: 'Node.js', description: 'Node.js green dark theme', isDark: true, category: 'Programming' },
+    { id: 'gopher', name: 'Go', description: 'Go bright theme with cyan', isDark: false, category: 'Programming' },
     { id: 'java', name: 'Java', description: 'Java red-orange and blue theme', isDark: false, category: 'Programming' },
     { id: 'javascript', name: 'JavaScript', description: 'JavaScript yellow theme', isDark: false, category: 'Programming' },
-    { id: 'kernel', name: 'Kernel', description: 'C/C++ inspired battle-tested classic', isDark: true, category: 'Programming' },
+    { id: 'kernel', name: 'C/C++', description: 'C/C++ classic dark theme', isDark: true, category: 'Programming' },
     { id: 'kotlin', name: 'Kotlin', description: 'Kotlin / JetBrains orange-to-purple theme', isDark: false, category: 'Programming' },
-    { id: 'oxide', name: 'Oxide', description: 'Rust-inspired dark theme with orange', isDark: true, category: 'Programming' },
+    { id: 'oxide', name: 'Rust', description: 'Rust dark theme with orange', isDark: true, category: 'Programming' },
     { id: 'python', name: 'Python', description: 'Python blue and yellow theme', isDark: false, category: 'Programming' },
     { id: 'typescript', name: 'TypeScript', description: 'TypeScript blue theme', isDark: false, category: 'Programming' },
     { id: 'wasm', name: 'WebAssembly', description: 'WebAssembly purple theme', isDark: false, category: 'Programming' },
