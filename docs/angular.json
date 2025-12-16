@@ -77,7 +77,11 @@
               { "input": "src/styles/themes/azure.scss", "bundleName": "azure", "inject": false },
               { "input": "src/styles/themes/gcloud.scss", "bundleName": "gcloud", "inject": false },
               { "input": "src/styles/themes/vercel.scss", "bundleName": "vercel", "inject": false },
-              { "input": "src/styles/themes/digitalocean.scss", "bundleName": "digitalocean", "inject": false }
+              { "input": "src/styles/themes/digitalocean.scss", "bundleName": "digitalocean", "inject": false },
+              { "input": "src/styles/themes/cloudflare.scss", "bundleName": "cloudflare", "inject": false },
+              { "input": "src/styles/themes/netlify.scss", "bundleName": "netlify", "inject": false },
+              { "input": "src/styles/themes/heroku.scss", "bundleName": "heroku", "inject": false },
+              { "input": "src/styles/themes/firebase.scss", "bundleName": "firebase", "inject": false }
             ],
             "scripts": []
           },

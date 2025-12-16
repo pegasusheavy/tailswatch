@@ -63,7 +63,11 @@
     "./themes/azure": "./dist/themes/azure.css",
     "./themes/gcloud": "./dist/themes/gcloud.css",
     "./themes/vercel": "./dist/themes/vercel.css",
-    "./themes/digitalocean": "./dist/themes/digitalocean.css"
+    "./themes/digitalocean": "./dist/themes/digitalocean.css",
+    "./themes/cloudflare": "./dist/themes/cloudflare.css",
+    "./themes/netlify": "./dist/themes/netlify.css",
+    "./themes/heroku": "./dist/themes/heroku.css",
+    "./themes/firebase": "./dist/themes/firebase.css"
   },
   "files": [
     "dist",
@@ -109,6 +113,10 @@
     "google-cloud",
     "vercel",
     "digitalocean",
+    "cloudflare",
+    "netlify",
+    "heroku",
+    "firebase",
     "cloud-themes"
   ],
   "repository": {

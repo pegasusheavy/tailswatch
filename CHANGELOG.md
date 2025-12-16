@@ -9,12 +9,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- **5 Cloud Provider themes**
+- **9 Cloud Provider themes**
   - AWS - Amazon Web Services orange and squid ink
   - Azure - Microsoft Azure professional blue
   - Google Cloud - Google Cloud Platform multi-color palette
+  - Firebase - Google Firebase yellow and orange
   - Vercel - Vercel minimalist black and white
   - DigitalOcean - DigitalOcean ocean blue and teal
+  - Cloudflare - Cloudflare orange and blue
+  - Netlify - Netlify teal with dark accents
+  - Heroku - Heroku classic purple
+
+### Changed
+
+- Theme selector dropdown now groups themes by category (Base, Bootswatch, Material Design, Programming, Cloud Providers)
 
 ## [1.1.1] - 2025-12-15
 

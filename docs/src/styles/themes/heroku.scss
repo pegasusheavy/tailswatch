@@ -1,0 +1,7 @@
+@use "tailwindcss";
+@use "../../../../src/themes/heroku.scss";
+
+html {
+  scroll-behavior: smooth;
+}
+

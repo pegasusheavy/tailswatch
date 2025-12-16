@@ -1,10 +1,23 @@
 import { Injectable, signal, computed } from '@angular/core';
 
+export type ThemeCategory = 
+  | 'Base'
+  | 'Bootswatch'
+  | 'Material Design'
+  | 'Programming'
+  | 'Cloud Providers';
+
 export interface ThemeInfo {
   id: string;
   name: string;
   description: string;
   isDark: boolean;
+  category: ThemeCategory;
+}
+
+export interface ThemeGroup {
+  category: ThemeCategory;
+  themes: ThemeInfo[];
 }
 
 @Injectable({
@@ -14,65 +27,78 @@ export class ThemeService {
   private readonly STORAGE_KEY = 'tailswatch-theme';
   private readonly THEME_LINK_ID = 'tailswatch-theme-link';
 
-  /** Available themes - Bootswatch-inspired + custom themes */
+  /** Available themes - organized by category */
   readonly themes: ThemeInfo[] = [
-    // Default
-    { id: 'default', name: 'Default', description: 'Generic Tailwind CSS with no customization', isDark: false },
+    // Base themes
+    { id: 'default', name: 'Default', description: 'Generic Tailwind CSS with no customization', isDark: false, category: 'Base' },
 
     // Bootswatch themes (alphabetical)
-    { id: 'cerulean', name: 'Cerulean', description: 'A calm blue sky theme', isDark: false },
-    { id: 'cosmo', name: 'Cosmo', description: 'An ode to Metro with vibrant blue', isDark: false },
-    { id: 'cyborg', name: 'Cyborg', description: 'Jet black with electric cyan accents', isDark: true },
-    { id: 'darkly', name: 'Darkly', description: 'Dark mode version of Flatly', isDark: true },
-    { id: 'flatly', name: 'Flatly', description: 'Flat theme with teal accents', isDark: false },
-    { id: 'journal', name: 'Journal', description: 'Crisp like a new sheet of paper', isDark: false },
-    { id: 'litera', name: 'Litera', description: 'The medium is the message', isDark: false },
-    { id: 'lumen', name: 'Lumen', description: 'Light and shadow', isDark: false },
-    { id: 'lux', name: 'Lux', description: 'A touch of class', isDark: false },
-    { id: 'materia', name: 'Materia', description: 'Material design inspired', isDark: false },
-    { id: 'minty', name: 'Minty', description: 'A fresh feel', isDark: false },
-    { id: 'morph', name: 'Morph', description: 'Soft neumorphism', isDark: false },
-    { id: 'pulse', name: 'Pulse', description: 'A trace of purple', isDark: false },
-    { id: 'quartz', name: 'Quartz', description: 'Glassmorphism aesthetic', isDark: true },
-    { id: 'sandstone', name: 'Sandstone', description: 'A touch of warmth', isDark: false },
-    { id: 'simplex', name: 'Simplex', description: 'Mini and minimalist', isDark: false },
-    { id: 'sketchy', name: 'Sketchy', description: 'A hand-drawn look', isDark: false },
-    { id: 'slate', name: 'Slate', description: 'Shades of gunmetal gray', isDark: true },
-    { id: 'solar', name: 'Solar', description: 'A spin on Solarized', isDark: true },
-    { id: 'spacelab', name: 'Spacelab', description: 'Silvery and sleek', isDark: false },
-    { id: 'superhero', name: 'Superhero', description: 'The brave and the blue', isDark: true },
-    { id: 'united', name: 'United', description: 'Ubuntu orange and unique font', isDark: false },
-    { id: 'vapor', name: 'Vapor', description: 'Vaporwave aesthetic', isDark: true },
-    { id: 'yeti', name: 'Yeti', description: 'A friendly foundation', isDark: false },
-    { id: 'zephyr', name: 'Zephyr', description: 'Breezy and bright', isDark: false },
-
-    // Custom programming-inspired themes
-    { id: 'evergreen', name: 'Evergreen', description: 'Node.js-inspired dark theme', isDark: true },
-    { id: 'gopher', name: 'Gopher', description: 'Go-inspired bright theme with cyan', isDark: false },
-    { id: 'kernel', name: 'Kernel', description: 'C/C++ inspired battle-tested classic', isDark: true },
-    { id: 'oxide', name: 'Oxide', description: 'Rust-inspired dark theme with orange', isDark: true },
+    { id: 'cerulean', name: 'Cerulean', description: 'A calm blue sky theme', isDark: false, category: 'Bootswatch' },
+    { id: 'cosmo', name: 'Cosmo', description: 'An ode to Metro with vibrant blue', isDark: false, category: 'Bootswatch' },
+    { id: 'cyborg', name: 'Cyborg', description: 'Jet black with electric cyan accents', isDark: true, category: 'Bootswatch' },
+    { id: 'darkly', name: 'Darkly', description: 'Dark mode version of Flatly', isDark: true, category: 'Bootswatch' },
+    { id: 'flatly', name: 'Flatly', description: 'Flat theme with teal accents', isDark: false, category: 'Bootswatch' },
+    { id: 'journal', name: 'Journal', description: 'Crisp like a new sheet of paper', isDark: false, category: 'Bootswatch' },
+    { id: 'litera', name: 'Litera', description: 'The medium is the message', isDark: false, category: 'Bootswatch' },
+    { id: 'lumen', name: 'Lumen', description: 'Light and shadow', isDark: false, category: 'Bootswatch' },
+    { id: 'lux', name: 'Lux', description: 'A touch of class', isDark: false, category: 'Bootswatch' },
+    { id: 'materia', name: 'Materia', description: 'Material design inspired', isDark: false, category: 'Bootswatch' },
+    { id: 'minty', name: 'Minty', description: 'A fresh feel', isDark: false, category: 'Bootswatch' },
+    { id: 'morph', name: 'Morph', description: 'Soft neumorphism', isDark: false, category: 'Bootswatch' },
+    { id: 'pulse', name: 'Pulse', description: 'A trace of purple', isDark: false, category: 'Bootswatch' },
+    { id: 'quartz', name: 'Quartz', description: 'Glassmorphism aesthetic', isDark: true, category: 'Bootswatch' },
+    { id: 'sandstone', name: 'Sandstone', description: 'A touch of warmth', isDark: false, category: 'Bootswatch' },
+    { id: 'simplex', name: 'Simplex', description: 'Mini and minimalist', isDark: false, category: 'Bootswatch' },
+    { id: 'sketchy', name: 'Sketchy', description: 'A hand-drawn look', isDark: false, category: 'Bootswatch' },
+    { id: 'slate', name: 'Slate', description: 'Shades of gunmetal gray', isDark: true, category: 'Bootswatch' },
+    { id: 'solar', name: 'Solar', description: 'A spin on Solarized', isDark: true, category: 'Bootswatch' },
+    { id: 'spacelab', name: 'Spacelab', description: 'Silvery and sleek', isDark: false, category: 'Bootswatch' },
+    { id: 'superhero', name: 'Superhero', description: 'The brave and the blue', isDark: true, category: 'Bootswatch' },
+    { id: 'united', name: 'United', description: 'Ubuntu orange and unique font', isDark: false, category: 'Bootswatch' },
+    { id: 'vapor', name: 'Vapor', description: 'Vaporwave aesthetic', isDark: true, category: 'Bootswatch' },
+    { id: 'yeti', name: 'Yeti', description: 'A friendly foundation', isDark: false, category: 'Bootswatch' },
+    { id: 'zephyr', name: 'Zephyr', description: 'Breezy and bright', isDark: false, category: 'Bootswatch' },
 
     // Material Design themes
-    { id: 'material-light-blue', name: 'Material Light Blue', description: 'Material Design with Blue primary', isDark: false },
-    { id: 'material-dark-blue', name: 'Material Dark Blue', description: 'Dark Material with Blue primary', isDark: true },
-    { id: 'material-light-indigo', name: 'Material Light Indigo', description: 'Material Design with Indigo primary', isDark: false },
-    { id: 'material-dark-indigo', name: 'Material Dark Indigo', description: 'Dark Material with Indigo primary', isDark: true },
-    { id: 'material-light-purple', name: 'Material Light Purple', description: 'Material Design with Purple primary', isDark: false },
-    { id: 'material-dark-purple', name: 'Material Dark Purple', description: 'Dark Material with Purple primary', isDark: true },
-    { id: 'material-light-teal', name: 'Material Light Teal', description: 'Material Design with Teal primary', isDark: false },
-    { id: 'material-dark-teal', name: 'Material Dark Teal', description: 'Dark Material with Teal primary', isDark: true },
-    { id: 'material-light-green', name: 'Material Light Green', description: 'Material Design with Green primary', isDark: false },
-    { id: 'material-dark-green', name: 'Material Dark Green', description: 'Dark Material with Green primary', isDark: true },
-    { id: 'material-light-deeporange', name: 'Material Light Deep Orange', description: 'Material Design with Deep Orange primary', isDark: false },
-    { id: 'material-dark-deeporange', name: 'Material Dark Deep Orange', description: 'Dark Material with Deep Orange primary', isDark: true },
+    { id: 'material-light-blue', name: 'Material Light Blue', description: 'Material Design with Blue primary', isDark: false, category: 'Material Design' },
+    { id: 'material-dark-blue', name: 'Material Dark Blue', description: 'Dark Material with Blue primary', isDark: true, category: 'Material Design' },
+    { id: 'material-light-indigo', name: 'Material Light Indigo', description: 'Material Design with Indigo primary', isDark: false, category: 'Material Design' },
+    { id: 'material-dark-indigo', name: 'Material Dark Indigo', description: 'Dark Material with Indigo primary', isDark: true, category: 'Material Design' },
+    { id: 'material-light-purple', name: 'Material Light Purple', description: 'Material Design with Purple primary', isDark: false, category: 'Material Design' },
+    { id: 'material-dark-purple', name: 'Material Dark Purple', description: 'Dark Material with Purple primary', isDark: true, category: 'Material Design' },
+    { id: 'material-light-teal', name: 'Material Light Teal', description: 'Material Design with Teal primary', isDark: false, category: 'Material Design' },
+    { id: 'material-dark-teal', name: 'Material Dark Teal', description: 'Dark Material with Teal primary', isDark: true, category: 'Material Design' },
+    { id: 'material-light-green', name: 'Material Light Green', description: 'Material Design with Green primary', isDark: false, category: 'Material Design' },
+    { id: 'material-dark-green', name: 'Material Dark Green', description: 'Dark Material with Green primary', isDark: true, category: 'Material Design' },
+    { id: 'material-light-deeporange', name: 'Material Light Deep Orange', description: 'Material Design with Deep Orange primary', isDark: false, category: 'Material Design' },
+    { id: 'material-dark-deeporange', name: 'Material Dark Deep Orange', description: 'Dark Material with Deep Orange primary', isDark: true, category: 'Material Design' },
+
+    // Programming language-inspired themes
+    { id: 'evergreen', name: 'Evergreen', description: 'Node.js-inspired dark theme', isDark: true, category: 'Programming' },
+    { id: 'gopher', name: 'Gopher', description: 'Go-inspired bright theme with cyan', isDark: false, category: 'Programming' },
+    { id: 'kernel', name: 'Kernel', description: 'C/C++ inspired battle-tested classic', isDark: true, category: 'Programming' },
+    { id: 'oxide', name: 'Oxide', description: 'Rust-inspired dark theme with orange', isDark: true, category: 'Programming' },
 
     // Cloud Provider themes
-    { id: 'aws', name: 'AWS', description: 'Amazon Web Services orange and squid ink', isDark: false },
-    { id: 'azure', name: 'Azure', description: 'Microsoft Azure professional blue', isDark: false },
-    { id: 'gcloud', name: 'Google Cloud', description: 'Google Cloud Platform multi-color palette', isDark: false },
-    { id: 'vercel', name: 'Vercel', description: 'Vercel minimalist black and white', isDark: false },
-    { id: 'digitalocean', name: 'DigitalOcean', description: 'DigitalOcean ocean blue and teal', isDark: false },
+    { id: 'aws', name: 'AWS', description: 'Amazon Web Services orange and squid ink', isDark: false, category: 'Cloud Providers' },
+    { id: 'azure', name: 'Azure', description: 'Microsoft Azure professional blue', isDark: false, category: 'Cloud Providers' },
+    { id: 'gcloud', name: 'Google Cloud', description: 'Google Cloud Platform multi-color palette', isDark: false, category: 'Cloud Providers' },
+    { id: 'firebase', name: 'Firebase', description: 'Google Firebase yellow and orange', isDark: false, category: 'Cloud Providers' },
+    { id: 'vercel', name: 'Vercel', description: 'Vercel minimalist black and white', isDark: false, category: 'Cloud Providers' },
+    { id: 'digitalocean', name: 'DigitalOcean', description: 'DigitalOcean ocean blue and teal', isDark: false, category: 'Cloud Providers' },
+    { id: 'cloudflare', name: 'Cloudflare', description: 'Cloudflare orange and blue', isDark: false, category: 'Cloud Providers' },
+    { id: 'netlify', name: 'Netlify', description: 'Netlify teal and dark accents', isDark: false, category: 'Cloud Providers' },
+    { id: 'heroku', name: 'Heroku', description: 'Heroku classic purple', isDark: false, category: 'Cloud Providers' },
   ];
+
+  /** Themes grouped by category */
+  readonly themesByCategory = computed<ThemeGroup[]>(() => {
+    const categories: ThemeCategory[] = ['Base', 'Bootswatch', 'Material Design', 'Programming', 'Cloud Providers'];
+    return categories.map(category => ({
+      category,
+      themes: this.themes.filter(t => t.category === category)
+    })).filter(group => group.themes.length > 0);
+  });
 
   /** Currently active theme ID */
   readonly currentThemeId = signal<string>(this.loadSavedTheme());
