@@ -23,6 +23,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Theme selector dropdown now groups themes by category (Base, Bootswatch, Material Design, Programming, Cloud Providers)
+- **Material Design themes enhanced with M3 design tokens:**
+  - 4dp grid spacing system (`--spacing-1` through `--spacing-24`)
+  - Material 3 border radius (rounded corners: `--radius-xs` through `--radius-xl`, `--radius-full`)
+  - 5-level elevation system (`--shadow-none` through `--shadow-xl`)
+  - Typography tokens (`--tracking-*`, `--leading-*`)
+  - Motion/easing tokens (`--duration-*`, `--easing-*`)
 
 ## [1.1.1] - 2025-12-15
 

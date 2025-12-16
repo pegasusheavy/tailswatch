@@ -1,6 +1,6 @@
 import { Injectable, signal, computed } from '@angular/core';
 
-export type ThemeCategory = 
+export type ThemeCategory =
   | 'Base'
   | 'Bootswatch'
   | 'Material Design'
