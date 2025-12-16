@@ -96,7 +96,7 @@ export class ThemeService {
     { id: 'azure', name: 'Azure', description: 'Microsoft Azure professional blue', isDark: false, category: 'Cloud Providers' },
     { id: 'gcloud', name: 'Google Cloud', description: 'Google Cloud Platform multi-color palette', isDark: false, category: 'Cloud Providers' },
     { id: 'firebase', name: 'Firebase', description: 'Google Firebase yellow and orange', isDark: false, category: 'Cloud Providers' },
-    { id: 'vercel', name: 'Vercel', description: 'Vercel minimalist black and white', isDark: false, category: 'Cloud Providers' },
+    { id: 'vercel', name: 'Vercel', description: 'Vercel signature dark mode aesthetic', isDark: true, category: 'Cloud Providers' },
     { id: 'digitalocean', name: 'DigitalOcean', description: 'DigitalOcean ocean blue and teal', isDark: false, category: 'Cloud Providers' },
     { id: 'cloudflare', name: 'Cloudflare', description: 'Cloudflare orange and blue', isDark: false, category: 'Cloud Providers' },
     { id: 'netlify', name: 'Netlify', description: 'Netlify teal and dark accents', isDark: false, category: 'Cloud Providers' },
