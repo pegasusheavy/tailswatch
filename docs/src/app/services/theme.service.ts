@@ -78,6 +78,7 @@ export class ThemeService {
     { id: 'evergreen', name: 'Evergreen', description: 'Node.js-inspired dark theme', isDark: true, category: 'Programming' },
     { id: 'gopher', name: 'Gopher', description: 'Go-inspired bright theme with cyan', isDark: false, category: 'Programming' },
     { id: 'java', name: 'Java', description: 'Java red-orange and blue theme', isDark: false, category: 'Programming' },
+    { id: 'javascript', name: 'JavaScript', description: 'JavaScript yellow theme', isDark: false, category: 'Programming' },
     { id: 'kernel', name: 'Kernel', description: 'C/C++ inspired battle-tested classic', isDark: true, category: 'Programming' },
     { id: 'kotlin', name: 'Kotlin', description: 'Kotlin / JetBrains orange-to-purple theme', isDark: false, category: 'Programming' },
     { id: 'oxide', name: 'Oxide', description: 'Rust-inspired dark theme with orange', isDark: true, category: 'Programming' },

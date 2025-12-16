@@ -47,6 +47,7 @@
     "./themes/evergreen": "./dist/themes/evergreen.css",
     "./themes/gopher": "./dist/themes/gopher.css",
     "./themes/java": "./dist/themes/java.css",
+    "./themes/javascript": "./dist/themes/javascript.css",
     "./themes/kernel": "./dist/themes/kernel.css",
     "./themes/kotlin": "./dist/themes/kotlin.css",
     "./themes/oxide": "./dist/themes/oxide.css",
@@ -130,6 +131,7 @@
     "kotlin",
     "jetbrains",
     "java",
+    "javascript",
     "python",
     "typescript",
     "zig"

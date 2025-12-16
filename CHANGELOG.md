@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **C# theme** - C# / .NET / Visual Studio purple theme with .NET Purple (#512BD4) primary color
 - **Kotlin theme** - Kotlin / JetBrains orange-to-purple theme with Kotlin Orange (#F88909) and Purple (#7F52FF)
 - **Java theme** - Java red-orange (#E76F00) and blue (#5382A1) with coffee brown accent
+- **JavaScript theme** - JavaScript Yellow (#F7DF1E) with modern purple accent
 - **Python theme** - Python Blue (#3776AB) and Yellow (#FFD43B) two-snake logo colors
 - **TypeScript theme** - TypeScript Blue (#3178C6) with cyan accent
 - **Zig theme** - Zig golden orange (#F7A41D) with electric blue accent

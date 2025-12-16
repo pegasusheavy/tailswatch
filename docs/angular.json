@@ -41,6 +41,7 @@
               { "input": "src/styles/themes/flatly.scss", "bundleName": "flatly", "inject": false },
               { "input": "src/styles/themes/gopher.scss", "bundleName": "gopher", "inject": false },
               { "input": "src/styles/themes/java.scss", "bundleName": "java", "inject": false },
+              { "input": "src/styles/themes/javascript.scss", "bundleName": "javascript", "inject": false },
               { "input": "src/styles/themes/journal.scss", "bundleName": "journal", "inject": false },
               { "input": "src/styles/themes/litera.scss", "bundleName": "litera", "inject": false },
               { "input": "src/styles/themes/lumen.scss", "bundleName": "lumen", "inject": false },
