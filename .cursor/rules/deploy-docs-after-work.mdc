@@ -15,14 +15,14 @@ After completing a task or set of changes, always update and deploy the document
    ```bash
    # 1. Verify docs build works
    cd docs && pnpm run build
-   
+
    # 2. Merge develop to main
    cd .. && git checkout main
    git merge develop --no-ff -m "chore: merge develop - [description of changes]"
-   
+
    # 3. Push to trigger GitHub Pages deployment
    git push origin main
-   
+
    # 4. Switch back to develop
    git checkout develop
    ```

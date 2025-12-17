@@ -7,17 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2025-12-16
+
 ### Added
 
-- **C# theme** - C# / .NET / Visual Studio purple theme with .NET Purple (#512BD4) primary color
-- **Kotlin theme** - Kotlin / JetBrains orange-to-purple theme with Kotlin Orange (#F88909) and Purple (#7F52FF)
-- **Java theme** - Java red-orange (#E76F00) and blue (#5382A1) with coffee brown accent
-- **JavaScript theme** - JavaScript Yellow (#F7DF1E) with modern purple accent
-- **Python theme** - Python Blue (#3776AB) and Yellow (#FFD43B) two-snake logo colors
-- **TypeScript theme** - TypeScript Blue (#3178C6) with cyan accent
-- **WebAssembly theme** - WASM Purple (#654FF0) with electric cyan accent
+- **155 total themes** (up from 43 in v1.0.0)
 
-### NFL Team Themes (32 total)
+#### Programming Language Themes (8 new)
+- **C#** - .NET / Visual Studio purple theme (#512BD4)
+- **Kotlin** - JetBrains orange-to-purple theme (#F88909, #7F52FF)
+- **Java** - Red-orange (#E76F00) and blue (#5382A1)
+- **JavaScript** - Yellow (#F7DF1E) with purple accent
+- **Python** - Blue (#3776AB) and Yellow (#FFD43B)
+- **TypeScript** - Blue (#3178C6) with cyan accent
+- **WebAssembly** - Purple (#654FF0) with cyan accent
+- **Zig** - Golden orange (#F7A41D) with blue accent
+
+#### NFL Team Themes (32 total)
 - **AFC East:** Bills, Dolphins, Patriots, Jets
 - **AFC North:** Ravens, Bengals, Browns, Steelers
 - **AFC South:** Texans, Colts, Jaguars, Titans
@@ -27,7 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **NFC South:** Falcons, Panthers, Saints, Buccaneers
 - **NFC West:** Cardinals, Rams, 49ers, Seahawks
 
-### NBA Team Themes (30 total)
+#### NBA Team Themes (30 total)
 - **Atlantic:** Celtics, Nets, Knicks, 76ers, Raptors
 - **Central:** Bulls, Cavaliers, Pistons, Pacers, Bucks
 - **Southeast:** Hawks, Hornets, Heat, Magic, Wizards
@@ -35,33 +41,39 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Pacific:** Warriors, Clippers, Lakers, Suns, Kings
 - **Southwest:** Mavericks, Rockets, Grizzlies, Pelicans, Spurs
 
-### NHL Team Themes (32 total)
+#### NHL Team Themes (32 total)
 - **Atlantic:** Bruins, Sabres, Red Wings, Panthers, Canadiens, Senators, Lightning, Maple Leafs
 - **Metropolitan:** Hurricanes, Blue Jackets, Devils, Islanders, Rangers, Flyers, Penguins, Capitals
 - **Central:** Utah HC, Blackhawks, Avalanche, Stars, Wild, Predators, Blues, Jets
 - **Pacific:** Ducks, Flames, Oilers, Kings, Sharks, Kraken, Canucks, Golden Knights
 
-### Motorsports Themes
+#### Motorsports Themes
 - **Formula 1** - F1 Racing Red (#E10600) and Black
 
-- **Zig theme** - Zig golden orange (#F7A41D) with electric blue accent
-- **9 Cloud Provider themes**
-  - AWS - Amazon Web Services orange and squid ink
-  - Azure - Microsoft Azure professional blue
-  - Google Cloud - Google Cloud Platform multi-color palette
-  - Firebase - Google Firebase yellow and orange
-  - Vercel - Vercel minimalist black and white
-  - DigitalOcean - DigitalOcean ocean blue and teal
-  - Cloudflare - Cloudflare orange and blue
-  - Netlify - Netlify teal with dark accents
-  - Heroku - Heroku classic purple
+#### Cloud Provider Themes (9 total)
+- AWS - Amazon Web Services orange and squid ink
+- Azure - Microsoft Azure professional blue
+- Google Cloud - Google Cloud Platform multi-color palette
+- Firebase - Google Firebase yellow and orange
+- Vercel - Vercel signature dark mode aesthetic
+- DigitalOcean - DigitalOcean ocean blue and teal
+- Cloudflare - Cloudflare orange and blue
+- Netlify - Netlify teal with dark accents
+- Heroku - Heroku classic purple
 
 ### Changed
 
-- Theme selector dropdown now groups themes by category (Base, Bootswatch, Material Design, Programming, Cloud Providers)
+- **Vercel theme converted to dark mode** - Now uses signature black background (#000000) with dark surfaces
+- **All themes now have cohesive themed backgrounds** - Background, surface, and border colors use primary color tints instead of plain white/gray
+- **Programming language theme names updated** to actual language names:
+  - Evergreen → Node.js
+  - Gopher → Go
+  - Kernel → C/C++
+  - Oxide → Rust
+- Theme selector dropdown now groups themes by category (Base, Bootswatch, Material Design, Programming, Cloud Providers, NFL, NBA, NHL, Motorsports)
 - **Material Design themes enhanced with M3 design tokens:**
   - 4dp grid spacing system (`--spacing-1` through `--spacing-24`)
-  - Material 3 border radius (rounded corners: `--radius-xs` through `--radius-xl`, `--radius-full`)
+  - Material 3 border radius (`--radius-xs` through `--radius-xl`, `--radius-full`)
   - 5-level elevation system (`--shadow-none` through `--shadow-xl`)
   - Typography tokens (`--tracking-*`, `--leading-*`)
   - Motion/easing tokens (`--duration-*`, `--easing-*`)
@@ -153,6 +165,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Example pages: Admin Dashboard, E-commerce, Photography Portfolio, Forum, SaaS Landing Page
 - Comprehensive UI component examples
 
+[1.2.0]: https://github.com/pegasusheavy/tailswatch/releases/tag/v1.2.0
 [1.1.1]: https://github.com/pegasusheavy/tailswatch/releases/tag/v1.1.1
 [1.1.0]: https://github.com/pegasusheavy/tailswatch/releases/tag/v1.1.0
 [1.0.0]: https://github.com/pegasusheavy/tailswatch/releases/tag/v1.0.0
