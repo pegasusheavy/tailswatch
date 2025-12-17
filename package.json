@@ -1,6 +1,6 @@
 {
   "name": "@pegasusheavy/tailswatch",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Customizable Tailwind CSS 4+ themes for import into other applications. Bootswatch-inspired themes, Material Design themes, programming language-inspired themes, cloud provider themes, NFL team themes, NBA team themes, NHL team themes, and motorsports themes.",
   "author": "Pegasus Heavy Industries LLC",
   "license": "MIT",
