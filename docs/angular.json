@@ -197,7 +197,19 @@
               { "input": "src/styles/themes/nextjs.scss", "bundleName": "nextjs", "inject": false },
               { "input": "src/styles/themes/nuxt.scss", "bundleName": "nuxt", "inject": false },
               { "input": "src/styles/themes/remix.scss", "bundleName": "remix", "inject": false },
-              { "input": "src/styles/themes/astro.scss", "bundleName": "astro", "inject": false }
+              { "input": "src/styles/themes/astro.scss", "bundleName": "astro", "inject": false },
+              { "input": "src/styles/themes/django.scss", "bundleName": "django", "inject": false },
+              { "input": "src/styles/themes/flask.scss", "bundleName": "flask", "inject": false },
+              { "input": "src/styles/themes/fastapi.scss", "bundleName": "fastapi", "inject": false },
+              { "input": "src/styles/themes/rails.scss", "bundleName": "rails", "inject": false },
+              { "input": "src/styles/themes/laravel.scss", "bundleName": "laravel", "inject": false },
+              { "input": "src/styles/themes/symfony.scss", "bundleName": "symfony", "inject": false },
+              { "input": "src/styles/themes/spring.scss", "bundleName": "spring", "inject": false },
+              { "input": "src/styles/themes/gin.scss", "bundleName": "gin", "inject": false },
+              { "input": "src/styles/themes/fiber.scss", "bundleName": "fiber", "inject": false },
+              { "input": "src/styles/themes/actix.scss", "bundleName": "actix", "inject": false },
+              { "input": "src/styles/themes/aspnet.scss", "bundleName": "aspnet", "inject": false },
+              { "input": "src/styles/themes/phoenix.scss", "bundleName": "phoenix", "inject": false }
             ],
             "scripts": []
           },

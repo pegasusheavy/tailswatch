@@ -7,6 +7,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.5.0] - 2026-01-01
+
+### Added
+
+#### Multi-Language Framework Themes (12 new)
+
+**Python Frameworks:**
+- **Django** - Django Green (#0C4B33) with teal accents
+- **Flask** - Minimalist black and white with green accent
+- **FastAPI** - FastAPI Teal (#009688) with green accents
+
+**Ruby/PHP Frameworks:**
+- **Ruby on Rails** - Rails Red (#CC0000) with silver accents
+- **Laravel** - Laravel Red (#FF2D20) with pink accents
+- **Symfony** - Minimalist black and white with lime green accent
+
+**Java/Go Frameworks:**
+- **Spring Boot** - Spring Green (#6DB33F) with emerald accents
+- **Gin** - Go Cyan (#00ADD8) with blue accents
+- **Fiber** - Fiber Cyan (#00ACD7) with slate accents
+
+**Rust/.NET/Elixir Frameworks:**
+- **Actix** - Dark mode with Rust Orange (#F74C00) accents
+- **ASP.NET** - .NET Purple (#512BD4) with blue accents
+- **Phoenix** - Phoenix Orange (#FD4F00) with Elixir purple accents
+
 ## [1.4.0] - 2026-01-01
 
 ### Added
@@ -190,6 +216,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Example pages: Admin Dashboard, E-commerce, Photography Portfolio, Forum, SaaS Landing Page
 - Comprehensive UI component examples
 
+[1.5.0]: https://github.com/pegasusheavy/tailswatch/releases/tag/v1.5.0
 [1.4.0]: https://github.com/pegasusheavy/tailswatch/releases/tag/v1.4.0
 [1.3.0]: https://github.com/pegasusheavy/tailswatch/releases/tag/v1.3.0
 [1.2.0]: https://github.com/pegasusheavy/tailswatch/releases/tag/v1.2.0
