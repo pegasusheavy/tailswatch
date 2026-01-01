@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.0] - 2026-01-01
+
+### Added
+
+#### Node.js Framework Themes (5 new)
+- **NestJS** - NestJS Red (#E0234E) with pink/magenta accents
+- **Express** - Minimalist black and white aesthetic with yellow accent
+- **Koa** - Elegant slate gray with cyan/teal accents
+- **Deno** - Dark mode theme with cyan dinosaur accents (#70CCD8)
+- **Bun** - Warm cream/beige (#FBF0DF) with orange-brown tones
+
 ## [1.2.0] - 2025-12-16
 
 ### Added
@@ -165,6 +176,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Example pages: Admin Dashboard, E-commerce, Photography Portfolio, Forum, SaaS Landing Page
 - Comprehensive UI component examples
 
+[1.3.0]: https://github.com/pegasusheavy/tailswatch/releases/tag/v1.3.0
 [1.2.0]: https://github.com/pegasusheavy/tailswatch/releases/tag/v1.2.0
 [1.1.1]: https://github.com/pegasusheavy/tailswatch/releases/tag/v1.1.1
 [1.1.0]: https://github.com/pegasusheavy/tailswatch/releases/tag/v1.1.0

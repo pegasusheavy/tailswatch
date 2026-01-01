@@ -1,0 +1,204 @@
+// ============================================
+// Tailswatch: Deno Theme (Dark)
+// Inspired by Deno's modern runtime aesthetic
+// Primary: Deno Black with green/blue accents
+// ============================================
+
+:root {
+  // Primary - Deno Dark/Black
+  --color-primary-50: #0d0d0d;
+  --color-primary-100: #1a1a1a;
+  --color-primary-200: #262626;
+  --color-primary-300: #333333;
+  --color-primary-400: #4d4d4d;
+  --color-primary-500: #70ccd8;
+  --color-primary-600: #5bc4d1;
+  --color-primary-700: #46bcca;
+  --color-primary-800: #31b4c3;
+  --color-primary-900: #f8f8f8;
+  --color-primary-950: #ffffff;
+
+  // Secondary - Deno Gray
+  --color-secondary-50: #0a0a0a;
+  --color-secondary-100: #141414;
+  --color-secondary-200: #1f1f1f;
+  --color-secondary-300: #2e2e2e;
+  --color-secondary-400: #444444;
+  --color-secondary-500: #6b6b6b;
+  --color-secondary-600: #8f8f8f;
+  --color-secondary-700: #b3b3b3;
+  --color-secondary-800: #d4d4d4;
+  --color-secondary-900: #ebebeb;
+  --color-secondary-950: #fafafa;
+
+  // Accent - Deno Cyan/Teal (dinosaur theme)
+  --color-accent-50: #042f34;
+  --color-accent-100: #0a4a52;
+  --color-accent-200: #10656f;
+  --color-accent-300: #16808d;
+  --color-accent-400: #1d9baa;
+  --color-accent-500: #70ccd8;
+  --color-accent-600: #8cd7e0;
+  --color-accent-700: #a8e2e8;
+  --color-accent-800: #c4edf0;
+  --color-accent-900: #e0f8f8;
+  --color-accent-950: #f0fbfb;
+
+  // Success - Deno Green
+  --color-success-50: #022c22;
+  --color-success-100: #065f46;
+  --color-success-200: #047857;
+  --color-success-300: #059669;
+  --color-success-400: #10b981;
+  --color-success-500: #34d399;
+  --color-success-600: #6ee7b7;
+  --color-success-700: #a7f3d0;
+  --color-success-800: #d1fae5;
+  --color-success-900: #ecfdf5;
+  --color-success-950: #f0fdf4;
+
+  // Warning - Yellow/Orange
+  --color-warning-50: #451a03;
+  --color-warning-100: #78350f;
+  --color-warning-200: #92400e;
+  --color-warning-300: #b45309;
+  --color-warning-400: #d97706;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #fbbf24;
+  --color-warning-700: #fcd34d;
+  --color-warning-800: #fde68a;
+  --color-warning-900: #fef3c7;
+  --color-warning-950: #fffbeb;
+
+  // Error - Red
+  --color-error-50: #450a0a;
+  --color-error-100: #7f1d1d;
+  --color-error-200: #991b1b;
+  --color-error-300: #b91c1c;
+  --color-error-400: #dc2626;
+  --color-error-500: #ef4444;
+  --color-error-600: #f87171;
+  --color-error-700: #fca5a5;
+  --color-error-800: #fecaca;
+  --color-error-900: #fee2e2;
+  --color-error-950: #fef2f2;
+
+  // Info - Deno Cyan
+  --color-info-50: #042f34;
+  --color-info-100: #0a4a52;
+  --color-info-200: #10656f;
+  --color-info-300: #16808d;
+  --color-info-400: #1d9baa;
+  --color-info-500: #70ccd8;
+  --color-info-600: #8cd7e0;
+  --color-info-700: #a8e2e8;
+  --color-info-800: #c4edf0;
+  --color-info-900: #e0f8f8;
+  --color-info-950: #f0fbfb;
+
+  // Surface Colors - Deno dark mode
+  --color-background: #0d0d0d;
+  --color-surface: #1a1a1a;
+  --color-surface-muted: #262626;
+  --color-border: #333333;
+
+  // Text Colors
+  --color-text: #f8f8f8;
+  --color-text-muted: #8f8f8f;
+  --color-text-inverted: #0d0d0d;
+}
+
+@theme {
+  --color-primary-50: var(--color-primary-50);
+  --color-primary-100: var(--color-primary-100);
+  --color-primary-200: var(--color-primary-200);
+  --color-primary-300: var(--color-primary-300);
+  --color-primary-400: var(--color-primary-400);
+  --color-primary-500: var(--color-primary-500);
+  --color-primary-600: var(--color-primary-600);
+  --color-primary-700: var(--color-primary-700);
+  --color-primary-800: var(--color-primary-800);
+  --color-primary-900: var(--color-primary-900);
+  --color-primary-950: var(--color-primary-950);
+
+  --color-secondary-50: var(--color-secondary-50);
+  --color-secondary-100: var(--color-secondary-100);
+  --color-secondary-200: var(--color-secondary-200);
+  --color-secondary-300: var(--color-secondary-300);
+  --color-secondary-400: var(--color-secondary-400);
+  --color-secondary-500: var(--color-secondary-500);
+  --color-secondary-600: var(--color-secondary-600);
+  --color-secondary-700: var(--color-secondary-700);
+  --color-secondary-800: var(--color-secondary-800);
+  --color-secondary-900: var(--color-secondary-900);
+  --color-secondary-950: var(--color-secondary-950);
+
+  --color-accent-50: var(--color-accent-50);
+  --color-accent-100: var(--color-accent-100);
+  --color-accent-200: var(--color-accent-200);
+  --color-accent-300: var(--color-accent-300);
+  --color-accent-400: var(--color-accent-400);
+  --color-accent-500: var(--color-accent-500);
+  --color-accent-600: var(--color-accent-600);
+  --color-accent-700: var(--color-accent-700);
+  --color-accent-800: var(--color-accent-800);
+  --color-accent-900: var(--color-accent-900);
+  --color-accent-950: var(--color-accent-950);
+
+  --color-success-50: var(--color-success-50);
+  --color-success-100: var(--color-success-100);
+  --color-success-200: var(--color-success-200);
+  --color-success-300: var(--color-success-300);
+  --color-success-400: var(--color-success-400);
+  --color-success-500: var(--color-success-500);
+  --color-success-600: var(--color-success-600);
+  --color-success-700: var(--color-success-700);
+  --color-success-800: var(--color-success-800);
+  --color-success-900: var(--color-success-900);
+  --color-success-950: var(--color-success-950);
+
+  --color-warning-50: var(--color-warning-50);
+  --color-warning-100: var(--color-warning-100);
+  --color-warning-200: var(--color-warning-200);
+  --color-warning-300: var(--color-warning-300);
+  --color-warning-400: var(--color-warning-400);
+  --color-warning-500: var(--color-warning-500);
+  --color-warning-600: var(--color-warning-600);
+  --color-warning-700: var(--color-warning-700);
+  --color-warning-800: var(--color-warning-800);
+  --color-warning-900: var(--color-warning-900);
+  --color-warning-950: var(--color-warning-950);
+
+  --color-error-50: var(--color-error-50);
+  --color-error-100: var(--color-error-100);
+  --color-error-200: var(--color-error-200);
+  --color-error-300: var(--color-error-300);
+  --color-error-400: var(--color-error-400);
+  --color-error-500: var(--color-error-500);
+  --color-error-600: var(--color-error-600);
+  --color-error-700: var(--color-error-700);
+  --color-error-800: var(--color-error-800);
+  --color-error-900: var(--color-error-900);
+  --color-error-950: var(--color-error-950);
+
+  --color-info-50: var(--color-info-50);
+  --color-info-100: var(--color-info-100);
+  --color-info-200: var(--color-info-200);
+  --color-info-300: var(--color-info-300);
+  --color-info-400: var(--color-info-400);
+  --color-info-500: var(--color-info-500);
+  --color-info-600: var(--color-info-600);
+  --color-info-700: var(--color-info-700);
+  --color-info-800: var(--color-info-800);
+  --color-info-900: var(--color-info-900);
+  --color-info-950: var(--color-info-950);
+
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-surface-muted: var(--color-surface-muted);
+  --color-border: var(--color-border);
+
+  --color-text: var(--color-text);
+  --color-text-muted: var(--color-text-muted);
+  --color-text-inverted: var(--color-text-inverted);
+}

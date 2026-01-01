@@ -1,7 +1,7 @@
 {
   "name": "@pegasusheavy/tailswatch",
-  "version": "1.2.0",
-  "description": "Customizable Tailwind CSS 4+ themes for import into other applications. Bootswatch-inspired themes, Material Design themes, programming language-inspired themes, cloud provider themes, NFL team themes, NBA team themes, NHL team themes, and motorsports themes.",
+  "version": "1.3.0",
+  "description": "Customizable Tailwind CSS 4+ themes for import into other applications. Bootswatch-inspired themes, Material Design themes, programming language-inspired themes, Node.js framework themes, cloud provider themes, NFL team themes, NBA team themes, NHL team themes, and motorsports themes.",
   "author": "Pegasus Heavy Industries LLC",
   "license": "MIT",
   "type": "module",
@@ -170,7 +170,12 @@
     "./themes/nhl-sharks": "./dist/themes/nhl-sharks.css",
     "./themes/nhl-kraken": "./dist/themes/nhl-kraken.css",
     "./themes/nhl-canucks": "./dist/themes/nhl-canucks.css",
-    "./themes/nhl-goldenknights": "./dist/themes/nhl-goldenknights.css"
+    "./themes/nhl-goldenknights": "./dist/themes/nhl-goldenknights.css",
+    "./themes/nestjs": "./dist/themes/nestjs.css",
+    "./themes/express": "./dist/themes/express.css",
+    "./themes/koa": "./dist/themes/koa.css",
+    "./themes/deno": "./dist/themes/deno.css",
+    "./themes/bun": "./dist/themes/bun.css"
   },
   "files": [
     "dist",
@@ -309,7 +314,20 @@
     "san-jose-sharks",
     "seattle-kraken",
     "vancouver-canucks",
-    "vegas-golden-knights"
+    "vegas-golden-knights",
+    "nestjs",
+    "nest-js",
+    "express",
+    "expressjs",
+    "express-js",
+    "koa",
+    "koajs",
+    "koa-js",
+    "deno",
+    "bun",
+    "bunjs",
+    "node-frameworks",
+    "http-frameworks"
   ],
   "repository": {
     "type": "git",
