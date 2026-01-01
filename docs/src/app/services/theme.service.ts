@@ -6,6 +6,7 @@ export type ThemeCategory =
   | 'Material Design'
   | 'Programming'
   | 'Node Frameworks'
+  | 'Web Frameworks'
   | 'Cloud Providers'
   | 'NFL'
   | 'NBA'
@@ -106,6 +107,20 @@ export class ThemeService {
     { id: 'nuxt', name: 'Nuxt', description: 'Fresh green with teal accents', isDark: false, category: 'Node Frameworks' },
     { id: 'remix', name: 'Remix', description: 'Blue with pink/magenta gradient', isDark: false, category: 'Node Frameworks' },
     { id: 'astro', name: 'Astro', description: 'Purple with orange coral accents', isDark: false, category: 'Node Frameworks' },
+
+    // Web Framework themes (Multi-language)
+    { id: 'django', name: 'Django', description: 'Django Green with teal accents', isDark: false, category: 'Web Frameworks' },
+    { id: 'flask', name: 'Flask', description: 'Minimalist black and white with green accent', isDark: false, category: 'Web Frameworks' },
+    { id: 'fastapi', name: 'FastAPI', description: 'FastAPI Teal with green accents', isDark: false, category: 'Web Frameworks' },
+    { id: 'rails', name: 'Ruby on Rails', description: 'Rails Red with silver accents', isDark: false, category: 'Web Frameworks' },
+    { id: 'laravel', name: 'Laravel', description: 'Laravel Red with pink accents', isDark: false, category: 'Web Frameworks' },
+    { id: 'symfony', name: 'Symfony', description: 'Minimalist black and white with lime accent', isDark: false, category: 'Web Frameworks' },
+    { id: 'spring', name: 'Spring Boot', description: 'Spring Green with emerald accents', isDark: false, category: 'Web Frameworks' },
+    { id: 'gin', name: 'Gin', description: 'Go Cyan with blue accents', isDark: false, category: 'Web Frameworks' },
+    { id: 'fiber', name: 'Fiber', description: 'Fiber Cyan with slate accents', isDark: false, category: 'Web Frameworks' },
+    { id: 'actix', name: 'Actix', description: 'Dark mode with Rust Orange accents', isDark: true, category: 'Web Frameworks' },
+    { id: 'aspnet', name: 'ASP.NET', description: '.NET Purple with blue accents', isDark: false, category: 'Web Frameworks' },
+    { id: 'phoenix', name: 'Phoenix', description: 'Phoenix Orange with Elixir purple accents', isDark: false, category: 'Web Frameworks' },
 
     // Cloud Provider themes
     { id: 'aws', name: 'AWS', description: 'Amazon Web Services orange and squid ink', isDark: false, category: 'Cloud Providers' },
@@ -254,7 +269,7 @@ export class ThemeService {
 
   /** Themes grouped by category */
   readonly themesByCategory = computed<ThemeGroup[]>(() => {
-    const categories: ThemeCategory[] = ['Base', 'Bootswatch', 'Material Design', 'Programming', 'Node Frameworks', 'Cloud Providers', 'NFL', 'NBA', 'NHL', 'Motorsports'];
+    const categories: ThemeCategory[] = ['Base', 'Bootswatch', 'Material Design', 'Programming', 'Node Frameworks', 'Web Frameworks', 'Cloud Providers', 'NFL', 'NBA', 'NHL', 'Motorsports'];
     return categories.map(category => ({
       category,
       themes: this.themes.filter(t => t.category === category)
