@@ -184,7 +184,20 @@
               { "input": "src/styles/themes/nhl-sharks.scss", "bundleName": "nhl-sharks", "inject": false },
               { "input": "src/styles/themes/nhl-kraken.scss", "bundleName": "nhl-kraken", "inject": false },
               { "input": "src/styles/themes/nhl-canucks.scss", "bundleName": "nhl-canucks", "inject": false },
-              { "input": "src/styles/themes/nhl-goldenknights.scss", "bundleName": "nhl-goldenknights", "inject": false }
+              { "input": "src/styles/themes/nhl-goldenknights.scss", "bundleName": "nhl-goldenknights", "inject": false },
+              { "input": "src/styles/themes/nestjs.scss", "bundleName": "nestjs", "inject": false },
+              { "input": "src/styles/themes/express.scss", "bundleName": "express", "inject": false },
+              { "input": "src/styles/themes/koa.scss", "bundleName": "koa", "inject": false },
+              { "input": "src/styles/themes/deno.scss", "bundleName": "deno", "inject": false },
+              { "input": "src/styles/themes/bun.scss", "bundleName": "bun", "inject": false },
+              { "input": "src/styles/themes/fastify.scss", "bundleName": "fastify", "inject": false },
+              { "input": "src/styles/themes/hono.scss", "bundleName": "hono", "inject": false },
+              { "input": "src/styles/themes/hapi.scss", "bundleName": "hapi", "inject": false },
+              { "input": "src/styles/themes/elysia.scss", "bundleName": "elysia", "inject": false },
+              { "input": "src/styles/themes/nextjs.scss", "bundleName": "nextjs", "inject": false },
+              { "input": "src/styles/themes/nuxt.scss", "bundleName": "nuxt", "inject": false },
+              { "input": "src/styles/themes/remix.scss", "bundleName": "remix", "inject": false },
+              { "input": "src/styles/themes/astro.scss", "bundleName": "astro", "inject": false }
             ],
             "scripts": []
           },

@@ -5,6 +5,7 @@ export type ThemeCategory =
   | 'Bootswatch'
   | 'Material Design'
   | 'Programming'
+  | 'Node Frameworks'
   | 'Cloud Providers'
   | 'NFL'
   | 'NBA'
@@ -90,6 +91,21 @@ export class ThemeService {
     { id: 'typescript', name: 'TypeScript', description: 'TypeScript blue theme', isDark: false, category: 'Programming' },
     { id: 'wasm', name: 'WebAssembly', description: 'WebAssembly purple theme', isDark: false, category: 'Programming' },
     { id: 'zig', name: 'Zig', description: 'Zig golden orange theme', isDark: false, category: 'Programming' },
+
+    // Node.js Framework themes
+    { id: 'nestjs', name: 'NestJS', description: 'NestJS Red with pink accents', isDark: false, category: 'Node Frameworks' },
+    { id: 'express', name: 'Express', description: 'Minimalist black and white aesthetic', isDark: false, category: 'Node Frameworks' },
+    { id: 'koa', name: 'Koa', description: 'Elegant slate gray with cyan accents', isDark: false, category: 'Node Frameworks' },
+    { id: 'deno', name: 'Deno', description: 'Dark mode with cyan dinosaur accents', isDark: true, category: 'Node Frameworks' },
+    { id: 'bun', name: 'Bun', description: 'Warm cream/beige with orange-brown tones', isDark: false, category: 'Node Frameworks' },
+    { id: 'fastify', name: 'Fastify', description: 'Clean black and white with blue accents', isDark: false, category: 'Node Frameworks' },
+    { id: 'hono', name: 'Hono', description: 'Flame orange with yellow accents', isDark: false, category: 'Node Frameworks' },
+    { id: 'hapi', name: 'Hapi', description: 'Enterprise orange with blue accents', isDark: false, category: 'Node Frameworks' },
+    { id: 'elysia', name: 'Elysia', description: 'Purple/violet with pink accents (Bun-native)', isDark: false, category: 'Node Frameworks' },
+    { id: 'nextjs', name: 'Next.js', description: 'Dark mode matching Vercel aesthetic', isDark: true, category: 'Node Frameworks' },
+    { id: 'nuxt', name: 'Nuxt', description: 'Fresh green with teal accents', isDark: false, category: 'Node Frameworks' },
+    { id: 'remix', name: 'Remix', description: 'Blue with pink/magenta gradient', isDark: false, category: 'Node Frameworks' },
+    { id: 'astro', name: 'Astro', description: 'Purple with orange coral accents', isDark: false, category: 'Node Frameworks' },
 
     // Cloud Provider themes
     { id: 'aws', name: 'AWS', description: 'Amazon Web Services orange and squid ink', isDark: false, category: 'Cloud Providers' },
@@ -238,7 +254,7 @@ export class ThemeService {
 
   /** Themes grouped by category */
   readonly themesByCategory = computed<ThemeGroup[]>(() => {
-    const categories: ThemeCategory[] = ['Base', 'Bootswatch', 'Material Design', 'Programming', 'Cloud Providers', 'NFL', 'NBA', 'NHL', 'Motorsports'];
+    const categories: ThemeCategory[] = ['Base', 'Bootswatch', 'Material Design', 'Programming', 'Node Frameworks', 'Cloud Providers', 'NFL', 'NBA', 'NHL', 'Motorsports'];
     return categories.map(category => ({
       category,
       themes: this.themes.filter(t => t.category === category)
