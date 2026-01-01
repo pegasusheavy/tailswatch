@@ -1,6 +1,6 @@
 {
   "name": "@pegasusheavy/tailswatch",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Customizable Tailwind CSS 4+ themes for import into other applications. Bootswatch-inspired themes, Material Design themes, programming language-inspired themes, Node.js framework themes, cloud provider themes, NFL team themes, NBA team themes, NHL team themes, and motorsports themes.",
   "author": "Pegasus Heavy Industries LLC",
   "license": "MIT",
@@ -175,7 +175,15 @@
     "./themes/express": "./dist/themes/express.css",
     "./themes/koa": "./dist/themes/koa.css",
     "./themes/deno": "./dist/themes/deno.css",
-    "./themes/bun": "./dist/themes/bun.css"
+    "./themes/bun": "./dist/themes/bun.css",
+    "./themes/fastify": "./dist/themes/fastify.css",
+    "./themes/hono": "./dist/themes/hono.css",
+    "./themes/hapi": "./dist/themes/hapi.css",
+    "./themes/elysia": "./dist/themes/elysia.css",
+    "./themes/nextjs": "./dist/themes/nextjs.css",
+    "./themes/nuxt": "./dist/themes/nuxt.css",
+    "./themes/remix": "./dist/themes/remix.css",
+    "./themes/astro": "./dist/themes/astro.css"
   },
   "files": [
     "dist",
@@ -327,7 +335,27 @@
     "bun",
     "bunjs",
     "node-frameworks",
-    "http-frameworks"
+    "http-frameworks",
+    "fastify",
+    "hono",
+    "honojs",
+    "hapi",
+    "hapijs",
+    "elysia",
+    "elysiajs",
+    "nextjs",
+    "next-js",
+    "nuxt",
+    "nuxtjs",
+    "nuxt-js",
+    "remix",
+    "remixjs",
+    "remix-run",
+    "astro",
+    "astrojs",
+    "astro-build",
+    "meta-frameworks",
+    "web-frameworks"
   ],
   "repository": {
     "type": "git",
