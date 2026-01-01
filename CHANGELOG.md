@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.4.0] - 2026-01-01
+
+### Added
+
+#### Extended HTTP Framework Themes (8 new)
+- **Fastify** - Clean black and white with blue accents
+- **Hono** - Flame orange (#FF5B00) with yellow inner flame accents
+- **Hapi** - Enterprise orange (#FF6600) with blue accents
+- **Elysia** - Elegant purple/violet (#8B5CF6) with pink accents (Bun-native)
+- **Next.js** - Dark mode theme matching Vercel aesthetic
+- **Nuxt** - Fresh green (#00DC82) with teal accents
+- **Remix** - Blue (#3992FF) with pink/magenta gradient accents
+- **Astro** - Purple (#7C3AED) with orange coral accents
+
 ## [1.3.0] - 2026-01-01
 
 ### Added
@@ -176,6 +190,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Example pages: Admin Dashboard, E-commerce, Photography Portfolio, Forum, SaaS Landing Page
 - Comprehensive UI component examples
 
+[1.4.0]: https://github.com/pegasusheavy/tailswatch/releases/tag/v1.4.0
 [1.3.0]: https://github.com/pegasusheavy/tailswatch/releases/tag/v1.3.0
 [1.2.0]: https://github.com/pegasusheavy/tailswatch/releases/tag/v1.2.0
 [1.1.1]: https://github.com/pegasusheavy/tailswatch/releases/tag/v1.1.1
