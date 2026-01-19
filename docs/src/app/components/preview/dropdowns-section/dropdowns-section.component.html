@@ -3,7 +3,7 @@
 
   <div class="space-y-8">
     <!-- Basic Dropdowns -->
-    <div appScrollAnimate="fade-up">
+    <div appScrollAnimate="fade-up" class="relative" [class.z-40]="dropdown1Open() || dropdown2Open() || dropdown3Open()">
       <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">Dropdown Menus</h3>
       <div class="flex flex-wrap gap-4" appStaggerChildren [staggerDelay]="100">
         <!-- Simple Dropdown -->
@@ -15,7 +15,7 @@
             <fa-icon [icon]="['fas', 'chevron-down']" class="text-xs transition-transform" [class.rotate-180]="dropdown1Open()"></fa-icon>
           </button>
           @if (dropdown1Open()) {
-            <div class="absolute left-0 top-full z-10 mt-1 w-48 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] py-1 shadow-lg">
+            <div class="absolute left-0 top-full z-50 mt-1 w-48 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] py-1 shadow-lg">
               <a href="#" class="block px-4 py-2 text-sm hover:bg-[var(--color-surface-muted)]">Edit</a>
               <a href="#" class="block px-4 py-2 text-sm hover:bg-[var(--color-surface-muted)]">Duplicate</a>
               <a href="#" class="block px-4 py-2 text-sm hover:bg-[var(--color-surface-muted)]">Archive</a>
@@ -34,7 +34,7 @@
             <fa-icon [icon]="['fas', 'chevron-down']" class="text-xs transition-transform" [class.rotate-180]="dropdown2Open()"></fa-icon>
           </button>
           @if (dropdown2Open()) {
-            <div class="absolute left-0 top-full z-10 mt-1 w-48 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] py-1 shadow-lg">
+            <div class="absolute left-0 top-full z-50 mt-1 w-48 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] py-1 shadow-lg">
               <a href="#" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-[var(--color-surface-muted)]">
                 <fa-icon [icon]="['fas', 'download']" class="w-4 text-[var(--color-text-muted)]"></fa-icon>
                 Download
@@ -63,7 +63,7 @@
             <fa-icon [icon]="['fas', 'chevron-down']" class="text-xs transition-transform" [class.rotate-180]="dropdown3Open()"></fa-icon>
           </button>
           @if (dropdown3Open()) {
-            <div class="absolute right-0 top-full z-10 mt-1 w-56 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] py-1 shadow-lg">
+            <div class="absolute right-0 top-full z-50 mt-1 w-56 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] py-1 shadow-lg">
               <div class="border-b border-[var(--color-border)] px-4 py-3">
                 <div class="font-medium">John Doe</div>
                 <div class="text-sm text-[var(--color-text-muted)]">john&#64;example.com</div>
@@ -92,7 +92,7 @@
     </div>
 
     <!-- CSS-Only Hover Dropdowns -->
-    <div appScrollAnimate="fade-up" [animateDelay]="100">
+    <div appScrollAnimate="fade-up" [animateDelay]="100" class="relative hover:z-40">
       <h3 class="mb-4 text-sm font-medium text-[var(--color-text-muted)]">CSS-Only Hover Dropdowns</h3>
       <div class="flex flex-wrap gap-4">
         <div class="group relative">
@@ -100,7 +100,7 @@
             Hover Me
             <fa-icon [icon]="['fas', 'chevron-down']" class="text-xs transition-transform group-hover:rotate-180"></fa-icon>
           </button>
-          <div class="invisible absolute left-0 top-full z-10 mt-1 w-48 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] py-1 opacity-0 shadow-lg transition-all group-hover:visible group-hover:opacity-100">
+          <div class="invisible absolute left-0 top-full z-50 mt-1 w-48 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] py-1 opacity-0 shadow-lg transition-all group-hover:visible group-hover:opacity-100">
             <a href="#" class="block px-4 py-2 text-sm hover:bg-[var(--color-surface-muted)]">Menu Item 1</a>
             <a href="#" class="block px-4 py-2 text-sm hover:bg-[var(--color-surface-muted)]">Menu Item 2</a>
             <a href="#" class="block px-4 py-2 text-sm hover:bg-[var(--color-surface-muted)]">Menu Item 3</a>
@@ -113,7 +113,7 @@
             Mega Menu
             <fa-icon [icon]="['fas', 'chevron-down']" class="text-xs transition-transform group-hover:rotate-180"></fa-icon>
           </button>
-          <div class="invisible absolute left-0 top-full z-10 mt-1 w-96 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-4 opacity-0 shadow-lg transition-all group-hover:visible group-hover:opacity-100">
+          <div class="invisible absolute left-0 top-full z-50 mt-1 w-96 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-4 opacity-0 shadow-lg transition-all group-hover:visible group-hover:opacity-100">
             <div class="grid grid-cols-2 gap-4">
               <div>
                 <h4 class="mb-2 text-xs font-semibold uppercase text-[var(--color-text-muted)]">Products</h4>
