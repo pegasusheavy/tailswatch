@@ -1,0 +1,230 @@
+@use "tailwindcss";
+
+// ============================================
+// QUARTZ LIGHT THEME
+// A light version of Quartz - clean with pink accents
+// Features white background with rounded borders
+// ============================================
+
+:root {
+  // Typography
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  // Primary - Pink (#E83283)
+  --color-primary-50: #fdeef5;
+  --color-primary-100: #fad4e6;
+  --color-primary-200: #f5a9cd;
+  --color-primary-300: #f07eb4;
+  --color-primary-400: #eb539b;
+  --color-primary-500: #e83283;
+  --color-primary-600: #c62a6f;
+  --color-primary-700: #a4235b;
+  --color-primary-800: #821c48;
+  --color-primary-900: #601435;
+  --color-primary-950: #3e0d22;
+
+  // Secondary - Gray
+  --color-secondary-50: #f5f5f5;
+  --color-secondary-100: #e8e8e8;
+  --color-secondary-200: #d4d4d4;
+  --color-secondary-300: #b8b8b8;
+  --color-secondary-400: #a0a0a0;
+  --color-secondary-500: #888888;
+  --color-secondary-600: #707070;
+  --color-secondary-700: #585858;
+  --color-secondary-800: #404040;
+  --color-secondary-900: #282828;
+  --color-secondary-950: #181818;
+
+  // Accent - Teal (#41B1A5)
+  --color-accent-50: #e8f8f6;
+  --color-accent-100: #c5eee9;
+  --color-accent-200: #9ae1d9;
+  --color-accent-300: #6fd4c9;
+  --color-accent-400: #52c5b7;
+  --color-accent-500: #41b1a5;
+  --color-accent-600: #37968c;
+  --color-accent-700: #2d7b73;
+  --color-accent-800: #24605a;
+  --color-accent-900: #1a4541;
+  --color-accent-950: #102a28;
+
+  // Success - Teal
+  --color-success-50: #e8f8f6;
+  --color-success-100: #c5eee9;
+  --color-success-200: #9ae1d9;
+  --color-success-300: #6fd4c9;
+  --color-success-400: #52c5b7;
+  --color-success-500: #41b1a5;
+  --color-success-600: #37968c;
+  --color-success-700: #2d7b73;
+  --color-success-800: #24605a;
+  --color-success-900: #1a4541;
+  --color-success-950: #102a28;
+
+  // Warning - Yellow
+  --color-warning-50: #fef9e6;
+  --color-warning-100: #fdf0bf;
+  --color-warning-200: #fbe58f;
+  --color-warning-300: #f9da5f;
+  --color-warning-400: #f7cf38;
+  --color-warning-500: #f5c211;
+  --color-warning-600: #d1a50e;
+  --color-warning-700: #ad880c;
+  --color-warning-800: #896b09;
+  --color-warning-900: #654e07;
+  --color-warning-950: #413104;
+
+  // Error - Pink (same as primary)
+  --color-error-50: #fdeef5;
+  --color-error-100: #fad4e6;
+  --color-error-200: #f5a9cd;
+  --color-error-300: #f07eb4;
+  --color-error-400: #eb539b;
+  --color-error-500: #e83283;
+  --color-error-600: #c62a6f;
+  --color-error-700: #a4235b;
+  --color-error-800: #821c48;
+  --color-error-900: #601435;
+  --color-error-950: #3e0d22;
+
+  // Info - Blue
+  --color-info-50: #e8f4fc;
+  --color-info-100: #c5e3f8;
+  --color-info-200: #9ecef3;
+  --color-info-300: #77b9ee;
+  --color-info-400: #55a6e9;
+  --color-info-500: #3493e4;
+  --color-info-600: #2c7dc3;
+  --color-info-700: #2467a1;
+  --color-info-800: #1c5180;
+  --color-info-900: #143b5f;
+  --color-info-950: #0c253e;
+
+  // Surface colors - Solid Light (no rgba for light mode)
+  --color-background: #ffffff;
+  --color-foreground: #282828;
+  --color-surface: #fcfcfc;
+  --color-surface-elevated: #ffffff;
+  --color-surface-muted: #f8f9fa;
+  --color-border: #dee2e6;
+  --color-border-muted: #e9ecef;
+
+  // Text colors
+  --color-text: #282828;
+  --color-text-muted: #6c757d;
+  --color-text-subtle: #adb5bd;
+  --color-text-inverse: #ffffff;
+
+  // Component tokens
+  --color-button-primary-bg: #e83283;
+  --color-button-primary-hover: #c62a6f;
+  --color-button-primary-active: #a4235b;
+  --color-card-bg: #fcfcfc;
+  --color-card-border: #dee2e6;
+  --color-input-bg: #ffffff;
+  --color-input-border: #dee2e6;
+  --color-input-border-focus: #e83283;
+  --color-navbar-bg: #ffffff;
+  --color-navbar-text: #6c757d;
+
+  // Border radius - More rounded for glassmorphism aesthetic
+  --radius-sm: 0.5rem;
+  --radius-default: 0.75rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.5rem;
+
+  // Shadows - Lower opacity for light theme
+  --shadow-sm: 0 2px 8px rgb(0 0 0 / 0.05);
+  --shadow-default: 0 8px 32px rgb(0 0 0 / 0.08);
+  --shadow-md: 0 12px 40px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 20px 60px rgb(0 0 0 / 0.1);
+  --shadow-glow: 0 0 30px rgba(232, 50, 131, 0.15);
+
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+// Fix dropdown/select styling for light theme
+select,
+select option {
+  background-color: #ffffff;
+  color: #282828;
+}
+
+select option:checked,
+select option:hover {
+  background-color: #e83283;
+  color: #ffffff;
+}
+
+// Ensure input elements have proper colors
+input,
+textarea {
+  color: #282828;
+
+  &::placeholder {
+    color: #adb5bd;
+  }
+}
+
+@theme {
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+  --font-mono: var(--font-mono);
+
+  --color-primary-50: var(--color-primary-50);
+  --color-primary-100: var(--color-primary-100);
+  --color-primary-200: var(--color-primary-200);
+  --color-primary-300: var(--color-primary-300);
+  --color-primary-400: var(--color-primary-400);
+  --color-primary-500: var(--color-primary-500);
+  --color-primary-600: var(--color-primary-600);
+  --color-primary-700: var(--color-primary-700);
+  --color-primary-800: var(--color-primary-800);
+  --color-primary-900: var(--color-primary-900);
+  --color-primary-950: var(--color-primary-950);
+
+  --color-secondary-50: var(--color-secondary-50);
+  --color-secondary-100: var(--color-secondary-100);
+  --color-secondary-200: var(--color-secondary-200);
+  --color-secondary-300: var(--color-secondary-300);
+  --color-secondary-400: var(--color-secondary-400);
+  --color-secondary-500: var(--color-secondary-500);
+  --color-secondary-600: var(--color-secondary-600);
+  --color-secondary-700: var(--color-secondary-700);
+  --color-secondary-800: var(--color-secondary-800);
+  --color-secondary-900: var(--color-secondary-900);
+  --color-secondary-950: var(--color-secondary-950);
+
+  --color-accent-50: var(--color-accent-50);
+  --color-accent-100: var(--color-accent-100);
+  --color-accent-200: var(--color-accent-200);
+  --color-accent-300: var(--color-accent-300);
+  --color-accent-400: var(--color-accent-400);
+  --color-accent-500: var(--color-accent-500);
+  --color-accent-600: var(--color-accent-600);
+  --color-accent-700: var(--color-accent-700);
+  --color-accent-800: var(--color-accent-800);
+  --color-accent-900: var(--color-accent-900);
+  --color-accent-950: var(--color-accent-950);
+
+  --color-success-500: var(--color-success-500);
+  --color-warning-500: var(--color-warning-500);
+  --color-error-500: var(--color-error-500);
+  --color-info-500: var(--color-info-500);
+
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+  --color-surface: var(--color-surface);
+  --color-border: var(--color-border);
+  --color-text: var(--color-text);
+  --color-text-muted: var(--color-text-muted);
+}

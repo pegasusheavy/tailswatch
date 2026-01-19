@@ -7,6 +7,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+#### Geocities Theme (1 new)
+- **Geocities** - Peak 1996-1998 chaos with neon colors (magenta, lime, cyan), beveled Windows 95-style effects, and mixed typography (Comic Neue body, Bebas Neue headings, VT323 mono)
+
+#### Bootswatch Light/Dark Counterparts (23 new)
+
+Every Bootswatch theme now has both light and dark variants:
+
+**Dark versions of light themes (17):**
+- Cerulean Dark, Cosmo Dark, Journal Dark, Litera Dark, Lumen Dark, Lux Dark
+- Materia Dark, Minty Dark, Morph Dark, Pulse Dark, Sandstone Dark, Simplex Dark
+- Sketchy Dark, Spacelab Dark, United Dark, Yeti Dark, Zephyr Dark
+
+**Light versions of dark themes (6):**
+- Cyborg Light, Quartz Light, Slate Light, Solar Light, Superhero Light, Vapor Light
+
+### Changed
+
+- **Total themes increased from 181 to 204**
+- Bootswatch category now features complete light/dark pairs for all themes
+
 ## [1.5.0] - 2026-01-01
 
 ### Added

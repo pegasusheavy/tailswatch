@@ -1,0 +1,184 @@
+@use "tailwindcss";
+
+// ============================================
+// MORPH DARK THEME
+// Soft neumorphism (Dark) - Bootswatch
+// ============================================
+
+:root {
+  --font-sans: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  // Primary - Blue (#378DFC)
+  --color-primary-50: #ebf4ff;
+  --color-primary-100: #d1e5fe;
+  --color-primary-200: #aed0fd;
+  --color-primary-300: #85b8fc;
+  --color-primary-400: #5ca0fb;
+  --color-primary-500: #378dfc;
+  --color-primary-600: #2e77d6;
+  --color-primary-700: #2661b0;
+  --color-primary-800: #1d4b8a;
+  --color-primary-900: #153564;
+  --color-primary-950: #0d1f3e;
+
+  // Secondary - Gray
+  --color-secondary-50: #f5f5f5;
+  --color-secondary-100: #e8e8e8;
+  --color-secondary-200: #d4d4d4;
+  --color-secondary-300: #b8b8b8;
+  --color-secondary-400: #9e9e9e;
+  --color-secondary-500: #7b7b7b;
+  --color-secondary-600: #666666;
+  --color-secondary-700: #525252;
+  --color-secondary-800: #3d3d3d;
+  --color-secondary-900: #292929;
+  --color-secondary-950: #141414;
+
+  // Accent - Teal (#07bc9c)
+  --color-accent-50: #e6fcf7;
+  --color-accent-100: #bff7eb;
+  --color-accent-200: #8ff1dc;
+  --color-accent-300: #5febcd;
+  --color-accent-400: #2fe5be;
+  --color-accent-500: #07bc9c;
+  --color-accent-600: #069f84;
+  --color-accent-700: #05826c;
+  --color-accent-800: #046554;
+  --color-accent-900: #03483c;
+  --color-accent-950: #022b24;
+
+  // Success
+  --color-success-50: #e6f9f0;
+  --color-success-100: #bfefd8;
+  --color-success-200: #8fe5bc;
+  --color-success-300: #5fdba0;
+  --color-success-400: #2fd184;
+  --color-success-500: #43cc47;
+  --color-success-600: #38ad3c;
+  --color-success-700: #2d8e31;
+  --color-success-800: #226f26;
+  --color-success-900: #17501b;
+  --color-success-950: #0c3110;
+
+  // Warning
+  --color-warning-50: #fff9e6;
+  --color-warning-100: #ffefb8;
+  --color-warning-200: #ffe48a;
+  --color-warning-300: #ffd95c;
+  --color-warning-400: #ffce2e;
+  --color-warning-500: #ffc800;
+  --color-warning-600: #d9aa00;
+  --color-warning-700: #b38c00;
+  --color-warning-800: #8c6e00;
+  --color-warning-900: #665000;
+  --color-warning-950: #403200;
+
+  // Error
+  --color-error-50: #fdecea;
+  --color-error-100: #f9cfca;
+  --color-error-200: #f5ada5;
+  --color-error-300: #f08a7f;
+  --color-error-400: #ec685a;
+  --color-error-500: #e52839;
+  --color-error-600: #c32230;
+  --color-error-700: #a11c27;
+  --color-error-800: #7f161e;
+  --color-error-900: #5d1015;
+  --color-error-950: #3b0a0c;
+
+  // Info
+  --color-info-50: #e6fcf7;
+  --color-info-100: #bff7eb;
+  --color-info-200: #8ff1dc;
+  --color-info-300: #5febcd;
+  --color-info-400: #2fe5be;
+  --color-info-500: #07bc9c;
+  --color-info-600: #069f84;
+  --color-info-700: #05826c;
+  --color-info-800: #046554;
+  --color-info-900: #03483c;
+  --color-info-950: #022b24;
+
+  // Surface - Dark Neumorphic style uses same color base
+  --color-background: #222222;
+  --color-foreground: #ebebeb;
+  --color-surface: #303030;
+  --color-surface-elevated: #3a3a3a;
+  --color-surface-muted: #2a2a2a;
+  --color-border: #444444;
+  --color-border-muted: #383838;
+
+  // Text - Dark
+  --color-text: #ebebeb;
+  --color-text-muted: #aaaaaa;
+  --color-text-subtle: #888888;
+  --color-text-inverse: #222222;
+
+  --radius-sm: 0.75rem;
+  --radius-default: 1rem;
+  --radius-md: 1.25rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+
+  // Dark Neumorphic shadows with #303030 base
+  --shadow-sm: 3px 3px 6px rgb(0 0 0 / 0.3), -3px -3px 6px rgb(60 60 60 / 0.3);
+  --shadow-default: 6px 6px 12px rgb(0 0 0 / 0.3), -6px -6px 12px rgb(60 60 60 / 0.3);
+  --shadow-md: 9px 9px 18px rgb(0 0 0 / 0.3), -9px -9px 18px rgb(60 60 60 / 0.3);
+  --shadow-lg: 12px 12px 24px rgb(0 0 0 / 0.3), -12px -12px 24px rgb(60 60 60 / 0.3);
+  --shadow-inset: inset 3px 3px 6px rgb(0 0 0 / 0.3), inset -3px -3px 6px rgb(60 60 60 / 0.3);
+
+  color-scheme: dark;
+}
+
+@theme {
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+  --color-primary-50: var(--color-primary-50);
+  --color-primary-100: var(--color-primary-100);
+  --color-primary-200: var(--color-primary-200);
+  --color-primary-300: var(--color-primary-300);
+  --color-primary-400: var(--color-primary-400);
+  --color-primary-500: var(--color-primary-500);
+  --color-primary-600: var(--color-primary-600);
+  --color-primary-700: var(--color-primary-700);
+  --color-primary-800: var(--color-primary-800);
+  --color-primary-900: var(--color-primary-900);
+  --color-primary-950: var(--color-primary-950);
+  --color-secondary-50: var(--color-secondary-50);
+  --color-secondary-100: var(--color-secondary-100);
+  --color-secondary-200: var(--color-secondary-200);
+  --color-secondary-300: var(--color-secondary-300);
+  --color-secondary-400: var(--color-secondary-400);
+  --color-secondary-500: var(--color-secondary-500);
+  --color-secondary-600: var(--color-secondary-600);
+  --color-secondary-700: var(--color-secondary-700);
+  --color-secondary-800: var(--color-secondary-800);
+  --color-secondary-900: var(--color-secondary-900);
+  --color-secondary-950: var(--color-secondary-950);
+  --color-accent-50: var(--color-accent-50);
+  --color-accent-100: var(--color-accent-100);
+  --color-accent-200: var(--color-accent-200);
+  --color-accent-300: var(--color-accent-300);
+  --color-accent-400: var(--color-accent-400);
+  --color-accent-500: var(--color-accent-500);
+  --color-accent-600: var(--color-accent-600);
+  --color-accent-700: var(--color-accent-700);
+  --color-accent-800: var(--color-accent-800);
+  --color-accent-900: var(--color-accent-900);
+  --color-accent-950: var(--color-accent-950);
+  --color-success-500: var(--color-success-500);
+  --color-warning-500: var(--color-warning-500);
+  --color-error-500: var(--color-error-500);
+  --color-info-500: var(--color-info-500);
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-border: var(--color-border);
+  --color-text: var(--color-text);
+  --color-text-muted: var(--color-text-muted);
+}
+
+body {
+  background-color: var(--color-background);
+}

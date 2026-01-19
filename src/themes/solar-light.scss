@@ -1,0 +1,184 @@
+@use "tailwindcss";
+
+// ============================================
+// SOLAR LIGHT THEME
+// A light version of Solar - Solarized Light color scheme
+// Features cream background (#fdf6e3) with gold accents
+// ============================================
+
+:root {
+  --font-sans: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Source Code Pro", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  // Primary - Solarized Yellow (#b58900)
+  --color-primary-50: #fbf6e6;
+  --color-primary-100: #f5e8b8;
+  --color-primary-200: #eed88a;
+  --color-primary-300: #e7c85c;
+  --color-primary-400: #e0b82e;
+  --color-primary-500: #b58900;
+  --color-primary-600: #9a7400;
+  --color-primary-700: #7f5f00;
+  --color-primary-800: #644a00;
+  --color-primary-900: #493500;
+  --color-primary-950: #2e2000;
+
+  // Secondary - Solarized Base
+  --color-secondary-50: #f4f4ed;
+  --color-secondary-100: #e0e0d2;
+  --color-secondary-200: #c9c9b2;
+  --color-secondary-300: #a6a68c;
+  --color-secondary-400: #838366;
+  --color-secondary-500: #657b83;
+  --color-secondary-600: #586e76;
+  --color-secondary-700: #4a5f68;
+  --color-secondary-800: #3d4f5b;
+  --color-secondary-900: #2f3f4d;
+  --color-secondary-950: #212f3f;
+
+  // Accent - Magenta (#d33682)
+  --color-accent-50: #fceef5;
+  --color-accent-100: #f7d4e6;
+  --color-accent-200: #f0b5d5;
+  --color-accent-300: #e996c4;
+  --color-accent-400: #e277b3;
+  --color-accent-500: #d33682;
+  --color-accent-600: #b32e6e;
+  --color-accent-700: #93265a;
+  --color-accent-800: #731e46;
+  --color-accent-900: #531632;
+  --color-accent-950: #330e1e;
+
+  // Success - Green (#859900)
+  --color-success-50: #f5f8e6;
+  --color-success-100: #e6ecb8;
+  --color-success-200: #d5de8a;
+  --color-success-300: #c4d05c;
+  --color-success-400: #b3c22e;
+  --color-success-500: #859900;
+  --color-success-600: #718200;
+  --color-success-700: #5d6b00;
+  --color-success-800: #495400;
+  --color-success-900: #353d00;
+  --color-success-950: #212600;
+
+  // Warning - Orange (#cb4b16)
+  --color-warning-50: #fdf0ea;
+  --color-warning-100: #f9d7ca;
+  --color-warning-200: #f4bba6;
+  --color-warning-300: #ef9f82;
+  --color-warning-400: #ea835e;
+  --color-warning-500: #cb4b16;
+  --color-warning-600: #ad4013;
+  --color-warning-700: #8f350f;
+  --color-warning-800: #712a0c;
+  --color-warning-900: #531f09;
+  --color-warning-950: #351406;
+
+  // Error - Red (#dc322f)
+  --color-error-50: #fdeaea;
+  --color-error-100: #f9cbcb;
+  --color-error-200: #f5a7a6;
+  --color-error-300: #f08281;
+  --color-error-400: #ec5d5c;
+  --color-error-500: #dc322f;
+  --color-error-600: #bb2b28;
+  --color-error-700: #9a2321;
+  --color-error-800: #791b1a;
+  --color-error-900: #581313;
+  --color-error-950: #370b0c;
+
+  // Info - Cyan (#2aa198)
+  --color-info-50: #e9f7f6;
+  --color-info-100: #c7ebe8;
+  --color-info-200: #a1ddd8;
+  --color-info-300: #7bcfc8;
+  --color-info-400: #55c1b8;
+  --color-info-500: #2aa198;
+  --color-info-600: #248981;
+  --color-info-700: #1e716a;
+  --color-info-800: #185953;
+  --color-info-900: #12413c;
+  --color-info-950: #0c2925;
+
+  // Surface - Solarized Light
+  --color-background: #fdf6e3;
+  --color-foreground: #657b83;
+  --color-surface: #eee8d5;
+  --color-surface-elevated: #fdf6e3;
+  --color-surface-muted: #f5efdc;
+  --color-border: #93a1a1;
+  --color-border-muted: #c9c9b2;
+
+  // Text - Solarized Light text colors
+  --color-text: #586e76;
+  --color-text-muted: #839496;
+  --color-text-subtle: #93a1a1;
+  --color-text-inverse: #fdf6e3;
+
+  --radius-sm: 0.2rem;
+  --radius-default: 0.25rem;
+  --radius-md: 0.3rem;
+  --radius-lg: 0.35rem;
+  --radius-xl: 0.4rem;
+
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.05);
+  --shadow-default: 0 1px 3px rgb(0 0 0 / 0.08);
+  --shadow-md: 0 4px 6px rgb(0 0 0 / 0.08);
+  --shadow-lg: 0 10px 15px rgb(0 0 0 / 0.08);
+
+  color-scheme: light;
+}
+
+@theme {
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+  --color-primary-50: var(--color-primary-50);
+  --color-primary-100: var(--color-primary-100);
+  --color-primary-200: var(--color-primary-200);
+  --color-primary-300: var(--color-primary-300);
+  --color-primary-400: var(--color-primary-400);
+  --color-primary-500: var(--color-primary-500);
+  --color-primary-600: var(--color-primary-600);
+  --color-primary-700: var(--color-primary-700);
+  --color-primary-800: var(--color-primary-800);
+  --color-primary-900: var(--color-primary-900);
+  --color-primary-950: var(--color-primary-950);
+  --color-secondary-50: var(--color-secondary-50);
+  --color-secondary-100: var(--color-secondary-100);
+  --color-secondary-200: var(--color-secondary-200);
+  --color-secondary-300: var(--color-secondary-300);
+  --color-secondary-400: var(--color-secondary-400);
+  --color-secondary-500: var(--color-secondary-500);
+  --color-secondary-600: var(--color-secondary-600);
+  --color-secondary-700: var(--color-secondary-700);
+  --color-secondary-800: var(--color-secondary-800);
+  --color-secondary-900: var(--color-secondary-900);
+  --color-secondary-950: var(--color-secondary-950);
+  --color-accent-50: var(--color-accent-50);
+  --color-accent-100: var(--color-accent-100);
+  --color-accent-200: var(--color-accent-200);
+  --color-accent-300: var(--color-accent-300);
+  --color-accent-400: var(--color-accent-400);
+  --color-accent-500: var(--color-accent-500);
+  --color-accent-600: var(--color-accent-600);
+  --color-accent-700: var(--color-accent-700);
+  --color-accent-800: var(--color-accent-800);
+  --color-accent-900: var(--color-accent-900);
+  --color-accent-950: var(--color-accent-950);
+  --color-success-500: var(--color-success-500);
+  --color-warning-500: var(--color-warning-500);
+  --color-error-500: var(--color-error-500);
+  --color-info-500: var(--color-info-500);
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-border: var(--color-border);
+  --color-text: var(--color-text);
+  --color-text-muted: var(--color-text-muted);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
