@@ -1,0 +1,49 @@
+# Tailswatch
+
+> Customizable Tailwind CSS 4+ themes with 43 ready-to-use theme presets.
+
+A collection of 43 customizable Tailwind CSS 4+ themes for import into any application. Includes themes inspired by Bootswatch, Material Design, and popular programming languages. Each theme provides a comprehensive set of design tokens covering colors, surfaces, typography, and effects as CSS custom properties that integrate seamlessly with Tailwind CSS utility classes.
+
+## Links
+
+- [Documentation](https://pegasusheavy.github.io/tailswatch/)
+- [GitHub Repository](https://github.com/pegasusheavy/tailswatch)
+- [npm Package](https://www.npmjs.com/package/@pegasusheavy/tailswatch)
+
+## Key Features
+
+- 43 ready-to-use themes for Tailwind CSS 4+
+- 25 Bootswatch-inspired themes (cerulean, cosmo, cyborg, darkly, flatly, journal, litera, lumen, lux, materia, minty, morph, pulse, quartz, sandstone, simplex, sketchy, slate, solar, spacelab, superhero, united, vapor, yeti, zephyr)
+- 12 Material Design themes in light and dark variants
+- 4 programming language-inspired themes (oxide/Rust, gopher/Go, evergreen/Node.js, kernel/C/C++)
+- 2 base themes (default light and dark)
+- Comprehensive design tokens: colors (50-950 shades), surfaces, typography, and effects
+- CSS custom properties for direct use outside Tailwind classes
+- Dynamic theme switching support
+- Import via CSS @import or JavaScript/TypeScript import
+- Custom theme creation support
+
+## Installation
+
+```bash
+npm install @pegasusheavy/tailswatch
+# or
+pnpm add @pegasusheavy/tailswatch
+```
+
+## Quick Start
+
+Import a theme in your CSS alongside Tailwind:
+
+```css
+@import "tailwindcss";
+@import "@pegasusheavy/tailswatch/themes/cosmo";
+```
+
+Or import directly in JavaScript/TypeScript:
+
+```js
+import "@pegasusheavy/tailswatch/themes/cosmo";
+```
+
+Your Tailwind classes will now use the selected theme's colors and design tokens.
