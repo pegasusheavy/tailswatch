@@ -7,6 +7,7 @@
   <select
     id="theme-select"
     (change)="onThemeChange($event)"
+    (focus)="onSelectFocus()"
     class="cursor-pointer appearance-none rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] py-2 pl-9 pr-10 text-sm font-medium text-[var(--color-text)] transition-colors hover:border-[var(--color-primary-500)] focus:border-[var(--color-primary-500)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-500)]/20"
   >
     @for (group of themeService.themesByCategory(); track group.category) {

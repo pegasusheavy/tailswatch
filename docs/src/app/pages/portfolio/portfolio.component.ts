@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, computed } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ThemeSelectorComponent } from '../../components/theme-selector/theme-selector.component';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
@@ -56,12 +56,12 @@ export class PortfolioComponent {
   // Profile photo for the about section
   profileImage = 'https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=600&h=750&fit=crop';
 
-  get filteredPhotos() {
+  filteredPhotos = computed(() => {
     if (this.selectedCategory() === 'all') {
       return this.photos;
     }
     return this.photos.filter(p => p.category === this.selectedCategory());
-  }
+  });
 
   toggleMenu() {
     this.menuOpen.update(v => !v);
@@ -85,7 +85,7 @@ export class PortfolioComponent {
     const current = this.selectedPhoto();
     if (!current) return;
 
-    const filtered = this.filteredPhotos;
+    const filtered = this.filteredPhotos();
     const currentIndex = filtered.findIndex(p => p.id === current.id);
     const newIndex = (currentIndex + direction + filtered.length) % filtered.length;
     this.selectedPhoto.set(filtered[newIndex]);

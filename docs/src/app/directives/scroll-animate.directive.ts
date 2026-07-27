@@ -1,5 +1,6 @@
 import { Directive, ElementRef, Input, OnInit, OnDestroy, inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { createSharedObserver } from './shared-observer';
 
 export type AnimationType =
   | 'fade-up'
@@ -11,6 +12,11 @@ export type AnimationType =
   | 'bounce-in'
   | 'flip-up';
 
+const scrollAnimateObserver = createSharedObserver({
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+});
+
 @Directive({
   selector: '[appScrollAnimate]',
   standalone: true
@@ -18,11 +24,9 @@ export type AnimationType =
 export class ScrollAnimateDirective implements OnInit, OnDestroy {
   private readonly el = inject(ElementRef);
   private readonly platformId = inject(PLATFORM_ID);
-  private observer: IntersectionObserver | null = null;
 
   @Input('appScrollAnimate') animation: AnimationType = 'fade-up';
   @Input() animateDelay: number = 0;
-  @Input() animateThreshold: number = 0.1;
   @Input() animateOnce: boolean = true;
 
   ngOnInit(): void {
@@ -38,33 +42,19 @@ export class ScrollAnimateDirective implements OnInit, OnDestroy {
     // Set initial transform based on animation type
     this.setInitialTransform(element);
 
-    // Create observer
-    this.observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            this.animateIn(element);
-            if (this.animateOnce && this.observer) {
-              this.observer.unobserve(element);
-            }
-          } else if (!this.animateOnce) {
-            this.animateOut(element);
-          }
-        });
-      },
-      {
-        threshold: this.animateThreshold,
-        rootMargin: '0px 0px -50px 0px'
+    // Register with the shared observer
+    scrollAnimateObserver.observe(element, (entry) => {
+      if (entry.isIntersecting) {
+        this.animateIn(element);
+        if (this.animateOnce) {
+          scrollAnimateObserver.release(element);
+        }
       }
-    );
-
-    this.observer.observe(element);
+    });
   }
 
   ngOnDestroy(): void {
-    if (this.observer) {
-      this.observer.disconnect();
-    }
+    scrollAnimateObserver.release(this.el.nativeElement as HTMLElement);
   }
 
   private setInitialTransform(element: HTMLElement): void {
@@ -101,9 +91,4 @@ export class ScrollAnimateDirective implements OnInit, OnDestroy {
     element.style.transform = 'translateY(0) translateX(0) scale(1) rotateX(0)';
   }
 
-  private animateOut(element: HTMLElement): void {
-    element.style.opacity = '0';
-    this.setInitialTransform(element);
-  }
 }
-

@@ -28,4 +28,4 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://pegasusheavy.github.io/tailswatch/sitemap.xml
+Sitemap: https://quinnjr.github.io/tailswatch/sitemap.xml

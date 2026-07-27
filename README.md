@@ -1,21 +1,21 @@
 # Tailswatch
 
-[![npm version](https://img.shields.io/npm/v/@pegasusheavy/tailswatch.svg)](https://www.npmjs.com/package/@pegasusheavy/tailswatch)
+[![npm version](https://img.shields.io/npm/v/tailswatch.svg)](https://www.npmjs.com/package/tailswatch)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![CI](https://github.com/pegasusheavy/tailswatch/actions/workflows/ci.yml/badge.svg)](https://github.com/pegasusheavy/tailswatch/actions/workflows/ci.yml)
+[![CI](https://github.com/quinnjr/tailswatch/actions/workflows/ci.yml/badge.svg)](https://github.com/quinnjr/tailswatch/actions/workflows/ci.yml)
 
-Customizable Tailwind CSS 4+ themes for import into other applications. Includes 43 ready-to-use themes inspired by Bootswatch, Material Design, and popular programming languages.
+Customizable Tailwind CSS 4+ themes for import into other applications. Includes 212 ready-to-use themes inspired by Bootswatch, Material Design, programming languages, web frameworks, cloud providers, pro sports teams, motorsports, and Vocaloid.
 
-**[Live Demo & Documentation →](https://pegasusheavy.github.io/tailswatch)**
+**[Live Demo & Documentation →](https://quinnjr.github.io/tailswatch)**
 
 ## Installation
 
 ```bash
-npm install @pegasusheavy/tailswatch
+npm install tailswatch
 # or
-pnpm add @pegasusheavy/tailswatch
+pnpm add tailswatch
 # or
-yarn add @pegasusheavy/tailswatch
+yarn add tailswatch
 ```
 
 ## Quick Start
@@ -23,81 +23,68 @@ yarn add @pegasusheavy/tailswatch
 Import a theme in your CSS:
 
 ```css
-@import "@pegasusheavy/tailswatch/themes/cosmo";
+@import "tailswatch/themes/cosmo";
 ```
 
 Or import directly in your JavaScript/TypeScript:
 
 ```js
-import "@pegasusheavy/tailswatch/themes/cosmo";
+import "tailswatch/themes/cosmo";
 ```
 
 That's it! Your Tailwind classes will now use the Cosmo theme colors.
 
-## Available Themes (43)
+## Available Themes (212)
 
-### Bootswatch-Inspired (25)
+### Base (3)
 
-| Theme | Description | Mode |
-|-------|-------------|------|
-| `cerulean` | A calm blue sky theme | Light |
-| `cosmo` | An ode to Metro | Light |
-| `cyborg` | Jet black and electric blue | Dark |
-| `darkly` | Flatly in night mode | Dark |
-| `flatly` | Flat and modern | Light |
-| `journal` | Crisp like a new sheet of paper | Light |
-| `litera` | The medium is the message | Light |
-| `lumen` | Light and shadow | Light |
-| `lux` | A touch of class | Light |
-| `materia` | Material is the metaphor | Light |
-| `minty` | A fresh feel | Light |
-| `morph` | A neumorphic layer | Light |
-| `pulse` | A trace of purple | Light |
-| `quartz` | A glassmorphic layer | Dark |
-| `sandstone` | A touch of warmth | Light |
-| `simplex` | Mini and minimalist | Light |
-| `sketchy` | A hand-drawn look | Light |
-| `slate` | Shades of gunmetal gray | Dark |
-| `solar` | A spin on Solarized | Dark |
-| `spacelab` | Silvery and sleek | Light |
-| `superhero` | The brave and the blue | Dark |
-| `united` | Ubuntu orange and unique font | Light |
-| `vapor` | A cyberpunk aesthetic | Dark |
-| `yeti` | A friendly foundation | Light |
-| `zephyr` | Breezy and light | Light |
+`default`, `dark`, `geocities`
+
+### Bootswatch-Inspired (48)
+
+Every Bootswatch theme ships with a light/dark counterpart:
+
+`cerulean`, `cerulean-dark`, `cosmo`, `cosmo-dark`, `cyborg`, `cyborg-light`, `darkly`, `flatly`, `journal`, `journal-dark`, `litera`, `litera-dark`, `lumen`, `lumen-dark`, `lux`, `lux-dark`, `materia`, `materia-dark`, `minty`, `minty-dark`, `morph`, `morph-dark`, `pulse`, `pulse-dark`, `quartz`, `quartz-light`, `sandstone`, `sandstone-dark`, `simplex`, `simplex-dark`, `sketchy`, `sketchy-dark`, `slate`, `slate-light`, `solar`, `solar-light`, `spacelab`, `spacelab-dark`, `superhero`, `superhero-light`, `united`, `united-dark`, `vapor`, `vapor-light`, `yeti`, `yeti-dark`, `zephyr`, `zephyr-dark`
 
 ### Material Design (12)
 
-| Theme | Description | Mode |
-|-------|-------------|------|
-| `material-light-blue` | Material Blue on light | Light |
-| `material-dark-blue` | Material Blue on dark | Dark |
-| `material-light-indigo` | Material Indigo on light | Light |
-| `material-dark-indigo` | Material Indigo on dark | Dark |
-| `material-light-purple` | Material Purple on light | Light |
-| `material-dark-purple` | Material Purple on dark | Dark |
-| `material-light-teal` | Material Teal on light | Light |
-| `material-dark-teal` | Material Teal on dark | Dark |
-| `material-light-green` | Material Green on light | Light |
-| `material-dark-green` | Material Green on dark | Dark |
-| `material-light-deeporange` | Material Deep Orange on light | Light |
-| `material-dark-deeporange` | Material Deep Orange on dark | Dark |
+`material-light-blue`, `material-dark-blue`, `material-light-indigo`, `material-dark-indigo`, `material-light-purple`, `material-dark-purple`, `material-light-teal`, `material-dark-teal`, `material-light-green`, `material-dark-green`, `material-light-deeporange`, `material-dark-deeporange`
 
-### Programming Language-Inspired (4)
+### Programming Languages (12)
 
-| Theme | Description | Mode |
-|-------|-------------|------|
-| `oxide` | Rust programming language inspired | Dark |
-| `gopher` | Go programming language inspired | Light |
-| `evergreen` | Node.js ecosystem inspired | Dark |
-| `kernel` | C/C++ inspired, professional and battle-tested | Dark |
+`csharp`, `evergreen` (Node.js), `gopher` (Go), `java`, `javascript`, `kernel` (C/C++), `kotlin`, `oxide` (Rust), `python`, `typescript`, `wasm`, `zig`
 
-### Base Themes (2)
+### Node Frameworks (13)
 
-| Theme | Description | Mode |
-|-------|-------------|------|
-| `default` | Generic Tailwind CSS, no customization | Light |
-| `dark` | Simple dark mode base | Dark |
+`nestjs`, `express`, `koa`, `deno`, `bun`, `fastify`, `hono`, `hapi`, `elysia`, `nextjs`, `nuxt`, `remix`, `astro`
+
+### Web Frameworks (12)
+
+`django`, `flask`, `fastapi`, `rails`, `laravel`, `symfony`, `spring`, `gin`, `fiber`, `actix`, `aspnet`, `phoenix`
+
+### Cloud Providers (9)
+
+`aws`, `azure`, `gcloud`, `firebase`, `vercel`, `digitalocean`, `cloudflare`, `netlify`, `heroku`
+
+### NFL Teams (32)
+
+`nfl-bills`, `nfl-dolphins`, `nfl-patriots`, `nfl-jets`, `nfl-ravens`, `nfl-bengals`, `nfl-browns`, `nfl-steelers`, `nfl-texans`, `nfl-colts`, `nfl-jaguars`, `nfl-titans`, `nfl-broncos`, `nfl-chiefs`, `nfl-raiders`, `nfl-chargers`, `nfl-cowboys`, `nfl-giants`, `nfl-eagles`, `nfl-commanders`, `nfl-bears`, `nfl-lions`, `nfl-packers`, `nfl-vikings`, `nfl-falcons`, `nfl-panthers`, `nfl-saints`, `nfl-buccaneers`, `nfl-cardinals`, `nfl-rams`, `nfl-49ers`, `nfl-seahawks`
+
+### NBA Teams (30)
+
+`nba-celtics`, `nba-nets`, `nba-knicks`, `nba-76ers`, `nba-raptors`, `nba-bulls`, `nba-cavaliers`, `nba-pistons`, `nba-pacers`, `nba-bucks`, `nba-hawks`, `nba-hornets`, `nba-heat`, `nba-magic`, `nba-wizards`, `nba-nuggets`, `nba-timberwolves`, `nba-thunder`, `nba-trailblazers`, `nba-jazz`, `nba-warriors`, `nba-clippers`, `nba-lakers`, `nba-suns`, `nba-kings`, `nba-mavericks`, `nba-rockets`, `nba-grizzlies`, `nba-pelicans`, `nba-spurs`
+
+### NHL Teams (32)
+
+`nhl-bruins`, `nhl-sabres`, `nhl-redwings`, `nhl-panthers`, `nhl-canadiens`, `nhl-senators`, `nhl-lightning`, `nhl-mapleleafs`, `nhl-hurricanes`, `nhl-bluejackets`, `nhl-devils`, `nhl-islanders`, `nhl-rangers`, `nhl-flyers`, `nhl-penguins`, `nhl-capitals`, `nhl-utahhc`, `nhl-blackhawks`, `nhl-avalanche`, `nhl-stars`, `nhl-wild`, `nhl-predators`, `nhl-blues`, `nhl-jets`, `nhl-ducks`, `nhl-flames`, `nhl-oilers`, `nhl-kings`, `nhl-sharks`, `nhl-kraken`, `nhl-canucks`, `nhl-goldenknights`
+
+### Motorsports (1)
+
+`f1`
+
+### Vocaloid (8)
+
+`vocaloid-miku`, `vocaloid-rin`, `vocaloid-len`, `vocaloid-luka`, `vocaloid-kaito`, `vocaloid-meiko`, `vocaloid-gumi`, `vocaloid-ia`
 
 ## Usage Examples
 
@@ -106,19 +93,19 @@ That's it! Your Tailwind classes will now use the Cosmo theme colors.
 ```css
 /* In your main CSS file */
 @import "tailwindcss";
-@import "@pegasusheavy/tailswatch/themes/cosmo";
+@import "tailswatch/themes/cosmo";
 ```
 
 ### Dynamic Theme Switching
 
 ```html
 <!-- Load themes as separate stylesheets -->
-<link id="theme" rel="stylesheet" href="node_modules/@pegasusheavy/tailswatch/dist/themes/cosmo.css">
+<link id="theme" rel="stylesheet" href="node_modules/tailswatch/dist/themes/cosmo.css">
 
 <script>
   function switchTheme(themeName) {
     document.getElementById('theme').href =
-      `node_modules/@pegasusheavy/tailswatch/dist/themes/${themeName}.css`;
+      `node_modules/tailswatch/dist/themes/${themeName}.css`;
   }
 </script>
 ```
@@ -233,4 +220,4 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 
 ## License
 
-[MIT](LICENSE) © Pegasus Heavy Industries LLC
+[MIT](LICENSE) © Joseph Quinn

@@ -6,9 +6,9 @@ A collection of 43 customizable Tailwind CSS 4+ themes for import into any appli
 
 ## Links
 
-- [Documentation](https://pegasusheavy.github.io/tailswatch/)
-- [GitHub Repository](https://github.com/pegasusheavy/tailswatch)
-- [npm Package](https://www.npmjs.com/package/@pegasusheavy/tailswatch)
+- [Documentation](https://quinnjr.github.io/tailswatch/)
+- [GitHub Repository](https://github.com/quinnjr/tailswatch)
+- [npm Package](https://www.npmjs.com/package/tailswatch)
 
 ## Key Features
 
@@ -26,9 +26,9 @@ A collection of 43 customizable Tailwind CSS 4+ themes for import into any appli
 ## Installation
 
 ```bash
-npm install @pegasusheavy/tailswatch
+npm install tailswatch
 # or
-pnpm add @pegasusheavy/tailswatch
+pnpm add tailswatch
 ```
 
 ## Quick Start
@@ -37,13 +37,13 @@ Import a theme in your CSS alongside Tailwind:
 
 ```css
 @import "tailwindcss";
-@import "@pegasusheavy/tailswatch/themes/cosmo";
+@import "tailswatch/themes/cosmo";
 ```
 
 Or import directly in JavaScript/TypeScript:
 
 ```js
-import "@pegasusheavy/tailswatch/themes/cosmo";
+import "tailswatch/themes/cosmo";
 ```
 
 Your Tailwind classes will now use the selected theme's colors and design tokens.

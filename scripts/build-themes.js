@@ -80,4 +80,4 @@ for (const file of themeFiles) {
 console.log(`\n✓ All themes ready for distribution!`);
 console.log(`\nUsage in downstream projects:`);
 console.log(`  @import "tailwindcss";`);
-console.log(`  @import "@pegasusheavy/tailswatch/themes/cosmo";`);
+console.log(`  @import "tailswatch/themes/cosmo";`);

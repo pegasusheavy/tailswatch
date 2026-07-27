@@ -100,7 +100,7 @@
 
       <!-- Photo Grid (Masonry-like) -->
       <div class="columns-1 gap-4 sm:columns-2 lg:columns-3">
-        @for (photo of filteredPhotos; track photo.id) {
+        @for (photo of filteredPhotos(); track photo.id) {
           <div
             (click)="openLightbox(photo)"
             class="group mb-4 cursor-pointer overflow-hidden rounded-lg break-inside-avoid">
