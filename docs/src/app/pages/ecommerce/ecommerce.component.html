@@ -225,7 +225,7 @@
 
               <!-- Rating -->
               <div class="mb-2 flex items-center gap-1">
-                @for (star of getRatingStars(product.rating); track $index) {
+                @for (star of product.stars; track $index) {
                   <fa-icon
                     [icon]="['fas', 'star']"
                     class="text-xs"

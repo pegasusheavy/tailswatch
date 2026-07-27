@@ -16,4 +16,15 @@ export class ThemeSelectorComponent {
     const select = event.target as HTMLSelectElement;
     this.themeService.setTheme(select.value);
   }
+
+  onSelectFocus(): void {
+    const themes = this.themeService.themes;
+    const index = themes.findIndex(t => t.id === this.themeService.currentThemeId());
+    for (let offset = -3; offset <= 3; offset++) {
+      const theme = themes[index + offset];
+      if (theme && offset !== 0) {
+        this.themeService.prefetchTheme(theme.id);
+      }
+    }
+  }
 }

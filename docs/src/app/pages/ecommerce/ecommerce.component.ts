@@ -14,6 +14,7 @@ interface Product {
   reviews: number;
   badge?: string;
   colors?: string[];
+  stars: string[];
 }
 
 interface CartItem {
@@ -56,7 +57,7 @@ export class EcommerceComponent {
     { id: 10, name: 'LED Desk Lamp', price: 59, image: 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=400&h=400&fit=crop', category: 'home', rating: 4.6, reviews: 167, badge: 'New' },
     { id: 11, name: 'Fitness Tracker Band', price: 49, image: 'https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?w=400&h=400&fit=crop', category: 'sports', rating: 4.1, reviews: 289 },
     { id: 12, name: 'Wool Sweater', price: 129, image: 'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=400&h=400&fit=crop', category: 'clothing', rating: 4.7, reviews: 98, colors: ['#92400e', '#1e3a5f', '#4a5568'] },
-  ];
+  ].map(p => ({ ...p, stars: this.getRatingStars(p.rating) }));
 
   filteredProducts = computed(() => {
     let filtered = this.products;
@@ -123,7 +124,7 @@ export class EcommerceComponent {
     }));
   }
 
-  getRatingStars(rating: number): string[] {
+  private getRatingStars(rating: number): string[] {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
       if (i <= Math.floor(rating)) {

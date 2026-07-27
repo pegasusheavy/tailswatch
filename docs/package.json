@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "description": "Tailswatch theme documentation and preview site",
   "scripts": {
+    "prebuild": "pnpm run build:stubs",
+    "prestart": "pnpm run build:stubs",
+    "build:stubs": "node scripts/build-theme-stubs.mjs",
     "ng": "ng",
-    "prebuild": "pnpm run copy:themes",
-    "prestart": "pnpm run copy:themes",
     "start": "ng serve",
     "build": "ng build",
     "build:gh-pages": "ng build --base-href /tailswatch/",
-    "copy:themes": "node scripts/copy-themes.js",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test:coverage": "ng test --coverage"

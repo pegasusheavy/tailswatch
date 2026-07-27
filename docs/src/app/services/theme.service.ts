@@ -1,4 +1,5 @@
 import { Injectable, signal, computed } from '@angular/core';
+import { THEME_FONT_QUERIES } from './theme-fonts.generated';
 
 export type ThemeCategory =
   | 'Base'
@@ -11,7 +12,8 @@ export type ThemeCategory =
   | 'NFL'
   | 'NBA'
   | 'NHL'
-  | 'Motorsports';
+  | 'Motorsports'
+  | 'Vocaloid';
 
 export interface ThemeInfo {
   id: string;
@@ -32,12 +34,17 @@ export interface ThemeGroup {
 export class ThemeService {
   private readonly STORAGE_KEY = 'tailswatch-theme';
   private readonly THEME_LINK_ID = 'tailswatch-theme-link';
+  private readonly PENDING_THEME_LINK_ID = 'tailswatch-theme-link-pending';
+  private readonly THEME_FONTS_LINK_ID = 'tailswatch-theme-fonts';
+
+  private readonly prefetchedThemes = new Set<string>();
 
   /** Available themes - organized by category */
   readonly themes: ThemeInfo[] = [
     // Base themes
     { id: 'default', name: 'Default', description: 'Generic Tailwind CSS with no customization', isDark: false, category: 'Base' },
     { id: 'geocities', name: 'Geocities', description: 'Peak 1996-1998 chaos with neon colors and beveled effects', isDark: true, category: 'Base' },
+    { id: 'dark', name: 'Dark', description: 'Modern dark theme with vibrant accents', isDark: true, category: 'Base' },
 
     // Bootswatch themes (alphabetical, with light/dark pairs)
     { id: 'cerulean', name: 'Cerulean', description: 'A calm blue sky theme', isDark: false, category: 'Bootswatch' },
@@ -289,11 +296,21 @@ export class ThemeService {
 
     // Motorsports themes
     { id: 'f1', name: 'Formula 1', description: 'F1 Racing Red and Black', isDark: false, category: 'Motorsports' },
+
+    // Vocaloid themes
+    { id: 'vocaloid-miku', name: 'Hatsune Miku', description: 'Miku Teal, Charcoal, and Pink', isDark: false, category: 'Vocaloid' },
+    { id: 'vocaloid-rin', name: 'Kagamine Rin', description: 'Rin Orange-Yellow and Charcoal', isDark: false, category: 'Vocaloid' },
+    { id: 'vocaloid-len', name: 'Kagamine Len', description: 'Len Yellow and Navy Charcoal', isDark: false, category: 'Vocaloid' },
+    { id: 'vocaloid-luka', name: 'Megurine Luka', description: 'Luka Rose Pink, Plum, and Gold', isDark: false, category: 'Vocaloid' },
+    { id: 'vocaloid-kaito', name: 'KAITO', description: 'KAITO Blue, Midnight, and Ice', isDark: false, category: 'Vocaloid' },
+    { id: 'vocaloid-meiko', name: 'MEIKO', description: 'MEIKO Crimson, Brown, and Amber', isDark: false, category: 'Vocaloid' },
+    { id: 'vocaloid-gumi', name: 'GUMI', description: 'Megpoid Green and Goggle Orange', isDark: false, category: 'Vocaloid' },
+    { id: 'vocaloid-ia', name: 'IA', description: 'IA Dusty Rose and Powder Blue', isDark: false, category: 'Vocaloid' },
   ];
 
   /** Themes grouped by category */
   readonly themesByCategory = computed<ThemeGroup[]>(() => {
-    const categories: ThemeCategory[] = ['Base', 'Bootswatch', 'Material Design', 'Programming', 'Node Frameworks', 'Web Frameworks', 'Cloud Providers', 'NFL', 'NBA', 'NHL', 'Motorsports'];
+    const categories: ThemeCategory[] = ['Base', 'Bootswatch', 'Material Design', 'Programming', 'Node Frameworks', 'Web Frameworks', 'Cloud Providers', 'NFL', 'NBA', 'NHL', 'Motorsports', 'Vocaloid'];
     return categories.map(category => ({
       category,
       themes: this.themes.filter(t => t.category === category)
@@ -330,35 +347,109 @@ export class ThemeService {
   }
 
   /**
-   * Dynamically load a theme CSS file
+   * Prefetch a theme CSS file so switching to it is instant
    */
-  private loadTheme(themeId: string): void {
+  prefetchTheme(themeId: string): void {
+    // Defense-in-depth: ignore unknown theme ids
+    if (!this.themes.some(t => t.id === themeId)) return;
+
     // Skip if running on server (SSR)
     if (typeof document === 'undefined') return;
 
-    // Remove existing theme link if present
-    const existingLink = document.getElementById(this.THEME_LINK_ID);
-    if (existingLink) {
-      existingLink.remove();
+    if (themeId === 'default' || this.prefetchedThemes.has(themeId)) return;
+    this.prefetchedThemes.add(themeId);
+
+    const link = document.createElement('link');
+    link.rel = 'prefetch';
+    link.as = 'style';
+    link.href = `${themeId}.css`;
+    document.head.appendChild(link);
+  }
+
+  /**
+   * Dynamically load a theme CSS file
+   */
+  private loadTheme(themeId: string): void {
+    // Defense-in-depth: ignore unknown theme ids
+    if (!this.themes.some(t => t.id === themeId)) return;
+
+    // Skip if running on server (SSR)
+    if (typeof document === 'undefined') return;
+
+    // Cancel any theme load still in flight
+    const pendingLink = document.getElementById(this.PENDING_THEME_LINK_ID);
+    if (pendingLink) {
+      pendingLink.remove();
     }
+
+    const existingLink = document.getElementById(this.THEME_LINK_ID);
 
     // Don't add a link for default theme (it's already injected)
     if (themeId === 'default') {
+      if (existingLink) {
+        existingLink.remove();
+      }
+      this.updateThemeFonts(themeId);
       this.updateColorScheme(themeId);
       return;
     }
 
-    // Create new link element for the theme
+    // The theme whose stylesheet is still applied, so a failed load can
+    // revert to it. Derived from the applied link rather than currentThemeId,
+    // which has already been switched by the time loadTheme runs.
+    const previousThemeId = existingLink?.getAttribute('href')?.replace(/\.css$/, '') ?? 'default';
+
+    // Create new link element for the theme; keep the old one until the
+    // new stylesheet has loaded to avoid a flash of unstyled content
     const link = document.createElement('link');
-    link.id = this.THEME_LINK_ID;
+    link.id = this.PENDING_THEME_LINK_ID;
     link.rel = 'stylesheet';
     link.href = `${themeId}.css`;
+    link.onload = () => {
+      if (!link.isConnected) return;
+      if (existingLink) {
+        existingLink.remove();
+      }
+      link.id = this.THEME_LINK_ID;
+    };
+    link.onerror = () => {
+      if (!link.isConnected) return;
+      link.remove();
+      console.error(`Theme "${themeId}" stylesheet failed to load`);
+      // Revert to the theme whose stylesheet is still applied so the
+      // selector reflects reality, and un-persist the broken choice.
+      this.currentThemeId.set(previousThemeId);
+      this.saveTheme(previousThemeId);
+    };
 
     // Add to head
     document.head.appendChild(link);
 
+    // Load any Google Fonts the theme needs
+    this.updateThemeFonts(themeId);
+
     // Update color-scheme
     this.updateColorScheme(themeId);
+  }
+
+  private updateThemeFonts(themeId: string): void {
+    const existingLink = document.getElementById(this.THEME_FONTS_LINK_ID) as HTMLLinkElement | null;
+    const query = THEME_FONT_QUERIES[themeId];
+
+    if (!query) {
+      existingLink?.remove();
+      return;
+    }
+
+    const href = `https://fonts.googleapis.com/css2?${query}&display=swap`;
+    if (existingLink?.href === href) return;
+    existingLink?.remove();
+
+    const link = document.createElement('link');
+    link.id = this.THEME_FONTS_LINK_ID;
+    link.rel = 'stylesheet';
+    link.href = href;
+    document.head.appendChild(link);
   }
 
   private updateColorScheme(themeId: string): void {
