@@ -29,7 +29,7 @@ After completing a task or set of changes, always update and deploy the document
 
 3. **What triggers deployment**: Pushing to `main` branch automatically triggers the GitHub Actions workflow that builds and deploys the docs to GitHub Pages.
 
-4. **Live URL**: https://pegasusheavy.github.io/tailswatch
+4. **Live URL**: https://quinnjr.github.io/tailswatch
 
 ## Checklist Before Deploying
 

@@ -238,11 +238,11 @@ Every Bootswatch theme now has both light and dark variants:
 - Example pages: Admin Dashboard, E-commerce, Photography Portfolio, Forum, SaaS Landing Page
 - Comprehensive UI component examples
 
-[1.5.0]: https://github.com/pegasusheavy/tailswatch/releases/tag/v1.5.0
-[1.4.0]: https://github.com/pegasusheavy/tailswatch/releases/tag/v1.4.0
-[1.3.0]: https://github.com/pegasusheavy/tailswatch/releases/tag/v1.3.0
-[1.2.0]: https://github.com/pegasusheavy/tailswatch/releases/tag/v1.2.0
-[1.1.1]: https://github.com/pegasusheavy/tailswatch/releases/tag/v1.1.1
-[1.1.0]: https://github.com/pegasusheavy/tailswatch/releases/tag/v1.1.0
-[1.0.0]: https://github.com/pegasusheavy/tailswatch/releases/tag/v1.0.0
+[1.5.0]: https://github.com/quinnjr/tailswatch/releases/tag/v1.5.0
+[1.4.0]: https://github.com/quinnjr/tailswatch/releases/tag/v1.4.0
+[1.3.0]: https://github.com/quinnjr/tailswatch/releases/tag/v1.3.0
+[1.2.0]: https://github.com/quinnjr/tailswatch/releases/tag/v1.2.0
+[1.1.1]: https://github.com/quinnjr/tailswatch/releases/tag/v1.1.1
+[1.1.0]: https://github.com/quinnjr/tailswatch/releases/tag/v1.1.0
+[1.0.0]: https://github.com/quinnjr/tailswatch/releases/tag/v1.0.0
 
